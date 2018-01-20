@@ -16,7 +16,7 @@ public class Panel_3 extends JPanel {
 	    setLocation(100, 100);
 		
 		JLabel label1 = new JLabel();
-	    label1.setText("Sample text");
+	    label1.setText("Sample text for panel 3");
 	    
 	    add(label1);
 	    
