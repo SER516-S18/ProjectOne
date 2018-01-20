@@ -11,11 +11,17 @@ import java.awt.Font;
  *
  */
 public class P002_ArmstrongMensah_Panel extends JPanel {
+	private int flag;
+	
 	/**
 	 * 
 	 * @param flag - int to determine the counter direction and panel color
 	 */
 	public P002_ArmstrongMensah_Panel (int flag) {
+		this.flag = flag;
+	}
+	
+	public void main() {
 		setBorder(new EtchedBorder(EtchedBorder.LOWERED, Color.BLACK, null));
 		setLayout(null);
 		
@@ -25,15 +31,15 @@ public class P002_ArmstrongMensah_Panel extends JPanel {
 		lblFullName.setBounds(5, 5, 90, 50);
 		add(lblFullName);
 		
-		 JLabel lblCounter = new JLabel("");
+		JLabel lblCounter = new JLabel("");
 		lblCounter.setFont(new Font("Papyrus", Font.BOLD, 16));
 		lblCounter.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		lblCounter.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCounter.setBounds(35, 65, 30, 30);
 		add(lblCounter);
 		
-		setBackground (flag % 2 == 0 ? Color.WHITE : new Color(135, 206, 250));				
-		Counter counter = new Counter (lblCounter, (flag % 2 == 0) ? 0 : 9);
+		setBackground (this.flag % 2 == 0 ? Color.WHITE : new Color(243, 255, 255));				
+		Counter counter = new Counter (lblCounter, (this.flag % 2 == 0) ? 0 : 9);
 		new Thread(counter).start();
 		
 		this.setSize(100, 100);
