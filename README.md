@@ -1,2 +1,2 @@
 # ProjectOne
-Just for Fun
+Swing application to display 131 panels
