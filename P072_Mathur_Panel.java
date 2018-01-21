@@ -16,7 +16,7 @@ public class P072_Mathur_Panel extends JPanel {
     public P072_Mathur_Panel(int num){
         this.num = num;
         setPanelSize();
-        initializeandAndNameLabel();
+        initializeAddNameLabel();
         setBackgroundColor();
         setCounterValue();
         setClockTimer();
@@ -72,7 +72,7 @@ public class P072_Mathur_Panel extends JPanel {
         }
     }
     // Initialize and Add  Name Label to panel
-    private void initializeandAndNameLabel() {
+    private void initializeAddNameLabel() {
         fullName = new JLabel("<html>Garv<br>Mathur</html>");
         fullName.setFont(new Font("Papyrus",Font.BOLD,16));
         this.add(fullName);
