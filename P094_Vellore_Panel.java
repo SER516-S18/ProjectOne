@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public class P094_Vellore_Panel {
 	/* The class consists of a JPanel with the Firstname and Lastname*/
 	//The JPanel is of size 100*100 
-	private JPanel label;
+	private JPanel panel;
 	private JLabel name;
 	private JLabel timer;
 	private boolean var;
@@ -26,17 +26,17 @@ public class P094_Vellore_Panel {
 	public JPanel P094_Vellore_Panel() {
 		
 		//setting up JPanel.
-		label=new JPanel();
-		label.setLayout(new BoxLayout(label, BoxLayout.Y_AXIS));
+		panel=new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		
 		if(var==false)
-			label.setBackground(Color.blue);
+			panel.setBackground(Color.blue);
 		else
-			label.setBackground(Color.white);
+			panel.setBackground(Color.white);
 		
 		//setting the size of the panel x,y axis
-		label.setPreferredSize(new Dimension(100,100));
-		label.setMaximumSize( label.getPreferredSize() );
+		panel.setPreferredSize(new Dimension(100,100));
+		panel.setMaximumSize( panel.getPreferredSize() );
 		
 		//setting up JLabel
 		//lable with first and last name details
@@ -51,9 +51,9 @@ public class P094_Vellore_Panel {
 		name.setHorizontalAlignment(JLabel.CENTER);
 	    timer.setHorizontalAlignment(JLabel.CENTER);
 		
-		label.add(name);
-		label.add(timer);
-		label.setVisible(true);
+		panel.add(name);
+		panel.add(timer);
+		panel.setVisible(true);
 		
 		//setting up counter. 
 		if(var==true) 
@@ -61,7 +61,7 @@ public class P094_Vellore_Panel {
 		else
 			TimerDecrement();
 		
-		return label;
+		return panel;
 	}//end of JLabel
 	
 	
@@ -80,9 +80,9 @@ public class P094_Vellore_Panel {
 	        int counter = 0;
 	        public void run() {
 	            while(true) {
-	            		if(counter==10)
-	            			counter=0;
-	            		
+	            	if(counter==10)
+	            		counter=0;	
+	            	
 	                timer.setText(" " +counter++);
 	                try{
 	                    Thread.sleep(1000);
@@ -100,11 +100,12 @@ public class P094_Vellore_Panel {
 	        int counter = 9;
 	        public void run() {
 	            while(true) {
-	            		if(counter==-1)
+	            	if(counter==-1)
 	            			counter=9;
-	            		timer.setText(" " +counter--);
+	            	
+	            	timer.setText(" " +counter--);
 	                try{
-	                    Thread.sleep(1000);
+	                	Thread.sleep(1000);
 	                } 
 	                catch(Exception e) {}
 	            }
