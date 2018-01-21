@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package p069_mantri_panel;
 
 import java.awt.Color;
@@ -114,8 +110,3 @@ public class P069_Mantri_Panel extends JPanel
         }
  
 }   
-   
-
-
-    
-
