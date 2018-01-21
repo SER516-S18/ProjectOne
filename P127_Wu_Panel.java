@@ -1,4 +1,3 @@
-package Panel;
 /**
  * a JLabel used for SER 516, which can show my name and a number
  * @author Huichuan Wu
