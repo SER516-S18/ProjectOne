@@ -1,122 +1,96 @@
+/* SER 516 Lab 01 Group 2 */
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.border.Border;
 
-public final class P029_Dutta_Panel {
+public class P029_Dutta_Panel extends JPanel{ //Class for creating individual panels
 
-    private JFrame frame;
-    private JPanel panel;
-    private JLabel namelabel;
-    private JLabel numlabel;
-    private Border blackline;
+	int count;
+    private JPanel panel= new JPanel();
+    private JLabel firstname = new JLabel("Ananya", JLabel.CENTER);
+    private JLabel lastname = new JLabel("Dutta", JLabel.CENTER);
+    private JLabel dNum = new JLabel("0", JLabel.CENTER);
+    private Border border = BorderFactory.createLineBorder(Color.BLACK,1); 
 
-    public P029_Dutta_Panel(int i) { //Constructor
-        
-        displayName(i);//Calling method which has the logic for counter and displaying name.
+    public P029_Dutta_Panel(int i) { //Constructor for setting the background color and timer.
+    	
+    	Color backColor;
+    	if(i%2 == 0) // Checks for even or odd and set background color.
+    	{
+    		backColor = Color.WHITE;
+    		this.count = 0;
+       	}
+    	else
+    	{
+    		Color color = new Color(173,216,230);
+    		backColor = color;
+    		this.count = 9;
+    	}
+    	try {
+    		createPanel(backColor);
+    		Timer t = new Timer(1000, new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) // Checks for even or odd and sets timer accordingly.
+				{
+					if(i%2 == 0)
+					{
+						if(count < 9)
+							count ++;
+						else
+							count =0;
+						dNum.setText(""+String.valueOf(count));
+						
+					}
+					else
+					{
+						if(count > 0)
+							count --;
+						else
+							count = 9;
+						
+						dNum.setText(""+String.valueOf(count));
+					}
+				}
+			});
+    		t.start();
+    	}
+    	catch(Exception e)
+    	{
+    		System.out.println(e.getMessage());
+    	}
+    	
+         
     }
-    public void displayName(int i) {
-        
-        frame = new JFrame("GROUP 1");
-        //Giving attributes to the panel
-        panel = new JPanel(new GridBagLayout());
-        panel.setSize(100, 100);
-        GridBagConstraints c = new GridBagConstraints();
-        blackline = BorderFactory.createLineBorder(Color.BLACK);
-        panel.setBorder(blackline);
-        
-        //Giving attributes to the name label
-        namelabel = new JLabel();
-        namelabel.setFont(new Font("Papyrus", Font.BOLD, 15));
-        namelabel.setBorder(blackline);
-        namelabel.setText("<html> ANANYA<br> DUTTA </html>");//(a) JPanel with full namelabel,first namelabel on first row and last namelabel on the next row.
-        c.gridx = 0;
-        c.gridy = 1;
-        panel.add(namelabel, c);//setting the namelabel label to coordinates 0,1.
-        
-        Timer timer = new Timer();
-        numlabel = new JLabel();
-        /*Checking if integer passed is not even, means it's odd so set 
-        background t light blue and decrement counter from 9 onwords till zero*/
-        
-       if (i % 2 != 0) {
-            panel.setBackground(new Color(173, 216, 230));//if int value is odd the color = light blue
-            TimerTask task = new TimerTask() {
-           int i =9;
-            public void toDO() {
-                numlabel.setText(String.valueOf(i--));//(b)JLabel displaying numbers from 0-9
-                numlabel.setFont(new Font("Papyrus", Font.BOLD, 15));
-
-            }
-            public void run() {
-                
-                toDO();
-                try {
-                    if (i < -1) {
-                        i = 9;
-                        toDO();
-                    }
-                } catch (Exception e) { //Error unknown exception, timer failed.
-                    
-                    e.printStackTrace();
-                    System.out.println("Error! Stopping the timer...");
-                    timer.cancel();
-                }
-
-            }
-        };
-        timer.scheduleAtFixedRate(task, 0, 1000);//after every 1000 ms that is one second timer is set
-
-        } else
-       {
-        panel.setBackground(Color.WHITE);//else color = white
-        TimerTask task = new TimerTask() {
-           int i =0;
-            public void toDO() {
-                numlabel.setText(String.valueOf(i++));//(b)JLabel displaying numbers from 0-9
-                numlabel.setFont(new Font("Papyrus", Font.BOLD, 15));
-
-            }
-            public void run() {
-                
-                toDO();
-                try {
-                    if (i > 10) {
-                        i = 0;
-                        toDO();
-                    }
-                } catch (Exception e) { //Error unknown exception, timer failed.
-                    
-                    e.printStackTrace();
-                    System.out.println("Error! Stopping the timer...");
-                    timer.cancel();
-                }
-
-            }
-        };
-        timer.scheduleAtFixedRate(task, 0, 1000);//setting the timer to run every 1 second.
-       }
-        
-        //Setting position of second JLabel of numbers
-        c.gridx = 0;
-        c.gridy = 2;
-        panel.add(numlabel, c);//setting the numlabel label to coordinates 0,2.
-        
-        //Giving attributes to the frame
-        frame.add(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        frame.setLayout(null);
-        frame.setVisible(true);
-        
+    
+    public void createPanel(Color color) throws Exception  // method for adding the different labels in the panel
+    {
+    	panel.setBackground(color);
+    	panel.setBorder(border);
+    	firstname.setFont(new Font("Papyrus",Font.PLAIN,10));
+    	lastname.setFont(new Font("Papyrus",Font.PLAIN,10));
+    	panel.add(firstname);
+    	panel.add(lastname);
+    	firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
+    	lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
+    	panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+    	dNum.setFont(new Font("Papyrus",Font.PLAIN,10));
+    	panel.add(dNum);
+    	dNum.setAlignmentX(Component.CENTER_ALIGNMENT);
+    	panel.setSize(100, 100);
     }
-   
-    public static void main(String[] args) {
-        
-        System.out.println("enter integer here, eg taken as three.");
-        new P029_Dutta_Panel(2);//Calling constructor
-
-   
+    
+    public static void main(String[] args)
+    {
+    	JFrame frame  = new JFrame(" test ");
+    	P029_Dutta_Panel p = new P029_Dutta_Panel(2);
+    	frame.add(p.panel);
+    	frame.setSize(800,800);
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	frame.pack();
+    	frame.setVisible(true);
     }
+    
 }
