@@ -43,7 +43,6 @@ public class P017_Cai_Panel extends JPanel {
         mIncrease = even;
         JLabel counter = new JLabel(mCnt + "", JLabel.CENTER);
         counter.setFont(new Font("papyrus", Font.PLAIN, 25));
-        counter.setAlignmentY(100);
         add(counter);
 
         Timer t = new Timer(1000, new ActionListener(){
