@@ -88,9 +88,11 @@ public class P072_Mathur_Panel extends JPanel {
         return num % 2 == 0;
     }
 
-//    public static void main(String [] s)
-//    {
-//        int val = 3;
-//        new P072_Mathur_Panel(val);
+//    public static void main(String [] s) {
+//        JFrame jFrame = new JFrame();
+//        jFrame.setContentPane(new P072_Mathur_Panel(4));
+//        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        jFrame.pack();
+//        jFrame.setVisible(true);
 //    }
 }
