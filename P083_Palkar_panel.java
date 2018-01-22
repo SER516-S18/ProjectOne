@@ -16,7 +16,7 @@ import java.util.TimerTask;
 public class P083_Palkar_panel extends JPanel{
 
 
-    public static int counter = 0;
+  public static int counter = 0;
     private boolean EvenFlag;
     private Color col;
 
@@ -42,17 +42,25 @@ public class P083_Palkar_panel extends JPanel{
     }
 
     public void setbgcol(Color c) 
-    {
-        setSize(100,100);//Set the size of the panel
+    {	
+       setSize(100,100);//Set the size of the panel
+        setLayout(new GridBagLayout());//For center alignment
+        GridBagConstraints a = new GridBagConstraints();//Create an object of GridBagConstraint
         setBackground(c);//Set the background colour of the panel
         JLabel Name = new JLabel("<html>Tejasi<br>Palkar</html>");//Create and initialise Name label with the name of the person.Represents the GUI component to be added on the panel
-        Name.setFont(new Font("Papyrus", Font.PLAIN, 10));
-        add(Name);//Add label onto panel
+        a.gridx=0;//Set the column address to O for the leftmost element
+        a.gridy=0;//Set the row address to 0
+        Name.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        add(Name,a);//Add label onto panel
 
         JLabel  Counter = new JLabel(String.valueOf(counter));//Create and Initialise Counter label with the counter value.Represents the gUI component to be added on the panel
-        Counter.setFont(new Font("Papyrus", Font.PLAIN, 10));
-        add(Counter);//Add counter label onto the panel
+        Counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
+       
+        a.gridx=0;//Set the column address for the counter to be aligned with the name label
+        a.gridy=1;//Set the row address as 1 for the counter to be diaplayed below the name label
+       add(Counter,a);//Add counter label onto the panel
 
+      
         
         //Timer value change is kept between try and catch to handle exception at the runtime
         try {
@@ -103,15 +111,14 @@ public class P083_Palkar_panel extends JPanel{
 
 
 
-    
-   /* public static void main(String[] args) {
-
+  /*  
+   public static void main(String[] args) {
         JFrame F = new JFrame("Frame_Palkar");
-        F.setSize(100,100);
         P083_Palkar_panel obj1 = new P083_Palkar_panel (81);
-        F.add(obj1 );
         F.setVisible(true);
+        F.add(obj1);
+        F.pack();
         F.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }*/
+
 }
