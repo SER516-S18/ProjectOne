@@ -101,7 +101,9 @@ public class P099_Shah_Panel extends JPanel{
             e.printStackTrace();//Runtime Errors are printed
         }
     }
-
+    
+    //Main Method to Execute the function
+    /*
     public static void main(String[] args) {
 
         JFrame jFrame = new JFrame("Frame");
@@ -111,5 +113,5 @@ public class P099_Shah_Panel extends JPanel{
         jFrame.add(p099_Shah_panel);
         jFrame.setVisible(true);
 
-    }
+    }*/
 }
