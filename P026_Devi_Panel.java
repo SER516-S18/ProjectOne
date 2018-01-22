@@ -10,7 +10,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.border.Border;
 
 public final class P026_Devi_Panel extends JPanel {
 
@@ -18,7 +17,6 @@ public final class P026_Devi_Panel extends JPanel {
     private JPanel panel;
     private JLabel namelabel;
     private JLabel numlabel;
-    private Border blackline;
 
     public P026_Devi_Panel(int i) { //Constructor
         
@@ -31,14 +29,14 @@ public final class P026_Devi_Panel extends JPanel {
         panel = new JPanel(new GridBagLayout());
         panel.setSize(100, 100);
         GridBagConstraints c = new GridBagConstraints();
-        blackline = BorderFactory.createLineBorder(Color.BLACK);
-        panel.setBorder(blackline);
+       // blackline = BorderFactory.createLineBorder(Color.BLACK);
+      //  panel.setBorder(blackline);
         
         //Giving attributes to the name label
         namelabel = new JLabel();
         namelabel.setFont(new Font("Papyrus", Font.BOLD, 15));
-        namelabel.setBorder(blackline);
-        namelabel.setText("<html> SANAY<br> DEVI </html>");//(a) JPanel with full namelabel,first namelabel on first row and last namelabel on the next row.
+       // namelabel.setBorder(blackline);
+        namelabel.setText("<html> Sanay <br> Devi </html>");//(a) JPanel with full namelabel,first namelabel on first row and last namelabel on the next row.
         c.gridx = 0;
         c.gridy = 1;
         panel.add(namelabel, c);//setting the namelabel label to coordinates 0,1.
@@ -54,7 +52,7 @@ public final class P026_Devi_Panel extends JPanel {
            int i =9;
             public void toDO() {
                 numlabel.setText(String.valueOf(i--));//(b)JLabel displaying numbers from 0-9
-                numlabel.setFont(new Font("Papyrus", Font.BOLD, 15));
+                numlabel.setFont(new Font("Papyrus", Font.PLAIN , 15));
 
             }
             public void run() {
@@ -83,7 +81,7 @@ public final class P026_Devi_Panel extends JPanel {
            int i =0;
             public void toDO() {
                 numlabel.setText(String.valueOf(i++));//(b)JLabel displaying numbers from 0-9
-                numlabel.setFont(new Font("Papyrus", Font.BOLD, 15));
+                numlabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
             }
             public void run() {
@@ -116,13 +114,16 @@ public final class P026_Devi_Panel extends JPanel {
     public JPanel getPanel()//returns the panel
     {
         return panel;
+    //PLEASE READ THIS!!
+    //In Main Method use: JPanel panel = new P026_Devi_Panel(0).getPanel(); for intializing
+   
     }
     // MAIN METHOD USED FOR TESTING, SHOULD BE COMPLETED BY ASSIGNED TAB MEMBER.
-    //use: JPanel panel = new P026_Devi_Panel(0).getPanel(); for intializing
-   /* public static void main(String[] args) {
+    
+    /* public static void main(String[] args) {
         
         JFrame frame = new JFrame("GROUP 1");
-         JPanel panel = new P026_Devi_Panel(0).getPanel();
+         JPanel panel = new P026_Devi_Panel(5).getPanel();
          //Giving attributes to the frame
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -134,4 +135,5 @@ public final class P026_Devi_Panel extends JPanel {
     }*/
     
 } //END 
+
 
