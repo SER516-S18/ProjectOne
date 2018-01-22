@@ -6,6 +6,7 @@
 */ 
 
 import java.awt.*;
+
 import javax.swing.*;
 
 
@@ -49,12 +50,16 @@ public class P064_Madaraju_Panel {
 		
 		//First Name
 		firstName = new JLabel("Venkata Akhil");
-		firstName.setFont(new Font("Papyrus",Font.BOLD,10));
+		firstName.setFont(new Font("Papyrus",Font.PLAIN,15));
+		firstName.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 		//Last Name
 		lastName = new JLabel("Madaraju");
-		lastName.setFont(new Font("Papyrus",Font.BOLD,10));
+		lastName.setFont(new Font("Papyrus",Font.PLAIN,15));
+		lastName.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 		//Counter Label
 		count = new JLabel();
+		count.setFont(new Font("Papyrus",Font.PLAIN,15));
+		count.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 		panel.add(firstName);
 		panel.add(lastName);
 		panel.add(count);
@@ -62,14 +67,14 @@ public class P064_Madaraju_Panel {
 		panel.setBackground(bgcolor);
 		//if loop to increment if the constructor receives even value else decrement 
 		if (flag==0)
-			madaraju_increment();
+			counter_increment();
 		else
-			madaraju_decrement();
+			counter_decrement();
 		return panel;
 	}
 	
 	//Thread to increment values from 0-9 if constructor receives even value
-	public void madaraju_increment()
+	public void counter_increment()
 	{
 		new Thread()
 		{
@@ -90,7 +95,7 @@ public class P064_Madaraju_Panel {
 	}
 	
 	//Thread to decrement values from 9-0 if constructor receives odd value
-	public void madaraju_decrement()
+	public void counter_decrement()
 	{
 		new Thread()
 		{
