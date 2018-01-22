@@ -1,5 +1,3 @@
-package edu.asu.swing.group5;
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
