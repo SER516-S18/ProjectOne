@@ -79,6 +79,7 @@ public class P107_Srivastava_Tab extends JTabbedPane{
 			add(new P126_Wei_Panel(126).getPanel(), gbc); //Had to call extra function
 			add(new P127_Wu_Panel(127).create(), gbc); //Had to call extra function
 			// add(new P128_Yadamreddi_Panel(128).panel, gbc);
+			add(new P129_Yan_Panel(129), gbc);
 
 
 			// add(new Panel_1(), gbc);
