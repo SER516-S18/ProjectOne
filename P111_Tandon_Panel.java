@@ -1,10 +1,14 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 /**
@@ -29,6 +33,7 @@ public class P111_Tandon_Panel extends JPanel {
 	public static final int PANEL_HEIGHT = 100;
 	public static final int PANEL_WIDTH = 100;
 	public static final int TIMER_DELAY = 1000;
+	public static final int FONT_SIZE = 15;
 
 	/**
 	 * Class variable for name label
@@ -62,7 +67,7 @@ public class P111_Tandon_Panel extends JPanel {
 		} catch (NumberFormatException e) {
 			System.out.println("Check input value to constructor,Error message: " + e.getMessage());
 		} catch (Exception e) {
-			System.out.println("Somethng went wrong.Error message: " + e.getMessage());
+			System.out.println("Please see error message: " + e.getMessage());
 		}
 
 		setPanelProperties();
@@ -84,7 +89,7 @@ public class P111_Tandon_Panel extends JPanel {
 				this.counterVal = 9;
 			}
 			counterLabel = new JLabel(String.valueOf(this.counterVal));
-			counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 18));
+			counterLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
 			this.add(counterLabel);
 
 			new Timer(TIMER_DELAY, new ActionListener() {
@@ -113,7 +118,7 @@ public class P111_Tandon_Panel extends JPanel {
 				}
 			}).start();
 		} catch (Exception e) {
-			System.out.println("Something went wrong: Message: " + e.getMessage());
+			System.out.println("Please see error message: " + e.getMessage());
 		}
 
 	}
@@ -123,7 +128,7 @@ public class P111_Tandon_Panel extends JPanel {
 	 */
 	private void setNameLabelProperties() {
 		nameLabel = new JLabel(NAME_TAG);
-		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 18));
+		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
 		this.add(nameLabel);
 
 	}
@@ -133,6 +138,7 @@ public class P111_Tandon_Panel extends JPanel {
 	 */
 	private void setPanelProperties() {
 		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		this.setLayout(new GridLayout(2, 0));
 		if (this.configParam) {
 			this.setBackground(Color.WHITE);
 		} else {
@@ -159,5 +165,24 @@ public class P111_Tandon_Panel extends JPanel {
 		return this;
 	}
 
+	/**
+	 * Testing the panel. Uncomment lines to test.
+	 * 
+	 * @param args
+	 * 
+	 */
+	/*
+	 * public static void main(String[] args) {
+	 * 
+	 * SwingUtilities.invokeLater(new Runnable() {
+	 * 
+	 * @Override public void run() { JFrame testFrame = new JFrame();
+	 * testFrame.add(new P111_Tandon_Panel(9).getPanelInstance());
+	 * testFrame.setVisible(true);
+	 * testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	 * testFrame.setSize(150, 150); } });
+	 * 
+	 * }
+	 */
 
 }
