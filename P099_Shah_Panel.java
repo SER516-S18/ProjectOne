@@ -105,14 +105,12 @@ public class P099_Shah_Panel extends JPanel{
     /*
     public static void main(String[] args) {
 
-        JFrame jFrame = new JFrame();
-        P099_Shah_Panel p099_Shah_panel = new P099_Shah_Panel (99);
-        
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.add(p099_Shah_panel);//Panel added to the frame
-        jFrame.setSize(800,800);//Size of the frame is set
-        jFrame.setLayout(null);//Layout of the frame is set to null
+    	JFrame jFrame = new JFrame();
         jFrame.setVisible(true);//Visibility of the Frame is set
-
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        P099_Shah_Panel p099_Shah_panel = new P099_Shah_Panel (99);
+        jFrame.getContentPane().add(p099_Shah_panel);//Panel added to the frame
+        jFrame.pack();
     }*/
 }
