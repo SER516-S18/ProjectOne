@@ -1,12 +1,13 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-class P071_Avinash_Panel{
+public class P071_MathadVijayaKumar_Panel {
 	/*
 	 * This class implements a 100*100 JPanel with three JLabels viz, Firstname, Lastname and 
 	 * a counter thread which counts 0-9 increment or decrement depending on the number passed to class. 
@@ -19,7 +20,7 @@ class P071_Avinash_Panel{
 	private boolean even;
 	
 	//constructor.
-	public P071_Avinash_Panel(int num) {
+	public P071_MathadVijayaKumar_Panel(int num) {
 		/* params: number 
 		 * return: None 
 		 * Description: sets boolean even to true if param num is even.
@@ -30,7 +31,7 @@ class P071_Avinash_Panel{
 			even=true;
 	}
 
-	public JPanel P071_Avinash_Panel() {
+	public JPanel P071_Mathad_VijayaKumar_Panel() {
 		/* params: None 
 		 * return: JPanel object 
 		 * Description: Populates JPanel with three JLabels arranged in Y_axis.
@@ -52,6 +53,11 @@ class P071_Avinash_Panel{
 		firstname=new JLabel(" Avinash");
 		lastname= new JLabel(" Mathad Vijayakumar");
 		count=new JLabel();
+		
+		firstname.setFont(new Font("Papyrus",Font.PLAIN,8));
+		lastname.setFont(new Font("Papyrus",Font.PLAIN,8));
+		count.setFont(new Font("Papyrus",Font.PLAIN,8));
+		
 		p.add(firstname);
 		p.add(lastname);
 		p.add(count);
@@ -60,15 +66,15 @@ class P071_Avinash_Panel{
 		
 		//setting up counter. 
 		if(even==true) 
-			P071_Avinash_TimerIncrement();
+			P071_Mathad_VijayaKumar_TimerIncrement();
 		else
-			P071_Avinash_TimerDecrement();
+			P071_Mathad_VijayaKumar_TimerDecrement();
 		
 		return p;
 	}
 	
 	
-	public void P071_Avinash_TimerIncrement() {
+	public void P071_Mathad_VijayaKumar_TimerIncrement() {
 		/* params: None 
 		 * return: None. 
 		 * Description: Thread. Starts the thread and counts from 0-9.
@@ -91,7 +97,7 @@ class P071_Avinash_Panel{
 	}//end or function. 
 	
 	
-	public void P071_Avinash_TimerDecrement() {
+	public void P071_Mathad_VijayaKumar_TimerDecrement() {
 		/* params: None 
 		 * return: None. 
 		 * Description: Thread. Starts the thread and counts from 9-0.
@@ -120,8 +126,8 @@ class P071_Avinash_Panel{
 		 * Description: This is for testing. 
 		 */
 		
-		P071_Avinash_Panel ob= new P071_Avinash_Panel(5);
-		JPanel p=ob.P071_Avinash_Panel();
+		P071_MathadVijayaKumar_Panel ob= new P071_MathadVijayaKumar_Panel(5);
+		JPanel p=ob.P071_Mathad_VijayaKumar_Panel();
 		JFrame f=new JFrame("Simple Window");
 		//f.setSize(800,800);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

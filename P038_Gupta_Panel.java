@@ -18,7 +18,7 @@ import java.util.Timer;
  * @version 1.0
  * @since 18-01-2018
  */
-public class P038_Gupta_Panel extends JPanel{
+ public class P038_Gupta_Panel extends JPanel{
    
     public P038_Gupta_Panel(int i)
     {
@@ -54,13 +54,13 @@ public class P038_Gupta_Panel extends JPanel{
         if the number is Even, background color is Blue, else White.
                 */
                 
-        if (c%2 == 0)
+       if (c%2 == 0)
         {
-           setBackground(new Color(90,150,255));
+           setBackground(Color.white);
         }
         else
         {
-           setBackground(Color.white);
+           setBackground(new Color(90,150,255));
         }
         JLabel jl3 = new JLabel();
         JLabel jl4 = new JLabel();
@@ -120,3 +120,5 @@ public class P038_Gupta_Panel extends JPanel{
     }*/
     
 }
+
+

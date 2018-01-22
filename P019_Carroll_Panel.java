@@ -21,23 +21,10 @@ public class P019_Carroll_Panel extends JPanel {
 	private int countValue;
 	private JLabel nameLabel;
 	private JLabel counterLabel;
-	
-	private static P019_Carroll_Panel panel;
-	
-	protected P019_Carroll_Panel( int setting ) {
+
+	P019_Carroll_Panel( int setting ) {
 		this.setting = setting;
 		init();
-	}
-	
-	// Singleton setup, conforms to the specification on BB discussion
-	// setting - Even for increasing counter, odd for decreasing.
-	public static P019_Carroll_Panel getInstance( int setting ) {
-		// Get new instance if the setting has changed as well.
-		// Breaks Singleton but conforms to specification if setting needs to be changed.
-		if( panel == null || panel.setting != setting ) {
-			panel = new P019_Carroll_Panel( setting );
-		}
-		return panel;
 	}
 	
 	private void init() {
@@ -74,7 +61,7 @@ public class P019_Carroll_Panel extends JPanel {
 		setBorder( new EmptyBorder( 20, 20, 20, 20 ) );
 		setSize( WIDTH, HEIGHT );
 		setVisible( true );
-		setBackground( increases(setting) ? Color.WHITE : new Color( 136, 206, 250 ) );
+		setBackground( increases(setting) ? Color.WHITE : Color.CYAN );
 		add( nameLabel, BorderLayout.NORTH );
 		add( counterLabel, BorderLayout.SOUTH );
 	}
@@ -89,7 +76,8 @@ public class P019_Carroll_Panel extends JPanel {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setSize(100, 100);
-		frame.add(P019_Carroll_Panel.getInstance(0));
+		P019_Carroll_Panel panel = new P019_Carroll_Panel(1);
+		frame.add(panel);
 		frame.setVisible(true);
 	}
 }
