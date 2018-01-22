@@ -33,7 +33,7 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 			this.setBackground(bg);
 			this.setLayout(new GridLayout(3,1));		//A 3x1 Layout for 3 labels.
 			
-			Font font = new Font("Papyrus", Font.PLAIN, 14);
+			Font font = new Font("Papyrus", Font.PLAIN, 15);
 			
 			fname.setFont(font);
 			lname.setFont(font);
