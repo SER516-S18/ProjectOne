@@ -42,7 +42,7 @@ public class P012_Bhatt_Panel extends JPanel
 
 		setPreferredSize(new Dimension(100,100));
 		//setBorder(border);
-		setLayout(null);
+		setLayout(new GridLayout(2,1));
 
 		add(name);
 		add(counter);
