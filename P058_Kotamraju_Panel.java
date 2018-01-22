@@ -87,7 +87,6 @@ public class P058_Kotamraju_Panel extends JPanel{
         }
     }
 	
-	
 //     public static void main(String[] args) {
         
 //         JFrame frame = new JFrame();
