@@ -64,8 +64,8 @@ public class P107_Srivastava_Tab extends JTabbedPane{
 			gbc.weightx = 1.0;
 	        gbc.weighty = 1.0;
 	        
-	        add(new p105_Siddiqui_Panel(105), gbc);
-	        add(new P106_Singal_Panel(106), gbc);
+	        	add(new P105_Siddiqui_Panel(105), gbc);
+		        add(new P106_Singal_Panel(106), gbc);
 			add(new P108_SubramanianVenkatraman_Panel(108), gbc);
 			add(new P109_Suryawanshi_Panel(109), gbc);
 			add(new P110_Swaminathan_Panel(110), gbc);

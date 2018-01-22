@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 /**
- P025_Desai_Panel is panel of Dhruti Desai
- The first row is giving first name
- The second row is giving last name
- Row three is a counter that is either incrementing from 0 or decrementing from 9.
- The mode of the counter and the background color are determined by the value passed to the constructor
+ * P025_Desai_Panel is panel of Dhruti Desai
+ * The first row is giving first name
+ * The second row is giving last name
+ * Row three is a counter that is either incrementing from 0 or decrementing from 9.
+ * The mode of the counter and the background color are determined by the value passed to the constructor
   @author Dhruti Desai
  */
 
@@ -76,14 +76,14 @@ public class P025_Desai_Panel extends JPanel {
         add(jp);
  }
    /**Main function is included for testing. */
-    public static void main(String args[])
-    {
-        JFrame jf= new JFrame();
-        jf.getContentPane().add(new P025_Desai_Panel(3));
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jf.setVisible(true);
-        jf.setSize(400,400);
-    }
+    /**public static void main(String args[])
+      *{
+      * JFrame jf= new JFrame();
+      * jf.getContentPane().add(new P025_Desai_Panel(3));
+      * jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      * jf.setVisible(true);
+      * jf.setSize(400,400);
+      *  }*/
 }
 
 

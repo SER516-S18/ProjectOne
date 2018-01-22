@@ -11,7 +11,7 @@ public class P114_Thoram_Panel extends JPanel {
      * 
      */
 	//string name variable to add name to the JLabel name
-	public static final String name_panel = "<html>RaviTeja</html>";
+	public static final String name_panel = "<html>RaviThoram</html>";
 	//JLabel that which need to be displayed in the panel
     JLabel name;
     JLabel counter;
@@ -104,7 +104,7 @@ public class P114_Thoram_Panel extends JPanel {
     /**
      * @param args
      */
-    /*public static void main(String[] args) {
+   /* public static void main(String[] args) {
         // TODO Auto-generated method stub
         SwingUtilities.invokeLater(new Runnable() {
  

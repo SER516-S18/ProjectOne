@@ -84,7 +84,7 @@ public class P059_Kulkarni_Panel {
 							counter = 0;
 						timer.setText(""+ counter++);
 					} else {
-						Color lightBlue = new Color(31,190,214); // If color_value is odd set background color to light blue
+						Color lightBlue = new Color(173, 216, 230); // If color_value is odd set background color to light blue
 						panel.setBackground(lightBlue);
 						if (counter == -1)
 							counter = 9;
@@ -99,18 +99,5 @@ public class P059_Kulkarni_Panel {
 	    	}
 		// return JPanel object
 		return panel;
-	}
-	
-	// For testing purpose
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		P059_Kulkarni_Panel panelDemo = new P059_Kulkarni_Panel(1);
-		JFrame frame = new JFrame();
-		JPanel panel = panelDemo.prepareGUI();
-
-		frame.setSize(100, 100);
-		frame.add(panel);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
 	}
 }

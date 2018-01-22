@@ -62,6 +62,10 @@ public class P126_Wei_Panel {
             th = new Thread(() -> {
                 for (int cur = 0; cur < 10; cur ++) {
                     countLabel.setText(Integer.toString(cur));
+                    if (cur == 9) {
+                        cur = -1;
+                    }
+
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -73,6 +77,10 @@ public class P126_Wei_Panel {
             th = new Thread(() -> {
                for (int cur = 9; cur >= 0; cur--) {
                    countLabel.setText(Integer.toString(cur));
+                   if (cur == 0) {
+                       cur = 10;
+                   }
+
                    try {
                        Thread.sleep(1000);
                    } catch (InterruptedException e) {

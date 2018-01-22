@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class P042_Yiru_Panel  
+public class P042_Hu_Panel  
 {
 	static JFrame frame1 = new JFrame();
 	//setting background
@@ -75,7 +75,7 @@ public class P042_Yiru_Panel
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		P042_Yiru_Panel yiru = new P042_Yiru_Panel();
+		P042_Hu_Panel yiru = new P042_Hu_Panel();
 		myTimer.schedule(yiru.myTask,1000,1000);
 	}
 }

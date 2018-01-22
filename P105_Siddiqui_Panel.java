@@ -17,7 +17,7 @@
  /*
   * Creating class as per Lab-work intructions
   */
- public class p105_Siddiqui_Panel extends JPanel {
+ public class P105_Siddiqui_Panel extends JPanel {
 
  	private JLabel fullName;
  	private JLabel counter;
@@ -39,7 +39,7 @@
  	 * Constructor which takes an integer value and set parameters for background and counter direction.
  	 */
 
- 	public p105_Siddiqui_Panel(int value){
+ 	public P105_Siddiqui_Panel(int value){
  		if (value % 2 == 0){
  			count = -1;
  			bgColor = white_Bg;
@@ -59,9 +59,9 @@
  	 */
  	public void panelWork(){
 
- 		fullName = new JLabel("<Html><div style='text-align: center;'>Zain<br>Siddiqui</div></Html>");
+ 		fullName = new JLabel("<Html><div>Zain<br>Siddiqui</div></Html>");
  		counter = new JLabel();
- 		font = new Font("Papyrus", Font.PLAIN, 12);
+ 		font = new Font("Papyrus", Font.PLAIN, 15);
 
 
  		fullName.setFont(font);
@@ -128,16 +128,18 @@
 
  	
  	/* Main method for testing purpose */
+	/* 
  	public static void main(String[] args) {
  		JFrame frame =  new JFrame();
  		frame.setVisible(true);
 		frame.setSize(100,100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		p105_Siddiqui_Panel testing = new p105_Siddiqui_Panel(106);
+		P105_Siddiqui_Panel testing = new P105_Siddiqui_Panel(106);
 		frame.add(testing);
  		
- 	}	
+ 	}
+	*/
 
  }
 

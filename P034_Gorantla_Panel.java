@@ -28,8 +28,8 @@ public class P034_Gorantla_Panel extends JPanel{
     // variables initialisation
     private JLabel counterHolder;
     private JLabel nameHolder;
-    private JPanel contentPanel;
-    private JFrame mainFrame;
+    //private JPanel contentPanel;
+    //private JFrame mainFrame;
     public static int counter = 0;
 
     // one parameter constructor, accepts integer value
@@ -51,26 +51,26 @@ public class P034_Gorantla_Panel extends JPanel{
     
     public void initUI(){
         // mainframe is the outer layout for the app
-        mainFrame = new JFrame();
-        mainFrame.setSize(200, 200);
-        mainFrame.setLayout(new GridLayout(3, 1));
+        //mainFrame = new JFrame();
+        //mainFrame.setSize(200, 200);
+        //mainFrame.setLayout(new GridLayout(3, 1));
 
-        mainFrame.addWindowListener(new WindowAdapter() {
-           public void windowClosing(WindowEvent windowEvent){
-              System.exit(0);
-           }        
-        }); 
+        //mainFrame.addWindowListener(new WindowAdapter() {
+        //   public void windowClosing(WindowEvent windowEvent){
+        //      System.exit(0);
+        //   }        
+        //}); 
 
         // adding a panel inside the mainframe
-        contentPanel = new JPanel();
-        contentPanel.setSize(100, 100);
-        contentPanel.setLayout(new FlowLayout());
-        
+        //contentPanel = new JPanel();
+        //contentPanel.setSize(100, 100);
+        //contentPanel.setLayout(new FlowLayout());
+        this.setLayout(new GridLayout(2,1));
         // setting border for the panel
         Border panelBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
-        contentPanel.setBorder(panelBorder);
+        this.setBorder(panelBorder);
 
-        mainFrame.setVisible(true); 
+        //mainFrame.setVisible(true); 
     }
     public JPanel setValues(int number){
         Boolean isEven = false;
@@ -95,19 +95,19 @@ public class P034_Gorantla_Panel extends JPanel{
         
         // setting background color for the panel
         if(isEven){
-            contentPanel.setBackground(Color.white);
+            this.setBackground(Color.white);
         }else{
-            contentPanel.setBackground(new Color(173,216,230));
+            this.setBackground(new Color(173,216,230));
         }
         
         // starting the counter
         initCounter(isEven);
         
         // adding individual components to the main layout
-        contentPanel.add(nameHolder);
-        contentPanel.add(counterHolder);
-        mainFrame.add(contentPanel);
-        return contentPanel;
+        this.add(nameHolder);
+        this.add(counterHolder);
+        //mainFrame.add(contentPanel);
+        return this;
 
     }
     public void initCounter(Boolean isEven){
@@ -142,8 +142,8 @@ public class P034_Gorantla_Panel extends JPanel{
         
     }
     // main function --- uncomment to test the file
-    /*public static void main(String args[]){
+    public static void main(String args[]){
         int number = 34; // this is the number which decide the properties of the panel
         P034_Gorantla_Panel p034_Gorantla_Panel = new P034_Gorantla_Panel(number);      
-    }*/
+    }
 }

@@ -90,6 +90,7 @@ public class P053_Kashyap_Panel {
         }
     }
     /* Main function */
+	/*
     public static void main(String[] args) {
 
             P053_Kashyap_Panel myPanel = new P053_Kashyap_Panel(5);
@@ -101,4 +102,5 @@ public class P053_Kashyap_Panel {
             myFrame.add(panel);
 
     }
+    */
 }
