@@ -32,7 +32,7 @@ public class P131_Zhou_Panel extends JPanel {
 
 		fullname=new JLabel("<html>Ruihao<br>Zhou</html>");
 		fullname.setBounds(0, 0, 100, 50);
-		number.setBounds(0, 50, 100, 50);
+		number.setBounds(0, 30, 100, 50);
 		fullname.setHorizontalAlignment(JLabel.CENTER);
 		number.setHorizontalAlignment(JLabel.CENTER);
 		fullname.setFont(new Font("Papyrus",Font.PLAIN,15));
@@ -46,7 +46,7 @@ public class P131_Zhou_Panel extends JPanel {
 
 	}
 
-    /**
+        /**
 	* Method which create the Panel with your full name and timer.
 	*/
 	public void setBackgroundinfo(int n) {
@@ -70,7 +70,7 @@ public class P131_Zhou_Panel extends JPanel {
 		}
 	}
 
-    /**
+        /**
 	* Method which the number sent is odd or even.
 	* Then set background color to the specified color and count repeatedly.
 	*/
@@ -102,9 +102,7 @@ public class P131_Zhou_Panel extends JPanel {
 		}
 	}
 
-    /**
-	* Test Myself.
-	*/
+        /**
 	public static void main(String[] args) {
 
         P131_Zhou_Panel zhou = new P131_Zhou_Panel(5);
@@ -114,7 +112,9 @@ public class P131_Zhou_Panel extends JPanel {
 		frame.setVisible(true);
 
 	}
-
+	
+	* Test Myself.
+	*/
 }
 
 
