@@ -4,9 +4,11 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 /**
- * 
+ * The class P012_Bhatt_Panel is used to create a panel which shows my name and a timer.
  * @author vihar bhatt
- * The class P012_Bhatt_Panel is used to create a panel which shows my name and a timer
+ * @version 1.00
+ * @since 01-20-2018
+ * 
  */
 public class P012_Bhatt_Panel extends JPanel
 {
