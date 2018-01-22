@@ -1,7 +1,7 @@
 /*
  * ID 81
  * Name: Namratha Olety Venkatesh
- * Class: P081_Olety_Panel
+ * File: P081_Olety_Panel
  * Group 4
  * */
 import javax.swing.JLabel;
