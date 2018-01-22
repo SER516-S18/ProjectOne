@@ -1,3 +1,5 @@
+package helloWorld;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -6,6 +8,7 @@ import javax.swing.border.Border;
  * SER: 516(SOFTWARE AGILITY)
  * P010_Bhat_Panel implements assignment one. A panel has two labels-
  * one that displays my full name, and the other that displays a counter.
+ * 
  * @author kritikabhat, ASU ID: kbhat3
  * @since 2018-01-20
  * @param fullName JLabel that contains First and Second Name
