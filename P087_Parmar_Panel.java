@@ -95,11 +95,11 @@ public class P087_Parmar_Panel extends JPanel {
      *
     public static void main(String[] args) {
 
-        JFrame sampleJframe1 = new JFrame("Frame");
-        sampleJframe1.setSize(100,100);
+        JFrame f1 = new JFrame("Frame");
+        f1.setSize(100,100);
         P087_Parmar_Panel obj = new P087_Parmar_Panel(1);
-        sampleJframe1.add(obj );
-        sampleJframe1.setVisible(true);
+        f1.add(obj );
+        f1.setVisible(true);
 
     }
     */
