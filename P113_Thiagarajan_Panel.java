@@ -6,12 +6,18 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
+
+
 /**
- * @author Janani
- *
- * Class to create a panel with name and timer
+ * @author Janani Thiagarajan
+ * 
+ * @version 1.0  A class that creates a Panel with two Labels-
+ * one with Name and one with timer. Uses an Integer input to 
+ * determine the background color and the timer
+ * 
  */
 @SuppressWarnings("serial")
 public class P113_Thiagarajan_Panel extends JPanel {
@@ -25,29 +31,32 @@ public class P113_Thiagarajan_Panel extends JPanel {
 	Timer timer;
 	int count;
 	
-	/* Constructor with integer value based on which 
-	 * the background color and the timer changes 
-	 */
+	 /*	Constructor with integer value based on which 
+	  *	the background color and the timer changes 
+	  */
 	public P113_Thiagarajan_Panel(int i) {  	
 		createMyPanel(i);
 	}
 	
 	/* Method that creates a Panel with First 
-	 * & Last name and a timer */
+	 * & Last name and a timer 
+	 */
 	
 	public void createMyPanel(int i) {  
-		
 		setPreferredSize(new Dimension(100,100));
-	  
+		
 		fnameLabel.setFont(font);
+		fnameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		add(fnameLabel);
+		
 		timeLabel.setFont(font);
-	 
-		add(fnameLabel);   
-		timeLabel = new JLabel();
+		timeLabel.setHorizontalAlignment(SwingConstants.CENTER);   
 		add(timeLabel);   
+
 		try {
 			/* Check if the argument sent is even and if it is then,
-			 * set background to White and a timer which counts from 0 to 9 repeatedly */
+			 * set background to White and a timer which counts from 0 to 9 repeatedly 
+			 */
 			if(i % 2 == 0) {
 				count=0;
 				setBackground(Color.WHITE);
@@ -65,7 +74,8 @@ public class P113_Thiagarajan_Panel extends JPanel {
 				timer.start();
 			}
 			/* If the argument sent is odd then, set background to 
-			 * Blue and a timer which counts from 9 to 0 repeatedly */
+			 * Blue and a timer which counts from 9 to 0 repeatedly 
+			 */
 			else {
 				count=9;
 				Color lightBlue= new Color(150,200,250);
