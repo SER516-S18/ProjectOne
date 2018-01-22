@@ -28,7 +28,7 @@ public class P067_Malik_Panel extends JPanel {
 	private Timer timer;
 
 	/**
-	 * The parameterized contructor which sets up the panel
+	 * The parameterized constructor which sets up the panel
 	 * 
 	 * @param configValue
 	 *            The value received by the constructor which decides the background
@@ -46,11 +46,11 @@ public class P067_Malik_Panel extends JPanel {
 
 		try {
 			name = new JLabel("<html>Salil<br/>Malik</center></html>");
-			name.setFont(new Font("Papyrus", Font.BOLD, 15));
+			name.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			add(name);
 
 			number = new JLabel(String.valueOf(configValue % 2 == 0 ? 0 : 9));
-			number.setFont(new Font("Papyrus", Font.BOLD, 15));
+			number.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			add(number);
 			startTimer();
 
@@ -93,10 +93,10 @@ public class P067_Malik_Panel extends JPanel {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		frame.add(new P067_Malik_Panel(1));
+		frame.add(new P067_Malik_Panel(0));
 		frame.setSize(100, 100);
 		frame.setVisible(true);
-	}
+	}*/
 }
