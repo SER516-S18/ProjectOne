@@ -12,9 +12,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.border.Border;
 
-public final class P026_Devi_Panel {
+public final class P026_Devi_Panel extends JPanel {
 
-    private JFrame frame;
+    
     private JPanel panel;
     private JLabel namelabel;
     private JLabel numlabel;
@@ -26,7 +26,7 @@ public final class P026_Devi_Panel {
     }
     public void Devi_method(int i) {
         
-        frame = new JFrame("GROUP 1");
+        
         //Giving attributes to the panel
         panel = new JPanel(new GridBagLayout());
         panel.setSize(100, 100);
@@ -46,10 +46,10 @@ public final class P026_Devi_Panel {
         Timer timer = new Timer();
         numlabel = new JLabel();
         /*Checking if integer passed is not even, means it's odd so set 
-        background t light blue and decrement counter from 9 onwords till zero*/
+        background to light blue and decrement counter from 9 onwards till zero*/
         
        if (i % 2 != 0) {
-            panel.setBackground(new Color(173, 216, 230));//if int value is odd the color = light blue
+            panel.setBackground(new Color(173, 216, 230));//if int value is odd then color = light blue
             TimerTask task = new TimerTask() {
            int i =9;
             public void toDO() {
@@ -110,25 +110,28 @@ public final class P026_Devi_Panel {
         c.gridx = 0;
         c.gridy = 2;
         panel.add(numlabel, c);//setting the numlabel label to coordinates 0,2.
+        panel.setVisible(true);
         
-        //Giving attributes to the frame
+    }
+    public JPanel getPanel()//returns the panel
+    {
+        return panel;
+    }
+    // MAIN METHOD USED FOR TESTING, SHOULD BE COMPLETED BY ASSIGNED TAB MEMBER.
+    //use: JPanel panel = new P026_Devi_Panel(0).getPanel(); for intializing
+   /* public static void main(String[] args) {
+        
+        JFrame frame = new JFrame("GROUP 1");
+         JPanel panel = new P026_Devi_Panel(0).getPanel();
+         //Giving attributes to the frame
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 400);
         frame.setLayout(null);
         frame.setVisible(true);
         
-    }
-    /**
-     * @param args the command line arguments
-     */
-    // MAIN METHOD USED FOR TESTING, SHOULD BE COMPLETED BY ASSIGNED TAB MEMBER.
-    public static void main(String[] args) {
-        
-        System.out.println("enter integer here, eg taken as three.");
-        new P026_Devi_Panel(2);//Calling constructor
-
    
-    }
-}
+    }*/
+    
+} //END 
 

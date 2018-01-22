@@ -69,20 +69,25 @@ public class P029_Dutta_Panel extends JPanel{ //Class for creating individual pa
     {
     	panel.setBackground(color);
     	panel.setBorder(border);
+    	
+    	//Setting font to Papyrus and font size 10
     	firstname.setFont(new Font("Papyrus",Font.PLAIN,10));
     	lastname.setFont(new Font("Papyrus",Font.PLAIN,10));
+    	dNum.setFont(new Font("Papyrus",Font.PLAIN,10));
     	panel.add(firstname);
     	panel.add(lastname);
+    	
+    	//Aligning the different labels
     	firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
     	lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
-    	panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-    	dNum.setFont(new Font("Papyrus",Font.PLAIN,10));
-    	panel.add(dNum);
     	dNum.setAlignmentX(Component.CENTER_ALIGNMENT);
+    	panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+    	
+    	panel.add(dNum);
     	panel.setSize(100, 100);
     }
     
-    public static void main(String[] args)
+    /*public static void main(String[] args)
     {
     	JFrame frame  = new JFrame(" test ");
     	P029_Dutta_Panel p = new P029_Dutta_Panel(2);
@@ -91,6 +96,7 @@ public class P029_Dutta_Panel extends JPanel{ //Class for creating individual pa
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.pack();
     	frame.setVisible(true);
-    }
+
+    } */
     
 }

@@ -17,6 +17,7 @@ public class P021_Chittineni_Panel extends JPanel {
 	}
 
 	@SuppressWarnings("finally")
+
 	public JPanel panelTimer() {
 		JPanel pnl = new JPanel();
 		JLabel lbl = new JLabel();
@@ -99,6 +100,20 @@ public class P021_Chittineni_Panel extends JPanel {
 
 			return pnl;
 		}
+	}
+
+	public static void main(String args[]) 
+	{
+		JFrame frame = new JFrame();
+		final long serialVersionUID = 1L;
+		P021_Chittineni_Panel panel1 = new P021_Chittineni_Panel(21);
+		frame.add(panel1.panelTimer()); // Adding Panel to Frame
+		frame.setTitle("Panel and Timer");
+		frame.setSize(100, 100);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+
 	}
 
 }
