@@ -6,7 +6,7 @@ and  contains name of the author and a counter that runs from 0-9/9-0 added as l
 
 
 
-package pkg516;
+//package pkg516;
 
 import javax.swing.*;
 import java.awt.*;
