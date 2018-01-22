@@ -9,7 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * P023_Day_Panel.java - creates a JPanel with name and counter
+ * creates a JPanel with name and counter
  * 
  * This class implements the following contents:
  * A Label for First Name (JLabel NameLabel)
