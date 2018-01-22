@@ -24,20 +24,20 @@ public class P053_Kashyap_Panel {
         name.setBounds(0,0,100,90);
         
         /*first name,last name in 2 rows*/
-        name.setText("<html><body><br><br>Rachana<br/>Kashyap<br/></body></html>");
-        name.setFont(new Font("Papyrus", Font.PLAIN, 12));
+        name.setText("<html><body>Rachana<br/>Kashyap<br/></body></html>");
+        name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         name.setLayout(null);
         panel.add(name);
         
-        /* check if isEven is true and set Background color appropriately */
+        /* check if isEven is true and set Background color accordingly */
         if(isEven==false)
                 panel.setBackground(Color.decode("#add8e6"));/*Light blue color*/
         else
                 panel.setBackground(Color.white);
         /* create a JLabel for timer */
         timer = new JLabel("0", JLabel.CENTER);
-        timer.setBounds(0,47,100,90);
-        timer.setFont(new Font("Papyrus", Font.PLAIN, 12));
+        timer.setBounds(0,30,100,90);
+        timer.setFont(new Font("Papyrus", Font.PLAIN, 15));
         timer.setLayout(null);
         panel.add(timer);
         
@@ -92,7 +92,7 @@ public class P053_Kashyap_Panel {
     /* Main function */
     public static void main(String[] args) {
 
-            P053_Kashyap_Panel myPanel = new P053_Kashyap_Panel(2);
+            P053_Kashyap_Panel myPanel = new P053_Kashyap_Panel(5);
             JPanel panel = myPanel.P053_Kashyap_Panel();
             JFrame myFrame = new JFrame("");
             myFrame.setVisible(true);
