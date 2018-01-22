@@ -11,12 +11,23 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class P126_Wei_Panel implements Runnable {
+/**
+ * This is class is singleton.
+ * Only one JPanel.
+ * Author: Zitong Wei
+ */
+public class P126_Wei_Panel {
     private int counter;
     private static JPanel panel;
     private JLabel countLabel;
     private static Thread th;
 
+    /**
+     * Init panel and all JComponents.
+     * The counter and color is determined by
+     * argument counter.
+     * @param counter
+     */
     public P126_Wei_Panel(int counter) {
         if (panel == null) {
             panel = new JPanel();
@@ -34,10 +45,6 @@ public class P126_Wei_Panel implements Runnable {
         }
 
         this.counter = counter;
-        if (th == null) {
-            th = new Thread(this);
-        }
-
         if ((this.counter & 1) == 0) {
             panel.setBackground(Color.WHITE);
         } else {
@@ -45,32 +52,52 @@ public class P126_Wei_Panel implements Runnable {
         }
     }
 
-    @Override
-    public void run() {
-        int step;
-        if ((this.counter & 1) == 0) {
-            step = 1;
-        } else {
-            step = -1;
-        }
-
-        for (int cur = this.counter % 9; cur >= 0 && cur <= 9; cur += step) {
-            countLabel.setText(Integer.toString(cur));
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        th = null;
-    }
-
+    /**
+     * Return the static instance JPanel
+     * the counter is set in the constructor
+     * @return JPanel
+     */
     public JPanel getPanel() {
+        if ((this.counter & 1) == 0) {
+            th = new Thread(() -> {
+                for (int cur = 0; cur < 10; cur ++) {
+                    countLabel.setText(Integer.toString(cur));
+                    if (cur == 9) {
+                        cur = -1;
+                    }
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } else {
+            th = new Thread(() -> {
+               for (int cur = 9; cur >= 0; cur--) {
+                   countLabel.setText(Integer.toString(cur));
+                   if (cur == 0) {
+                       cur = 10;
+                   }
+
+                   try {
+                       Thread.sleep(1000);
+                   } catch (InterruptedException e) {
+                       e.printStackTrace();
+                   }
+               }
+            });
+        }
+
         th.start();
         return panel;
     }
 
+    /**
+     * This is used to testing.
+     * @param args
+     */
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setSize(100, 100);

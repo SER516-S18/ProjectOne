@@ -56,25 +56,24 @@ public JPanel panelCreate(int code) {
 	
 	Border border;
 	Box box;
-	JPanel panel = new JPanel(new GridBagLayout());;
+	JPanel panel = new JPanel(new GridLayout(2,1));;
 	JLabel name,counter;
 	try
 	{
 	
     border = BorderFactory.createLineBorder(Color.BLACK,1);
     box = Box.createVerticalBox();
-    panel.setSize(100, 100);
-    panel.setBorder(border);
+    //panel.setSize(100, 100);
+    //panel.setBorder(border);
     
-    name = new JLabel ("<html><p>&nbsp;&nbsp;&nbsp;Sai Saran&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;Kandimalla&nbsp;&nbsp;&nbsp;</p></html>"); 
+    name = new JLabel ("<html><p>&nbsp;&nbsp;&nbsp;Sai Saran&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;Kandimalla&nbsp;&nbsp;&nbsp;</p></html>",JLabel.CENTER); 
     box.add(name);
-    name.setFont(new Font("papyrus",Font.BOLD,15));
-    name.setBorder(border);
+    name.setFont(new Font("papyrus",Font.BOLD,16));
     counter = new JLabel();
-    name.setBorder(border);
-    counter.setBorder(border);
-    counter.setFont(new Font("papyrus",Font.BOLD,15));
+    counter.setLayout(new GridLayout());
+    counter.setFont(new Font("papyrus",Font.BOLD,16));
     box.add(counter);
+    
     panel.add(box);
     
     if(code%2==0)

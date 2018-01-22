@@ -1,6 +1,7 @@
+
 /**
  *  For SER 516 only.
- * @author  Chetanya Ahuja
+ * @author  Madhavi Latha
  * @version 1.0
  * @since   01-21-2018
  */
@@ -21,14 +22,14 @@ import java.awt.event.ActionEvent;
  *         It is decremented when the flag received from the constructor is odd, goes fro 9 to 0
  *         and repeats.
  */
-public class P001_Ahuja_Panel extends JPanel
+public class P015_Bodeddula_Panel extends JPanel
 {
     private static int increment= -1;
     private static int decrement=10;
     private JLabel label;
     private JLabel label1;
 
-    public P001_Ahuja_Panel(int flag)//Constructor where flag decides the timer execution
+    public P015_Bodeddula_Panel(int flag)//Constructor where flag decides the timer execution
     {
         /**
          * Panel and label properties: Font, Color, Text, Layout,
@@ -36,7 +37,7 @@ public class P001_Ahuja_Panel extends JPanel
          */
         setSize(100,100);
         setLayout(new GridLayout(2, 1));
-        label = new JLabel("<html>Chetanya<br>Ahuja</html>", JLabel.CENTER);
+        label = new JLabel("<html>Madhavi Latha<br>Bodeddula</html>", JLabel.CENTER);
         label1 = new JLabel("", JLabel.CENTER);
         label.setFont(new Font("Papyrus", Font.PLAIN, 15));
         label1.setFont(new Font("Papyrus", Font.PLAIN, 15));
@@ -89,13 +90,13 @@ public class P001_Ahuja_Panel extends JPanel
         }
     }
 
-    /*public static void main(String args[])
+    public static void main(String args[])
     {
-        P001_Ahuja_Panel p= new P001_Ahuja_Panel(1);
+        P015_Bodeddula_Panel p= new P015_Bodeddula_Panel(0);
         JFrame frame = new JFrame();
-        frame.setSize(500, 500);
+        frame.setSize(200, 200);
         frame.add(p);
         frame.setVisible(true);
 
-    }*/
+    }
 }

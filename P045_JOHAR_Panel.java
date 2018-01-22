@@ -131,7 +131,7 @@ public class P045_JOHAR_Panel extends JPanel{
 
 
 
-    public static void main(String args[])
+   /* public static void main(String args[])
     {
 
         JFrame frame = new JFrame();
@@ -139,6 +139,6 @@ public class P045_JOHAR_Panel extends JPanel{
         frame.add(P045_JOHAR_Panel.getInstance(0));
         frame.setVisible(true);
 
-    }
+    }*/
 
 }
