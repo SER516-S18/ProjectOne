@@ -84,7 +84,7 @@ public class P059_Kulkarni_Panel {
 							counter = 0;
 						timer.setText(""+ counter++);
 					} else {
-						Color lightBlue = new Color(31,190,214); // If color_value is odd set background color to light blue
+						Color lightBlue = new Color(173, 216, 230); // If color_value is odd set background color to light blue
 						panel.setBackground(lightBlue);
 						if (counter == -1)
 							counter = 9;
