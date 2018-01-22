@@ -25,8 +25,7 @@ public class P012_Bhatt_Panel extends JPanel
 	 * 
 	 */
 	public P012_Bhatt_Panel(int value)
-	{
-		border=BorderFactory.createLineBorder(Color.black);
+	{		border=BorderFactory.createLineBorder(Color.black);
 		setBackgroundProperties(value);
 
 		name=new JLabel("<html>Vihar<br>Bhatt</html>");
@@ -71,7 +70,7 @@ public class P012_Bhatt_Panel extends JPanel
 			else
 			{
 				counter=new JLabel("9");
-				setBackground(new Color(135,206,250));
+				setBackground(new Color(173,216,230));
 				flag=1;
 				count=9;
 			}
