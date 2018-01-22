@@ -20,13 +20,13 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
             }
             
             else {
-                color = Color.CYAN;     // When the input is odd, light blue(cyan) colour will be displayed
+                color = new Color (173,216,230);     // When the input is odd, light blue colour will be displayed
                 countDowndards();
             }
             this.setBackground(color);
             this.setLayout(new GridLayout(3,1));        
             
-            Font font = new Font("Papyrus", Font.PLAIN, 14);
+            Font font = new Font("Papyrus", Font.PLAIN, 15);
             
             first.setFont(font);
             last.setFont(font);
