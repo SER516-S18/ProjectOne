@@ -94,7 +94,7 @@ public class P036_Gupta_Panel extends JPanel{
 	/*
 	 * Main method to test the code
 	 * @param args
-	 */
+	 *
 	public static void main(String args[])
 	{	
 		JFrame jf = new JFrame();
@@ -104,7 +104,7 @@ public class P036_Gupta_Panel extends JPanel{
 		jf.setLayout(null);
 		jf.setVisible(true);
 	}
-	
+	*/
 }
 
 
