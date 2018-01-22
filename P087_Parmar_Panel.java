@@ -13,7 +13,7 @@ import java.util.TimerTask;
 
 public class P087_Parmar_Panel extends JPanel {
 	
-	public static int counter = 0;
+    public static int counter = 0;
     private JLabel labelName ;//To set name label in panel.
     private JLabel labelCount;//To set Counter component in the panel
     private boolean isOdd;
@@ -79,7 +79,7 @@ public class P087_Parmar_Panel extends JPanel {
 
             // Setting timer class to run every second(1000 ms).
             Timer t = new Timer();
-            long delay = 10L; // To start execution after 5ms.
+            long delay = 5L; // To start execution after 5ms.
             long intervalPeriod = 1000L;
             t.scheduleAtFixedRate(oneSecondTask, delay, intervalPeriod);
 
