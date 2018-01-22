@@ -18,7 +18,7 @@ public class P065_Mahajan_Panel implements Runnable {
         {  
 		timeLabel=new JLabel();
 		Thread t = new Thread(this);
-		font = new Font("Papyrus", Font.BOLD, 18);
+		font = new Font("Papyrus", Font.BOLD, 16);
         f= new JFrame();
        
         labelName = new JLabel("<html>Aanchal<br>Mahajan</html>"); //JLabel to display full name in two rows
