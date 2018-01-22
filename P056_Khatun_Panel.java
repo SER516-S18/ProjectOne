@@ -22,7 +22,7 @@ public class P056_Khatun_Panel {
 	P056_Khatun_Panel(int x){
 		createPanel(x);
 	}
-	
+	//CREATING A PANEL WITH DESIRED FUNCTIONALITY 
 	public void createPanel(int value)
 	{
 		//CREATING OBJ OF LIGHT BLUE COLOR 
