@@ -3,6 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+/**
+ * P072_Mathur_Panel class creates a label with first and and last name displayed in 2 line
+ * The timer displays number from 0-9
+ * The background is set depending on the value of the parameter sent to the constructor
+ * @author  Garv Mathur
+ */
+
 public class P072_Mathur_Panel extends JPanel {
     private JLabel fullName;
     private JLabel clock;
