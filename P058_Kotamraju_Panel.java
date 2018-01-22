@@ -94,13 +94,13 @@ public class P058_Kotamraju_Panel extends JPanel{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+//     public static void main(String[] args) {
         
-        JFrame frame = new JFrame();
-    	frame.setContentPane(new P058_Kotamraju_Panel(6));
-    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	frame.pack();
-    	frame.setVisible(true);
-    }
+//         JFrame frame = new JFrame();
+//     	frame.setContentPane(new P058_Kotamraju_Panel(6));
+//     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//     	frame.pack();
+//     	frame.setVisible(true);
+//     }
     
 }
