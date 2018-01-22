@@ -12,7 +12,7 @@ import java.util.TimerTask;
  * @version 1.0.0 (01/21/2018)
  * @purpose This class extends JPanel. This is the mini jpanel consisting of name and a counter value
  */
-public class P97_Sampath_Panel extends JPanel{
+public class P097_Sampath_Panel extends JPanel{
 
     private JLabel nameLabel;
     private JLabel counterLabel;
@@ -24,7 +24,7 @@ public class P97_Sampath_Panel extends JPanel{
      * This constructor acts as a controller which calls appropriate functions to intialize timer, labels and background based on input value
      * @param inputValue
      */
-    public P97_Sampath_Panel(int inputValue)
+    public P097_Sampath_Panel(int inputValue)
     {
         isEven = (inputValue%2==0);
         setPreferredSize(new Dimension(100, 100));
@@ -105,10 +105,10 @@ public class P97_Sampath_Panel extends JPanel{
         JFrame jFrame = new JFrame();
         jFrame.setLayout(new GridLayout(5, 5));
         // This is how to initialise JPanel and use the created object directly
-        jFrame.add(new P97_Sampath_Panel(Integer.MIN_VALUE));
+        jFrame.add(new P097_Sampath_Panel(Integer.MIN_VALUE));
         for(int i=0;i<24;i++)
         {
-            jFrame.add(new P97_Sampath_Panel(i));
+            jFrame.add(new P097_Sampath_Panel(i));
         }
         jFrame.setSize(1000, 500);
         jFrame.setVisible(true);
