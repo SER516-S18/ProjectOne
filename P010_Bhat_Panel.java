@@ -97,4 +97,27 @@ public class P010_Bhat_Panel extends JPanel {
 			    }.start();
 			}
 		}
+		
+		/**
+		 * The main method was used for testing only.
+		 * 
+		 * @param args command line arguments
+		 *  
+		public static void main(String[] args) {
+			
+			//creating the panel
+			P010_Bhat_Panel p = new P010_Bhat_Panel(6);
+			JFrame f = new JFrame();
+			
+			//just style for JFrame for testing
+			f.getContentPane().add(p);
+			f.pack();
+			f.setVisible(true);
+			f.setSize(800,800);
+			f.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 90));
+			
+			//testing to make sure threads are working properly
+			System.out.print("Testing");
+		}
+		*/
 }
