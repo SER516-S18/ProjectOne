@@ -1,6 +1,7 @@
 /*
  Lab1
  Author : Aayushi Mehulbhai Shah
+ Since : 01-20-2018
  This file creates a JPanel with the name of the author.
  A counter is displayed which increments or decrements from 0 to 9 / 9 - 0.
  Counter and Background color changes according to the input passed to the constructor. 
@@ -35,7 +36,6 @@ public class P099_Shah_Panel extends JPanel{
     }
 
     public void set_Background(boolean ID) {
-        
     	setSize(100,100); //Size of the panel is set
       
     	//Background set to White if ID is even or set to Blue if ID is odd
@@ -44,23 +44,22 @@ public class P099_Shah_Panel extends JPanel{
     	else
     		setBackground(Color.BLUE);
         
-      //Name to be displayed in panel is initialized to the Label Name
-        Name = new JLabel("<html>Aayushi<br>Shah</html>");
-        
-      //Font and TextSize of the name displayed is set
-        Name.setFont(new Font("Papyrus", Font.PLAIN, 10));
-      
+    	Name = new JLabel("<html>Aayushi<br>Shah</html>",SwingConstants.CENTER); //Name to be displayed in panel is initialized to the Label Name
+        Name.setFont(new Font("Papyrus", Font.PLAIN, 15)); //Font and TextSize of the name displayed is set
         add(Name);//Label Name is added to the panel
-
-      //Counter value set according to the ID is initialized to the Label Counter
-        Counter = new JLabel(String.valueOf(counter));
         
-      //Font and TextSize of the counter displayed is set
-        Counter.setFont(new Font("Papyrus", Font.PLAIN, 10));
+      
+        Counter = new JLabel(String.valueOf(counter),SwingConstants.CENTER); //Counter value set according to the ID is initialized to the Label Counter
+        Counter.setFont(new Font("Papyrus", Font.PLAIN, 15)); //Font and TextSize of the counter displayed is set
         
         add(Counter);//Label Counter is added to the panel
-
-      //Timer value change is kept between try and catch to handle exception at the runtime
+        
+        //Set properties of JPanel
+      	setBounds(0, 0, 100, 100);//Size of the panel is changed
+      	setLayout(new GridLayout(2,0));//grid layout with two rows and zero columns is created and set as the layout for the panel
+        
+      	//Timer class used to monitor the increment/decrement of the counter
+      	//Specified between the try and catch to avoid runtime errors
         try {
 
             TimerTask oneSecondTask = new TimerTask()
@@ -106,12 +105,14 @@ public class P099_Shah_Panel extends JPanel{
     /*
     public static void main(String[] args) {
 
-        JFrame jFrame = new JFrame("Frame");
-        jFrame.setSize(100,100);
-        
+        JFrame jFrame = new JFrame();
         P099_Shah_Panel p099_Shah_panel = new P099_Shah_Panel (99);
-        jFrame.add(p099_Shah_panel);
-        jFrame.setVisible(true);
+        
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.add(p099_Shah_panel);//Panel added to the frame
+        jFrame.setSize(800,800);//Size of the frame is set
+        jFrame.setLayout(null);//Layout of the frame is set to null
+        jFrame.setVisible(true);//Visibility of the Frame is set
 
     }*/
 }
