@@ -31,7 +31,7 @@ public class P060_Kumar_Panel extends JPanel{
 			backColor=Color.WHITE;
 		}else
 		{			
-			backColor=Color.cyan;
+			backColor=new Color(173,216,230);
 		}
 		
 	}
@@ -56,13 +56,13 @@ public class P060_Kumar_Panel extends JPanel{
 			this.firstName=new JLabel("Abhishek");
 			this.lastName=new JLabel("Kumar");
 			
-			this.firstName.setFont(new Font("Papyrus ", Font.PLAIN, 18));
-			this.lastName.setFont(new Font("Papyrus ", Font.PLAIN, 18));
+			this.firstName.setFont(new Font("Papyrus ", Font.PLAIN, 15));
+			this.lastName.setFont(new Font("Papyrus ", Font.PLAIN, 15));
 			
 
 			//initialising the Jlabel for changing digit
 			displayNum=new JLabel();
-			this.displayNum.setFont(new Font("Papyrus ", Font.PLAIN, 18));
+			this.displayNum.setFont(new Font("Papyrus ", Font.PLAIN, 15));
 
 			//setting the Timer to change the digit every second
 			Timer t = new javax.swing.Timer(1000, new ActionListener(){
@@ -120,7 +120,7 @@ public class P060_Kumar_Panel extends JPanel{
 	/**Main method--Uncomment the main method for testing
 	 * @param args
 	 */
-	/*public static void main(String args[])
+/*	public static void main(String args[])
 	{
 	
 		JFrame jFrame = new JFrame();
