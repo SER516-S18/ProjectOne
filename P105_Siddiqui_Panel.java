@@ -128,6 +128,7 @@
 
  	
  	/* Main method for testing purpose */
+	/* 
  	public static void main(String[] args) {
  		JFrame frame =  new JFrame();
  		frame.setVisible(true);
@@ -137,7 +138,8 @@
 		P105_Siddiqui_Panel testing = new P105_Siddiqui_Panel(106);
 		frame.add(testing);
  		
- 	}	
+ 	}
+	*/
 
  }
 
