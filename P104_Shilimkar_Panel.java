@@ -110,6 +110,7 @@ public class P104_Shilimkar_Panel {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+       // call the GUI 
         new P104_Shilimkar_Panel(3);
     }
 
