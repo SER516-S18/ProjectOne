@@ -29,7 +29,7 @@ public class P086_Parlapalli_Panel {
 		}
 		else 
 		{
-			background = new Color(0,0,182,155);
+			background = new Color(173,216,230);
 		}
 	}
 	
@@ -40,14 +40,18 @@ public class P086_Parlapalli_Panel {
 		panel.setLayout(new BoxLayout(panel,BoxLayout.PAGE_AXIS));
 		panel.setPreferredSize(new Dimension(100,100));
 		panel.setMaximumSize(panel.getPreferredSize());
-		firstName = new JLabel("SUMAN");
-		lastName = new JLabel("PARLAPALLI");
-		firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lastName.setAlignmentY( Component.CENTER_ALIGNMENT);
+		firstName = new JLabel("Suman");
+		lastName = new JLabel("Parlapalli");
 		count = new JLabel();
+		firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lastName.setAlignmentX( Component.CENTER_ALIGNMENT);	
+		count.setAlignmentX( Component.CENTER_ALIGNMENT);
 		panel.add(firstName,Component.CENTER_ALIGNMENT);
 		panel.add(lastName, Component.CENTER_ALIGNMENT);
-		panel.add(count);
+		panel.add(count,Component.CENTER_ALIGNMENT);
+		firstName.setFont(new Font("Papyrus",Font.PLAIN,15));
+		lastName.setFont(new Font("Papyrus",Font.PLAIN,15));
+		count.setFont(new Font("Papyrus",Font.PLAIN,15));
 		panel.setVisible(true);
 		panel.setBackground(background); 
 		if (input==0)
