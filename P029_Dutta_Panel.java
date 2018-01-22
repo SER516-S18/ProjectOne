@@ -9,7 +9,6 @@ import javax.swing.border.Border;
 public class P029_Dutta_Panel extends JPanel{ //Class for creating individual panels
 
 	int count;
-    private JPanel panel= new JPanel();
     private JLabel firstname = new JLabel("Ananya", JLabel.CENTER);
     private JLabel lastname = new JLabel("Dutta", JLabel.CENTER);
     private JLabel dNum = new JLabel("0", JLabel.CENTER);
@@ -67,24 +66,24 @@ public class P029_Dutta_Panel extends JPanel{ //Class for creating individual pa
     
     public void createPanel(Color color) throws Exception  // method for adding the different labels in the panel
     {
-    	panel.setBackground(color);
-    	panel.setBorder(border);
+    	this.setBackground(color);
+    	this.setBorder(border);
     	
     	//Setting font to Papyrus and font size 10
     	firstname.setFont(new Font("Papyrus",Font.PLAIN,10));
     	lastname.setFont(new Font("Papyrus",Font.PLAIN,10));
     	dNum.setFont(new Font("Papyrus",Font.PLAIN,10));
-    	panel.add(firstname);
-    	panel.add(lastname);
+    	this.add(firstname);
+    	this.add(lastname);
     	
     	//Aligning the different labels
     	firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
     	lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
     	dNum.setAlignmentX(Component.CENTER_ALIGNMENT);
-    	panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+    	this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
     	
-    	panel.add(dNum);
-    	panel.setSize(100, 100);
+    	this.add(dNum);
+    	this.setSize(100, 100);
     }
     
     /*public static void main(String[] args)
