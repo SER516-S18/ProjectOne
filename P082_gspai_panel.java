@@ -1,4 +1,4 @@
-package gopika;
+//package gopika;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
