@@ -49,7 +49,7 @@ public class P072_Mathur_Panel extends JPanel {
     // Starts the clock timer. If the initial parameter is set as even the value increments. If odd it decrements.
     private void setClockTimer() {
         clock = new JLabel(String.valueOf(counterValue));
-        clock.setFont(new Font("Papyrus",Font.BOLD,16));
+        clock.setFont(new Font("Papyrus",Font.PLAIN,15));
         this.add(clock);
 
         // Starts the timer
@@ -88,7 +88,7 @@ public class P072_Mathur_Panel extends JPanel {
     // Initialize and Add  Name Label to panel
     private void initializeAddNameLabel() {
         fullName = new JLabel("<html>Garv<br>Mathur</html>");
-        fullName.setFont(new Font("Papyrus",Font.BOLD,16));
+        fullName.setFont(new Font("Papyrus",Font.PLAIN,15));
         this.add(fullName);
     }
 
