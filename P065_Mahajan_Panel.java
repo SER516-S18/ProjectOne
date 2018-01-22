@@ -9,7 +9,7 @@ public class P065_Mahajan_Panel implements Runnable {
 	JPanel panel;
 	JLabel labelName;
 	JLabel timeLabel;
-	JFrame f;
+	//JFrame f; 			//used for testing purpose
 	Font font;
     static Integer counterD=10;
 	static Integer counterI=-1;
@@ -19,7 +19,7 @@ public class P065_Mahajan_Panel implements Runnable {
 		timeLabel=new JLabel();
 		Thread t = new Thread(this);
 		font = new Font("Papyrus", Font.BOLD, 16);
-        f= new JFrame();
+       // f= new JFrame();							//used for testing purpose
        
         labelName = new JLabel("<html>Aanchal<br>Mahajan</html>"); //JLabel to display full name in two rows
         labelName.setFont(font);
@@ -38,21 +38,21 @@ public class P065_Mahajan_Panel implements Runnable {
 		}
 
         panel.add(labelName);
-       
+     /*  
         f.add(panel);  
         
                 f.setSize(400,400);    
-                f.setLayout(null);    
-               f.setVisible(true);    
+                f.setLayout(null);    				used for testing purposes
+               f.setVisible(true);    */
         } 
-	
+	/*
         public static void main(String args[])  
         {  
-        
-        	 new P065_Mahajan_Panel(2);
+        										
+        	 new P065_Mahajan_Panel(2);					//used for testing purpose
         	
         }
-
+*/
 		@Override
 		public void run() {
 			
