@@ -65,6 +65,8 @@ public class P106_Singal_Panel  extends JPanel {
             counter = 9;
             isEven = false;
         }
+
+        gui();
     }
 
 

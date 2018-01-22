@@ -65,12 +65,14 @@ public class P107_Srivastava_Tab extends JTabbedPane{
 	        gbc.weighty = 1.0;
 	        
 	        add(new p105_Siddiqui_Panel(105), gbc);
+	        add(new P106_Singal_Panel(106), gbc);
 			add(new P108_SubramanianVenkatraman_Panel(108), gbc);
 			add(new P109_Suryawanshi_Panel(109), gbc);
 			add(new P110_Swaminathan_Panel(110), gbc);
 			add(new P111_Tandon_Panel(111), gbc);
 			add(new P112_Thakkar_Panel(112).ReturnObject(), gbc); //Had to call extra function
 			add(new P113_Thiagarajan_Panel(113), gbc);
+			add(new P114_Thoram_Panel(114), gbc);
 			add(new P115_Tikku_Panel(115), gbc);
 			add(new P117_VasantraoYadav_Panel(117), gbc);
 			add(new P118_VelaudampalayamKesavan_Panel(118), gbc);
@@ -88,9 +90,10 @@ public class P107_Srivastava_Tab extends JTabbedPane{
 			
 			
 			
-			/*add(new P129_Yan_Panel(129), gbc);
-			add(new P129_Yan_Panel(129), gbc);
-			add(new P129_Yan_Panel(129), gbc);
+			/*
+			
+			
+			add(new P113_Thiagarajan_Panel(113), gbc);
 			add(new P129_Yan_Panel(129), gbc);
 			add(new P129_Yan_Panel(129), gbc);
 			add(new P129_Yan_Panel(129), gbc);*/
