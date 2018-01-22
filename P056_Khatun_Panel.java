@@ -48,15 +48,16 @@ public class P056_Khatun_Panel {
 		// ADD LABELS TO PANEL
 		panel.add(lblName);
 		panel.add(lblCounter);
-		
+		/*
 		// CREATE FRAME
 		JFrame frame= new JFrame("");
 
 		// ADD PANEL TO FRAME
-		//frame.setSize(300, 300);
-		//frame.setLayout(null);
-		//frame.setVisible(true);
-		//frame.add(panel);
+		frame.setSize(300, 300);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		frame.add(panel);
+		*/
 
 		Integer c = 0;
 		while(true)
@@ -86,7 +87,7 @@ public class P056_Khatun_Panel {
 				}
 			}
 
-			//IF VALUE IS NOT EVEN,BACKGROUND CYAN COUNTER DECREASES
+			//IF VALUE IS NOT EVEN,BACKGROUND LIGHT BLUE COUNTER DECREASES
 			else {
 					panel.setBackground(color);
 					try {
