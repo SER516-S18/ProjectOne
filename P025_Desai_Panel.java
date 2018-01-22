@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 /**
- P025_Desai_Panel is panel of Dhruti Desai
- The first row is giving first name
- The second row is giving last name
- Row three is a counter that is either incrementing from 0 or decrementing from 9.
- The mode of the counter and the background color are determined by the value passed to the constructor
+ * P025_Desai_Panel is panel of Dhruti Desai
+ * The first row is giving first name
+ * The second row is giving last name
+ * Row three is a counter that is either incrementing from 0 or decrementing from 9.
+ * The mode of the counter and the background color are determined by the value passed to the constructor
   @author Dhruti Desai
  */
 
