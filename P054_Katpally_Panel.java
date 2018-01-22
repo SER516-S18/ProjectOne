@@ -50,7 +50,7 @@ public class P054_Katpally_Panel{
 	    label3.setFont(new Font("Papyrus", Font.BOLD, 16));
 	  
 	    panel = new JPanel();
-	    panel.setBounds(110, 0, 100, 100);
+	    panel.setSize(100, 100);
 	    panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
 	    /*Using Timer class to display the counter depending on the argument passed while object creation*/

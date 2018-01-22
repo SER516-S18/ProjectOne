@@ -57,7 +57,7 @@ public class P011_Bhat_Panel extends JPanel {
 			this.setBackground(Color.white);
 		} else {
 			counterLabel.setText("9");
-			this.setBackground(SystemColor.activeCaption);
+			this.setBackground(new Color(171,216,230));
 		}
 
 		counterLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -86,7 +86,7 @@ public class P011_Bhat_Panel extends JPanel {
 	 */
 	private void stylePanel() {
 		setMaximumSize(new Dimension(100, 100));
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBorder(null);
 		setPreferredSize(new Dimension(100, 100));
 	}
 }

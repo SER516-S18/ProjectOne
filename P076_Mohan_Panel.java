@@ -55,7 +55,7 @@ public class P076_Mohan_Panel implements Runnable {
 		//Increment counter & light blue background colour setting if the constructor integer is even
 		if (decider % 2 == 0)
 		{
-			Color lightBlue= new Color(153,180,209);
+			Color lightBlue= new Color(173,216,230);
 			panel.setBackground(lightBlue);
 			
 			do {

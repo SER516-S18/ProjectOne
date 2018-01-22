@@ -35,17 +35,17 @@ public class P084_Pandey_Panel implements ActionListener{
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setSize(100, 100);
         
-        // Setting background to white if even, else light blue or cyan.
+        // Setting background to white if even, else light blue.
         if(even) {
             panel.setBackground(Color.WHITE);
         } else {
-            panel.setBackground(Color.CYAN);
+            panel.setBackground(new Color(173, 216, 230));
         }
         
         // Setting font style
-        firstName.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        lastName.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        counter.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        firstName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        lastName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
         // Align Center
         firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -56,7 +56,7 @@ public class P084_Pandey_Panel implements ActionListener{
         tm.start();
         
         // Adding Components
-        panel.add(firstName, SwingConstants.CENTER);
+        panel.add(firstName);
         panel.add(lastName);
         panel.add(counter);
     

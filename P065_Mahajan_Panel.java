@@ -9,21 +9,25 @@ public class P065_Mahajan_Panel implements Runnable {
 	JPanel panel;
 	JLabel labelName;
 	JLabel timeLabel;
-	JFrame f;
+	//JFrame f; 			//used for testing purpose
 	Font font;
     static Integer counterD=10;
 	static Integer counterI=-1;
 	int determineCounter;
+	 GridBagConstraints c;
 	P065_Mahajan_Panel(int val)  
         {  
 		timeLabel=new JLabel();
 		Thread t = new Thread(this);
-		font = new Font("Papyrus", Font.BOLD, 16);
-        f= new JFrame();
+		font = new Font("Papyrus", Font.PLAIN, 15);
+        //f= new JFrame();							//used for testing purpose
        
         labelName = new JLabel("<html>Aanchal<br>Mahajan</html>"); //JLabel to display full name in two rows
         labelName.setFont(font);
-        panel=new JPanel();  
+        panel=new JPanel(new GridBagLayout());
+        c = new GridBagConstraints();
+        c.gridx=0;                                                   
+		c.gridy=2;
         panel.setSize(100,100);   
         if(val%2==0) {
         	determineCounter=0;
@@ -38,20 +42,14 @@ public class P065_Mahajan_Panel implements Runnable {
 		}
 
         panel.add(labelName);
-       
-        f.add(panel);  
+       panel.setVisible(true);
+/*        f.add(panel);  
         
                 f.setSize(400,400);    
-                f.setLayout(null);    
-               f.setVisible(true);    
+                f.setLayout(null);    				//used for testing purposes
+               f.setVisible(true);    */
         } 
-	
-        public static void main(String args[])  
-        {  
-        
-        	 new P065_Mahajan_Panel(2);
-        	
-        }
+
 
 		@Override
 		public void run() {
@@ -68,7 +66,7 @@ public class P065_Mahajan_Panel implements Runnable {
 	                	counterI=0;
 	            }
 	                timeLabel.setFont(font);
-	               panel.add(timeLabel); 
+	               panel.add(timeLabel,c); 
 	               
 	               
 	            }catch (InterruptedException iex) {
@@ -89,7 +87,7 @@ public class P065_Mahajan_Panel implements Runnable {
 		                	counterD=9;
 		            }
 		                timeLabel.setFont(font);
-		               panel.add(timeLabel);
+		               panel.add(timeLabel,c);
 		               
 		            }catch (InterruptedException iex) {
 		            
