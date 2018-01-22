@@ -137,7 +137,7 @@ public class P023_Day_Panel extends JPanel implements Runnable {
 		}
 
 		for (int i = 0; i < 15; i++) {
-			//frame.add(new P023_Day_Panel(9));
+			frame.add(new P023_Day_Panel(9));
 		}
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
