@@ -81,7 +81,7 @@ public class P063_Madabhushi_Panel extends JPanel
             timer.start();
             }
         }
-        /* for testing */
+        /* for testing 
     public static void frame()
         {//creating JFrame 
         JFrame f = new JFrame("demo");
@@ -104,7 +104,7 @@ public class P063_Madabhushi_Panel extends JPanel
             //condition
             }
         });
-    }
+    } */
         
-    }
+    } 
         
