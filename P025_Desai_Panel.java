@@ -17,7 +17,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 public class P025_Desai_Panel extends JPanel {
     private int timer;
     private int type;
-    private Font f = new Font("Papyrus", Font.BOLD, 16);
+    //private Font f = new Font("Papyrus", Font.BOLD, 15);
 
     /**
      * Class constructor.
@@ -45,7 +45,9 @@ public class P025_Desai_Panel extends JPanel {
         else
             jp.setBackground(new Color(0, 255, 255));
         JLabel name = new JLabel("<html>Dhruti<br> Desai</html>", JLabel.CENTER);
+        name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         JLabel counter = new JLabel("",JLabel.CENTER);
+        counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
         final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(new Runnable() {
