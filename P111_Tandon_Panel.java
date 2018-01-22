@@ -89,6 +89,8 @@ public class P111_Tandon_Panel extends JPanel {
 				this.counterVal = 9;
 			}
 			counterLabel = new JLabel(String.valueOf(this.counterVal));
+			counterLabel.setHorizontalAlignment(JLabel.CENTER);
+			counterLabel.setVerticalAlignment(JLabel.CENTER);
 			counterLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
 			this.add(counterLabel);
 
@@ -128,6 +130,8 @@ public class P111_Tandon_Panel extends JPanel {
 	 */
 	private void setNameLabelProperties() {
 		nameLabel = new JLabel(NAME_TAG);
+		nameLabel.setHorizontalAlignment(JLabel.CENTER);
+		nameLabel.setVerticalAlignment(JLabel.CENTER);
 		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
 		this.add(nameLabel);
 
@@ -171,18 +175,18 @@ public class P111_Tandon_Panel extends JPanel {
 	 * @param args
 	 * 
 	 */
-	/*
-	 * public static void main(String[] args) {
-	 * 
-	 * SwingUtilities.invokeLater(new Runnable() {
-	 * 
-	 * @Override public void run() { JFrame testFrame = new JFrame();
-	 * testFrame.add(new P111_Tandon_Panel(9).getPanelInstance());
-	 * testFrame.setVisible(true);
-	 * testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	 * testFrame.setSize(150, 150); } });
-	 * 
-	 * }
-	 */
+	
+/*	  public static void main(String[] args) {
+	  
+	  SwingUtilities.invokeLater(new Runnable() {
+	  
+	  @Override public void run() { JFrame testFrame = new JFrame();
+	  testFrame.add(new P111_Tandon_Panel(9).getPanelInstance());
+	  testFrame.setVisible(true);
+	  testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  testFrame.setSize(150, 150); } });
+	  
+	  }*/
+	 
 
 }
