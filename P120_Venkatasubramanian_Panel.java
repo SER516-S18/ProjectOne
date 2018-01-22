@@ -38,13 +38,13 @@ public class P120_Venkatasubramanian_Panel extends JPanel {
 		JLabel firstnameLabel = new JLabel(firstname);
 		JLabel lastnameLabel = new JLabel(lastname);
 		firstnameLabel.setHorizontalAlignment(JLabel.CENTER);
-		firstnameLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
+		firstnameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		this.add(firstnameLabel);
 		lastnameLabel.setHorizontalAlignment(JLabel.CENTER);
-		lastnameLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
+		lastnameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		this.add(lastnameLabel);
 		counter.setHorizontalAlignment(JLabel.CENTER);
-		counter.setFont(new Font("Papyrus", Font.BOLD, 16));
+		counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		this.add(counter);
 	}
 		public void incrementor() {
