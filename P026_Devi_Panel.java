@@ -46,10 +46,10 @@ public final class P026_Devi_Panel extends JPanel {
         Timer timer = new Timer();
         numlabel = new JLabel();
         /*Checking if integer passed is not even, means it's odd so set 
-        background t light blue and decrement counter from 9 onwords till zero*/
+        background to light blue and decrement counter from 9 onwards till zero*/
         
        if (i % 2 != 0) {
-            panel.setBackground(new Color(173, 216, 230));//if int value is odd the color = light blue
+            panel.setBackground(new Color(173, 216, 230));//if int value is odd then color = light blue
             TimerTask task = new TimerTask() {
            int i =9;
             public void toDO() {
@@ -117,9 +117,6 @@ public final class P026_Devi_Panel extends JPanel {
     {
         return panel;
     }
-    /**
-     * @param args the command line arguments
-     */
     // MAIN METHOD USED FOR TESTING, SHOULD BE COMPLETED BY ASSIGNED TAB MEMBER.
     //use: JPanel panel = new P026_Devi_Panel(0).getPanel(); for intializing
    /* public static void main(String[] args) {
@@ -135,5 +132,6 @@ public final class P026_Devi_Panel extends JPanel {
         
    
     }*/
-}
+    
+} //END 
 
