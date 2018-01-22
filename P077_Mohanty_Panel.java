@@ -1,16 +1,17 @@
-
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class P077_Mohanty_Panel extends JFrame {
+public class P077_Mohanty_Panel extends JPanel {
 	//Initializing JLabels
 	JLabel label1 = new JLabel("Abhinab");
 	JLabel label2 = new JLabel("Mohanty");
 	JLabel label3 = new JLabel();
+	
+	 //Initializing Color object for the lighter shade of blue
+	 Color lightBlue= new Color(173,216,230);
 	
 	//Initializing counter and up/down values
 	int val1=-1,counter=0,val2=10;
@@ -24,9 +25,11 @@ public class P077_Mohanty_Panel extends JFrame {
 			 newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
 			 
 			 //Setting Font for labels
-			 label1.setFont(new Font("Papyrus",Font.PLAIN,12));
-			 label2.setFont(new Font("Papyrus",Font.PLAIN,12));
-			 label3.setFont(new Font("Papyrus",Font.PLAIN,12));
+			 label1.setFont(new Font("Papyrus",Font.PLAIN,15));
+			 label2.setFont(new Font("Papyrus",Font.PLAIN,15));
+			 label3.setFont(new Font("Papyrus",Font.PLAIN,15));
+			 
+
 			 
 			 //Setting X-Axis Alignment
 			 label1.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -46,7 +49,7 @@ public class P077_Mohanty_Panel extends JFrame {
 					else 
 					{
 						slope=false;
-						newPanel.setBackground(Color.CYAN);
+						newPanel.setBackground(lightBlue);
 					}
 					
 
@@ -98,7 +101,7 @@ public class P077_Mohanty_Panel extends JFrame {
 			 
 			 add(newPanel);
 			 t.start();    
-			 pack();
+			 //pack();
 
 			 
 			
@@ -121,7 +124,14 @@ public class P077_Mohanty_Panel extends JFrame {
 	}
 	
 	
+//	public static void main(String[] args){
+//        JFrame frame;
+//        frame = new JFrame("P077_Mohanty_Panel");
+//        frame.setVisible(true);
+//        frame.setSize(800, 800);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        P077_Mohanty_Panel obj=new P077_Mohanty_Panel(3);
+//        frame.add(obj.myPanel());
+//    }
 	
 	
-	 
-}
