@@ -72,6 +72,7 @@ public class P107_Srivastava_Tab extends JTabbedPane{
 			add(new P112_Thakkar_Panel(112).ReturnObject(), gbc); //Had to call extra function
 			add(new P113_Thiagarajan_Panel(113), gbc);
 			add(new P115_Tikku_Panel(115), gbc);
+			add(new P117_VasantraoYadav_Panel(117), gbc);
 			add(new P118_VelaudampalayamKesavan_Panel(118), gbc);
 			add(new P120_Venkatasubramanian_Panel(120), gbc);
 			add(new P122_Vyas_Panel(122), gbc);
@@ -82,7 +83,7 @@ public class P107_Srivastava_Tab extends JTabbedPane{
 			add(new P129_Yan_Panel(129), gbc);
 
 
-			// add(new Panel_1(), gbc);
+			
 			// add(new Panel_1(), gbc);
 			// add(new Panel_1(), gbc);
 			// add(new Panel_1(), gbc);
