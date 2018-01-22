@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -44,6 +45,7 @@ public class P113_Thiagarajan_Panel extends JPanel {
 	
 	public void createMyPanel(int i) {  
 		setPreferredSize(new Dimension(100,100));
+		setLayout(new GridLayout(0, 1));
 		
 		fnameLabel.setFont(font);
 		fnameLabel.setHorizontalAlignment(SwingConstants.CENTER);
