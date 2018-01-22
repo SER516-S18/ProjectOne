@@ -9,8 +9,8 @@ import java.awt.*;
  *
  * Class Extends JPanel and contains author's name and a Counter. It contains one parameterized constructor
  * that accepts an integer value.
- * Panel background is set to WHITE (255,255,255) if value is even or LIGTH BLUE (173,216,230) is odd.
- * Counter increments from 0-9 is value is even or decrements from 9-0 if odd.
+ * Panel background is set to WHITE (255,255,255) if value is even or LIGTH BLUE (173,216,230) if odd.
+ * Counter increments from 0-9 if value is even or decrements from 9-0 if odd.
  */
 public class P096_Saifudeen_Panel extends JPanel{
 
@@ -24,7 +24,7 @@ public class P096_Saifudeen_Panel extends JPanel{
      */
     public P096_Saifudeen_Panel(int value){
 
-        //Get if value is even of odd
+        //Get if value is even or odd
         boolean isEven = value % 2 == 0;
         setLabelsAndProperties();
         setBackgroundColor(isEven);
@@ -36,7 +36,7 @@ public class P096_Saifudeen_Panel extends JPanel{
         //Setting GridBagLayout helps center the panel contents
         setLayout(new GridBagLayout());
 
-        //Setting size and fort as per requirements
+        //Setting size and font as per requirements
         setPreferredSize(new Dimension(100,100));
         Font font = new Font("Papyrus", 1, 14);
 
@@ -58,7 +58,7 @@ public class P096_Saifudeen_Panel extends JPanel{
      * @param isEven
      */
     private void setBackgroundColor(boolean isEven){
-        //Set background color. White is even. Light Blue if odd
+        //Set background color. White if even. Light Blue if odd
         Color bg = isEven? new Color(255,255,255) : new Color(173,216,230);
         setBackground(bg);
     }
@@ -82,7 +82,7 @@ public class P096_Saifudeen_Panel extends JPanel{
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    //Calculate new counter value by checking if it increments of decrements.
+                    //Calculate new counter value by checking if it increments or decrements.
                     counterValue = (isEven ? counterValue + 1 : counterValue + 9) % 10;
                 }
             }
