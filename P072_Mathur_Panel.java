@@ -23,7 +23,7 @@ public class P072_Mathur_Panel extends JPanel {
             setClockTimer();
         }
         catch (Exception e){
-            System.out.println("Exception in code: " + e);
+            System.out.println("Exception in code: " + e.getMessage());
         }
 
     }
