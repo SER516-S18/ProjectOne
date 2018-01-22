@@ -18,14 +18,18 @@ public class P124_Wang_Panel extends JPanel {
 	public P124_Wang_Panel(int pass) {
 
 		try {
+			// Decide initial number
 			countingNumber = (pass % 2 == 0) ? 0 : 9;
 
+			// Create labels
 			JLabel msglabel = new JLabel("<html>Zachary<br/>Wang</html>", JLabel.CENTER);
 			JLabel msglabel2 = new JLabel("", JLabel.CENTER);
 
+			// Set font
 			msglabel.setFont(new Font("Papyrus", Font.BOLD, 12));
 			msglabel2.setFont(new Font("Papyrus", Font.BOLD, 12));
 
+			// Decide the condition
 			if (pass % 2 == 0) {
 				Timer timer = new Timer(ONE_SECOND, new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
@@ -58,6 +62,7 @@ public class P124_Wang_Panel extends JPanel {
 				setBackground(Color.cyan);
 			}
 
+			// Set up my panel
 			setLayout(new FlowLayout());
 			add(msglabel);
 			add(msglabel2);
