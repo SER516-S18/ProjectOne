@@ -49,7 +49,8 @@ public class P008_Bartakke_Panel
 		Panel1.add(Name2);
 		Panel1.setSize(100, 100);
 		Panel1.setLayout(null);
-    	try // Exception handling included for the changing background and counter conditions
+
+		try // Exception handling included for the changing background and counter conditions
     	{
     		if(value % 2 == 0) // Checks whether value is even
     		{
@@ -97,6 +98,7 @@ public class P008_Bartakke_Panel
     	return Panel1;
 	}
 	
+	/*
 	// FOR TESTING ONLY - Specification requires this to remain in here.
 	public static void main(String[] args) 
 	{
@@ -107,5 +109,5 @@ public class P008_Bartakke_Panel
 		Frame1.setSize(150, 150);
 		Frame1.setLayout(null);    
         Frame1.setVisible(true);
-	}
+	}*/
 }

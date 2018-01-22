@@ -34,13 +34,11 @@ public class P002_ArmstrongMensah_Panel extends JPanel {
 
 		JLabel lblFullName = new JLabel("<html>Cephas<br>Armstrong-Mensah</html>");
 		lblFullName.setFont(new Font("Papyrus", Font.PLAIN, 10));
-		lblFullName.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		lblFullName.setBounds(5, 5, 90, 50);
+		lblFullName.setBounds(2, 2, 96, 50);
 		add(lblFullName);
 
 		JLabel lblCounter = new JLabel("");
-		lblCounter.setFont(new Font("Papyrus", Font.BOLD, 16));
-		lblCounter.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		lblCounter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		lblCounter.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCounter.setBounds(35, 65, 30, 30);
 		add(lblCounter);

@@ -25,9 +25,13 @@ public class P124_Wang_Panel extends JPanel {
 			JLabel msglabel = new JLabel("<html>Zachary<br/>Wang</html>", JLabel.CENTER);
 			JLabel msglabel2 = new JLabel("", JLabel.CENTER);
 
-			// Set font
-			msglabel.setFont(new Font("Papyrus", Font.BOLD, 12));
-			msglabel2.setFont(new Font("Papyrus", Font.BOLD, 12));
+			// Set fonts
+			msglabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+			msglabel2.setFont(new Font("Papyrus", Font.PLAIN, 15));
+			
+			// Set colors
+			msglabel.setForeground(Color.black);
+			msglabel2.setForeground(Color.black);
 
 			// Decide the condition
 			if (pass % 2 == 0) {
@@ -63,28 +67,34 @@ public class P124_Wang_Panel extends JPanel {
 			}
 
 			// Set up my panel
-			setLayout(new FlowLayout());
-			add(msglabel);
-			add(msglabel2);
+			setLayout(new GridBagLayout());
+			GridBagConstraints c = new GridBagConstraints();
+			c.fill = GridBagConstraints.HORIZONTAL;
+			c.gridx = 0;
+			c.gridy = 0;
+			add(msglabel,c);
+			c.gridx = 0;
+			c.gridy = 1;
+			add(msglabel2,c);
 		} catch (Exception e) {
 			System.out.println("Error happened!" + e);
 		}
 	}
 
-	public static void main(String[] args) {
-		P124_Wang_Panel p124 = new P124_Wang_Panel(124);
-
-		JFrame mainFrame = new JFrame("mainFrame content");
-		mainFrame.setSize(100, 100);
-		mainFrame.setLayout(new GridLayout(1, 1));
-		mainFrame.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent windowEvent) {
-				System.exit(0);
-			}
-		});
-		mainFrame.add(p124);
-		mainFrame.setVisible(true);
-		
-	}
+//	public static void main(String[] args) {
+//		P124_Wang_Panel p124 = new P124_Wang_Panel(123);
+//
+//		JFrame mainFrame = new JFrame("mainFrame content");
+//		mainFrame.setSize(100, 100);
+//		mainFrame.setLayout(new GridLayout(1, 1));
+//		mainFrame.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent windowEvent) {
+//				System.exit(0);
+//			}
+//		});
+//		mainFrame.add(p124);
+//		mainFrame.setVisible(true);
+//		
+//	}
 
 }

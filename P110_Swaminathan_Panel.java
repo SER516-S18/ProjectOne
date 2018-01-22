@@ -47,8 +47,8 @@ public class P110_Swaminathan_Panel extends JPanel {
         
         JLabel firstname = new JLabel("Sangeetha", JLabel.CENTER);
         JLabel lastname = new JLabel("Swaminathan", JLabel.CENTER);
-        firstname.setFont(new Font("Papyrus", Font.BOLD, 15));
-        lastname.setFont(new Font("Papyrus", Font.BOLD, 15));
+        firstname.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        lastname.setFont(new Font("Papyrus", Font.PLAIN, 15));
         addAtPosition(firstname, 0, 0);
         addAtPosition(lastname, 0, 1);
        
@@ -77,7 +77,7 @@ public class P110_Swaminathan_Panel extends JPanel {
                 
                 JLabel counter = new JLabel(new Integer(value).toString());
                 counter.setHorizontalAlignment(JLabel.CENTER);
-                counter.setFont(new Font("Papyrus", Font.BOLD, 15));
+                counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
                 addAtPosition(counter, 0, 2);
                 while (true) {
                     

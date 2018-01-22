@@ -92,6 +92,7 @@ public class P111_Tandon_Panel extends JPanel {
 			counterLabel.setHorizontalAlignment(JLabel.CENTER);
 			counterLabel.setVerticalAlignment(JLabel.CENTER);
 			counterLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
+			counterLabel.setForeground(Color.BLACK);
 			this.add(counterLabel);
 
 			new Timer(TIMER_DELAY, new ActionListener() {
@@ -133,6 +134,7 @@ public class P111_Tandon_Panel extends JPanel {
 		nameLabel.setHorizontalAlignment(JLabel.CENTER);
 		nameLabel.setVerticalAlignment(JLabel.CENTER);
 		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
+		nameLabel.setForeground(Color.BLACK);
 		this.add(nameLabel);
 
 	}

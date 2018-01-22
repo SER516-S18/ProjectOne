@@ -50,9 +50,9 @@ public class P005_Banerjee_Panel
 		displayNumber.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//Customizing labels using fonts of style 'Papyrus' and size '10'
-		firstname.setFont(new Font("Papyrus", Font.PLAIN, 10));
-		lastname.setFont(new Font("Papyrus", Font.PLAIN, 10));
-		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 10));
+		firstname.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		lastname.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		displayNumber.setBorder(new LineBorder(Color.BLACK));
 		
 		try {

@@ -44,12 +44,12 @@ public class P117_VasantraoYadav_Panel extends JPanel{
 	abc.gridy=1;
 	
 	
-	setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	//setBorder(BorderFactory.createLineBorder(Color.BLACK));
 	
 	JLabel fname = new JLabel("Mohan",JLabel.CENTER);
 	JLabel lname= new JLabel("Vasantrao Yadav",JLabel.CENTER);
-	fname.setFont(new Font("Papyrus",Font.BOLD,14));
-	lname.setFont(new Font("Papyrus",Font.BOLD,14));
+	fname.setFont(new Font("Papyrus",Font.PLAIN,15));
+	lname.setFont(new Font("Papyrus",Font.PLAIN,15));
 	addAtPosition(fname,0,0);/* Positioning first name in first row*/
 	addAtPosition(lname,0,1);/*Positioning last name in second row*/
 	
@@ -79,7 +79,7 @@ public class P117_VasantraoYadav_Panel extends JPanel{
 			
 			JLabel counter = new JLabel(new Integer(fwd).toString());
 			counter.setHorizontalAlignment(JLabel.CENTER);
-			counter.setFont(new Font("Papyrus", Font.BOLD,14));
+			counter.setFont(new Font("Papyrus", Font.PLAIN,15));
 			addAtPosition(counter,0,2);
 			while(true) {
 				try {
