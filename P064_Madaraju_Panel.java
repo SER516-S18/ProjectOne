@@ -115,7 +115,7 @@ public class P064_Madaraju_Panel {
 	}
 	
 	//Main Function to test the panel created
-	public static void main(String[] args)
+	/*public static void main(String[] args)
 	{
 		int con = 64;
 		P064_Madaraju_Panel obj = new P064_Madaraju_Panel(con);
@@ -125,6 +125,6 @@ public class P064_Madaraju_Panel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JPanel p = obj.madaraju_Panel();
 		frame.add(p);
-	}
+	}*/
 
 }
