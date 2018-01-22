@@ -1,5 +1,5 @@
 /*
- * Class Assignment -1
+ * Class Assignment - 1
  * Author : Abhishek Parmar (aparmar2)
  * Description : 
  * This class will create JPanel containing person's name with 
@@ -14,15 +14,13 @@ import java.util.TimerTask;
 public class P087_Parmar_Panel extends JPanel {
 	
     public static int counter = 0;
-    private JLabel labelName ;//To set name label in panel.
-    private JLabel labelCount;//To set Counter component in the panel
     private boolean isOdd;
     private Color col; // To set background color of panel
 
     
     // Constructor to set counter and background color according to ID.
-    public P087_Parmar_Panel(int val) {
-        if(val%2==0)
+    public P087_Parmar_Panel(int id) {
+        if(id%2==0)
         {
             isOdd=false;
             counter=-1;
@@ -34,29 +32,38 @@ public class P087_Parmar_Panel extends JPanel {
             counter=10;
             col=Color.blue;
         }
-        setPanel();
+        setPanel(col);
     }
 
     // To make panel, set background color, set name and counter.
-    public void setPanel() {
+    public void setPanel(Color col) {
 
         setSize(100,100);
+        
+        setLayout(new GridBagLayout());//To align labels in center
+      //A GridBagConstraint object to set x and y coordinate of name and counter in grid.
+        GridBagConstraints a = new GridBagConstraints();
+        
         setBackground(col);
 
         // Setting label for First and last Name.
-        labelName = new JLabel("<html><b>Abhishek<br>Parmar</b></html>");//Initialises Name label with the name of the person
-        labelName.setFont(new Font("Papyrus", Font.PLAIN, 10));
-        add(labelName);
+        JLabel labelName = new JLabel("<html><b>Abhishek<br>Parmar</b></html>");//Initialises Name label with the name of the person
+        a.gridx =0;
+        a.gridy =0;
+        labelName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        add(labelName,a);
 
         // Setting label for counter.
-        labelCount = new JLabel(String.valueOf(counter));//Initialises Counter label with the counter value
-        labelCount.setFont(new Font("Papyrus", Font.PLAIN, 12));
-        add(labelCount);
+        JLabel labelCount = new JLabel(String.valueOf(counter));//Initialises Counter label with the counter value
+        labelCount.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        a.gridx = 0;
+        a.gridy = 1;
+        add(labelCount,a);
 
         //Changing the counter values using timer.
         //Used try and catch for exception handling.
         try {
-            TimerTask oneSecondTask = new TimerTask()
+            TimerTask task = new TimerTask()
             {
                 public void run()
                 {
@@ -81,7 +88,7 @@ public class P087_Parmar_Panel extends JPanel {
             Timer t = new Timer();
             long delay = 5L; // To start execution after 5ms.
             long intervalPeriod = 1000L;
-            t.scheduleAtFixedRate(oneSecondTask, delay, intervalPeriod);
+            t.scheduleAtFixedRate(task, delay, intervalPeriod);
 
         } catch(Exception e)
         {
@@ -93,6 +100,7 @@ public class P087_Parmar_Panel extends JPanel {
     /*
      * main() - For Saurabh
      *
+     *
     public static void main(String[] args) {
 
         JFrame f1 = new JFrame("Frame");
@@ -100,10 +108,11 @@ public class P087_Parmar_Panel extends JPanel {
         P087_Parmar_Panel obj = new P087_Parmar_Panel(1);
         f1.add(obj );
         f1.setVisible(true);
+        f1.pack();
+        f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
     */
+    
 }
-
-
 
