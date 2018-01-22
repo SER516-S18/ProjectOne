@@ -31,12 +31,12 @@ public class P085_Panwar_Panel {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));    //Set the Layout
 
         nameLabel = new JLabel("<html>Shipra <br/>Panwar</html>");      //Define label to contain first name and lastname
-        nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
         nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);        //sets the alignment of the label to the centre inside panel
         nameLabel.setHorizontalAlignment(SwingConstants.CENTER);    //sets the alignment of the text inside the label to the centre
 
         timerLabel = new JLabel();                                           //Define label for time counter
-        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
         //add both labels to panel
         panel.add(nameLabel);
