@@ -1,5 +1,3 @@
-package com.P008.Bartakke.Panel;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
