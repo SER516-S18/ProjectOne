@@ -76,15 +76,15 @@ public class P025_Desai_Panel extends JPanel {
         add(jp);
  }
    /**Main function is included for testing. */
-    public static void main(String args[])
-    {
-        JFrame jf= new JFrame();
-        jf.getContentPane().add(new P025_Desai_Panel(3));
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jf.setVisible(true);
-        jf.setSize(400,400);
-    }
-}
+    /**public static void main(String args[])
+      *{
+      * JFrame jf= new JFrame();
+      * jf.getContentPane().add(new P025_Desai_Panel(3));
+      * jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      * jf.setVisible(true);
+      * jf.setSize(400,400);
+   *}
+*}*/
 
 
 
