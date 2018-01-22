@@ -21,17 +21,17 @@ public class P123_Wakchaure_Panel extends JPanel{
 	public P123_Wakchaure_Panel(int p) {
 			
 		Font font = new Font("Papyrus", Font.PLAIN, 15);  //font of style PAPAYRUS
-		setSize(100,100);   					          //panel size 100*100
+		setSize(100,100);   			          //panel size 100*100
 		setLayout(new GridLayout(0, 1));
 		
 		//First name and Last name in panel
 		JLabel f_label = new JLabel("<html>Kanchan<br>Wakchaure</html>");
 		f_label.setFont(font);
 		f_label.setHorizontalAlignment(JLabel.CENTER);
-	    add(f_label);
+	        add(f_label);
 			    
 		//Counter
-	    JLabel counter = new JLabel();
+	        JLabel counter = new JLabel();
 		counter.setFont(font);
 		counter.setHorizontalAlignment(JLabel.CENTER);
 		add(counter);
