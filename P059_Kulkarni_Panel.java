@@ -100,17 +100,4 @@ public class P059_Kulkarni_Panel {
 		// return JPanel object
 		return panel;
 	}
-	
-	// For testing purpose
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		P059_Kulkarni_Panel panelDemo = new P059_Kulkarni_Panel(1);
-		JFrame frame = new JFrame();
-		JPanel panel = panelDemo.prepareGUI();
-
-		frame.setSize(100, 100);
-		frame.add(panel);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-	}
 }

@@ -80,14 +80,17 @@ public class P016_Bumb_Panel extends JPanel {
 
     }
     // Main method used for testing.
-    public static void main(String args[])
-    {
-        JFrame jf= new JFrame();
-        jf.getContentPane().add(new P016_Bumb_Panel(3));// calling constructor.
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jf.setVisible(true);
-        jf.setSize(400,400);
-    }
+    /**
+    * public static void main(String args[])
+    * {
+    *   JFrame jf= new JFrame();
+    *    jf.getContentPane().add(new P016_Bumb_Panel(3));// calling constructor.
+    *    jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    *    jf.setVisible(true);
+    *    jf.setSize(400,400);
+    * }
+    */
+    
 
 
 }

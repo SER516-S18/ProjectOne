@@ -37,12 +37,12 @@ public class P078_NamakkalSudhakar_Panel extends JPanel {
 		
 		//Panel related settings 
 		setLayout(new GridBagLayout());
-		setBorder(new EtchedBorder(EtchedBorder.LOWERED, Color.BLACK, null));
-        setPreferredSize(new Dimension(100, 100));
-        //setting background for panel based on the panel type
-        this.setBackground((this.panelType == PanelType.Even) ? Color.white : new Color(173, 216, 230)); 
+		//setBorder(new EtchedBorder(EtchedBorder.LOWERED, Color.BLACK, null));
+       		setPreferredSize(new Dimension(100, 100));
+        	//setting background for panel based on the panel type
+        	this.setBackground((this.panelType == PanelType.Even) ? Color.white : new Color(173, 216, 230)); 
 		
-        //Labels for displaying name and specifying their configuration values
+        	//Labels for displaying name and specifying their configuration values
 		JLabel firstNameLabel = new JLabel("Raam Prashanth", JLabel.CENTER);
 		JLabel lastNameLabel = new JLabel("Namakkal Sudhakar", JLabel.CENTER);
 		

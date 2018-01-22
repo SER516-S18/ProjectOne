@@ -89,13 +89,13 @@ public class P001_Ahuja_Panel extends JPanel
         }
     }
 
-    public static void main(String args[])
+    /*public static void main(String args[])
     {
-        P001_Ahuja_Panel p= new P001_Ahuja_Panel(0);
+        P001_Ahuja_Panel p= new P001_Ahuja_Panel(1);
         JFrame frame = new JFrame();
         frame.setSize(500, 500);
         frame.add(p);
         frame.setVisible(true);
 
-    }
+    }*/
 }
