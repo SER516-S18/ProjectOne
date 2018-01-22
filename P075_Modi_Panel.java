@@ -1,6 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * P075_Modi_Panel.java - Class to create the panel.
+ * @author Rishabh Modi
+ * @version 1.0
+ *
+ */
+
 public class P075_Modi_Panel extends JFrame implements Runnable
 {
 
@@ -14,6 +21,11 @@ public class P075_Modi_Panel extends JFrame implements Runnable
     Thread t;
     int j;
 
+    /**
+     *
+     * @param j if the value is odd, the panel background changes to light blue and the counter decreases from 9 to 0
+     *          if the value is even, the panel background changes to white and the counter increases from 0 to 9.
+     */
 //    Panel Constructor
 
     public P075_Modi_Panel(int j) {
@@ -100,8 +112,12 @@ public class P075_Modi_Panel extends JFrame implements Runnable
         }
     }
 
+    /**
+     *
+     * @return Jpanel object.
+     */
 //    Created function to return panel object
-    
+
     public JPanel getPanel()
     {
         return panel;
