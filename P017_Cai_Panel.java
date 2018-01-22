@@ -28,7 +28,7 @@ public class P017_Cai_Panel extends JPanel {
     private void SetPanelProperties(int num) {
         setPreferredSize(new Dimension(100,100));
       //  setBorder(BorderFactory.createLineBorder(Color.black));
-        Color bg = num % 2 == 0 ? Color.white : new Color(135,206,250);
+        Color bg = num % 2 == 0 ? Color.white : new Color(171,216,230);
         setBackground(bg);
         setLayout(new GridLayout(2, 1));
     }
