@@ -32,7 +32,7 @@ public class P131_Zhou_Panel extends JPanel {
 
 		fullname=new JLabel("<html>Ruihao<br>Zhou</html>");
 		fullname.setBounds(0, 0, 100, 50);
-		number.setBounds(0, 30, 100, 50);
+		number.setBounds(0, 40, 100, 50);
 		fullname.setHorizontalAlignment(JLabel.CENTER);
 		number.setHorizontalAlignment(JLabel.CENTER);
 		fullname.setFont(new Font("Papyrus",Font.PLAIN,15));
@@ -65,8 +65,8 @@ public class P131_Zhou_Panel extends JPanel {
 				mark = true;
 			}
 		}
-		catch (Exception e) {
-			e.printStackTrace();
+		catch (Exception ex) {
+			System.out.println("There is an error" + ex);
 		}
 	}
 
@@ -80,7 +80,7 @@ public class P131_Zhou_Panel extends JPanel {
 		public void actionPerformed(ActionEvent event) {
 			try{
 				number.setText(String.valueOf(count));
-				if(mark == false) {
+				if(!mark) {
 					if(count != 9) {
 						count++;
 					}else{
@@ -95,8 +95,8 @@ public class P131_Zhou_Panel extends JPanel {
 					}
 				}
 			}
-			catch(Exception e) {
-				e.printStackTrace();
+			catch(Exception ex) {
+				System.out.println("There is an error" + ex);
 			}
 
 		}
