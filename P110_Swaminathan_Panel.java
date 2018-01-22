@@ -43,7 +43,7 @@ public class P110_Swaminathan_Panel extends JPanel {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridx = 1;
         gbc.gridy = 1;
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        
         
         JLabel firstname = new JLabel("Sangeetha", JLabel.CENTER);
         JLabel lastname = new JLabel("Swaminathan", JLabel.CENTER);
