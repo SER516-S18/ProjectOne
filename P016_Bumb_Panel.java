@@ -3,19 +3,21 @@ import java.awt.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-/*
-Row1 one is the first name.
-Row 2 is the last name.
-Row 3 is the counter that is incrementing from 0 or decrementing frrom 9.
-The mode of the counter and the background color are determined by the value passed to the constructor.
+/**
+* Row1 one is the first name.
+* Row 2 is the last name.
+* Row 3 is the counter that is incrementing from 0 or decrementing frrom 9.
+* The mode of the counter and the background color are determined by the value passed to the constructor.
  */
 public class P016_Bumb_Panel extends JPanel {
     private int timer;
     private int type;
     private Font f = new Font("Papyrus", Font.BOLD, 16);
 
-    /* constuctor class
-     describes the background color and counter mode of the panel. */
+    /**
+    * constuctor class
+    * describes the background color and counter mode of the panel. 
+    */
     public P016_Bumb_Panel(int type) { //constructor
         // Even is white and count uop, odd is cyan and counts down.
         this.type = type;
@@ -27,8 +29,10 @@ public class P016_Bumb_Panel extends JPanel {
 
         function(); // calling method which has the logic
     }
-    /* This function sets the layout, color and also executing the thread
-    for counter*/
+    /**
+    *This function sets the layout, color and also executing the thread
+    *for counter
+    */
 
     private void function() {
         JPanel jp = new JPanel();
