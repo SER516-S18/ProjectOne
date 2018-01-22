@@ -1,3 +1,2 @@
 # ProjectOne
--------------------
 Just do it!
