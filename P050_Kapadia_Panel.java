@@ -33,7 +33,7 @@ public class P050_Kapadia_Panel extends JPanel {
         if(type%2==0)
             p.setBackground(new Color(255,255,255));
         else
-            p.setBackground(new Color(173,216,230));
+            p.setBackground(new Color(90,150,255));
 
         p.setLayout(new GridLayout(2,1));
         p.setPreferredSize(new Dimension(100,100));
