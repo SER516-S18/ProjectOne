@@ -46,8 +46,8 @@ public class P078_NamakkalSudhakar_Panel extends JPanel {
 		JLabel firstNameLabel = new JLabel("Raam Prashanth", JLabel.CENTER);
 		JLabel lastNameLabel = new JLabel("Namakkal Sudhakar", JLabel.CENTER);
 		
-		firstNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
-		lastNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
+		firstNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		lastNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		
 		addLabel(firstNameLabel, 0, 0);
 		addLabel(lastNameLabel, 0, 1); 
