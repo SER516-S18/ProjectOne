@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+
 public class P021_Chittineni_Panel extends JPanel {
 	int par; // parameter from main method
 	Timer ctr; // creating an object for 'Timer' class
@@ -17,6 +18,7 @@ public class P021_Chittineni_Panel extends JPanel {
 	}
 
 	@SuppressWarnings("finally")
+	
 	public JPanel panelTimer() {
 		JPanel pnl = new JPanel();
 		JLabel lbl = new JLabel();
@@ -44,7 +46,8 @@ public class P021_Chittineni_Panel extends JPanel {
 
 					public void actionPerformed(ActionEvent event) {
 						lbl2.setText("    " + timerCount++ + "    ");
-						if (timerCount > 9) {
+						if (timerCount > 9) 
+						{
 							ctr.stop(); // Stopping the counter once it has reached 10
 							timerCount = 0; // Resetting it to 0; as the timer needs to run back from 0 to 9
 							ctr.restart(); // Restarting the counter
@@ -69,7 +72,8 @@ public class P021_Chittineni_Panel extends JPanel {
 					public void actionPerformed(ActionEvent event) {
 
 						lbl2.setText("    " + timerCount-- + "    ");
-						if (timerCount < 0) {
+						if (timerCount < 0)
+						{
 							ctr.stop(); // Stopping the counter once it has reached -1
 							timerCount = 9; // Resetting it to 9; as the timer needs to run back from 9 to 0
 							ctr.restart(); // Restarting the counter
@@ -100,5 +104,25 @@ public class P021_Chittineni_Panel extends JPanel {
 			return pnl;
 		}
 	}
+	
+	public static void main(String args[])
+	{
+		JFrame frame = new JFrame();
+		final long serialVersionUID = 1L;
+	    
+		
+	    P021_Chittineni_Panel panel1 = new P021_Chittineni_Panel(21);
+	   
+		frame.add(panel1.panelTimer()); //Adding Panel to Frame
+		
+		frame.setTitle("Panel and Timer");
+	    frame.setSize(100,100);
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.setVisible(true);
+	    frame.setLocationRelativeTo(null);
+		
+	}
 
 }
+
+
