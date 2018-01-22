@@ -162,23 +162,5 @@ public class P111_Tandon_Panel extends JPanel {
 		return this;
 	}
 
-	/**
-	 * Testing the panel. Uncomment lines to test.
-	 * 
-	 * @param args
-	 * 
-	 */
-	public static void main(String[] args) {
-
-		/*
-		 * SwingUtilities.invokeLater(new Runnable() {
-		 * 
-		 * @Override public void run() { JFrame testFrame = new JFrame();
-		 * testFrame.add(new P111_Tandon_Panel(9).getPanelInstance());
-		 * testFrame.setVisible(true);
-		 * testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		 * testFrame.setSize(100, 100); } });
-		 */
-	}
 
 }
