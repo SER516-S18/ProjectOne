@@ -80,12 +80,12 @@ public class P041_Hosahalli_Panel {
         panel.setBackground(bgcolor);
         return panel;
     }
-    public static void main(String[] args) {
-        P041_Hosahalli_Panel p = new P041_Hosahalli_Panel(4);
-        JFrame frame = new JFrame("Frame");
-        frame.setSize(100, 100);
-        frame.add(p.panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        P041_Hosahalli_Panel p = new P041_Hosahalli_Panel(4);
+//        JFrame frame = new JFrame("Frame");
+//        frame.setSize(100, 100);
+//        frame.add(p.panel);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setVisible(true);
+//    }
 }
