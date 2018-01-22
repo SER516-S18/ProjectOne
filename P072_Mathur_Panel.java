@@ -14,12 +14,18 @@ public class P072_Mathur_Panel extends JPanel {
 
     // Constructor
     public P072_Mathur_Panel(int num){
-        this.num = num;
-        setPanelSize();
-        initializeAddNameLabel();
-        setBackgroundColor();
-        setCounterValue();
-        setClockTimer();
+        try{
+            this.num = num;
+            setPanelSize();
+            initializeAddNameLabel();
+            setBackgroundColor();
+            setCounterValue();
+            setClockTimer();
+        }
+        catch (Exception e){
+            System.out.println("Exception in code: " + e.getMessage());
+        }
+
     }
 
     // Sets the Counter Value depending on the parameter being odd or even

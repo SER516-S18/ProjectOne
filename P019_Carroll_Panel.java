@@ -61,7 +61,7 @@ public class P019_Carroll_Panel extends JPanel {
 		setBorder( new EmptyBorder( 20, 20, 20, 20 ) );
 		setSize( WIDTH, HEIGHT );
 		setVisible( true );
-		setBackground( increases(setting) ? Color.WHITE : new Color( 135, 206, 250 ) );
+		setBackground( increases(setting) ? Color.WHITE : Color.CYAN );
 		add( nameLabel, BorderLayout.NORTH );
 		add( counterLabel, BorderLayout.SOUTH );
 	}

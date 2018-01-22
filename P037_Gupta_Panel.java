@@ -18,12 +18,14 @@ public class P037_Gupta_Panel extends JPanel{
 	   JLabel counter = new JLabel();	   
 	   int j;
 	   boolean even; 
+	   int num;
 	   
     /**Constructor to create object of class.
      *@param num value given can be even or odd, if even counter increases from 0 to 9 else counter decreases from 9 to 0.
      */
 	   public P037_Gupta_Panel(int num){
-		getJPanelInstance(num);
+		   this.num=num;
+		   getJPanelInstance();
         if(num%2==0) {
         	j=0;
         	even=true;
@@ -36,7 +38,7 @@ public class P037_Gupta_Panel extends JPanel{
  * @param num which can be even or odd, if even counter increases from 0 to 9 else counter decreases from 9 to 0.
  * @return JPanel instance.
  */
-public JPanel getJPanelInstance(int num){
+public JPanel getJPanelInstance(){
    
     
     try {
@@ -73,7 +75,7 @@ public JPanel getJPanelInstance(int num){
     p.add(counter);
     
     // if num is even, sets panel background to white otherwise set panel color to light blue.
-    if(num%2==0)
+    if(this.num%2==0)
     	p.setBackground(Color.WHITE);
     else
     	p.setBackground(Color.CYAN);  
