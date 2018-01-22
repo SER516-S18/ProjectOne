@@ -1,6 +1,6 @@
 /* Panel with 2 JLabels containing full name and timer which increases and decreases according to input provided */
 
-import java.swing.*;
+import javax.swing.*;
 import java.awt.*;
 public class P080_Nolastname_Panel implements Runnable{
     private JPanel p;
