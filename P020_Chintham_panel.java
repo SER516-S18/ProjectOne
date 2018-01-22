@@ -29,20 +29,20 @@ public class P020_chintham_panel implements ActionListener{
 			clock=10;
 		}
 		
-		lblTharun = new JLabel("tharun");
-		lblTharun.setFont(new Font("Papyrus",Font.PLAIN,18));
+		lblTharun = new JLabel("Tharun");
+		lblTharun.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblTharun.setHorizontalAlignment(JLabel.CENTER);
 		panel.add(lblTharun);
 		
 		
-		lblChintham = new JLabel("chintham");
-		lblChintham.setFont(new Font("Papyrus",Font.PLAIN,18));
+		lblChintham = new JLabel("Chintham");
+		lblChintham.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblChintham.setHorizontalAlignment(JLabel.CENTER);
 		panel.add(lblChintham);
 		
 		
 		lblTimer = new JLabel();
-		lblTimer.setFont(new Font("Papyrus",Font.PLAIN,18));
+		lblTimer.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblTimer.setHorizontalAlignment(JLabel.CENTER);
 		panel.add(lblTimer);		
 		
