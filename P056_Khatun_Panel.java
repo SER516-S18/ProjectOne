@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,8 +24,9 @@ public class P056_Khatun_Panel {
 	//CREATING A PANEL WITH DESIRED FUNCTIONALITY 
 	public void createPanel(int value)
 	{
-		//CREATING OBJ OF LIGHT BLUE COLOR 
+		//LIGHT BLUE COLOR OBJ		
 		Color color=new Color(173, 216, 230);
+		
 		// CREATE PANEL + PANEL PROPERTIES
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
