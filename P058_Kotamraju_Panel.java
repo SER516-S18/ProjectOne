@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package P058_Kotamraju_Panel;
 
 import javax.swing.*;
@@ -91,9 +86,8 @@ public class P058_Kotamraju_Panel extends JPanel{
         	e.printStackTrace();
         }
     }
-    /**
-     * @param args the command line arguments
-     */
+	
+	
 //     public static void main(String[] args) {
         
 //         JFrame frame = new JFrame();
