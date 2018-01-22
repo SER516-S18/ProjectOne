@@ -25,7 +25,7 @@ public class P020_chintham_panel implements ActionListener{
 			panel.setBackground(Color.WHITE);
 		}
 		else {
-			panel.setBackground(Color.CYAN);
+			panel.setBackground(new Color(173, 216, 230));
 			clock=10;
 		}
 		
