@@ -1,5 +1,3 @@
-package main.tab.panel;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Timer;
@@ -51,16 +49,16 @@ public class P070_Marathe_Panel {
 			e.printStackTrace();
 		}
 		//set label's properties
-		f_name.setBounds(25, 25, 40, 25);
-		f_name.setFont(new Font("Papyrus", Font.PLAIN, 8));
+		f_name.setBounds(25, 25, 70, 25);
+		f_name.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		panel.add(f_name);
 		
-		l_name.setBounds(25, 40, 35, 25);
-		l_name.setFont(new Font("Papyrus", Font.PLAIN, 8));
+		l_name.setBounds(25, 40, 60, 25);
+		l_name.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		panel.add(l_name);
 		
-		count.setBounds(25, 55, 25, 25);
-		count.setFont(new Font("Papyrus", Font.PLAIN, 8));
+		count.setBounds(25, 55, 60, 25);
+		count.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		panel.add(count);
 		
 		panel.setSize(100, 100);
@@ -73,10 +71,12 @@ public class P070_Marathe_Panel {
 		}
 		else
 		{
-			panel.setBackground(new Color(32,110,215));
+			panel.setBackground(new Color(173,216,230));
 		}
 		
 		//create a timer to increase or decrease counter per second
+		try
+		{
 		Timer t = new Timer();
 		t.schedule(new TimerTask() {
 		    @Override
@@ -94,16 +94,21 @@ public class P070_Marathe_Panel {
 		    	}
 		    }
 		}, 0, 1000);
-		
+		}
+		catch(Exception e)
+		{
+			System.out.println("Error occured with timer!");
+			e.printStackTrace();
+		}
 		return panel;	//return JPanel object
 	}
-	public static void main(String[] args) {
-		P070_Marathe_Panel pan = new P070_Marathe_Panel(1);
+	/*public static void main(String[] args) {
+		P070_Marathe_Panel pan = new P070_Marathe_Panel(2);
 		JPanel panel  = pan.display();
 		JFrame frame = new JFrame();
 		frame.add(panel);
 		frame.setSize(800, 800);
 		frame.setVisible(true);
 		frame.setLayout(null);
-	}
+	}*/
 }
