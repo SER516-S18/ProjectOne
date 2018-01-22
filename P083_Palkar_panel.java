@@ -1,3 +1,11 @@
+/*Lab 1
+Author:Tejasi Palkar
+This file creates a JPanel, the panel is painted with a color-white(for a even ID author) and Blue(for an odd ID author)
+and  contains name of the author and a counter that runs from 0-9/9-0 added as labels depending on the type of ID of the author
+*/
+
+
+
 package pkg516;
 
 import javax.swing.*;
