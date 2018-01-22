@@ -26,8 +26,8 @@ public class P111_Tandon_Panel extends JPanel {
 
 	// Constants
 	public static final int RED_PART = 173;
-	public static final int BLUE_PART = 216;
-	public static final int GREEN_PART = 230;
+	public static final int GREEN_PART = 216;
+	public static final int BLUE_PART = 230;
 	public static final String NAME_TAG = "<html>Manish<br>Tandon</html>";
 	public static final int PANEL_HEIGHT = 100;
 	public static final int PANEL_WIDTH = 100;
