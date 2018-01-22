@@ -71,20 +71,20 @@ public class P124_Wang_Panel extends JPanel {
 		}
 	}
 
-	public static void main(String[] args) {
-		P124_Wang_Panel p124 = new P124_Wang_Panel(124);
-
-		JFrame mainFrame = new JFrame("mainFrame content");
-		mainFrame.setSize(100, 100);
-		mainFrame.setLayout(new GridLayout(1, 1));
-		mainFrame.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent windowEvent) {
-				System.exit(0);
-			}
-		});
-		mainFrame.add(p124);
-		mainFrame.setVisible(true);
-		
-	}
+//	public static void main(String[] args) {
+//		P124_Wang_Panel p124 = new P124_Wang_Panel(124);
+//
+//		JFrame mainFrame = new JFrame("mainFrame content");
+//		mainFrame.setSize(100, 100);
+//		mainFrame.setLayout(new GridLayout(1, 1));
+//		mainFrame.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent windowEvent) {
+//				System.exit(0);
+//			}
+//		});
+//		mainFrame.add(p124);
+//		mainFrame.setVisible(true);
+//		
+//	}
 
 }
