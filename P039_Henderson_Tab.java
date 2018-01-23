@@ -13,7 +13,6 @@ import java.awt.Color;
 public class P039_Henderson_Tab extends JPanel {
 
 	public static final String TABNAME = "Chris Henderson";
-	public static final Color LIGHTBLUE = new Color(173,216,230);
 
 	public P039_Henderson_Tab() {
 		// Panels expect an integer in their constructor which determines
@@ -32,8 +31,8 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P035_Gupta_Panel(typeSwitch++));
 		this.add(new P036_Gupta_Panel(typeSwitch++));
 		this.add(new P037_Gupta_Panel(typeSwitch++));
-		// 39 is the tab author.
 		this.add(new P038_Gupta_Panel(typeSwitch++));
+		// 39 is the tab author.
 		this.add(new P040_Henderson_Panel(typeSwitch++));
 		this.add(new P041_Hosahalli_Panel(typeSwitch++));
 		this.add(new P042_Hu_Panel(typeSwitch++));
