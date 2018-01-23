@@ -82,9 +82,9 @@ public class P011_Bhat_Panel extends JPanel {
 	 * Panel size set to 100*100
 	 */
 	private void stylePanel() {
-		setMaximumSize(new Dimension(100, 100));
 		setBorder(null);
 		setPreferredSize(new Dimension(100, 100));
+		setLayout(new GridLayout(2,1));
 	}
 }
 
