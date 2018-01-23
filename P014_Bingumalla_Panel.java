@@ -107,12 +107,12 @@ public class P014_Bingumalla_Panel extends JPanel {
 	 * @param args
 	 * Main function just to test testing
 	 */
-	public static void main(String[] args) {	
+	/*public static void main(String[] args) {	
 		P014_Bingumalla_Panel obj = new P014_Bingumalla_Panel(0141);
 		JFrame frame = new JFrame();
 		frame.setSize(500, 500);
 		frame.add(obj);
 		frame.setVisible(true);
-	}
+	}*/
 
 }
