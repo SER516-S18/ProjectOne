@@ -17,10 +17,10 @@ import javax.swing.SwingConstants;
 
 public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 
-	private Color bgWhite = new Color.WHITE;
+	private Color bgWhite = Color.WHITE;
 	private Color bgLBlue = new Color (173,216,230);
-	private JLabel fname = new JLabel("Hari Siddarth");
-	private JLabel lname = new JLabel("V Kesavan");
+	private JLabel fName = new JLabel("Hari Siddarth");
+	private JLabel lName = new JLabel("V Kesavan");
 	private JLabel time = new JLabel();
 	
 	/**
@@ -46,17 +46,17 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 			
 		Font font = new Font("Papyrus", Font.PLAIN, 15);
 			
-		fname.setFont(font);
-		lname.setFont(font);
+		fName.setFont(font);
+		lName.setFont(font);
 		time.setFont(font);
 			
-		fname.setHorizontalAlignment(SwingConstants.CENTER);
-		lname.setHorizontalAlignment(SwingConstants.CENTER);
+		fName.setHorizontalAlignment(SwingConstants.CENTER);
+		lName.setHorizontalAlignment(SwingConstants.CENTER);
 		time.setHorizontalAlignment(SwingConstants.CENTER);
 			
 		this.setBounds(0, 0, 100, 100);
-		this.add(fname);
-		this.add(lname);
+		this.add(fName);
+		this.add(lName);
 		this.add(time);
 		this.setVisible(true);
 	}
@@ -92,7 +92,9 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 						counter--;
 						try {
 							Thread.sleep(1000);
-						}catch(Exception e) {}
+						}catch(Exception e) {
+						e.printStackTrace();
+						}
 					}
 				}
 			}.start();

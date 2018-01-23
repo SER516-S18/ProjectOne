@@ -1,8 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Date; 
+import java.util.Timer; 
+import java.util.TimerTask; 
+import javax.swing.border.Border;
 
 /*
 Author: Ramesh Gorantla
@@ -13,42 +15,36 @@ and the counter starts from 0 to 9 and continues in a loop (incresing counter). 
 and the counter starts from 9 to 0 and continues in a loop (decreasing counter).
 
 Input: Expects a integer
-Return value: The class returns JPanel object
+Output: Returns JPanel object
 
 */
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.Date; 
-import java.util.Timer; 
-import java.util.TimerTask; 
-import javax.swing.border.Border;
 
 public class P034_Gorantla_Panel extends JPanel{
     // variables initialisation
     private JLabel counterHolder;
     private JLabel nameHolder;
-    //private JPanel contentPanel;
-    //private JFrame mainFrame;
-    public static int counter = 0;
+    private static int COUNTER = 0;
+    Color LIGHTBLUE = new Color(173,216,230); 
+    private static String FONTSTYLE = "Papyrus";
+    private static int FONTSIZE = 15;
+    private static String NAMETOBEDISPLAYED = "<html>Ramesh<br>Gorantla";
 
     // one parameter constructor, accepts integer value
     public P034_Gorantla_Panel(int number) {
         try{
-            if(number == (int)number)
+            if(number == (int)number) // check for making sure integer is passed as argument
             {
-               initUI(); //initialises the panel
-               setValues(number); //sets values inside the panel
+                initUI(); //initialises the panel
+                setValues(number); //sets values inside the panel
             }else{
                 System.out.println("Integer is expected");
             }
-        }catch(NumberFormatException e){
-            System.out.println("Integer is expected"+e);
         }catch(Exception e){
             System.out.println(e);
         }
     }
     
+    // initialises the panel UI
     public void initUI(){
         // setting the layout for the panel
         this.setLayout(new GridLayout(2,1));
@@ -56,6 +52,8 @@ public class P034_Gorantla_Panel extends JPanel{
         Border panelBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
         this.setBorder(panelBorder);
     }
+    
+    // sets the content for the panel
     public JPanel setValues(int number){
         Boolean isEven = false;
         try{
@@ -63,41 +61,32 @@ public class P034_Gorantla_Panel extends JPanel{
         }catch(ArithmeticException e){
             System.out.println(e);
         }
-        Font fontStyle = new Font("Papyrus",Font.PLAIN,15); // setting font style
-        
+        Font fontStyle = new Font(FONTSTYLE,Font.PLAIN,FONTSIZE);       
         // making the lables center aligned
         counterHolder = new JLabel("", JLabel.CENTER); 
-        nameHolder = new JLabel("", JLabel.CENTER); 
-        
+        nameHolder = new JLabel("", JLabel.CENTER);         
         // setting font style for the labels
         counterHolder.setFont(fontStyle);
         nameHolder.setFont(fontStyle);
-        
-        // value for name label
-        nameHolder.setText("<html>Ramesh<br>Gorantla");
-        
+        nameHolder.setText(NAMETOBEDISPLAYED);        
         // setting background color for the panel
         if(isEven){
             this.setBackground(Color.white);
         }else{
-            this.setBackground(new Color(173,216,230));
+            this.setBackground(LIGHTBLUE); 
         }
-        
-        // starting the counter
-        initCounter(isEven);
-        
+        initCounter(isEven);        
         // adding individual components to the main layout
         this.add(nameHolder);
         this.add(counterHolder);
-        //mainFrame.add(contentPanel);
         return this;
-
     }
+    // starting the timer
     public void initCounter(Boolean isEven){
         if(isEven){
-            counter = -1;
+            COUNTER = -1;
         }else{
-            counter = 10;
+            COUNTER = 10;
         }
         // timer logic: based on the whether its a even or odd number the timer increases or decreases for every second
         Timer timer = new Timer(); 
@@ -105,28 +94,22 @@ public class P034_Gorantla_Panel extends JPanel{
             timer.scheduleAtFixedRate(new TimerTask(){
                 public void run() { 
                     if(isEven){
-                        if(counter == 9){
-                            counter = -1;
+                        if(COUNTER == 9){
+                            COUNTER = -1;
                         }
-                        counter++;
+                        COUNTER++;
                     }else{
-                        if(counter == 0){
-                            counter = 10;
+                        if(COUNTER == 0){
+                            COUNTER = 10;
                         }
-                        counter--;
+                        COUNTER--;
                     }
                     // updates the counter label value ever second
-                    counterHolder.setText(Integer.toString(counter));
+                    counterHolder.setText(Integer.toString(COUNTER));
                 } 
             }, new Date(), 1000); 
         }catch(Exception e){
             System.out.println(e);
         }
-        
     }
-    // main function --- uncomment to test the file
-    /*public static void main(String args[]){
-        int number = 34; // this is the number which decide the properties of the panel
-        P034_Gorantla_Panel p034_Gorantla_Panel = new P034_Gorantla_Panel(number);      
-    }*/
 }
