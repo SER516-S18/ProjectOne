@@ -30,10 +30,7 @@ public class P039_Henderson_Tab extends JPanel {
 		// 39 is the tab author.
 		this.add(new P038_Gupta_Panel(12));
 		this.add(new P040_Henderson_Panel(13));
-		// Individual is not conforming to convention and does
-		// not respond to group discussions.
-		this.add(new P041_Hosahalli_Panel(14).
-			preparePanelUI(new Color(173,216,230)));
+		this.add(new P041_Hosahalli_Panel(14));
 		// Is not a panel. Will not work. Does not appear to be done.
 		// this.add(new P042_Yiru_Panel(15));
 		this.add(new P043_Iyer_Panel(16));
