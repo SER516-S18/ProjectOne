@@ -50,27 +50,11 @@ public class P034_Gorantla_Panel extends JPanel{
     }
     
     public void initUI(){
-        // mainframe is the outer layout for the app
-        //mainFrame = new JFrame();
-        //mainFrame.setSize(200, 200);
-        //mainFrame.setLayout(new GridLayout(3, 1));
-
-        //mainFrame.addWindowListener(new WindowAdapter() {
-        //   public void windowClosing(WindowEvent windowEvent){
-        //      System.exit(0);
-        //   }        
-        //}); 
-
-        // adding a panel inside the mainframe
-        //contentPanel = new JPanel();
-        //contentPanel.setSize(100, 100);
-        //contentPanel.setLayout(new FlowLayout());
+        // setting the layout for the panel
         this.setLayout(new GridLayout(2,1));
         // setting border for the panel
         Border panelBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
         this.setBorder(panelBorder);
-
-        //mainFrame.setVisible(true); 
     }
     public JPanel setValues(int number){
         Boolean isEven = false;
@@ -79,7 +63,6 @@ public class P034_Gorantla_Panel extends JPanel{
         }catch(ArithmeticException e){
             System.out.println(e);
         }
-        System.out.println(isEven);
         Font fontStyle = new Font("Papyrus",Font.PLAIN,15); // setting font style
         
         // making the lables center aligned
@@ -142,8 +125,8 @@ public class P034_Gorantla_Panel extends JPanel{
         
     }
     // main function --- uncomment to test the file
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         int number = 34; // this is the number which decide the properties of the panel
         P034_Gorantla_Panel p034_Gorantla_Panel = new P034_Gorantla_Panel(number);      
-    }
+    }*/
 }

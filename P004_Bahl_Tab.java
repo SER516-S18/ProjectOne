@@ -1,12 +1,12 @@
+
+import javax.swing.*;
+import java.awt.GridLayout;
 /**
 * P004_Bahl_Tab implements the 5x5 tabbed panel grid for group 1( P001 to P026 ). 
 *
 * @author Nikita Bahl
 * @version 1.0 (01/22/2018)
-*/
-import javax.swing.*;
-import java.awt.GridLayout;
-  
+*/ 
 
 public class P004_Bahl_Tab extends JPanel
 {    
@@ -18,7 +18,7 @@ public class P004_Bahl_Tab extends JPanel
     {
 //        f.add(tbp);
 //        f.setVisible(true);
-        tbp.addTab("Tab 1", p);
+        tbp.addTab("Tab 1", this);
         this.setLayout(new GridLayout(5,5,3,3));
         
         this.add(new P001_Ahuja_Panel(1));
