@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 * P118_VelaudampalayamKesavan_Panel is a Panel
 * First row has the First Name
 * Second row has the Last Name
-* Last row has counter that either increases or decreases through 0 to 9
+* Last row has a counter that either increases or decreases through 0 to 9
 * The background color and the counter direction is decided based on a parameter passed to the constructor
 */
 
@@ -22,6 +22,7 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 	private JLabel fName = new JLabel("Hari Siddarth");
 	private JLabel lName = new JLabel("V Kesavan");
 	private JLabel time = new JLabel();
+	private Font font = new Font("Papyrus", Font.PLAIN, 15);
 	
 	/**
 	* Class Constructor
@@ -43,9 +44,7 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 		}
 		
 		this.setLayout(new GridLayout(3,1));
-			
-		Font font = new Font("Papyrus", Font.PLAIN, 15);
-			
+	
 		fName.setFont(font);
 		lName.setFont(font);
 		time.setFont(font);
@@ -74,29 +73,31 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 					
 					try {
 						Thread.sleep(1000);
-					}catch(Exception e) {}
+					}catch(Exception e) {
+					e.printStackTrace();
 					}
 				}
-			}.start();
-		}
+			}
+		}.start();
+	}
 		
-		public void decrementCounter() {
-			new Thread() {
-				int counter = 9;
-				public void run() {
-					while(true) {
-						if(counter == -1) {
-							counter = 9;
-						}
-						time.setText(new Integer(counter).toString());
-						counter--;
-						try {
-							Thread.sleep(1000);
-						}catch(Exception e) {
-						e.printStackTrace();
-						}
+	public void decrementCounter() {
+		new Thread() {
+			int counter = 9;
+			public void run() {
+				while(true) {
+					if(counter == -1) {
+						counter = 9;
+					}
+					time.setText(new Integer(counter).toString());
+					counter--;
+					try {
+						Thread.sleep(1000);
+					}catch(Exception e) {
+					e.printStackTrace();
 					}
 				}
-			}.start();
-		}
+			}
+		}.start();
+	}
 }
