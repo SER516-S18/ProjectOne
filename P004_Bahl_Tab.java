@@ -10,14 +10,10 @@ import java.awt.GridLayout;
 
 public class P004_Bahl_Tab extends JPanel
 {    
-//    private final JFrame f = new JFrame("Frame");
-    //private final JPanel p = new JPanel();
     private final JTabbedPane tbp = new JTabbedPane();
     
     public P004_Bahl_Tab()
     {
-//        f.add(tbp);
-//        f.setVisible(true);
         tbp.addTab("Tab 1", this);
         this.setLayout(new GridLayout(5,5,3,3));
         
@@ -47,15 +43,6 @@ public class P004_Bahl_Tab extends JPanel
         this.add(new P023_Day_Panel(22));
         this.add(new P024_Deolal_Panel(23));
         this.add(new P025_Desai_Panel(24));
-        this.add(new P026_Devi_Panel(25).getPanel());
-                
-//        f.setSize(800, 800);
-//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.add(new P026_Devi_Panel(25).getPanel());      
     }
-    
-    //FOR UNIT TESTING
-//    public static void main(String[] args) 
-//    {
-//        new P004_Bahl_Tab();
-//    }
 }
