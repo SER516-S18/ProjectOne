@@ -32,10 +32,14 @@ public class P117_VasantraoYadav_Panel extends JPanel{
 	
 	GridBagConstraints abc = new GridBagConstraints();
 	Font s_font=new Font("Papyrus",Font.PLAIN,15);
-	Color s_color= new Color(90,150,255);
+	Color s_color= new Color(173,216,230);
 	
-	/*Constructor is created and based on checvalue variable if it is even then countforward method is executed orelse
-	countbackward function is executed*/
+	/*Constructor is created.
+	 *Based on checkvalue variable if it is even then background is set white and countforward method is executed.
+	 *Countforward method will increment and display the counter.
+	 *Orelse background is set light blue and countbackward function is executed.
+	 *Countbackward function will decrement and display the counter.
+	*/
 	
 	public P117_VasantraoYadav_Panel(int checkvalue) 
 	{
