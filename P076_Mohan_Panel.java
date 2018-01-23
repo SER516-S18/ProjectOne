@@ -14,7 +14,7 @@ public class P076_Mohan_Panel implements Runnable {
 	//Declaring class variables
 	int decider;
 	JPanel panel = new JPanel();
-	JLabel timerLabel = new JLabel("Counter :");
+	JLabel timerLabel = new JLabel();
 	Thread thread;
 	
 	//Assigning the integer received to a variable
@@ -26,7 +26,7 @@ public class P076_Mohan_Panel implements Runnable {
 	public void myPanel() {
 		
 		//lable with first name last name details
-		JLabel NameLabel = new JLabel("<html><br>First Name: Rakesh<br>Last Name: Mohan</html>");
+		JLabel NameLabel = new JLabel("<html><br>Rakesh<br>Mohan</html>");
 		
 		//Resetting the font for both the variables
 		Font font = new Font("Papyrus", Font.PLAIN, 15);
@@ -67,7 +67,7 @@ public class P076_Mohan_Panel implements Runnable {
 						e.printStackTrace();
 					}
 					
-					timerLabel.setText("Counter :"+Integer.toString(i));
+					timerLabel.setText(""+Integer.toString(i));
 				}
 			}while (true);
 		}
@@ -85,7 +85,7 @@ public class P076_Mohan_Panel implements Runnable {
 							e.printStackTrace();
 						}
 						
-						timerLabel.setText("Counter :"+Integer.toString(i));
+						timerLabel.setText(""+Integer.toString(i));
 					}
 					
 				}while(true);
