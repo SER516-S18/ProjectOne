@@ -1,6 +1,6 @@
 /* Panel with 2 JLabels containing full name and timer which increases and decreases according to input provided */
 
-import java.swing.*;
+import javax.swing.*;
 import java.awt.*;
 public class P080_Nolastname_Panel implements Runnable{
     private JPanel p;
@@ -10,9 +10,13 @@ public class P080_Nolastname_Panel implements Runnable{
 
     public P080_Nolastname_Panel(int num){
         p = new JPanel();
+        p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         p.setSize(100,100);
-        nameLabel = new JLabel("<html>Aditya<br>Kumar</html>",JLabel.CENTER); // Setting the contents of the FullName JLabel
-        timeLabel = new JLabel("",JLabel.CENTER);
+        nameLabel = new JLabel("<html>Aditya<br>Kumar</html>"); // Setting the contents of the FullName JLabel
+        nameLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);        //sets the alignment of the label to the centre inside panel
+        nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        timeLabel = new JLabel("");
+        timeLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         Font font = new Font("Papyrus", Font.PLAIN, 15);
         nameLabel.setFont(font);
         timeLabel.setFont(font);

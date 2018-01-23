@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.FlowLayout;
 import java.awt.event.*;
 
-public class P005_Banerjee_Panel
+public class P005_Banerjee_Panel extends JPanel
 {
 	int count_even = 0;
 	int flag;

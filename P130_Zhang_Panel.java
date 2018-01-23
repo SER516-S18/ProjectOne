@@ -15,8 +15,11 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
-
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+import javax.swing.BoxLayout;
 
 /**
  *author: Lei Zhang, ID: 130
@@ -24,77 +27,68 @@ import javax.swing.*;
  */
 
 public class P130_Zhang_Panel extends JPanel{
-	final private int TIME_INTERVAL = 1000;
-	final private String FIRST_NAME = "Lei";
-	final private String LAST_NAME = "Zhang";
-	
+    final private int TIME_INTERVAL = 1000;
+    final private String FIRST_NAME = "Lei";
+    final private String LAST_NAME = "Zhang";
+    
     private int counter;
-    private JPanel panel;
     private JLabel countLabel;
     private boolean flag = true;
-
+    private Timer timer;
     /**
      * Construct the panel
      * The counter and color is determined by
      * argument counter.
      * @param counter
      */
-    public P130_Zhang_Panel(int counter) {
-        if (panel == null) {
-            init();
-        }
-        this.counter = counter;
-        if ((this.counter & 1) == 0) {
-            panel.setBackground(Color.WHITE);
+    public P130_Zhang_Panel(int count) {
+        init();
+        counter = count;
+        if ((counter & 1) == 0) {
+            setBackground(Color.WHITE);
             flag = true;
         } else {
-            panel.setBackground(new Color(224, 255, 255));
+            setBackground(new Color(224, 255, 255));
             flag = false;
+        }
+        try{
+            timer = new Timer(TIME_INTERVAL, new ActionListener(){
+                public void actionPerformed(ActionEvent e) {
+                    //Check increase flag then increase of decrease time
+                    if(flag) {
+                        counter++;
+                        if(counter == 10) {counter -= 10;}
+                    }else {
+                        counter--;
+                        if(counter == -1) {counter += 10;}
+                    }
+                    //Update text
+                    countLabel.setText(Integer.toString(counter));
+                }
+            });
+            timer.start();
+        }catch(Exception err){
+            err.printStackTrace();
         }
     }
     
     /**
      * Initialize the Panel
+     * Set layout and font size
+     * Set label options
      */
     public void init(){
-    	panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setSize(100, 100);
-        JLabel firstNameLabel = new JLabel(FIRST_NAME);
-        JLabel lastNameLabel = new JLabel(LAST_NAME);
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setSize(100, 100);
+        JLabel firstNameLabel = new JLabel(FIRST_NAME, JLabel.CENTER);
+        JLabel lastNameLabel = new JLabel(LAST_NAME, JLabel.CENTER);
         countLabel = new JLabel();
         countLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
         firstNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
         lastNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        panel.add(firstNameLabel);
-        panel.add(lastNameLabel);
-        panel.add(countLabel);
-    }
-
-    /**
-     * Update text and return the JPanel by the flag value
-     * @return JPanel
-     */
-    public JPanel getPanel() {
-    	ActionListener taskPerformer = new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				//Check increase flag then increase of decrease time
-				if(flag) {
-					counter++;
-					if(counter == 10) {counter -= 10;}
-				}else {
-					counter--;
-					if(counter == -1) {counter += 10;}
-				}
-				//Update text
-				countLabel.setText(Integer.toString(counter));
-			}
-		};
-		
-		Timer timer = new Timer(this.TIME_INTERVAL, taskPerformer);
-		timer.start();
-		
-		return panel;
+        add(firstNameLabel);
+        add(lastNameLabel);
+        add(countLabel);
     }
 
     /**
@@ -103,9 +97,9 @@ public class P130_Zhang_Panel extends JPanel{
      */
     public static void main(String[] args) {
         JFrame frame = new JFrame();
-        P130_Zhang_Panel testPanel = new P130_Zhang_Panel(1);
-        frame.add(testPanel.getPanel());
+        JPanel testPanel = new P130_Zhang_Panel(1);
         frame.setSize(800, 800);
+        frame.add(testPanel);
         frame.setVisible(true);
     }
 }

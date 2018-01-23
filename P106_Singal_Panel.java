@@ -126,19 +126,19 @@ public class P106_Singal_Panel  extends JPanel {
      */
     private void createLabels() {
         lblFName = new JLabel("Vishakha", JLabel.CENTER);
-        lblFName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        lblFName.setFont(new Font("Papyrus", Font.PLAIN, 15));
         lblFName = this.centreLabel(lblFName);
 
 
         lblLName = new JLabel("Singal", JLabel.CENTER);
-        lblLName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        lblLName.setFont(new Font("Papyrus", Font.PLAIN, 15));
         lblLName = this.centreLabel(lblLName);
 
 
 
         //Create a label for displaying the counter
         lblCounter = new JLabel("   " + String.valueOf(counter));
-        lblCounter.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        lblCounter.setFont(new Font("Papyrus", Font.PLAIN, 15));
         lblCounter = this.centreLabel(lblCounter);
     }
 

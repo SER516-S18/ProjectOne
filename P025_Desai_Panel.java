@@ -17,7 +17,11 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 public class P025_Desai_Panel extends JPanel {
     private int timer;
     private int type;
+<<<<<<< HEAD
     //private Font f = new Font("Papyrus", Font.BOLD, 15);
+=======
+    private Font f = new Font("Papyrus", Font.PLAIN, 15);
+>>>>>>> 4277db61a187b0742aa8e8c2069ab6778db3be9d
 
     /**
      * Class constructor.

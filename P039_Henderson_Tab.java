@@ -26,7 +26,7 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P037_Gupta_Panel(11).getJPanelInstance());
 		// this.add(new P039_NAME_Panel(12));	The owner of the tab, ignored but commented to keep the numbers contiguous.
 		this.add(new P038_Gupta_Panel(12));
-		// this.add(new P040_NAME_Panel(13));	Does not exist.
+		this.add(new P040_Henderson_Panel(13));
 		this.add(new P041_Hosahalli_Panel(14).preparePanelUI(new Color(173,216,230))); // Oh come on, guys. It's called a constructor.
 		// this.add(new P042_Yiru_Panel(15));	Is not a panel. Will not work. Does not appear to be done.
 		this.add(new P043_Iyer_Panel(16));

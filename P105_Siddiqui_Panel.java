@@ -19,7 +19,8 @@
   */
  public class P105_Siddiqui_Panel extends JPanel {
 
- 	private JLabel fullName;
+ 	private JLabel fName;
+ 	private JLabel lName;
  	private JLabel counter;
  	private ActionListener al;
  	private Color bgColor;
@@ -59,17 +60,23 @@
  	 */
  	public void panelWork(){
 
- 		fullName = new JLabel("<Html><div>Zain<br>Siddiqui</div></Html>");
+ 		fName = new JLabel("Zain");
+ 		lName = new JLabel("Siddiqui");
  		counter = new JLabel();
  		font = new Font("Papyrus", Font.PLAIN, 15);
 
 
- 		fullName.setFont(font);
+ 		fName.setFont(font);
+ 		lName.setFont(font);
  		counter.setFont(font);
+ 		fName.setAlignmentX(CENTER_ALIGNMENT);
+ 		lName.setAlignmentX(CENTER_ALIGNMENT);
+ 		counter.setAlignmentX(CENTER_ALIGNMENT);
 
  		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
- 		add(fullName);
+ 		add(fName);
+ 		add(lName);
  		add(counter);
 
  		try{
@@ -135,12 +142,10 @@
 		frame.setSize(100,100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		P105_Siddiqui_Panel testing = new P105_Siddiqui_Panel(106);
+		P105_Siddiqui_Panel testing = new P105_Siddiqui_Panel(105);
 		frame.add(testing);
  		
  	}
 	*/
 
  }
-
-

@@ -1,6 +1,7 @@
-//The programs creates a panel with two labels which are name and timer.
-//Jahnavi Bantupalli
-//Date created- 01-20-2018
+/*The program creates a panel with two labels which are name and timer.
+**@author Jahnavi Bantupalli
+**@version- 01-20-2018
+*/
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -65,6 +66,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 			countUp=false;
 			counter=10;
 		}
+		makeApplication();
 	}
 
 	//Creates the panel with required specifications.
@@ -135,10 +137,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		mainFrame.setResizable(false);
 		
 		
-
-
 	}
 	*/
 
 }
-
