@@ -11,7 +11,7 @@ Another JLabel dispaying a down counter or an up counter (i.e, either from 0 to 
 Contains a background color, either light blue or white (based on the integer value passed to the constructor)
 A constructor which receives an integer value as a parameter and if the value is even ( if modulo 2 is 0) then background is white,
 and the upcounter functions.
-Try-catch statements are also included for handling exceptions
+Try-catch statements are also included for handling exceptions (while the use of threads for the display of cnt label)
 
 @author Vineesha Kasam
 */
@@ -24,7 +24,8 @@ public class P052_Kasam_Panel {
 	
 	private String evenOrOddString;
 	
-	//Creation of a constructor which receives an integer as a parameter
+	//Creation of a constructor which receives an integer as a parameter AND
+	//Assigns values EVEN and ODD to the respectively to the variable "evenOrOddString"
 	
 	public P052_Kasam_Panel(int integerValue) 
 	{
@@ -45,7 +46,7 @@ public class P052_Kasam_Panel {
 
 		kasamPanel.setLayout(new BoxLayout(kasamPanel, BoxLayout.Y_AXIS));
 
-		//Based on the parameter passed, we set the background color either to white or light blue
+		//Based on the parameter passed and the "evenOroddString" variable, we set the background color either to white or light blue
 		// (This is done after the constructor is called with the integer parameter
 		
 		if(evenOrOddString == "EVEN")

@@ -37,6 +37,7 @@ public class P107_Srivastava_Tab extends JPanel{
 		add(new P113_Thiagarajan_Panel(113), gbc);
 		add(new P114_Thoram_Panel(114), gbc);
 		add(new P115_Tikku_Panel(115), gbc);
+		add(new P116_Tran_Panel(116), gbc);
 		add(new P117_VasantraoYadav_Panel(117), gbc);
 		add(new P118_VelaudampalayamKesavan_Panel(118), gbc);
 		add(new P120_Venkatasubramanian_Panel(120), gbc);
