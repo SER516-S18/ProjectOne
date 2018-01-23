@@ -15,6 +15,8 @@ public class P019_Carroll_Panel extends JPanel {
 	public final int HEIGHT = 100;
 	public final int COUNT_MAX = 9;
 	public final int COUNT_MIN = 0;
+	public final int FONT_SIZE = 15;
+	public final String FONT_TYPE = "Papyrus";
 	
 	private int setting;
 	private Timer timer;
@@ -32,13 +34,13 @@ public class P019_Carroll_Panel extends JPanel {
 		
 		// Name label
 		nameLabel = new JLabel("<html><center> Douglas <br/> Carroll </center></html>");
-		nameLabel.setFont( new Font( "Papyrus", Font.PLAIN, 9 ) );
+		nameLabel.setFont( new Font( FONT_TYPE, Font.PLAIN, FONT_SIZE ) );
 		nameLabel.setHorizontalAlignment (JLabel.CENTER );
 		nameLabel.setVerticalAlignment( JLabel.CENTER );
 		
 		// Counter label
 		counterLabel = new JLabel( Integer.toString( countValue ) );
-		counterLabel.setFont( new Font( "Papyrus", Font.PLAIN, 9 ) );
+		counterLabel.setFont( new Font( FONT_TYPE, Font.PLAIN, FONT_SIZE ) );
 		counterLabel.setHorizontalAlignment( JLabel.CENTER );
 		counterLabel.setVerticalAlignment( JLabel.CENTER );
 		timer = new Timer( 1000, new ActionListener() {
@@ -58,10 +60,10 @@ public class P019_Carroll_Panel extends JPanel {
 		
 		// Panel settings
 		setLayout( new BorderLayout( 0, 0 ) );
-		setBorder( new EmptyBorder( 20, 20, 20, 20 ) );
+		setBorder( new EmptyBorder( 10, 10, 10, 10 ) );
 		setSize( WIDTH, HEIGHT );
 		setVisible( true );
-		setBackground( increases(setting) ? Color.WHITE : new Color( 135, 206, 250 ) );
+		setBackground( increases(setting) ? Color.WHITE : new Color( 171, 216, 230 ) );
 		add( nameLabel, BorderLayout.NORTH );
 		add( counterLabel, BorderLayout.SOUTH );
 	}
@@ -70,14 +72,5 @@ public class P019_Carroll_Panel extends JPanel {
 	// setting - Even for true, odd for false.
 	private boolean increases( int setting ) {
 		return setting % 2 == 0;
-	}
-
-	// FOR TESTING ONLY - Specification requires this to remain in here.
-	public static void main(String[] args) {
-		JFrame frame = new JFrame();
-		frame.setSize(100, 100);
-		P019_Carroll_Panel panel = new P019_Carroll_Panel(1);
-		frame.add(panel);
-		frame.setVisible(true);
 	}
 }

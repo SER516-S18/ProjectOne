@@ -1,11 +1,14 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
+
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class P071_Mathad_VijayaKumar_Panel {
+public class P071_MathadVijayaKumar_Panel {
 	/*
 	 * This class implements a 100*100 JPanel with three JLabels viz, Firstname, Lastname and 
 	 * a counter thread which counts 0-9 increment or decrement depending on the number passed to class. 
@@ -18,7 +21,7 @@ public class P071_Mathad_VijayaKumar_Panel {
 	private boolean even;
 	
 	//constructor.
-	public P071_Mathad_VijayaKumar_Panel(int num) {
+	public P071_MathadVijayaKumar_Panel(int num) {
 		/* params: number 
 		 * return: None 
 		 * Description: sets boolean even to true if param num is even.
@@ -38,22 +41,37 @@ public class P071_Mathad_VijayaKumar_Panel {
 		//setting up JPanel.
 		p=new JPanel();
 		p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
+		JPanel helper=new JPanel();
 		
-		if(even==false)
-			p.setBackground(new Color(51,204,255));
-		else
+		if(even==false) {
+			p.setBackground(new Color(173,216,230));
+			helper.setBackground(new Color(173,216,230));
+		}
+		else {
 			p.setBackground(Color.white);
+			helper.setBackground(Color.white);
+			
+		}
 		
 		p.setPreferredSize(new Dimension(100,100));
 		p.setMaximumSize( p.getPreferredSize() );
 		
 		//setting up JLabel
-		firstname=new JLabel(" Avinash");
-		lastname= new JLabel(" Mathad Vijayakumar");
+		firstname=new JLabel("Avinash");
+		lastname= new JLabel("Mathad Vijayakumar");
 		count=new JLabel();
+		
+		firstname.setFont(new Font("Papyrus",Font.PLAIN,15));
+		lastname.setFont(new Font("Papyrus",Font.PLAIN,15));
+		
+		
+		count.setFont(new Font("Papyrus",Font.PLAIN,15));
+		helper.add(count);
+		
+
 		p.add(firstname);
 		p.add(lastname);
-		p.add(count);
+		p.add(helper);
 		p.setVisible(true);
 		
 		
@@ -112,21 +130,22 @@ public class P071_Mathad_VijayaKumar_Panel {
 	}//end or function. 
 	
 	
-	public static void main(String[] args) {
-		/*
-		 * params: None 
-		 * return: None. 
-		 * Description: This is for testing. 
-		 */
-		
-		P071_Mathad_VijayaKumar_Panel ob= new P071_Mathad_VijayaKumar_Panel(4);
-		JPanel p=ob.P071_Mathad_VijayaKumar_Panel();
-		JFrame f=new JFrame("Simple Window");
-		//f.setSize(800,800);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.getContentPane().add(p);
-		f.pack();
-		//f.add(p);
-		f.setVisible(true);
-	}
+//	
+//	public static void main(String[] args) {
+//		/*
+//		 * params: None 
+//		 * return: None. 
+//		 * Description: This is for testing. 
+//		 */
+//		
+//		P071_MathadVijayaKumar_Panel ob= new P071_MathadVijayaKumar_Panel(4);
+//		JPanel p=ob.P071_Mathad_VijayaKumar_Panel();
+//		JFrame f=new JFrame("Simple Window");
+//		//f.setSize(800,800);
+//		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		f.getContentPane().add(p);
+//		f.pack();
+//		//f.add(p);
+//		f.setVisible(true);
+//	}
 }

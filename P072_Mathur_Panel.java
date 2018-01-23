@@ -3,6 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+/**
+ * P072_Mathur_Panel class creates a label with first and and last name displayed in 2 line
+ * The timer displays number from 0-9
+ * The background is set depending on the value of the parameter sent to the constructor
+ * @author  Garv Mathur
+ */
+
 public class P072_Mathur_Panel extends JPanel {
     private JLabel fullName;
     private JLabel clock;
@@ -14,12 +22,18 @@ public class P072_Mathur_Panel extends JPanel {
 
     // Constructor
     public P072_Mathur_Panel(int num){
-        this.num = num;
-        setPanelSize();
-        initializeAddNameLabel();
-        setBackgroundColor();
-        setCounterValue();
-        setClockTimer();
+        try{
+            this.num = num;
+            setPanelSize();
+            initializeAddNameLabel();
+            setBackgroundColor();
+            setCounterValue();
+            setClockTimer();
+        }
+        catch (Exception e){
+            System.out.println("Exception in code: " + e.getMessage());
+        }
+
     }
 
     // Sets the Counter Value depending on the parameter being odd or even
@@ -35,7 +49,7 @@ public class P072_Mathur_Panel extends JPanel {
     // Starts the clock timer. If the initial parameter is set as even the value increments. If odd it decrements.
     private void setClockTimer() {
         clock = new JLabel(String.valueOf(counterValue));
-        clock.setFont(new Font("Papyrus",Font.BOLD,16));
+        clock.setFont(new Font("Papyrus",Font.PLAIN,15));
         this.add(clock);
 
         // Starts the timer
@@ -74,7 +88,7 @@ public class P072_Mathur_Panel extends JPanel {
     // Initialize and Add  Name Label to panel
     private void initializeAddNameLabel() {
         fullName = new JLabel("<html>Garv<br>Mathur</html>");
-        fullName.setFont(new Font("Papyrus",Font.BOLD,16));
+        fullName.setFont(new Font("Papyrus",Font.PLAIN,15));
         this.add(fullName);
     }
 
