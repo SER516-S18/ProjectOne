@@ -29,7 +29,7 @@ public class P125_Wathodkar_Panel extends JPanel {
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(
 						layout.createSequentialGroup()
-								.addGap(55, 55, 55)
+								.addGap(20, 20, 20)
 								.addGroup(
 										layout.createParallelGroup(
 												javax.swing.GroupLayout.Alignment.LEADING)
@@ -39,9 +39,9 @@ public class P125_Wathodkar_Panel extends JPanel {
 								.addContainerGap(202, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout.createParallelGroup(
 				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-				layout.createSequentialGroup().addGap(40, 40, 40)
-						.addComponent(jLabel1).addGap(40, 40, 40)
-						.addComponent(jLabel2).addGap(39, 39, 39)
+				layout.createSequentialGroup().addGap(20, 20, 20)
+						.addComponent(jLabel1).addGap(20, 20, 20)
+						.addComponent(jLabel2).addGap(20, 20, 20)
 						.addComponent(jLabel3)
 						.addContainerGap(82, Short.MAX_VALUE)));
 		
