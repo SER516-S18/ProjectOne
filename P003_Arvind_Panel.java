@@ -26,7 +26,7 @@ public class P003_Arvind_Panel extends JPanel{
             bgColor = Color.WHITE;
             this.counter = 0;
        	} else {
-            Color color = new Color(136, 206, 250);
+            Color color = new Color(173, 216, 230);            
             bgColor = color;
             this.counter = 9;
     	}
