@@ -12,7 +12,7 @@ public class P005_Banerjee_Panel extends JPanel
 	int count_odd = 9;
 	
 	//creating JPanel and JLabels for printing Firstname, Lastname and the timer field
-	//JPanel myPanel = new JPanel();
+	JPanel myPanel = new JPanel();
 	private JLabel firstname = new JLabel("Sanchari", JLabel.CENTER);
 	private JLabel lastname = new JLabel("Banerjee", JLabel.CENTER);
 	private JLabel displayNumber = new JLabel("  0  ", JLabel.CENTER);
@@ -24,24 +24,34 @@ public class P005_Banerjee_Panel extends JPanel
 	{
 		//JPanel objPanell = new JPanel();
 		if ((number % 2) == 0)
+		{
 			flag = 1;
+			Color white = new Color(255,255,255);
+			this.setBackground(white);
+		}
+			
 		else 
+		{
 			flag = 0;
+			Color lightblue = new Color(187,255,255);
+			this.setBackground(lightblue);
+		}
+			
 		//Passing the flag value to Panel
 		createPanel(flag);
 	}
 	
-	public void createPanel(int flag)
+	private void createPanel(int flag)
 	{	
 		//setting panel dimension to a window of size 100X100
 		this.setPreferredSize(new Dimension(100, 100));
-	    	this.setLayout(new BoxLayout(myPanel, BoxLayout.PAGE_AXIS));  
+	    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));  
 	   
-	    	//Printing the labels
-	    	this.add(firstname, BorderLayout.CENTER);
-	    	this.add(lastname);
-	   	// flagNum = new JLabel(String.valueOf(flag));
-	    	//myPanel.add(flagNum);
+	    //Printing the labels
+	    this.add(firstname, BorderLayout.CENTER);
+	    this.add(lastname);
+	   // flagNum = new JLabel(String.valueOf(flag));
+	    //myPanel.add(flagNum);
 		this.add(displayNumber);
 		
 		//Aligning the labels to center of the panel
@@ -49,10 +59,10 @@ public class P005_Banerjee_Panel extends JPanel
 		lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
 		displayNumber.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		//Customizing labels using fonts of style 'Papyrus' and size '15'
-		firstname.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		lastname.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		//Customizing labels using fonts of style 'Papyrus' and size '10'
+		firstname.setFont(new Font("Papyrus", Font.PLAIN, 10));
+		lastname.setFont(new Font("Papyrus", Font.PLAIN, 10));
+		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 10));
 		//displayNumber.setBorder(new LineBorder(Color.BLACK));
 		
 		try {
@@ -65,8 +75,8 @@ public class P005_Banerjee_Panel extends JPanel
 				{
 					if(flag==1)
 					{	
-						Color white = new Color(255,255,255);
-						this.setBackground(white);
+						
+						
 						
 						if(count_even<10)
 						{	
@@ -81,9 +91,7 @@ public class P005_Banerjee_Panel extends JPanel
 					}
 					else if(flag==0)
 					{	
-						Color lightblue = new Color(173,216,230);
-						this.setBackground(lightblue);
-						
+												
 						if(count_odd>0)
 						{
 							
@@ -105,19 +113,19 @@ public class P005_Banerjee_Panel extends JPanel
 		{
 			System.out.println(e.getMessage());
 		}
-	   // return myPanel;
+	    //return myPanel;
 	}
 	/*public static void main(String[] args)
 	{
-		Creating an object of the P005_Banerjee_Panel class and passing it a test value(say 4). 
-		This value is passed to the parameterized constructor of the class, which in turn checks if the number is even or odd in nature. 
+		//Creating an object of the P005_Banerjee_Panel class and passing it a test value(say 4). 
+		//This value is passed to the parameterized constructor of the class, which in turn checks if the number is even or odd in nature. 
 		P005_Banerjee_Panel objPanel = new P005_Banerjee_Panel(4);
 		JFrame frame = new JFrame("JPanel Test");	//Creating a JFrame object
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 800);
-		frame.add(objPanel.myPanel);	//Adding the JPanel to the Frame, using the JPanel object, myPanel
+		frame.add(objPanel);	//Adding the JPanel to the Frame, using the JPanel object, myPanel
 		frame.pack();
 		frame.setVisible(true);
-	}
-	*/
+	}*/
+	
 }
