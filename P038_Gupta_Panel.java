@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package javaapplication1;
 
 import javax.swing.JPanel;
 import java.awt.*;
@@ -14,92 +15,76 @@ import java.util.Timer;
 /**
  *
  * @author srajangupta
- * @version 1.0
+ * @version 1.2
  * @since 18-01-2018
  */
  public class P038_Gupta_Panel extends JPanel{
    
-    public P038_Gupta_Panel(int i)
+    public P038_Gupta_Panel(int timerCalculate)
     {
-        int c = i;
-        //JFrame jf = new JFrame("Srajan's Frame");
         
-        
-                setLayout(null);
-        
+        setLayout(null);
         setSize(100,100);
         
         /**
-          Creating Labels for adding Fullname.
+          Creating Labels for adding Full name and timer.
             */
         
-        JLabel jl1,jl2;
-        jl1=new JLabel("Srajan");
-        jl2=new JLabel("Gupta");
-        jl1.setBounds(10, 5, 100, 30);
-        jl2.setBounds(10, 20, 100, 30);
-        jl1.setFont(new Font("Papyrus",Font.BOLD,16));
-        jl2.setFont(new Font("Papyrus",Font.BOLD,16));
+        JLabel firstName,lastName,timerLabel;
+        Color lightBlue = new Color(90,150,255); 
+        firstName=new JLabel("Srajan");
+        lastName=new JLabel("Gupta");
+        firstName.setBounds(10, 5, 100, 30);
+        lastName.setBounds(10, 20, 100, 30);
+        firstName.setFont(new Font("Papyrus",Font.BOLD,16));
+        lastName.setFont(new Font("Papyrus",Font.BOLD,16));
+        add(firstName);
+        add(lastName);  
         
-        //jf.setVisible(true);
-        //jf.setSize(400, 400);
-        //jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-                add(jl1);
-                add(jl2);  
-        
-   /*
-        Changing background color based on the number passed.
-        if the number is Even, background color is Blue, else White.
-                */
-                
-       if (c%2 == 0)
-        {
-           setBackground(Color.white);
-        }
-        else
-        {
-           setBackground(new Color(90,150,255));
-        }
-        JLabel jl3 = new JLabel();
-        JLabel jl4 = new JLabel();
-       
     /**
-        Creating a counter from 0 to 9 or 9 to 0 based on the condition.  
-        if the number passed is Even, Counter Starts from 0 and goes till 9.
-        Else it starts from 9 till 0.
+    Creating a counter from zero to nine or nine to zero based on the condition.  
+        
+        * if the number passed is Even, Counter Starts from 0 and goes till 9
+        and sets the background color white
+        
+        * Else it starts from 9 goes till 0 and sets the background color
+        LightBlue
             */  
         
+        timerLabel = new JLabel();
         Thread t = new Thread(new Runnable() {
-            int x=0,y=9;
+            int incCounter=0,decCouter=9;
                
             @Override
             public void run() {                   
                 
                 while (true) {
                     try {
-                        if(c%2==0)
+                        if(timerCalculate%2==0)
                         {
-                             add(jl3);
-                        jl3.setText(String.valueOf(x));
-                        jl3.setBounds(60, 13, 100, 30);    
+                            add(timerLabel);
+                            setBackground(Color.white);
+                            timerLabel.setText(String.valueOf(incCounter));
+                            timerLabel.setBounds(60, 13, 100, 30);    
                         
-                        if (x<9)
-                            x++;
+                        if (incCounter<9)
+                            incCounter++;
                         else 
-                            x = 0;
+                            incCounter = 0;
                         
                         }
                         else 
                         {   
-                            add(jl4);
-                            jl4.setText(String.valueOf(y));
-                            jl4.setBounds(60, 13, 100, 30);
+                            setBackground(new Color(90,150,255));
+                            add(timerLabel);
+                            
+                            timerLabel.setText(String.valueOf(decCouter));
+                            timerLabel.setBounds(60, 13, 100, 30);
                           
-                          if(y>0)
-                              y--;
+                          if(decCouter>0)
+                              decCouter--;
                           else
-                              y=9;                
+                              decCouter=9;                
                         }
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
@@ -110,14 +95,7 @@ import java.util.Timer;
         });
         t.start();
  }
-    
-    /*public static void main(String [] s)
-    {
-        int a = 3;
-        
-        new P038_Gupta_Panel(a);
-    }*/
-    
+
 }
 
 
