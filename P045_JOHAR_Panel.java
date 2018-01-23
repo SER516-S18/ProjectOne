@@ -21,6 +21,7 @@ public class P045_JOHAR_Panel extends JPanel{
 
     int counter;
     boolean isEven = false;
+    Color lightBlue = new Color(173, 216, 230);
 
     //Singelton Panel object which is returned
     private static P045_JOHAR_Panel panel;
@@ -38,12 +39,12 @@ public class P045_JOHAR_Panel extends JPanel{
             isEven = true;
             counter = 0;
         }
-
         createPanelObject();
     }
 
-    // Singleton setup
-    // num - Even for increasing counter, odd for decreasing.
+    /* Singleton setup
+     * num - Even for increasing counter, odd for decreasing.
+    */
     public static P045_JOHAR_Panel getInstance( int num ) {
 
         //if panel object is null, then create a new object else return the already created object
@@ -53,6 +54,9 @@ public class P045_JOHAR_Panel extends JPanel{
         return panel;
     }
 
+    /**
+     * This method creates a panel with 3 labels :- firstName, lastName and counter.
+     */
     public void createPanelObject()
     {
         Timer timer;
@@ -60,15 +64,15 @@ public class P045_JOHAR_Panel extends JPanel{
         JLabel lastName;
         JLabel displayNum;
 
-        setLayout(null);
-        // Setting the size of the panel
+        //Setting the size of the panel
         setSize(100, 100);
+        setLayout(null);
 
         //Setting the background color of the panel depending on the input passed to constructor
         if (isEven) {
             setBackground(Color.WHITE);
         } else {
-            Color lightBlue = new Color(173, 216, 230);
+
             setBackground(lightBlue);
         }
 
@@ -131,17 +135,4 @@ public class P045_JOHAR_Panel extends JPanel{
         timer.setInitialDelay(500);
         timer.start();
     }
-
-
-
-   /* public static void main(String args[])
-    {
-
-        JFrame frame = new JFrame();
-        frame.setSize(100, 100);
-        frame.add(P045_JOHAR_Panel.getInstance(0));
-        frame.setVisible(true);
-
-    }*/
-
 }
