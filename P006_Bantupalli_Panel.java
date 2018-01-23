@@ -85,7 +85,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		//customizing timer label
 		timerLabel= new JLabel("",JLabel.CENTER);
 		timerLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
-		timerLabel.setBounds(50, 100, 200, 100);
+		timerLabel.setBounds(50, 50, 200, 100);
 		//create a timer that generates an event after 1 second and pass it the frame object which handles the action event by implementing the ActionListener interface
 		Timer timer=new Timer(1000,this);
 		try
