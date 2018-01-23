@@ -1,3 +1,4 @@
+//package swing;
 /*Lab 1
 Author:Tejasi Palkar
 This file creates a JPanel, the panel is painted with a color-white(for a even ID author) and Blue(for an odd ID author)
@@ -19,7 +20,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class P083_Palkar_panel extends JPanel{
+public class P083_Palkar_Panel extends JPanel{
 
 
  public static int counter=0;
@@ -27,7 +28,7 @@ public class P083_Palkar_panel extends JPanel{
 	private JLabel Counter;	//Private members
 	private Color bgColor;	//Private members
 	
-	public P083_Palkar_Panel1(int ID) {
+	public P083_Palkar_Panel(int ID) {
 		// TODO Auto-generated constructor stub
 		if(ID%2==0)
 		{
@@ -112,7 +113,7 @@ public class P083_Palkar_panel extends JPanel{
 	public static void main(String[] args) 
 	{
 	        JFrame F = new JFrame("Frame_Palkar");
-	        P083_Palkar_Panel1 obj1 = new P083_Palkar_Panel1(83);
+	        P083_Palkar_Panel obj1 = new P083_Palkar_Panel(83);
 	        F.setVisible(true);
 	        F.add(obj1);
 	        F.pack();
@@ -120,3 +121,4 @@ public class P083_Palkar_panel extends JPanel{
 	    }*/
 
 }
+
