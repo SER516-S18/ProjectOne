@@ -25,7 +25,7 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P034_Gorantla_Panel(8));
 		this.add(new P035_Gupta_Panel(9));
 		this.add(new P036_Gupta_Panel(10));
-		this.add(new P037_Gupta_Panel(11).getJPanelInstance());
+		this.add(new P037_Gupta_Panel(11));
 		// this.add(new P039_NAME_Panel(12));	The owner of the tab, ignored but commented to keep the numbers contiguous.
 		this.add(new P038_Gupta_Panel(12));
 		this.add(new P040_Henderson_Panel(13));
