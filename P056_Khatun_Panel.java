@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
+
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -7,6 +9,7 @@ import javax.swing.JPanel;
 
 public class P056_Khatun_Panel extends JPanel {
 	
+	private static final long serialVersionUID = 1L;
 	Color color;
 	Boolean isEven;
 	JLabel lblCounter;
@@ -26,7 +29,6 @@ public class P056_Khatun_Panel extends JPanel {
 
 		//IF VALUE IS NOT EVEN,BACKGROUND LIGHT BLUE COUNTER DECREASES
 		else {
-				//panel.setBackground(blue);
 				color = blue;
 				isEven = false;
 			
@@ -34,7 +36,7 @@ public class P056_Khatun_Panel extends JPanel {
 
 		// CREATE PANEL + PANEL PROPERTIES
 		//JPanel panel=new JPanel();
-		this.setLayout(null);
+		this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
 		this.setBounds(20,20,200,200);
 		this.setBackground(color);;
 		
