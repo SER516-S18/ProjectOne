@@ -92,7 +92,9 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 						counter--;
 						try {
 							Thread.sleep(1000);
-						}catch(Exception e) {}
+						}catch(Exception e) {
+						e.printStackTrace();
+						}
 					}
 				}
 			}.start();
