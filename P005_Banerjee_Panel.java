@@ -59,10 +59,10 @@ public class P005_Banerjee_Panel extends JPanel
 		lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
 		displayNumber.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		//Customizing labels using fonts of style 'Papyrus' and size '10'
-		firstname.setFont(new Font("Papyrus", Font.PLAIN, 10));
-		lastname.setFont(new Font("Papyrus", Font.PLAIN, 10));
-		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 10));
+		//Customizing labels using fonts of style 'Papyrus' and size '15'
+		firstname.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		lastname.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		//displayNumber.setBorder(new LineBorder(Color.BLACK));
 		
 		try {
@@ -75,9 +75,6 @@ public class P005_Banerjee_Panel extends JPanel
 				{
 					if(flag==1)
 					{	
-						
-						
-						
 						if(count_even<10)
 						{	
 							count_even++;
@@ -100,8 +97,7 @@ public class P005_Banerjee_Panel extends JPanel
 						}
 						else
 						{
-							count_odd = 9;
-							
+							count_odd = 9;	
 						}
 						displayNumber.setText(""+count_odd);
 					}
