@@ -31,7 +31,7 @@ public class P005_Banerjee_Panel extends JPanel
 		createPanel(flag);
 	}
 	
-	private JPanel createPanel(int flag)
+	public void createPanel(int flag)
 	{	
 		//setting panel dimension to a window of size 100X100
 		this.setPreferredSize(new Dimension(100, 100));
@@ -105,7 +105,7 @@ public class P005_Banerjee_Panel extends JPanel
 		{
 			System.out.println(e.getMessage());
 		}
-	    return myPanel;
+	   // return myPanel;
 	}
 	/*public static void main(String[] args)
 	{
