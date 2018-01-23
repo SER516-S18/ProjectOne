@@ -1,7 +1,7 @@
 /*
  * ID 81
  * Name: Namratha Olety Venkatesh
- * File: P081_Olety_Panel
+ * Class: P081_Olety_Panel
  * Group 4
  * */
 import javax.swing.JLabel;
@@ -22,38 +22,48 @@ public class P081_Olety_Panel extends JPanel {
 		label1.setFont(labelFont1); 
 		jpanel.setPreferredSize(new Dimension(100, 100)); 
 		jpanel.add(label1);
-		//check value passed is even or odd
-		if(oddeven%2==0) 
-		{
-			jpanel.setBackground( new Color(173,216,230) );
-		}
-		else 
-		{
-			jpanel.setBackground(Color.WHITE);
-		}
 		JLabel label2 = new JLabel("");
 		label2.setFont(labelFont2);
 		jpanel.add(label2);
-		while(true)
+		//check value passed is even or odd
+		if(oddeven%2==0) 
 		{
-			//Counter up
-			for (int up = 0; up < 9; up++) {
-				label2.setText("" + up);
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					System.out.println("Exception in P081_Olety_Panel "+e.getMessage());
+			//Background blue if even
+			jpanel.setBackground( new Color(173,216,230) );
+			while(true)
+			{
+				//Counter up if parameter is even
+				for (int up = 0; up <=9; up++) {
+					label2.setText("" + up);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						System.out.println("Exception in P081_Olety_Panel "+e.getMessage());
+					}
 				}
 			}
-			for ( int down = 9; down > 0; down--) {
-				label2.setText("" + down);
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException ie) {
-					System.out.println("Exception in P081_Olety_Panel "+ie.getMessage());
+		}
+		
+		else 
+		{
+			//Background white if odd
+			jpanel.setBackground(Color.WHITE);
+			while(true)
+			{
+				//Counter down if parameter is odd
+				for ( int down = 9; down >= 0; down--) {
+					label2.setText("" + down);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException ie) {
+						System.out.println("Exception in P081_Olety_Panel "+ie.getMessage());
+					}
 				}
-			}}
+			}
+		}
+		
 	}
+	
 	/*public static void main(String[] args) {
 		new P081_Olety_Panel(28);
 	}*/
