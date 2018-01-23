@@ -50,12 +50,12 @@ public P068_Mandadi_Panel(int key){
     private void nameandtimer(int key) throws InterruptedException {
         //Name is Printed in one Multi-Lined Label
        name = new JLabel("<html>Siva Pranav<br>Mandadi</html>");
-       name.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+       name.setHorizontalAlignment(JLabel.CENTER);
        name.setFont(new Font("Papyrus",Font.PLAIN,15));
        this.add(name);//Adding the Name Label to the Panel
        counter = new JLabel();
        counter.setFont(new Font("Papyrus",Font.PLAIN,15));
-       counter.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+       counter.setHorizontalAlignment(JLabel.CENTER);
        this.add(counter);//Addign the Counter Label to the Panel
        Thread t;
         t = new Thread(() -> {
