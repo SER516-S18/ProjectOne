@@ -1,7 +1,11 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.BorderFactory;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,17 +24,19 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 	
 	// Constructor with an integer as a parameter.
 	public P022_ChittoorPrem_Panel(int num) {
-		Font font = new Font("Papyrus", Font.BOLD, 10);
-		setBorder(BorderFactory.createLineBorder(Color.black));
-		setLayout(null);
+		Font font = new Font("Papyrus", Font.PLAIN, 12);
+		setLayout(new GridLayout(2,1));
 		//instantiate name and number
 		name = new JLabel("<html><center>Anusha<br>Chittoor Prem</center></html>",JLabel.CENTER);
 		number = new JLabel();
 		//set positions and font of name and number
-		name.setBounds(10,10,80,50);
-		number.setBounds(45, 50, 25, 25);
+		name.setHorizontalAlignment(JLabel.CENTER);
+		number.setHorizontalAlignment(JLabel.CENTER);
+		name.setForeground(Color.black);
+		number.setForeground(Color.black);
 		name.setFont(font);
 		number.setFont(font);
+		
 		//add them to the panel
 		add(name);
 		add(number);
@@ -39,11 +45,11 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 			this.setBackground(new Color(255,255,255));
 			increment();
 		}else{ //if value passed is odd
-			this.setBackground(new Color(135,206,250));
+			this.setBackground(new Color(173,216,230));
 			decrement();
 		}
 		//set size of the panel
-		this.setSize(100,100);
+		this.setPreferredSize(new Dimension(100,100));
 		this.setVisible(true);
 	}
 	
@@ -94,7 +100,7 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 	
 	
 	//main function for testing
-/*	public static void main(String []args) {		
+	public static void main(String []args) {		
 		P022_ChittoorPrem_Panel p = new P022_ChittoorPrem_Panel(22);
 		JFrame jframe = new JFrame("Java Applaiction");
 		JPanel mainPanel = new JPanel(new BorderLayout());
@@ -103,5 +109,5 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 		jframe.setContentPane(mainPanel);
 		jframe.setVisible(true);
 	}
-*/
+
 }
