@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -10,7 +9,7 @@ public class P056_Khatun_Panel extends JPanel {
 
 	//private static final long serialVersionUID = 1L;
 
-	/* 
+	/*  
 	public static void main(String args[])  
     {
 		//OBJECT OF THIS CLASS IS CREATED
@@ -21,9 +20,10 @@ public class P056_Khatun_Panel extends JPanel {
 	
 	Color color;
 	Boolean isEven;
+	JLabel lblCounter;
 	
 	//CONSTRUCTOR 
-	P056_Khatun_Panel(int value){
+	public P056_Khatun_Panel(int value){
 		
 		Color blue = new Color(173, 216, 230);
 		Color white = new Color(255, 255, 255);
@@ -43,15 +43,11 @@ public class P056_Khatun_Panel extends JPanel {
 			
 		}
 
-	}
-	//CREATING A PANEL WITH DESIRED FUNCTIONALITY 
-	public void createPanel()
-	{
 		// CREATE PANEL + PANEL PROPERTIES
-		JPanel panel=new JPanel();
-		panel.setLayout(null);
-		panel.setBounds(20,20,200,200);
-		panel.setBackground(color);;
+		//JPanel panel=new JPanel();
+		this.setLayout(null);
+		this.setBounds(20,20,200,200);
+		this.setBackground(color);;
 		
 		// CREATE NAME LABEL + LABEL PROPERTIES
 		JLabel lblName = new JLabel("<html>Raisa<br>Khatun</html>");
@@ -60,27 +56,18 @@ public class P056_Khatun_Panel extends JPanel {
 		lblName.setFont(new Font("Papyrus",Font.PLAIN, 15));
 		
 		// CREATE COUNTER LABEL + LABEL PROPERTIES
-		JLabel lblCounter = new JLabel();
 		lblCounter.setLayout(null);
 		lblCounter.setBounds(90,100,50,50);
 		lblCounter.setFont(new Font("Papyrus",Font.PLAIN, 15));
 		
 		// ADD LABELS TO PANEL
-		panel.add(lblName);
-		panel.add(lblCounter);
-		
-		/* 
-		// CREATE FRAME
-		JFrame frame= new JFrame("");
-
-		// ADD PANEL TO FRAME
-		frame.setSize(300, 300);
-		frame.setLayout(null);
-		frame.setVisible(true);
-		frame.add(panel);
-		*/
-
-		
+		this.add(lblName);
+		this.add(lblCounter);		
+	}
+	
+	//CREATING A PANEL WITH DESIRED FUNCTIONALITY 
+	public void createPanel()
+	{
 		Integer c = 0;
 		while(true)
 		{
@@ -129,8 +116,6 @@ public class P056_Khatun_Panel extends JPanel {
 						e.printStackTrace();
 					}
 			}
-			
-			
 			
 		}//END OF WHILE LOOP				
 		
