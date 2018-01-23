@@ -21,7 +21,10 @@ public class P045_JOHAR_Panel extends JPanel{
 
     int counter;
     boolean isEven = false;
-    Color lightBlue = new Color(173, 216, 230);
+    public static Color LIGHT_BLUE = new Color(173,216,230);
+    public static Font FONT = new Font("Papyrus", Font.PLAIN, 15);
+    private static final String FIRSTNAME="Saheb";
+    private static final String LASTNAME="Johar";
 
     /**
      * Class constructor.
@@ -49,47 +52,35 @@ public class P045_JOHAR_Panel extends JPanel{
         JLabel lastName;
         JLabel displayNum;
 
-        //Setting the size of the panel
-        setSize(100, 100);
-        setLayout(null);
-
         //Setting the background color of the panel depending on the input passed to constructor
         if (isEven) {
             setBackground(Color.WHITE);
         } else {
-
-            setBackground(lightBlue);
+            setBackground(LIGHT_BLUE);
         }
 
         //First name of the author which goes in the first row
-        firstName=new JLabel("Saheb", JLabel.CENTER);
-        firstName.setBounds(10, 0, 50, 25);
-        firstName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        firstName=new JLabel(FIRSTNAME, JLabel.CENTER);
+        firstName.setFont(FONT);
         firstName.setHorizontalAlignment(JLabel.CENTER);
-        firstName.setVerticalAlignment(JLabel.CENTER);
-        firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(firstName);
+        firstName.setVerticalAlignment(JLabel.CENTER);;
+        this.add(firstName);
 
         //Last name of the author which goes in the second row
-        lastName=new JLabel("Johar", JLabel.CENTER);
-        lastName.setBounds(10, 15, 50, 25);
-        lastName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        lastName=new JLabel(LASTNAME, JLabel.CENTER);
+        lastName.setFont(FONT);
         lastName.setHorizontalAlignment(JLabel.CENTER);
         lastName.setVerticalAlignment(JLabel.CENTER);
-        lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(lastName);
+        this.add(lastName);
 
         //Counter value which goes in the last row
         displayNum=new JLabel(String.valueOf(counter), JLabel.CENTER);
-        displayNum.setBounds(10, 30, 50, 25);
-        displayNum.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        displayNum.setFont(FONT);
         displayNum.setHorizontalAlignment(JLabel.CENTER);
         displayNum.setVerticalAlignment(JLabel.CENTER);
-        displayNum.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(displayNum);
+        this.add(displayNum);
 
-        setLayout(new BorderLayout(0, 0));
-        setBorder(new EmptyBorder(30, 30, 30, 30));
+        this.setLayout(new GridLayout(3,0));
 
         //Timer which is used to increment or decrement the counter
         timer = new Timer(1000, new ActionListener() {
