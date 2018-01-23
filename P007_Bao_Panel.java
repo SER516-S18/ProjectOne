@@ -70,7 +70,7 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 		}
 	}
 	
-	public static void main(String[]args){
+	/*public static void main(String[]args){
 		//test 
 		JFrame jf = new JFrame();	//create a frame
 		P007_Bao_Panel p = new P007_Bao_Panel(1);	
@@ -79,6 +79,6 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 		jf.setVisible(true);
 		jf.add(p);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	}*/
 	
 }
