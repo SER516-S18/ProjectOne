@@ -96,9 +96,9 @@ public class P069_Mantri_Panel extends JPanel
         add(Surname);
         add(Clock);
         //setting font
-        Name.setFont(new Font("Papyrus",Font.BOLD,16));
-        Surname.setFont(new Font("Papyrus",Font.BOLD,16));
-        Clock.setFont(new Font("Papyrus",Font.BOLD,16));
+        Name.setFont(new Font("Papyrus",Font.PLAIN,15));
+        Surname.setFont(new Font("Papyrus",Font.PLAIN,15));
+        Clock.setFont(new Font("Papyrus",Font.PLAIN,15));
         
         Name.setBounds(25, 1, 75, 25);
         Surname.setBounds(25, 30, 75, 25);
