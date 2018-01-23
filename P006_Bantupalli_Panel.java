@@ -1,146 +1,146 @@
-/*The program creates a panel with two labels which are name and timer.
-**@author Jahnavi Bantupalli
-**@version- 01-20-2018
-*/
+/**
+ * SER516 Lab1.
+ * Create a class to create panel for group project.
+ * 
+ * @author Yuan Cao id: 018, ASU ID: ycao87
+ * @email caoyuan0816@gmail.com
+ * @version 2018.0121
+ * @group 1
+ */
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
+import javax.swing.*;
 
-//Defining a jpanel
-public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
-	private JLabel nameLabel ;				//label for first name and last name.
-	private JLabel timerLabel;				//label for timer
-	private static int counter;			//counter to implement timer.
-	private static boolean countUp;	//flag for count up and count down.
-	public class UpdateCount implements Runnable	//thread for implementing timer.
-	{
-		public void run(){
-			if(countUp)
-			{
-				//increase counter value for count up.
-				counter=counter+1;	
-				//if counter exceeds 9 start from 0 again.
-				if(counter==10)
-					counter=0;
-			}
-		else
-		{
-			//decrease the counter value for count down.
-				counter=counter-1;		
-			//if counter is less than 0, start from 9 again.
-				if(counter==-1)
-					counter=9;
-		}						
-			//add counter to the timer label.
-			timerLabel.setText(Integer.toString(counter));	
+/**
+ * Class P018_Cao_Panel implemented 3 methods: A constructor, create(), and main().
+ * Usage:
+ *     P018_Cao_Panel p = new P018_Cao_Panel(1);
+ *     JPanel panel = p.create(); //variable panel storing the panel has been created
+ *     
+ * @author Yuan Cao, ID: 018
+ * @version 2018.0121
+ */
+public class P018_Cao_Panel extends JPanel{
 
-		}
-		}
+	private boolean increase;
+	private int curTime;
+	private Color color;
 	
-
-	public P006_Bantupalli_Panel(int i) {
+	//Time interval 1000 ms = 1s
+	final private int TIME_INTERVAL = 1000;
+	
+	/**
+	 * Constructor method for class P018_Cao_Panel.
+	 * Recieve one integer parameter, if it's odd, will set color to lightblue, increase to false, curTime to 0
+	 * else, will set color to white, increase to true and curTime to 0.
+	 * 
+	 * @param arg: an integer number used to determine behavior of this constructor.
+	 */
+	public P018_Cao_Panel(int arg) {
 		super();
-		
-		
-		if(i%2==0)										
-		{
-			//set background color to white if i is even.
-			setBackground(Color.white);
-			//set the timer to count up.
-			countUp=true;
-			counter=-1;
-			
+		//Check argument even or odd 
+		if((arg & 1) == 1) {
+			//If odd
+			//Setting background LightBlue
+			this.color = new Color(135, 206, 250);
+			//Setting counter decrease
+			this.increase = false;
+			//Current time should be 9
+			this.curTime = 9;
+		}else {
+			//If even
+			//Setting background White
+			this.color = Color.white;
+			//Setting counter increase
+			this.increase = true;
+			//Current time should be 0
+			this.curTime = 0;
 		}
-		else
-		{
-			//set background color to light blue if i is odd.
-			setBackground(new Color(243,255,255));	
-			//set the timer to count down.
-			countUp=false;
-			counter=10;
-		}
-		makeApplication();
+		this.create();
+	}
+	
+	/**
+	 * Method Create used to create a new JPanel and return it based on the behavior decided by constructor.
+	 * It will create a JPnael and two JLabels.
+	 * One of JLabel used to show the first name and last name, the other one used to show timer.
+	 * For the timer, it will create a taskPerformer by override actionPerformed method of class ActionListener.
+	 * Then create a new timer configured by constant variable TIME_INTERVAL and taskPerformer instance and start it.
+	 * 
+	 * @return a panel instance which user wish to create.
+	 * @see java.awt.event.ActionListener;
+	 */
+	private void create() {
+		Font font = new Font("Papyrus", Font.PLAIN, 12);
+		
+		//Configure panel layout and size
+		setLayout(new GridLayout(2, 1));
+		setPreferredSize(new Dimension(100, 100));
+		setMinimumSize(new Dimension(100, 100));
+		
+		//Configure panel background color
+		setBackground(this.color);
+		
+		//JLabel for name
+		JLabel label1 = new JLabel("<html>Yuan<br>Cao</html>", JLabel.CENTER);
+		label1.setFont(font);
+		add(label1);
+		
+		//JLabel for time counter
+		JLabel label2 = new JLabel(Integer.toString(curTime), JLabel.CENTER);
+		label2.setFont(font);
+		add(label2);
+		
+		//Configuring timer for time counter
+		
+		//Setting task performer
+		ActionListener taskPerformer = new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				//Check increase flag then increase of decrease cur time
+				if(increase) {
+					curTime++;
+					if(curTime == 10) {curTime -= 10;}
+				}else {
+					curTime--;
+					if(curTime == -1) {curTime += 10;}
+				}
+				//Redrawing text of label2
+				label2.setText(Integer.toString(curTime));
+			}
+		};
+		
+		//Create a new timer and run it
+		Timer timer = new Timer(this.TIME_INTERVAL, taskPerformer);
+		timer.start();
 	}
 
-	//Creates the panel with required specifications.
-	public void makeApplication()					
-	{
-		//sets layout,font,border and size for the panel
+	/**
+	 * This main method used for test.
+	 * It should be commented when committed to github.
+	 * If some one want to test this class, he should decomment this method and try to run it.
+	 * 
+	 * @param args: arguments for main entrance.
+	 */
+	/*
+	public static void main(String[] args) {
 		
-		this.setFont(new Font("Papyrus",Font.PLAIN,10));
-		this.setPreferredSize(new Dimension(100, 100));
-		this.setLayout(null);
-		this.setBounds(100,100, 100, 100);
-		//customizing name label.
-		nameLabel=new JLabel("<html>Jahnavi<br>Bantupalli</html>",JLabel.CENTER);
-		nameLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
-		nameLabel.setBounds(50, 5, 200, 100);
-		//customizing timer label
-		timerLabel= new JLabel("",JLabel.CENTER);
-		timerLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
-		timerLabel.setBounds(50, 100, 200, 100);
-		//create a timer that generates an event after 1 second and pass it the frame object which handles the action event by implementing the ActionListener interface
-		Timer timer=new Timer(1000,this);
-		try
-		{
-		//start the timer
-		timer.start();					
-		}
-		catch(Exception e)
-		{
-			//Handles any exceptions
-			System.out.println("The timer failed to start"+e.getMessage());
-		}
-		//adds name label to the panel
-		this.add(nameLabel);		
-		//adds timer label to the panel
-		this.add(timerLabel);				
-
+		//Creating new JFrame
+		JFrame frame = new JFrame("Lab1 Test");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setUndecorated(true);
 		
-	}
-
-
-
-	@Override
-	public void actionPerformed(ActionEvent e){
-		try
-		{
-			//invokes thread
-		javax.swing.SwingUtilities.invokeLater(new UpdateCount());
-		}
-		catch(RuntimeException exception)
-		{
-			//handles run time exceptions.
-			nameLabel.setText("Thread failed to start due to "+exception.getMessage());		
-		}
-		}
-
-/*	public static void main(String args[])
-	{
-		 //creates a panel
-	    P006_Bantupalli_Panel jb= new P006_Bantupalli_Panel(3);
-	  //makes the panel satisfy the given requirements.
-	    jb.makeApplication();									
-	    JFrame mainFrame = new JFrame("Java Application");
-	    JPanel mainPanel= new JPanel(new BorderLayout());
-	    mainPanel.add(jb);
-		mainFrame.setSize(400,400);
-		mainFrame.setContentPane(mainPanel);;
-		mainFrame.setVisible(true);
-		mainFrame.setResizable(false);
+		//Setting and getting new panel
+		P018_Cao_Panel entity = new P018_Cao_Panel(2);
+		frame.setContentPane(entity);
 		
-		
-
-
+		//Pack and run it
+		frame.pack();
+		frame.setVisible(true);
 	}
 	*/
-
 }
-
