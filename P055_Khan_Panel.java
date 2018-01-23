@@ -26,7 +26,7 @@ public class P055_Khan_Panel extends JPanel{
 	private JLabel labelName;
 	private JLabel labelCounter;
 	private Timer timer;
-	public Color lightBlue = new Color(173,216,230);
+	public Color LIGHT_BLUE = new Color(173,216,230);
 	/*
 	 * This function initializes the panel and the labels
 	 * and assign color to the panel according to the value 
@@ -47,7 +47,7 @@ public class P055_Khan_Panel extends JPanel{
 				}
 			else
 				{labelCounter= new JLabel(String.valueOf( 9 ));
-				setBackground(lightBlue);
+				setBackground(LIGHT_BLUE);
 				}
 			labelCounter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			add(labelCounter);
