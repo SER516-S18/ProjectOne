@@ -67,7 +67,7 @@ public class P001_Ahuja_Panel extends JPanel
 
                     else {
 
-                        setBackground(new Color(224, 255, 255));
+                        setBackground(new Color(171, 216, 230));
 
 
                         if (decrement == 0)
