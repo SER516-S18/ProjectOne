@@ -35,7 +35,7 @@ public class P074_Mishra_Tab {
 			P054_Katpally_Panel katpally = new P054_Katpally_Panel(2);
 			panel.add(katpally.createPanel(), setGrid);
 			panel.add(new P055_Khan_Panel(3), setGrid);
-			//P056 -4
+			panel.add(new P056_Khatun_Panel(4), setGrid);
 			panel.add(new P057_Kolla_Panel(5), setGrid);
 			panel.add(new P058_Kotamraju_Panel(6), setGrid);
 			panel.add(new P059_Kulkarni_Panel(7), setGrid);
@@ -76,7 +76,7 @@ public class P074_Mishra_Tab {
 	}
 	// Code fragment to be used for only testing purpose
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		JTabbedPane tab = new JTabbedPane();
 		P074_Mishra_Tab mishraM = new P074_Mishra_Tab(); 
@@ -87,6 +87,6 @@ public class P074_Mishra_Tab {
 	    frame.setContentPane(tab);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	}*/
+	}
 
 }
