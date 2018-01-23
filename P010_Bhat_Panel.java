@@ -29,7 +29,8 @@ public class P010_Bhat_Panel extends JPanel {
 	 		this.setLayout(new GridLayout(2,1));
 	 		displayNumber = new JLabel();
 	 		fullName = new JLabel("<html>Kritika<br> Bhat</html>");
-	 		fullName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+			fullName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+	 		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	 		this.add(fullName);
 	 		this.add(displayNumber);
 	 		fullName.setHorizontalAlignment(JLabel.CENTER);
