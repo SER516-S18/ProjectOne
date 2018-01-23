@@ -61,7 +61,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		else
 		{
 			//set background color to light blue if i is odd.
-			setBackground(new Color(243,255,255));	
+			setBackground(new Color(173,216,230));	
 			//set the timer to count down.
 			countUp=false;
 			counter=10;
