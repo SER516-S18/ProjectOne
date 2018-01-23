@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class P016_Bumb_Panel extends JPanel {
     private int timer;
     private int type;
-   // private static JPanel jp;
+    // private static JPanel jp;
     private Font f = new Font("Papyrus", Font.BOLD, 16);
 
     /**
@@ -37,7 +37,7 @@ public class P016_Bumb_Panel extends JPanel {
      */
 
     private void function() {
-       // jp = new JPanel();
+        // jp = new JPanel();
         setSize(100,100);
         this.setLayout(new GridLayout(2,1)); // giving attributes to the panel
 //        jp.setPreferredSize(new Dimension(100,100));
@@ -86,15 +86,15 @@ public class P016_Bumb_Panel extends JPanel {
     }
     // Main method used for testing.
 
-   /** public static void main(String args[])
-    *{
-    *   JFrame jf= new JFrame();
-    *   jf.getContentPane().add(new P016_Bumb_Panel(3));// calling constructor.
-    *    jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    *    jf.setVisible(true);
-    *    jf.setSize(1200,400);
-    *    jf.add(jp);
-    }*/
+    /* public static void main(String args[])
+     *{
+     *  JFrame jf= new JFrame();
+     *   jf.getContentPane().add(new P016_Bumb_Panel(3));// calling constructor.
+     *    jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     *    jf.setVisible(true);
+     *    jf.setSize(1200,400);
+
+     *}*/
 
 
 
