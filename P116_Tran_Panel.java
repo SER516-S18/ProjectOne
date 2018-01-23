@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -22,6 +23,10 @@ public class P116_Tran_Panel extends JPanel {
 		 *      Tran
 		 *      [0-9]
 		 */
+
+		_firstName_label.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		_lastName_label.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		_counter_label.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
 		this.setSize(DIMENSION, DIMENSION);
 		this.setLayout(new GridLayout(3, 1));
@@ -66,7 +71,7 @@ public class P116_Tran_Panel extends JPanel {
 	 * @param args Command line arguments.
 	 */
 	public static void main(String... args) {
-		P116_Tran_Panel panel = new P116_Tran_Panel(117);
+		P116_Tran_Panel panel = new P116_Tran_Panel(116);
 		JFrame frame = new JFrame();
 		frame.add(panel);
 		frame.setSize(100, 100);
