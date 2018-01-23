@@ -11,11 +11,10 @@ import javax.swing.JPanel;
  * Description - The class creates a panel with my First Name & Last Name with 
  * counter & background changing based on the integer passed to the constructor.
 */
-public class P076_Mohan_Panel implements Runnable {
+public class P076_Mohan_Panel extends JPanel implements Runnable {
 
 	//Declaring class variables
 	private final int DECIDER;
-	private JPanel panel = new JPanel();
 	private JLabel timerLabel = new JLabel();
 	private Thread thread = new Thread();
 	private final Color lIGHTBLUE= new Color(173,216,230);
@@ -26,6 +25,7 @@ public class P076_Mohan_Panel implements Runnable {
 	 */
 	public P076_Mohan_Panel(int input){
 		DECIDER = input;
+		myPanel();
 	}
 	
 	//Designing the panel with details
@@ -42,10 +42,10 @@ public class P076_Mohan_Panel implements Runnable {
 		timerLabel.setHorizontalAlignment(JLabel.CENTER);
 	
 		//Adding the labels to the panel.
-		panel.setLayout(new BorderLayout());	
-		panel.setSize(100, 100);
-		panel.add(BorderLayout.NORTH, nameLabel);
-		panel.add(timerLabel);
+		setLayout(new BorderLayout());	
+		setSize(100, 100);
+		add(BorderLayout.NORTH, nameLabel);
+		add(timerLabel);
 	
 		//Starting the Thread for the counter.
 		this.thread = new Thread(this);
@@ -64,7 +64,7 @@ public class P076_Mohan_Panel implements Runnable {
 		*/
 		if (DECIDER % 2 == 0)
 		{
-			panel.setBackground(lIGHTBLUE);
+			setBackground(Color.WHITE);
 			
 			do {
 				for (int counter = 0;counter < 10; counter++)
@@ -84,7 +84,7 @@ public class P076_Mohan_Panel implements Runnable {
 		 */
 		else
 		{
-			panel.setBackground(Color.white);
+			setBackground(lIGHTBLUE);
 			
 			do {
 					for (int counter = 9 ;counter >= 0; counter--)
@@ -100,15 +100,5 @@ public class P076_Mohan_Panel implements Runnable {
 					
 				}while(true);
 		}
-	}
-	
-	/**
-	 *  Method to access the myPanel 
-	 * @return myPanel
-	 */
-	public JPanel getPanel() {
-		
-		myPanel();
-		return panel;
 	}
 }
