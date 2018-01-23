@@ -33,14 +33,14 @@ public class P040_Henderson_Panel extends JPanel {
 		labelName.setFont(FONT);
 		labelName.setHorizontalAlignment(SwingConstants.CENTER);
 		labelName.setAlignmentX(0.5f);
-		this.add(labelName, BorderLayout.PAGE_START); // Add the name label to the panel, at the top
+		this.add(labelName, BorderLayout.PAGE_START); // Add name label to panel, at the top
 
 		if(value % 2 == 0) {
-			// Per spec, if value is even set the panel background to white and count up
+			// If value is even set the panel background to white and count up
 			this.setBackground(Color.WHITE);
 			labelCounter = new JCountdownLabel(true);
 		} else {
-			// Otherwise per spec, if value is odd set the panel background to light blue and count down
+			// If value is odd set the panel background to light blue and count down
 			this.setBackground(LIGHT_BLUE);
 			labelCounter = new JCountdownLabel(false);
 		}
@@ -70,9 +70,9 @@ public class P040_Henderson_Panel extends JPanel {
 			ActionListener task = e -> {
 				JCountdownLabel.this.value = (JCountdownLabel.this.value + 1) % 10; // Keep counting
 				if(ascending)
-					this.setText( String.valueOf(JCountdownLabel.this.value) ); // If counting up, display raw value
+					this.setText( String.valueOf(JCountdownLabel.this.value) ); // (Raw value)
 				else
-					this.setText( String.valueOf(9 - JCountdownLabel.this.value) ); // If counting down, display 9 minus raw value
+					this.setText( String.valueOf(9 - JCountdownLabel.this.value) ); // (9 - raw value)
 			};
 
 			// Timer to increment the value and update the label
