@@ -90,8 +90,8 @@ public class P097_Sampath_Panel extends JPanel{
         Border border = counterLabel.getBorder();
         Border margin = new EmptyBorder(11,11,11,11);
         counterLabel.setBorder(new CompoundBorder(border, margin));
-        nameLabel.setFont(new Font("Papyrus",Font.BOLD,16));
-        counterLabel.setFont(new Font("Papyrus",Font.BOLD,16));
+        nameLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
+        counterLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
         add(nameLabel);
         add(counterLabel);
     }
