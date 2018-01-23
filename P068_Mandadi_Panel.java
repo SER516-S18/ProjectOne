@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  * @author Siva Pranav Mandadi
  * @date 01/22/2018
@@ -13,7 +8,6 @@
  * Panel background is set to WHITE if value is even or LIGHT BLUE (173,216,230) if odd.
  * Counter increments from 0-9 if value is even or decrements from 9-0 if odd.
  */
-package p068_mandadi_panel;
 import java.awt.*;
 import javax.swing.*;
 
