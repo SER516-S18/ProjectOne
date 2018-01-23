@@ -29,22 +29,21 @@ public class P050_Kapadia_Panel extends JPanel {
      * creates the panels, labels and takes care of the counter
      */
     private void init(){
-        JPanel p = new JPanel();
         if(type%2==0)
-            p.setBackground(new Color(255,255,255));
+            setBackground(new Color(255,255,255));
         else
-            p.setBackground(new Color(90,150,255));
+            setBackground(new Color(90,150,255));
 
-        p.setLayout(new GridLayout(2,1));
-        p.setPreferredSize(new Dimension(100,100));
+        setLayout(new GridLayout(2,1));
+        setPreferredSize(new Dimension(100,100));
 
         JLabel nameLab = new JLabel("<html>Zubin<br/>Kapadia</html>", JLabel.CENTER);
         nameLab.setFont(font);
-        p.add(nameLab);
+        add(nameLab);
 
         JLabel TimerLab = new JLabel("Timer", JLabel.CENTER);
         TimerLab.setFont(font);
-        p.add(TimerLab);
+        add(TimerLab);
 
         try {
             final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
@@ -69,8 +68,6 @@ public class P050_Kapadia_Panel extends JPanel {
         catch (Exception e){
             e.printStackTrace();
         }
-
-        add(p);
     }
 
     /**
