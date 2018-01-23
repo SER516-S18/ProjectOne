@@ -16,7 +16,6 @@ public class P024_Deolal_Panel extends JPanel {
     public P024_Deolal_Panel(int check){
         this.check = check;
         set_panel_size();
-        name_label();
         set_background_colour();
         set_counter_value();
         set_timer();
@@ -41,18 +40,22 @@ public class P024_Deolal_Panel extends JPanel {
         }
     }
 
-      // function to initialize the full name
-    private void name_label() {
-        myName = new JLabel("<html>Kaustuv<br>Deolal</html>");
-        myName.setFont(new Font("TimesRoman",Font.BOLD,14));
-        this.add(myName);
-    }
+         
 
 
     // Clock timer begins. If the initial value of check is even it increments else it decrements by one.
     private void set_timer() {
         clock = new JLabel(String.valueOf(value_of_counter));
-        clock.setFont(new Font("TimesRoman",Font.ITALIC,14));
+        clock.setFont(new Font("Papyrus",Font.PLAIN,15));
+        myName = new JLabel("<html>Kaustuv<br>Deolal</html>");
+        myName.setFont(new Font("Papyrus",Font.PLAIN,15));
+        myName.setHorizontalAlignment(JLabel.CENTER);
+        myName.setVerticalAlignment(JLabel.CENTER);
+        clock.setVerticalAlignment(JLabel.CENTER);
+        clock.setHorizontalAlignment(JLabel.CENTER);
+        setLayout(new GridLayout(2, 0));
+       
+        this.add(myName);
         this.add(clock);
 
         // listener to start the timer
@@ -68,6 +71,8 @@ public class P024_Deolal_Panel extends JPanel {
                 else value_of_counter = value_of_counter -1;
                 
                 clock.setText(String.valueOf(value_of_counter));
+                
+
             }
         };
         new Timer(wait, driver).start();
@@ -87,9 +92,9 @@ public class P024_Deolal_Panel extends JPanel {
         
     }
 
-  /*  public static void main(String [] s) {
+    /*public static void main(String [] s) {
         JFrame jFrame = new JFrame();
-        jFrame.setContentPane(new P024_Deolal_Panel(7));
+        jFrame.setContentPane(new P024_Deolal_Panel(4));
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.pack();
         jFrame.setVisible(true);
