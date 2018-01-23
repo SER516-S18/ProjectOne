@@ -55,9 +55,9 @@ public class P094_Vellore_Panel extends JPanel{
 		
 		//setting the size of the panel x,y axis
 		setLayout(new BorderLayout());
-        setSize(100,100);
-        
-			
+		setSize(100,100);
+		
+		
 		//Resetting the font and alignment for both the variables
 		Font font = new Font("Papyrus", Font.PLAIN, 15);
 		name.setFont(font);
@@ -128,7 +128,7 @@ public class P094_Vellore_Panel extends JPanel{
 	
 	public static void main(String[] args) {
 		
-		P094_Vellore_Panel object= new P094_Vellore_Panel(4);
+		P094_Vellore_Panel object= new P094_Vellore_Panel(3);
 		JFrame b=new JFrame(" ");
 		b.setVisible(true);
 		b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
