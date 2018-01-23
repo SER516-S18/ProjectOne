@@ -8,7 +8,7 @@ public class P080_Nolastname_Panel implements Runnable{
     private JLabel nameLabel;  // JLabel for FullName(First Row contains First name and second row contains last name)
     static Integer startingPoint;
 
-    public P080_Nolastname_Panel(int num){
+    public JPanel P080_Nolastname_Panel(int num){
         p = new JPanel();
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         p.setSize(100,100);
@@ -22,6 +22,7 @@ public class P080_Nolastname_Panel implements Runnable{
         timeLabel.setFont(font);
         timeLabelOrder(num);
         p.add(nameLabel);
+        return p;
     }
 
     public void timeLabelOrder(int num){  // Function to identify whether even or odd input is provided and increments or decrements the timer accordingly
