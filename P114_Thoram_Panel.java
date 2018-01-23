@@ -8,119 +8,91 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/*
+ * SER516 lab1
+ * Program implements a panel showing name and counter 
+ */
 public class P114_Thoram_Panel extends JPanel {
-    /**
-     * 
-     */
-	//string name variable to add name to the JLabel name
-	public static final String name_panel = "<html><font color='black'>NagaThoram</font></html>";
-	//JLabel that which need to be displayed in the panel
-    JLabel name;
-    JLabel counter;
-    private static final long serialVersionUID = 1L;
-    //count to hold the global count value
-    public static int count;
-    //boolean useful to configure the panel environment 
-    boolean conf;
-    //constructor that decides the values of configuration variables(conf,count) based on input type
-    public P114_Thoram_Panel(int inp) {
-        if(inp%2==0)    
-        {
-            conf=true;
-            count=0;
-        }
-        else
-        {
-            conf=false;
-            count=9;
-        }
-        set_bg_counter();
-    }
-    public P114_Thoram_Panel get_object()
-    {
-    	//returning an instance of class
-        return this;
-    }
-    public void set_bg_counter() {
-    	//setting dimensions for the panel
-    	this.setLayout(new GridBagLayout());
-    	GridBagConstraints cnst = new GridBagConstraints();
-    	cnst.fill=GridBagConstraints.HORIZONTAL;
-    	cnst.gridx=1;
-    	cnst.gridy=0;
-        this.setPreferredSize(new Dimension(100, 100));
-        if(conf)
-            this.setBackground(Color.WHITE); //even input white background
-        else{
-            Color blue = new Color(173,216,230); //blue color 
-            this.setBackground(blue);//odd input blue color
-        }
-        //setting up name label with font and size
-        name = new JLabel(name_panel);
-        name.setFont(new Font("Papyrus",Font.PLAIN,15));
-        this.add(name,cnst); // adding name label to panel
-        //setting and initialing counter label
-        counter = new JLabel(String.valueOf(count));
-        counter.setFont(new Font("Papyrus",Font.PLAIN,15));
-        cnst.fill=GridBagConstraints.CENTER;
-        cnst.gridx=1;
-        cnst.gridy=1;
-        this.add(counter,cnst); //adding counter label to panel
-        //try catch to handle timer increments
-        try
-        {
-        new Timer(1000 ,new ActionListener()
-        {
-            
-            public void actionPerformed(ActionEvent arg0) {
-                int temp_val = Integer.parseInt(counter.getText());
-                //System.out.println("hello!!");
-                if(conf)
-                {
-                    if(temp_val==9)
-                    {
-                        temp_val=0;
-                    }
-                    else
-                    {
-                        temp_val++;
-                    }
-                }
-                else
-                {
-                    if(temp_val==0)
-                    {
-                        temp_val=9;
-                    }
-                    else
-                    {
-                        temp_val--;
-                    }
-                }
-                counter.setText(String.valueOf(temp_val));
-            }
-            
-        }).start();
-        }
-        catch(Exception e)
-        {
-        	//printing stack trace in case of exception
-            e.printStackTrace();
-        }
-        
-    }
-        
 
-    /**
-     * @param args
-     */
-  /*  public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        SwingUtilities.invokeLater(new Runnable() {
- 
-        public void run() { JFrame test = new JFrame();
-        test.add(new P114_Thoram_Panel(22).get_object());
-        test.setVisible(true);
-        test.setSize(100, 100); } });
-    }*/
+	public static final int RED = 173;
+	public static final int GREEN = 216;
+	public static final int BLUE = 230;
+	public static final String NAME_PANEL = "<html><font color='black'>NagaThoram</font></html>";
+	public JLabel name;
+	public JLabel counter;
+	private static final long serialVersionUID = 1L;
+	public static int count;
+	boolean configuration;
+
+	/*
+	 * @param input integer value Constructor accepts the input Based on the type of
+	 * integer like odd or even background color and counter initialization is made.
+	 */
+	public P114_Thoram_Panel(int input) {
+		if (input % 2 == 0) {
+			configuration = true;
+			count = 0;
+		} else {
+			configuration = false;
+			count = 9;
+		}
+		setBackGroundCounter();
+	}
+
+	/*
+	 * set background for panel. adds name and counter labels to panel with
+	 * respective values. Implements counter with help of Timer
+	 */
+	public void setBackGroundCounter() {
+		this.setLayout(new GridBagLayout());
+		GridBagConstraints constraint = new GridBagConstraints();
+		this.setPreferredSize(new Dimension(100, 100));
+		if (configuration)
+			this.setBackground(Color.WHITE);
+		else {
+			Color lightBlue = new Color(RED, GREEN, BLUE);
+			this.setBackground(lightBlue);
+		}
+		name = new JLabel(NAME_PANEL);
+		name.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		// constraints for name label alignment
+		constraint.fill = GridBagConstraints.HORIZONTAL;
+		constraint.gridx = 1;
+		constraint.gridy = 0;
+		this.add(name, constraint);
+		counter = new JLabel(String.valueOf(count));
+		counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		// constraints for counter label alignment
+		constraint.fill = GridBagConstraints.CENTER;
+		constraint.gridx = 1;
+		constraint.gridy = 1;
+		this.add(counter, constraint);
+		// try-catch block to handle timer exception
+		try {
+			new Timer(1000, new ActionListener() {
+
+				public void actionPerformed(ActionEvent arg0) {
+					int counterValue = Integer.parseInt(counter.getText());
+					if (configuration) {
+						if (counterValue == 9) {
+							counterValue = 0;
+						} else {
+							counterValue++;
+						}
+					} else {
+						if (counterValue == 0) {
+							counterValue = 9;
+						} else {
+							counterValue--;
+						}
+					}
+					counter.setText(String.valueOf(counterValue));
+				}
+
+			}).start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }
