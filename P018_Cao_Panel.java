@@ -48,7 +48,7 @@ public class P018_Cao_Panel extends JPanel{
 		if((arg & 1) == 1) {
 			//If odd
 			//Setting background LightBlue
-			this.color = new Color(135, 206, 250);
+			this.color = new Color(173, 216, 230);
 			//Setting counter decrease
 			this.increase = false;
 			//Current time should be 9
