@@ -47,14 +47,16 @@ class P078_Morris_Panel extends JPanel {
         label_name.setHorizontalAlignment(JLabel.CENTER);
         label_count.setFont(new Font("Papyrus", Font.PLAIN, 30));
         label_count.setHorizontalAlignment(JLabel.CENTER);
-        
-        
         setLayout(new GridLayout(1, 2));
         setPreferredSize(new Dimension(100, 100));
         add(label_name);
         add(label_count);
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new CounterTask(), 1000, 1000);
+        try {
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new CounterTask(), 1000, 1000);
+        } catch(Exception e) {
+            System.out.println("Error with P078_Morris_Panel.java");
+        }
     }
     
     /**
