@@ -59,11 +59,12 @@ public class P097_Sampath_Panel extends JPanel{
         try {
             oneSecondTask = new TimerTask() {
                 public void run() {
+                    counterLabel.setText(String.valueOf(counter));
                     if (isEven)
                         counter = (counter + 1) % 10;
                     else
                         counter = (9 + counter) % 10;
-                    counterLabel.setText(String.valueOf(counter));
+
                 }
             };
 
