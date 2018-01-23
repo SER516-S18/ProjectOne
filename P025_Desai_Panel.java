@@ -19,7 +19,7 @@ public class P025_Desai_Panel extends JPanel {
     private int timer;
     private int type;
     private Font f = new Font("Papyrus", Font.PLAIN, 15);
-    private static JPanel jp;
+   // private static JPanel jp;
     /**
      * Class constructor.
      * @param  type Describes the background and counter mode of the panel. Even numbers result in a PanelType.WhiteIncrementor, odd give a PanelType.LightBlueDecrementor.
@@ -38,13 +38,13 @@ public class P025_Desai_Panel extends JPanel {
      * This action function also executes the thread for the counter.
      * Exception handling is included to check for errors encountered by threads.*/
     private void action_function() {
-        jp = new JPanel();
-        jp.setLayout(new GridLayout(2,1));
+      //  jp = new JPanel();
+        this.setLayout(new GridLayout(2,1));
 //        jp.setPreferredSize(new Dimension(100,100));
         if (type % 2 == 0)
-            jp.setBackground(new Color(255, 255, 255));
+            this.setBackground(new Color(255, 255, 255));
         else
-            jp.setBackground(new Color(0, 255, 255));
+            this.setBackground(new Color(0, 255, 255));
         JLabel name = new JLabel("<html>Dhruti<br> Desai</html>", JLabel.CENTER);
         name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         JLabel counter = new JLabel("",JLabel.CENTER);
@@ -74,8 +74,9 @@ public class P025_Desai_Panel extends JPanel {
             }
         }, 0, 1, TimeUnit.SECONDS);
 
-        jp.add(name);
-        jp.add(counter);
+        this.add(name);
+        this.add(counter);
+         setVisible(true);
 
     }
     /**Main function is included for testing. */
