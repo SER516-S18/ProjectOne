@@ -76,6 +76,7 @@ public class P053_Kashyap_Panel extends JPanel{
                             Thread.sleep(1000);
                         } 
                         catch(Exception e){
+				/* Catch exceptions if any */
                         }
                     }
                 }
@@ -96,6 +97,7 @@ public class P053_Kashyap_Panel extends JPanel{
                             Thread.sleep(1000);
                         } 
                         catch(Exception e){
+				/* Catch exceptions if any */
                         }
                     }
                 }
