@@ -15,9 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class P047_Kakarla_Panel {
-	
-	private JPanel p;
+public class P047_Kakarla_Panel extends JPanel {
 	
 	private JLabel firstname; 
 	private JLabel lastname;
@@ -40,41 +38,31 @@ public class P047_Kakarla_Panel {
 		{
 			even=false;
 		}
-	}
-
-	public JPanel P047_Kakarla_Panel() {
-		/* params: None
-		 * return: JPanel object 
-		 * Description: Populates JPanel with three JLabels arranged in Y_axis.
-		 */
-		
-		//setting up JPanel and its color to either white or blue based upon input.
-		p=new JPanel();
-		p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		if(even==true)
 		{
-			p.setBackground(Color.white);
+			this.setBackground(Color.white);
 		}
 		else
 		{
-			p.setBackground(new Color(51,204,255));
+			this.setBackground(new Color(51,204,255));
 		}
 		
-		p.setPreferredSize(new Dimension(100,100));
-		p.setMaximumSize( p.getPreferredSize() );
+		this.setPreferredSize(new Dimension(100,100));
+		this.setMaximumSize( this.getPreferredSize() );
 		
 		//setting up JLabel for firstname and lastname in 2 different lines.
-		firstname=new JLabel(" Venkat Sai Shirisha");
-		lastname= new JLabel(" Kakarla");
+		this.firstname=new JLabel(" Venkat Sai Shirisha");
+		this.lastname= new JLabel(" Kakarla");
 		
 		//setting up the JLabel for the Timer.
-		count=new JLabel();
+		this.count=new JLabel();
 		
-		p.add(firstname);
-		p.add(lastname);
-		p.add(count);
-		p.setVisible(true);
+		this.add(firstname);
+		this.add(lastname);
+		this.add(count);
+		this.setVisible(true);
 		
 		
 		//setting up counter,if input is even it is increasing. 
@@ -82,10 +70,7 @@ public class P047_Kakarla_Panel {
 			P047_Kakarla_CounterIncrement();
 		else
 			P047_Kakarla_CounterDecrement();
-		
-		return p;
 	}
-	
 	
 	public void P047_Kakarla_CounterIncrement() {
 		/* params: None 
@@ -130,24 +115,5 @@ public class P047_Kakarla_Panel {
 	        }
 	    }.start();
 	} 
-	
-	//For testing purpose this class was created.
-	public static void main(String[] args) {
-		/*
-		 * params: None 
-		 * return: None. 
-		 * Description: To test. 
-		 */
-		
-		P047_Kakarla_Panel ob= new P047_Kakarla_Panel(3);
-		JPanel p=ob.P047_Kakarla_Panel();
-		JFrame f=new JFrame("Simple Window");
-		//f.setSize(800,800);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.getContentPane().add(p);
-		f.pack();
-		//f.add(p);
-		f.setVisible(true);
-	}
 }
 

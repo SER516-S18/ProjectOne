@@ -30,22 +30,19 @@ public class P039_Henderson_Tab extends JPanel {
 		// 39 is the tab author.
 		this.add(new P038_Gupta_Panel(12));
 		this.add(new P040_Henderson_Panel(13));
-		// Individual is not conforming to convention and does
-		// not respond to group discussions.
-		this.add(new P041_Hosahalli_Panel(14).
-			preparePanelUI(new Color(173,216,230)));
+		this.add(new P041_Hosahalli_Panel(14));
 		// Is not a panel. Will not work. Does not appear to be done.
 		// this.add(new P042_Yiru_Panel(15));
 		this.add(new P043_Iyer_Panel(16));
 		this.add(new P044_Jaime_Panel(17));
 		this.add(new P045_JOHAR_Panel(18));
 		// this.add(new P046_NAME_Panel(19)); Does not exist.
-		this.add(new P047_Kakarla_Panel(20).P047_Kakarla_Panel());
+		this.add(new P047_Kakarla_Panel(20));
 		this.add(new P048_Kalluri_Panel(21));
 		this.add(new P049_Kandimalla_Panel(22));
 		this.add(new P050_Kapadia_Panel(23));
 		this.add(new P051_Kapoor_Panel(24));
-		this.add(new P052_Kasam_Panel(25).P052_Kasam_Panel());
+		this.add(new P052_Kasam_Panel(25));
 		// This person swears that they are group 2. Could be
 		// because the main author is in our block.
 		this.add(new P131_Zhou_Panel(25));

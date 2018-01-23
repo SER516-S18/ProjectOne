@@ -16,9 +16,8 @@ Try-catch statements are also included for handling exceptions (while the use of
 @author Vineesha Kasam
 */
 
-public class P052_Kasam_Panel {
+public class P052_Kasam_Panel extends JPanel {
 	
-	private JPanel kasamPanel;
 	private JLabel myfirstlastName; 
 	private JLabel cnt;
 	
@@ -38,30 +37,25 @@ public class P052_Kasam_Panel {
 		{
 			evenOrOddString = "ODD";
 		}
-	}
 
-	public JPanel P052_Kasam_Panel() {
-		
-		kasamPanel = new JPanel();
-
-		kasamPanel.setLayout(new BoxLayout(kasamPanel, BoxLayout.Y_AXIS));
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
 		//Based on the parameter passed and the "evenOroddString" variable, we set the background color either to white or light blue
 		// (This is done after the constructor is called with the integer parameter
 		
 		if(evenOrOddString == "EVEN")
 		{
-			kasamPanel.setBackground(Color.white);
+			this.setBackground(Color.white);
 		}
 		else
 		{
-			kasamPanel.setBackground(new Color(173,216,230));
+			this.setBackground(new Color(173,216,230));
 		}
 		
-		//setting differenty parameters for kasamPanel
-		kasamPanel.setPreferredSize(new Dimension(100,100));
+		//setting differenty parameters for this
+		this.setPreferredSize(new Dimension(100,100));
 
-		kasamPanel.setMaximumSize(kasamPanel.getPreferredSize() );
+		this.setMaximumSize(this.getPreferredSize() );
 		
 		// creating two JLabels for my first name and last name in two separate rows AND 
 		// counter display on sepearte row
@@ -69,10 +63,10 @@ public class P052_Kasam_Panel {
 		myfirstlastName =  new JLabel("<html><br>Vineesha<br>Kasam<br></html>");
 		cnt = new JLabel();
 		
-		// Add the labels to the kasamPanel
-		kasamPanel.add(myfirstlastName);
-		kasamPanel.add(cnt);
-		kasamPanel.setVisible(true);
+		// Add the labels to the this
+		this.add(myfirstlastName);
+		this.add(cnt);
+		this.setVisible(true);
 		
 		if(evenOrOddString == "EVEN") 
 		{
@@ -135,28 +129,5 @@ public class P052_Kasam_Panel {
 	        		}
 	    		}.start();
 		}
-			
-		return kasamPanel;
-	}
-	
-	
-	
-	// main function was written just to see how the panel is displayed
-
-	public static void main(String[] args) {
-		
-		P052_Kasam_Panel myPanelObject = new P052_Kasam_Panel(4);
-		//P052_Kasam_Panel myPanelObject = new P052_Kasam_Panel(3);
-
-		JPanel myPanel = myPanelObject.P052_Kasam_Panel();
-
-		JFrame frame = new JFrame("My Panel (Vineesha Kasam)");
-		frame.setSize(500,500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		// adding mypanel created to the frame
-		frame.getContentPane().add(myPanel);
-		frame.pack();
-		frame.setVisible(true);
 	}
 }
