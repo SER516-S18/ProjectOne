@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package javaapplication1;
 
 import javax.swing.JPanel;
 import java.awt.*;
@@ -29,7 +30,7 @@ import java.util.Timer;
           Creating Labels for adding Full name and timer.
             */
         
-        JLabel firstName,lastName,timerLabel;
+        JLabel firstName,lastName,timerLabel;   
         Color lightBlue = new Color(90,150,255); 
         firstName=new JLabel("Srajan");
         lastName=new JLabel("Gupta");
@@ -74,9 +75,8 @@ import java.util.Timer;
                         }
                         else 
                         {   
-                            setBackground(new Color(90,150,255));
+                            setBackground(lightBlue);
                             add(timerLabel);
-                            
                             timerLabel.setText(String.valueOf(decCouter));
                             timerLabel.setBounds(60, 13, 100, 30);
                           
