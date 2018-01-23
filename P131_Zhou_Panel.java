@@ -104,7 +104,7 @@ public class P131_Zhou_Panel extends JPanel {
 		}
 	}
 
-
+         /**
 	 public static void main(String[] args) {
 	 P131_Zhou_Panel zhou = new P131_Zhou_Panel(4);
 	 JFrame frame = new JFrame();
@@ -112,7 +112,8 @@ public class P131_Zhou_Panel extends JPanel {
 	 frame.add(zhou);
 	 frame.setVisible(true);
 	 }
-
+         * Test myself.
+	 */
 
 }
 
