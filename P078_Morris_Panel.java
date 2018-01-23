@@ -32,7 +32,10 @@ class P078_Morris_Panel extends JPanel {
      * decreases.
      */
     public P078_Morris_Panel(int value) {
+        // determine if value is odd  or even
         isEven = value %2 == 0;
+        // creates counter lable, determines background color and counter
+        // direction
         if(isEven) {
             setBackground(Color.WHITE);
             count = 0;
@@ -42,15 +45,22 @@ class P078_Morris_Panel extends JPanel {
             count = 9;
             label_count = new JLabel("9");
         }
+        // create name label
         label_name = new JLabel(string_name);
+        // set font style and size
         label_name.setFont(new Font("Papyrus", Font.PLAIN, 20));
-        label_name.setHorizontalAlignment(JLabel.CENTER);
         label_count.setFont(new Font("Papyrus", Font.PLAIN, 30));
+        // set font alignment
+        label_name.setHorizontalAlignment(JLabel.CENTER);
         label_count.setHorizontalAlignment(JLabel.CENTER);
+        // set how panel is layed out
         setLayout(new GridLayout(1, 2));
+        // set size of panel
         setPreferredSize(new Dimension(100, 100));
+        // creates the panel
         add(label_name);
         add(label_count);
+        // creates timer thread
         try {
             Timer timer = new Timer();
             timer.scheduleAtFixedRate(new CounterTask(), 1000, 1000);
@@ -70,17 +80,24 @@ class P078_Morris_Panel extends JPanel {
          */
         @Override
         public void run() {
+            // increases counter
             if(isEven) {
                 counter++;
                 count = counter %10;
-            } else {
+            }
+            // decreases counter
+            else {
                 counter--;
+                // ensures 0 is printed
                 if(counter %10 == 0) {
                     count = 0;
-                } else {
+                } 
+                // ensures counter goes down
+                else {
                     count = (counter %10) + 10;
                 }
             }
+            // sets current counter value in panel
             label_count.setText(Integer.toString(count));
         }
     }
