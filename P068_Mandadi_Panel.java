@@ -49,14 +49,17 @@ public P068_Mandadi_Panel(int key){
 
     private void nameandtimer(int key) throws InterruptedException {
         //Name is Printed in one Multi-Lined Label
+       this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS)); 
        name = new JLabel("<html>Siva Pranav<br>Mandadi</html>");
-       name.setHorizontalAlignment(JLabel.CENTER);
+       name.setAlignmentX(Component.CENTER_ALIGNMENT);
        name.setFont(new Font("Papyrus",Font.PLAIN,15));
-       this.add(name);//Adding the Name Label to the Panel
+       //Adding the Name Label to the Panel
+       this.add(name);
        counter = new JLabel();
        counter.setFont(new Font("Papyrus",Font.PLAIN,15));
-       counter.setHorizontalAlignment(JLabel.CENTER);
-       this.add(counter);//Addign the Counter Label to the Panel
+       counter.setAlignmentX(Component.CENTER_ALIGNMENT);
+       //Adding the Counter Label to the Panel 
+       this.add(counter);
        Thread t;
         t = new Thread(() -> {
             //Starting value is 0 if even or 9 if odd.
