@@ -12,7 +12,7 @@ public class P005_Banerjee_Panel extends JPanel
 	int count_odd = 9;
 	
 	//creating JPanel and JLabels for printing Firstname, Lastname and the timer field
-	JPanel myPanel = new JPanel();
+	//JPanel myPanel = new JPanel();
 	private JLabel firstname = new JLabel("Sanchari", JLabel.CENTER);
 	private JLabel lastname = new JLabel("Banerjee", JLabel.CENTER);
 	private JLabel displayNumber = new JLabel("  0  ", JLabel.CENTER);
@@ -34,15 +34,15 @@ public class P005_Banerjee_Panel extends JPanel
 	private JPanel createPanel(int flag)
 	{	
 		//setting panel dimension to a window of size 100X100
-		myPanel.setPreferredSize(new Dimension(100, 100));
-	    	myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.PAGE_AXIS));  
+		this.setPreferredSize(new Dimension(100, 100));
+	    	this.setLayout(new BoxLayout(myPanel, BoxLayout.PAGE_AXIS));  
 	   
 	    	//Printing the labels
-	    	myPanel.add(firstname, BorderLayout.CENTER);
-	    	myPanel.add(lastname);
+	    	this.add(firstname, BorderLayout.CENTER);
+	    	this.add(lastname);
 	   	// flagNum = new JLabel(String.valueOf(flag));
 	    	//myPanel.add(flagNum);
-		myPanel.add(displayNumber);
+		this.add(displayNumber);
 		
 		//Aligning the labels to center of the panel
 		firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -66,7 +66,7 @@ public class P005_Banerjee_Panel extends JPanel
 					if(flag==1)
 					{	
 						Color white = new Color(255,255,255);
-						myPanel.setBackground(white);
+						this.setBackground(white);
 						
 						if(count_even<10)
 						{	
@@ -82,7 +82,7 @@ public class P005_Banerjee_Panel extends JPanel
 					else if(flag==0)
 					{	
 						Color lightblue = new Color(173,216,230);
-						myPanel.setBackground(lightblue);
+						this.setBackground(lightblue);
 						
 						if(count_odd>0)
 						{
