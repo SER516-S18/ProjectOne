@@ -130,22 +130,4 @@
  	}
  			
 
- 		
- 	
-
- 	
- 	/* Main method for testing purpose */
-	/* 
- 	public static void main(String[] args) {
- 		JFrame frame =  new JFrame();
- 		frame.setVisible(true);
-		frame.setSize(100,100);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		P105_Siddiqui_Panel testing = new P105_Siddiqui_Panel(105);
-		frame.add(testing);
- 		
- 	}
-	*/
-
  }
