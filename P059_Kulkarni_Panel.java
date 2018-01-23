@@ -1,4 +1,3 @@
-// Import necessary libraries
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -27,26 +26,22 @@ import java.util.TimerTask;
  */
 
 public class P059_Kulkarni_Panel extends Panel {
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	// Constants
 	private int counter = 0;
 	private boolean even = true;
-	public static final int FONT_SIZE = 15;
+	private static final int FONT_SIZE = 15;
+	private static final String FONT_TYPE = "Papyrus";
+	private static final String NAME = "<html>Mitali<br/>Kulkarni</html>";
 	
-	// Constructor 
+	/**
+	 * Determines counter and background color of Panel
+	 * If even = true , background is white and counter increases from 0 to 9. 
+	 * If even = false, background is light blue and counter decreases from 9 to 0. 
+	 * Even is true by default.
+	 */
 	public P059_Kulkarni_Panel(int color_value) {
-		
-		/**
-		 * Determines counter and background color of Panel
-		 * If even = true , background is white and counter increases from 0 to 9. 
-		 * If even = false, background is light blue and counter decreases from 9 to 0. 
-		 * Even is true by default.
-		 */
 		if (color_value % 2 == 0) {
 			even = true;
 			counter = 0;
@@ -57,17 +52,17 @@ public class P059_Kulkarni_Panel extends Panel {
 		
 		try {
 			// Add First Name JLabel with font = Papyrus Color = BLACK
-			JLabel NameLabel = new JLabel("<html>Mitali<br/>Kulkarni</html>", JLabel.CENTER);
+			JLabel NameLabel = new JLabel(NAME, JLabel.CENTER);
 			NameLabel.setHorizontalAlignment(JLabel.CENTER);
 			NameLabel.setVerticalAlignment(JLabel.CENTER);
-			NameLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
+			NameLabel.setFont(new Font(FONT_TYPE, Font.PLAIN, FONT_SIZE));
 			NameLabel.setForeground(Color.BLACK);
 			
 			// Add Timer JLabel with font = Papyrus Color = BLACK
 			JLabel timer = new JLabel("", JLabel.CENTER);
 			timer.setHorizontalAlignment(JLabel.CENTER);
 			timer.setVerticalAlignment(JLabel.CENTER);
-			timer.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
+			timer.setFont(new Font(FONT_TYPE, Font.PLAIN, FONT_SIZE));
 			timer.setForeground(Color.BLACK);
 			
 			// Timer object
@@ -92,35 +87,13 @@ public class P059_Kulkarni_Panel extends Panel {
 						}
 					}
 				}, 0, 1000);
-				
 			// Set up my panel
 			setLayout(new GridLayout(2, 0));
 			add(NameLabel);
 			add(timer);
-			
-		} catch(Exception e) { // Any exceptions encountered are handled in this part
-			
+		} catch(Exception e) {
 	    		System.out.println("Error in Timer Display");
 			e.printStackTrace();
 	    	}
 	}
-	
-	/*
-		// For testing purpose
-		public static void main(String[] args) {
-			// TODO Auto-generated method stub
-			P059_Kulkarni_Panel panel = new P059_Kulkarni_Panel(2);
-			
-			JFrame mainFrame = new JFrame("Frame");
-			mainFrame.setSize(100, 100);
-			mainFrame.setLayout(new GridLayout(1, 1));
-			mainFrame.addWindowListener(new WindowAdapter() {
-				public void windowClosing(WindowEvent windowEvent) {
-					System.exit(0);
-				}
-			});
-			mainFrame.add(panel);
-			mainFrame.setVisible(true);
-		}
-	*/
 }
