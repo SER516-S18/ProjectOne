@@ -6,19 +6,24 @@ import java.awt.event.ActionListener;
 /*
  * P098_Sawant_Panel
  * @author: Nishiti Sawant
+ * The following class displays a panel with 2 Jlabels: name and timer
+ * The name label displays both first and the last name and
+  * the timer label displays a counter
  * */
-
 public class P098_Sawant_Panel extends JPanel{
     Timer timer;
     private int count;
-    private int decider;
+    //private int decider;
     private JLabel name = new JLabel("<html>Nishiti<br>Sawant</html>");
     private JLabel timerLabel = new JLabel("");
 
-    //Constructor: Takes the value of the decider variable
+    /*
+    * The constructor takes panelPosition as a parameter and
+    * displays the labels and formats the panel
+    * It passes the panelPosition to counter() function
+    * which decides the background and the content of timer label
+    * */
     public P098_Sawant_Panel(int panelPosition) {
-
-        decider = panelPosition;
 
         setSize(100,100);
         setLayout(new GridBagLayout());
@@ -38,11 +43,16 @@ public class P098_Sawant_Panel extends JPanel{
         add(name, namePosition);
         add(timerLabel, timerLabelPosition);
 
-        counter();
+        counter(panelPosition);
     }
 
-    //displays the timer values
-    public void counter() {
+    /*
+    * Displays an increasing counter and a white background
+    * if the decider value that is the panel position is even
+    * or a decreasing counter and a light blue background
+    * if the decider is odd using a timer with a delay of 1 sec
+    * */
+    public void counter(int decider) {
 
         try {
             if (decider % 2 == 0) {
