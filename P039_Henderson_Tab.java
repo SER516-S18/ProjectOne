@@ -14,7 +14,7 @@ public class P039_Henderson_Tab extends JPanel {
 	public P039_Henderson_Tab() {
 		this.setLayout(new GridLayout(5, 5));
 		this.add(new P027_Dua_Panel(1));
-		this.add(new P028_Dusad_Panel(2).preparePanelUI(2));
+		this.add(new P028_Dusad_Panel(2));
 		this.add(new P029_Dutta_Panel(3));
 		// this.add(new P030_NAME_Panel(4));	This is Main
 		this.add(new P031_Faldu_Panel(5));
@@ -31,7 +31,7 @@ public class P039_Henderson_Tab extends JPanel {
 		// this.add(new P042_Yiru_Panel(15));	Is not a panel. Will not work. Does not appear to be done.
 		this.add(new P043_Iyer_Panel(16));
 		this.add(new P044_Jaime_Panel(17));
-		this.add(P045_JOHAR_Panel.getInstance(18));
+		this.add(new P045_JOHAR_Panel(18));
 		// this.add(new P046_NAME_Panel(19));	Does not exist.
 		this.add(new P047_Kakarla_Panel(20).P047_Kakarla_Panel());
 		this.add(new P048_Kalluri_Panel(21));

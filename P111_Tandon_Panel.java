@@ -5,10 +5,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 /**
@@ -17,9 +15,9 @@ import javax.swing.Timer;
  * value (0 to 9 ;or 9 to 0). Integer value passed to the constructor determines
  * the background color of panel and nature of counter.
  * 
- * @author Manish Tandon
- * @version 1.0
- * @see
+ * @author Manish Tandon (mtandon3@asu.edu)
+ * @version 1.1
+ * 
  */
 public class P111_Tandon_Panel extends JPanel {
 
@@ -34,6 +32,7 @@ public class P111_Tandon_Panel extends JPanel {
 	public static final int PANEL_WIDTH = 100;
 	public static final int TIMER_DELAY = 1000;
 	public static final int FONT_SIZE = 15;
+	public static final String FONT_STYLE = "papyrus";
 
 	/**
 	 * Class variable for name label
@@ -55,19 +54,21 @@ public class P111_Tandon_Panel extends JPanel {
 	private boolean configParam = true;
 
 	/**
-	 * Toggles configParam, if even configParam is true and for odd configParam if
-	 * false. See configParam properties for more details
+	 * Class constructor. Toggles configParam, if even configParam is true and for
+	 * odd configParam if false. See configParam properties for more details. Calls
+	 * methods that create the panel.
 	 * 
 	 * @param val
+	 *            Parameter used for toggling configParam
 	 */
 	public P111_Tandon_Panel(int val) {
 
 		try {
 			this.configParam = checkEven(val);
 		} catch (NumberFormatException e) {
-			System.out.println("Check input value to constructor,Error message: " + e.getMessage());
+			System.out.println("Check input value to constructor,Error message(Panel 111): " + e.getMessage());
 		} catch (Exception e) {
-			System.out.println("Please see error message: " + e.getMessage());
+			System.out.println("Please see error message(Panel 111): " + e.getMessage());
 		}
 
 		setPanelProperties();
@@ -91,15 +92,14 @@ public class P111_Tandon_Panel extends JPanel {
 			counterLabel = new JLabel(String.valueOf(this.counterVal));
 			counterLabel.setHorizontalAlignment(JLabel.CENTER);
 			counterLabel.setVerticalAlignment(JLabel.CENTER);
-			counterLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
+			counterLabel.setFont(new Font(FONT_STYLE, Font.PLAIN, FONT_SIZE));
 			counterLabel.setForeground(Color.BLACK);
 			this.add(counterLabel);
 
 			new Timer(TIMER_DELAY, new ActionListener() {
-
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// gets the current counter label value
+					// gets the current counter label value after converting string to integer.
 					int currentVal = Integer.parseInt(counterLabel.getText());
 
 					// If even value is passed into constructor counter value will be increased,
@@ -121,7 +121,7 @@ public class P111_Tandon_Panel extends JPanel {
 				}
 			}).start();
 		} catch (Exception e) {
-			System.out.println("Please see error message: " + e.getMessage());
+			System.out.println("Please see error message(Panel 111): " + e.getMessage());
 		}
 
 	}
@@ -160,35 +160,5 @@ public class P111_Tandon_Panel extends JPanel {
 	private boolean checkEven(int val) {
 		return val % 2 == 0;
 	}
-
-	/**
-	 * To conform with the technical specifications provided by scrum master on the
-	 * black board thread.
-	 * 
-	 * @return JPanel
-	 */
-	public P111_Tandon_Panel getPanelInstance() {
-		return this;
-	}
-
-	/**
-	 * Testing the panel. Uncomment lines to test.
-	 * 
-	 * @param args
-	 * 
-	 */
-	
-/*	  public static void main(String[] args) {
-	  
-	  SwingUtilities.invokeLater(new Runnable() {
-	  
-	  @Override public void run() { JFrame testFrame = new JFrame();
-	  testFrame.add(new P111_Tandon_Panel(9).getPanelInstance());
-	  testFrame.setVisible(true);
-	  testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	  testFrame.setSize(150, 150); } });
-	  
-	  }*/
-	 
 
 }

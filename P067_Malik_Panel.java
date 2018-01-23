@@ -26,6 +26,7 @@ public class P067_Malik_Panel extends JPanel {
 	private JLabel name;
 	private JLabel number;
 	private Timer timer;
+	public final static Color LIGHT_BLUE = new Color(173, 216, 230);
 
 	/**
 	 * The parameterized constructor which sets up the panel
@@ -56,7 +57,7 @@ public class P067_Malik_Panel extends JPanel {
 
 			setSize(100, 100);
 			// The hex color code (173, 216, 230) is for LightBlue
-			setBackground(configValue % 2 == 0 ? Color.WHITE : new Color(173, 216, 230));
+			setBackground(configValue % 2 == 0 ? Color.WHITE : LIGHT_BLUE);
 			setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -93,10 +94,12 @@ public class P067_Malik_Panel extends JPanel {
 	 * 
 	 * @param args
 	 */
+
 	/*public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		frame.add(new P067_Malik_Panel(0));
+		frame.add(new P067_Malik_Panel(1));
 		frame.setSize(100, 100);
 		frame.setVisible(true);
 	}*/
+
 }
