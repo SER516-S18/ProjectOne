@@ -75,7 +75,7 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
                     try {
                         Thread.sleep(1000);
                     }catch(Exception e) {
-                    	System.out.println("Exception occured at incrementing counter. Exception Trace ::"+e.toString());
+                    	System.out.println("Exception occured while incrementing counter. Exception Trace ::"+e.toString());
                     }
                 }
             }
@@ -101,7 +101,7 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
                     try {
                         Thread.sleep(1000);
                     }catch(Exception e) {
-                    	System.out.println("Exception occured at decrementing counter. Exception Trace ::"+e.toString());
+                    	System.out.println("Exception occured while decrementing counter. Exception Trace ::"+e.toString());
                     }
                 }
             }
