@@ -1,45 +1,50 @@
-//Lab1
-//Author: Rakesh Mohan
-//The class creates a panel with my First Name & Last Name with counter & background changing 
-//based on the integer passed to the constructor.
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * For SER516 Lab1
+ * @author - Rakesh Mohan
+ * @version - 1.0
+ * Description - The class creates a panel with my First Name & Last Name with 
+ * counter & background changing based on the integer passed to the constructor.
+*/
 public class P076_Mohan_Panel implements Runnable {
 
 	//Declaring class variables
-	int decider;
-	JPanel panel = new JPanel();
-	JLabel timerLabel = new JLabel();
-	Thread thread;
+	private final int DECIDER;
+	private JPanel panel = new JPanel();
+	private JLabel timerLabel = new JLabel();
+	private Thread thread = new Thread();
+	private final Color lIGHTBLUE= new Color(173,216,230);
+	private final Font FONT = new Font("Papyrus", Font.PLAIN, 15);
 	
-	//Assigning the integer received to a variable
-	public P076_Mohan_Panel(int num){
-		decider = num;
+	/** Constructor assigning the input value deciding the background colour
+	 *  and counter.
+	 */
+	public P076_Mohan_Panel(int input){
+		DECIDER = input;
 	}
 	
 	//Designing the panel with details
 	public void myPanel() {
 		
-		//lable with first name last name details
-		JLabel NameLabel = new JLabel("<html><br>Rakesh<br>Mohan</html>");
+		//label with first name last name details
+		JLabel nameLabel = new JLabel("<html><br>Rakesh<br>Mohan</html>");
 		
 		//Resetting the font for both the variables
-		Font font = new Font("Papyrus", Font.PLAIN, 15);
-		NameLabel.setFont(font);
-		timerLabel.setFont(font);
+		nameLabel.setFont(FONT);
+		timerLabel.setFont(FONT);
 		
-		NameLabel.setHorizontalAlignment(JLabel.CENTER);
+		nameLabel.setHorizontalAlignment(JLabel.CENTER);
 		timerLabel.setHorizontalAlignment(JLabel.CENTER);
 	
 		//Adding the labels to the panel.
 		panel.setLayout(new BorderLayout());	
 		panel.setSize(100, 100);
-		panel.add(BorderLayout.NORTH, NameLabel);
+		panel.add(BorderLayout.NORTH, nameLabel);
 		panel.add(timerLabel);
 	
 		//Starting the Thread for the counter.
@@ -48,18 +53,21 @@ public class P076_Mohan_Panel implements Runnable {
 		
 	}
 	
-	//Overriding the run function of the thread to run the counter and modify the panel colour.
+	/**Overriding the run function of the thread to run the counter and 
+	 * modify the panel colour.
+	 */
 	@Override
 	public void run() {
 		
-		//Increment counter & light blue background colour setting if the constructor integer is even
-		if (decider % 2 == 0)
+		/**Increment counter & light blue background colour setting if 
+		 * the constructor integer is even 
+		*/
+		if (DECIDER % 2 == 0)
 		{
-			Color lightBlue= new Color(173,216,230);
-			panel.setBackground(lightBlue);
+			panel.setBackground(lIGHTBLUE);
 			
 			do {
-				for (int i = 0 ;i < 10; i++)
+				for (int counter = 0;counter < 10; counter++)
 				{
 					try {
 					    		Thread.sleep(1000);
@@ -67,17 +75,19 @@ public class P076_Mohan_Panel implements Runnable {
 						e.printStackTrace();
 					}
 					
-					timerLabel.setText(""+Integer.toString(i));
+					timerLabel.setText(""+Integer.toString(counter));
 				}
 			}while (true);
 		}
-		//Decrement counter & white background colour setting if the constructor integer is odd
+		/**Decrement counter & white background colour setting if 
+		 * the constructor integer is odd
+		 */
 		else
 		{
 			panel.setBackground(Color.white);
 			
 			do {
-					for (int i = 9 ;i >= 0; i--)
+					for (int counter = 9 ;counter >= 0; counter--)
 					{
 						try {
 						    		Thread.sleep(1000);
@@ -85,14 +95,17 @@ public class P076_Mohan_Panel implements Runnable {
 							e.printStackTrace();
 						}
 						
-						timerLabel.setText(""+Integer.toString(i));
+						timerLabel.setText(""+Integer.toString(counter));
 					}
 					
 				}while(true);
 		}
 	}
 	
-	//Returns the panel. 
+	/**
+	 *  Method to access the myPanel 
+	 * @return myPanel
+	 */
 	public JPanel getPanel() {
 		
 		myPanel();
