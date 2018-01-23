@@ -88,7 +88,7 @@ public class P069_Mantri_Panel extends JPanel
             }
         });
         t.start();
-    
+        this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
         //setting name and surname in the variables
         Name.setText("Rishab");
         Surname.setText("Mantri");
@@ -100,11 +100,10 @@ public class P069_Mantri_Panel extends JPanel
         Surname.setFont(new Font("Papyrus",Font.PLAIN,15));
         Clock.setFont(new Font("Papyrus",Font.PLAIN,15));
         
-        Name.setBounds(25, 1, 75, 25);
-        Surname.setBounds(25, 30, 75, 25);
-        Clock.setBounds(25, 59, 75, 25);
-        setSize(100,100);    
-        setLayout(null); 
+        Name.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Surname.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Clock.setAlignmentX(Component.CENTER_ALIGNMENT);
+        setSize(100,100);
         setVisible(true);   
         }
  
