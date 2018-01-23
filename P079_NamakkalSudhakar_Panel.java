@@ -30,7 +30,7 @@ public class P079_NamakkalSudhakar_Panel extends JPanel {
 	
 	private PanelType panelType;
 	
-	public P078_NamakkalSudhakar_Panel(int num) {
+	public P079_NamakkalSudhakar_Panel(int num) {
 		
 		//Set panel type
 		this.panelType = (num%2 == 0) ? PanelType.Even : PanelType.Odd; 
