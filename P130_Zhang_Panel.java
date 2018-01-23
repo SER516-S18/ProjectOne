@@ -1,5 +1,3 @@
-package ser516_lab1;
-
 /**
  * 1. Every panel class must have three methods. A constructor. A main method (for your testing). And a function which does all the work.
  * 2. The constructor will take an integer argument and based on that set a flag for background color and timer
