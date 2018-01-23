@@ -1,5 +1,5 @@
 /**
- * The P030_Eswara_Prasad_Main class creates a JPanel that contains 5 tabs, each of which have 25 Panels in them.
+ * The P030_EswaraPrasad_Main class creates a JPanel that contains 5 tabs, each of which have 25 Panels in them.
  * This is a similar to a gateway and lets the user access all 125 Panels segregated using tabs.
  *
  * @author  Swaroop Eswara Prasad
@@ -14,9 +14,9 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 
-public class P030_Eswara_Prasad_Main extends JPanel {
+public class P030_EswaraPrasad_Main extends JPanel {
 
-    public P030_Eswara_Prasad_Main(){
+    public P030_EswaraPrasad_Main(){
 
         /* Enclosing the code in Try/Catch block to catch exceptions. */
         try {
@@ -66,7 +66,7 @@ public class P030_Eswara_Prasad_Main extends JPanel {
             public void run() {
                 /* Main Method that creates a JFrame object and adds the JTabbedPane Object. */
                 JFrame frame = new JFrame();
-                frame.add(new P030_Eswara_Prasad_Main());
+                frame.add(new P030_EswaraPrasad_Main());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationByPlatform(true);
                 frame.setSize(800, 800);
