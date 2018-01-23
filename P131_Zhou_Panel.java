@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -6,6 +5,7 @@ import java.awt.event.*;
 
 /**
  * This class creates a panel displaying a name and a counter which increments from 0 to 9 every second.
+ * showing different color depends received integer whether it's even or odd.
  * @author Ruihao Zhou, rzhou21@asu.edu
  * @version 1.0
  * @TimeLine 01.19.2018 - 01.22.2018
