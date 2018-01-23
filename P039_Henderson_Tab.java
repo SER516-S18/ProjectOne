@@ -11,7 +11,7 @@ import java.awt.Color;
 */
 public class P039_Henderson_Tab extends JPanel {
 
-	public static final string NAME = "Chris Henderson";
+	public static final String NAME = "Chris Henderson";
 	
 	public P039_Henderson_Tab() {
 		this.setLayout(new GridLayout(5, 5));
