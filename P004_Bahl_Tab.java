@@ -1,4 +1,3 @@
-package test;
 /**
 * P004_Bahl_Tab implements the 5x5 tabbed panel grid for group 1( P001 to P026 ). 
 *
