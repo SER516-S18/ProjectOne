@@ -13,7 +13,7 @@ public class P091_Prakash_Tab extends JPanel {
     public P091_Prakash_Tab() {
         this.setLayout(new GridLayout(5, 5));
         //this.add(new P079_Name_Panel);
-        //this.add(new P080_Nolastname_Panel(1)); no imports (error in file)
+        this.add(new P080_Nolastname_Panel(1).getPanel()); // addding method to return panel
         this.add(new P082_gspai_panel(3));
         this.add(new P083_Palkar_panel(4));
         //this.add(new P084_Pandey_Panel(5)); Does not return Jpanel
