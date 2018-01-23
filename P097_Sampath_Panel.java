@@ -19,7 +19,16 @@ public class P097_Sampath_Panel extends JPanel{
     private int counter;
     private TimerTask oneSecondTask;
     private boolean isEven;
-    private static final String labelName = "<html>Balachandar<br>Sampath</html>";
+    private static final String LABEL_NAME = "<html>Balachandar<br>Sampath</html>";
+    private static final String FONT_TYPE = "Papyrus";
+    private static final int FONT_SIZE = 15;
+    private static final int FONT_STYLE = Font.PLAIN;
+    private static final int COUNTER_SIZE = 10;
+    private static final long TIMER_INTERVAL = 1000L;
+
+    /**
+     * This enum is used to return color objects
+     */
     public enum ColorsEnum{
         LIGHTBLUE(new Color(173,216,230)), WHITE(Color.WHITE);
         private Color color;
@@ -73,15 +82,14 @@ public class P097_Sampath_Panel extends JPanel{
                 public void run() {
                     counterLabel.setText(String.valueOf(counter));
                     if (isEven)
-                        counter = (counter + 1) % 10;
+                        counter = (counter + 1) % COUNTER_SIZE;
                     else
-                        counter = (9 + counter) % 10;
+                        counter = (COUNTER_SIZE + counter - 1) % COUNTER_SIZE;
                 }
             };
             Timer timer = new Timer();
-            long interval = 1000L;
             long delay = 0L;
-            timer.scheduleAtFixedRate(oneSecondTask, delay, interval);
+            timer.scheduleAtFixedRate(oneSecondTask, delay, TIMER_INTERVAL);
         }
         catch (RuntimeException e)
         {
@@ -95,13 +103,13 @@ public class P097_Sampath_Panel extends JPanel{
     public void initializeLabels()
     {
         setLayout(new GridBagLayout());
-        nameLabel = new JLabel(labelName);
+        nameLabel = new JLabel(LABEL_NAME);
         counterLabel = new JLabel();
         Border border = counterLabel.getBorder();
         Border margin = new EmptyBorder(11,11,11,11);
         counterLabel.setBorder(new CompoundBorder(border, margin));
-        nameLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
-        counterLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
+        nameLabel.setFont(new Font(FONT_TYPE,FONT_STYLE,FONT_SIZE));
+        counterLabel.setFont(new Font(FONT_TYPE,FONT_STYLE,FONT_SIZE));
         add(nameLabel);
         add(counterLabel);
     }
@@ -110,7 +118,7 @@ public class P097_Sampath_Panel extends JPanel{
      * This method is to test this application
      * @param args
      */
-  /*  public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         JFrame jFrame = new JFrame();
         jFrame.setLayout(new GridLayout(5, 5));
@@ -123,6 +131,6 @@ public class P097_Sampath_Panel extends JPanel{
         jFrame.setSize(1000, 500);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    } */
-
+    }
+*/
 }
