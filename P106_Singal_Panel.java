@@ -92,7 +92,7 @@ public class P106_Singal_Panel  extends JPanel {
         gbc.gridx = 1;
         gbc.gridy = 1;
 
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        //setBorder(BorderFactory.createLineBorder(Color.black));
 
         this.createLabels();
 
