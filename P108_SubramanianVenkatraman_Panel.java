@@ -30,6 +30,7 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
             
             first.setFont(font);
             last.setFont(font);
+            counter.setFont(font);
             
             first.setHorizontalAlignment(SwingConstants.CENTER);
             last.setHorizontalAlignment(SwingConstants.CENTER);

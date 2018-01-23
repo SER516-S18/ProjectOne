@@ -68,7 +68,7 @@ public class P051_Kapoor_Panel extends JPanel
 						}
 					else
 					{
-						setBackground(new Color(224,255,255));
+						setBackground(new Color(173,216,230));
 					    if(j==0)
 					    {
 					    	j = 10;
@@ -87,16 +87,17 @@ public class P051_Kapoor_Panel extends JPanel
 	    }
 		}
 	/*
-	 * Main function just for trial.
-	 */
+	Main function just for trial.
+	 
 	public static void main(String[] args) 
     {	
-		/*
-	    * P051_Kapoor_Panel p = new P051_Kapoor_Panel(3);
-	    * JFrame frame = new JFrame("Trial");
-		* frame.setVisible(true);
-		* frame.setSize(200,200);
-		* frame.add(p);
-		*/
+		
+	    P051_Kapoor_Panel p = new P051_Kapoor_Panel(3);
+	    JFrame frame = new JFrame("Trial");
+		frame.setVisible(true);
+		frame.setSize(200,200);
+		frame.add(p);
+		
 	}
+	*/
 }

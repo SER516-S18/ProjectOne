@@ -1,6 +1,7 @@
-//The programs creates a panel with two labels which are name and timer.
-//Jahnavi Bantupalli
-//Date created- 01-20-2018
+/*The program creates a panel with two labels which are name and timer.
+**@author Jahnavi Bantupalli
+**@version- 01-20-2018
+*/
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -60,11 +61,12 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		else
 		{
 			//set background color to light blue if i is odd.
-			setBackground(new Color(243,255,255));	
+			setBackground(new Color(173,216,230));	
 			//set the timer to count down.
 			countUp=false;
 			counter=10;
 		}
+		makeApplication();
 	}
 
 	//Creates the panel with required specifications.
@@ -83,7 +85,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		//customizing timer label
 		timerLabel= new JLabel("",JLabel.CENTER);
 		timerLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
-		timerLabel.setBounds(50, 100, 200, 100);
+		timerLabel.setBounds(50, 50, 200, 100);
 		//create a timer that generates an event after 1 second and pass it the frame object which handles the action event by implementing the ActionListener interface
 		Timer timer=new Timer(1000,this);
 		try
@@ -135,10 +137,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		mainFrame.setResizable(false);
 		
 		
-
-
 	}
 	*/
 
 }
-

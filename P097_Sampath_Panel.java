@@ -59,11 +59,12 @@ public class P097_Sampath_Panel extends JPanel{
         try {
             oneSecondTask = new TimerTask() {
                 public void run() {
+                    counterLabel.setText(String.valueOf(counter));
                     if (isEven)
                         counter = (counter + 1) % 10;
                     else
                         counter = (9 + counter) % 10;
-                    counterLabel.setText(String.valueOf(counter));
+
                 }
             };
 
@@ -90,8 +91,8 @@ public class P097_Sampath_Panel extends JPanel{
         Border border = counterLabel.getBorder();
         Border margin = new EmptyBorder(11,11,11,11);
         counterLabel.setBorder(new CompoundBorder(border, margin));
-        nameLabel.setFont(new Font("Papyrus",Font.BOLD,16));
-        counterLabel.setFont(new Font("Papyrus",Font.BOLD,16));
+        nameLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
+        counterLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
         add(nameLabel);
         add(counterLabel);
     }
@@ -100,7 +101,7 @@ public class P097_Sampath_Panel extends JPanel{
      * This method is to test this application
      * @param args
      */
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
 
         JFrame jFrame = new JFrame();
         jFrame.setLayout(new GridLayout(5, 5));
@@ -113,6 +114,6 @@ public class P097_Sampath_Panel extends JPanel{
         jFrame.setSize(1000, 500);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+    }*/
 
 }

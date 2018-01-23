@@ -1,5 +1,3 @@
-package P058_Kotamraju_Panel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -9,9 +7,9 @@ import java.awt.event.*;
  */
 public class P058_Kotamraju_Panel extends JPanel{
 
-    private int key; //integer value that will determine the counter and background color
-    private JLabel counterLabel, nameLabel; //two labels: one for the counter and one for name
-    private int counter;
+    int key; //integer value that will determine the counter and background color
+    JLabel counterLabel, nameLabel; //two labels: one for the counter and one for name
+    int counter;
 
     public P058_Kotamraju_Panel(int key) 
     {
@@ -30,7 +28,7 @@ public class P058_Kotamraju_Panel extends JPanel{
             	this.setBackground(blue1);	
                 this.counter = 9;
             }
-
+	    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
             nameLabel = new JLabel("<html>Koushik<br>Kotamraju</html>");    //creating name label for first name and last name
             nameLabel.setFont(new Font("Papyrus",Font.BOLD,15));
             this.add(nameLabel);    //adding name to Panel

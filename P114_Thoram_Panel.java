@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,7 +13,7 @@ public class P114_Thoram_Panel extends JPanel {
      * 
      */
 	//string name variable to add name to the JLabel name
-	public static final String name_panel = "<html>RaviThoram</html>";
+	public static final String name_panel = "<html><font color='black'>NagaThoram</font></html>";
 	//JLabel that which need to be displayed in the panel
     JLabel name;
     JLabel counter;
@@ -41,6 +43,11 @@ public class P114_Thoram_Panel extends JPanel {
     }
     public void set_bg_counter() {
     	//setting dimensions for the panel
+    	this.setLayout(new GridBagLayout());
+    	GridBagConstraints cnst = new GridBagConstraints();
+    	cnst.fill=GridBagConstraints.HORIZONTAL;
+    	cnst.gridx=1;
+    	cnst.gridy=0;
         this.setPreferredSize(new Dimension(100, 100));
         if(conf)
             this.setBackground(Color.WHITE); //even input white background
@@ -50,12 +57,15 @@ public class P114_Thoram_Panel extends JPanel {
         }
         //setting up name label with font and size
         name = new JLabel(name_panel);
-        name.setFont(new Font("Papyrus",Font.PLAIN,18));
-        this.add(name); // adding name label to panel
+        name.setFont(new Font("Papyrus",Font.PLAIN,15));
+        this.add(name,cnst); // adding name label to panel
         //setting and initialing counter label
         counter = new JLabel(String.valueOf(count));
-        counter.setFont(new Font("Papyrus",Font.PLAIN,18));
-        this.add(counter); //adding counter label to panel
+        counter.setFont(new Font("Papyrus",Font.PLAIN,15));
+        cnst.fill=GridBagConstraints.CENTER;
+        cnst.gridx=1;
+        cnst.gridy=1;
+        this.add(counter,cnst); //adding counter label to panel
         //try catch to handle timer increments
         try
         {
@@ -104,7 +114,7 @@ public class P114_Thoram_Panel extends JPanel {
     /**
      * @param args
      */
-   /* public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         // TODO Auto-generated method stub
         SwingUtilities.invokeLater(new Runnable() {
  
@@ -112,6 +122,5 @@ public class P114_Thoram_Panel extends JPanel {
         test.add(new P114_Thoram_Panel(22).get_object());
         test.setVisible(true);
         test.setSize(100, 100); } });
-
     }*/
 }

@@ -62,14 +62,16 @@ public class P088_Patel_Panel implements Runnable   //thread for implementing co
             panel.setBackground(Color.white);
         }
         else {
-            panel.setBackground(Color.CYAN);
+            panel.setBackground(new Color(173,216,230));
         }
         panel.setPreferredSize(new Dimension(100, 100));
         panel.add(label);
-        label.setFont(new Font("Papyrus", Font.PLAIN, 16));
+        label.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        label.setHorizontalAlignment(JLabel.CENTER);
         constraints.gridy = 1;
         panel.add(label1, constraints);
-        label1.setFont(new Font("Papyrus", Font.PLAIN, 16));
+        label1.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        label.setHorizontalAlignment(JLabel.CENTER);
         Thread thread = new Thread(this);
         thread.start();  // Starts the Thread
     }

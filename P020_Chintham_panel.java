@@ -19,13 +19,13 @@ public class P020_chintham_panel implements ActionListener{
 		panel = new JPanel();//panel settings
 		panel.setLayout(new GridLayout(3,1));
 		panel.setSize(100,100);
-		panel.setBounds(172, 27, 111, 99);
+		
 		
 		if (check==0) {
 			panel.setBackground(Color.WHITE);
 		}
 		else {
-			panel.setBackground(Color.CYAN);
+			panel.setBackground(new Color(173, 216, 230));
 			clock=10;
 		}
 		

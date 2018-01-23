@@ -3,136 +3,130 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package p104_shilimkar_panel;
 
-import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
-import java.util.TimerTask;
-import java.util.Timer;
-import javax.swing.Box;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.Timer;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
- * @author Anuradha Shilimkar *
+ * @author anu
  */
-//This class for writing tha full name is two rows
-class FullNameLabel {
-
-    JLabel firstname, lastname;
-
-    //This method is reciving two parameters @firstname and last name
-    FullNameLabel(String firstName, String lastName) {
-        firstname = new JLabel(firstName);
-        lastname = new JLabel(lastName);
-        firstname.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        lastname.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        firstname.setFont(new Font("Papyrus", Font.PLAIN, 16));
-        lastname.setFont(new Font("Papyrus", Font.PLAIN, 16));
-    }
-}
-//This the inherietance this class is extending the Jpanel class
-
+//Need to extend this class
 public class P104_Shilimkar_Panel extends JPanel {
 
-    private FullNameLabel nameLabel;
-    private JLabel counterLabel;
-    int count = 9;
-    boolean flag = false;
+    JLabel label1, label2, label3;
+    Timer timer;
+    int counter = 0; //initialize with 0
 
-    /**
-     * This is the constructor of receiving the parameter
-     *
-     * @param num
-     *
-     */
+    //Write a constructor for class
     public P104_Shilimkar_Panel(int num) {
+        //constructor that recieves a paramter
+        //setting a Panel dimensions
+        setPreferredSize(new Dimension(100, 100));
 
-        setBackColor(num);
+        setLayout(new GridLayout(3, 1));
+        //    GridBagConstraints c = new GridBagConstraints();
 
-        nameLabel = new FullNameLabel("Anu", "Shilimkar");
+        setBorder(BorderFactory.createLineBorder(Color.blue));
+        //JLabel label = new JLabel("<html>Anu<br>Shilimkar<br></html>");
 
-        counterLabel = new JLabel();
+        label3 = new JLabel("Timer");
+        label3.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        SetTimer(num);
+        add(label3, JLabel.CENTER);
 
-        setTimerTask();
+        label2 = new JLabel("Shilimkar");
+        label2.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        add(label2, JLabel.CENTER);
 
-        Box box = setBoxLabels();
-
-        this.setBackground(getColor(num));
-
-        this.add(box);
-
+        label1 = new JLabel("Anu");
+        label1.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        add(label1, JLabel.CENTER);
     }
 
-    //This method is checking the variable is odd or even and setting the color of panel
-    private void setBackColor(int value) {
-        if (value % 2 == 0) {
-            flag = true;
-        }
-        if (flag) {
-            count = 0;
-        }
-    }
+    private void SetTimer(int num) {
+        //set the background colors according to parameter for the JPanel
+        if (num % 2 == 0) {
+            //When num is even then color will be White
+            setBackground(Color.white);
 
-    //This is the methid to show the counter on panel from 0-9
-    private void setTimerTask() {
-        Timer timer = new Timer();
-        try {
-            TimerTask timerTask = new TimerTask() {
-                public void run() {
-                    setCounterLabelProperties(counterLabel);
-                    if (flag) {
-                        count = count + 1;
-                        // counter is again reset when it will reach to 9
-                        count = count > 9 ? 0 : count;
-                    } else {
-                        count = count - 1;
-                        // Counter is resetting when it will reach to 0
-                        count = count < 0 ? 9 : count;
+            //In Timer performing the action listerner
+            timer = new Timer(1000, new ActionListener() {
+
+                //timer now acting on the Event   
+                @Override
+
+                public void actionPerformed(ActionEvent e) {
+                    label3.setText(String.valueOf(counter));
+                    //incrementing the counter form 0 to 9 for White color
+
+                    counter++;
+                    //Reset the counter when it reaches 9 and start again with 0
+                    if (counter == 11) {
+
+                        counter = 0;
+                        label3.setText(String.valueOf(counter));
+                        counter++;
+
                     }
+
                 }
-            };
-            //Set the timer for 1 second
-            timer.scheduleAtFixedRate(timerTask, 1000, 1000);
-        } catch (Exception e) {
-            System.out.println("Exception occured : " + e);
+
+            });
+
+            timer.start();
+        } else {
+            counter = 9;
+            setBackground(new Color(51, 204, 255));
+            //Performing action of listening the event
+            timer = new Timer(1000, new ActionListener() {
+
+                //method for timer using an ActionListener    
+                @Override
+
+                public void actionPerformed(ActionEvent e) {
+                    label3.setText(String.valueOf(counter));
+                    //decrement in the counter from 0 to 9
+
+                    counter--;
+
+                    if (counter == -2) {
+                        //resetting the counter and start again with 9
+
+                        counter = 9;
+                        label3.setText(String.valueOf(counter));
+
+                        counter--;
+
+                    }
+
+                }
+
+            });
+
+            timer.start();
         }
     }
 
-    //This method is getting the number for the color
-    private Color getColor(int num) {
-        return flag ? Color.WHITE : new Color(173, 216, 230);
-    }
-
-    //function to set counter label
-    private void setCounterLabelProperties(JLabel counterLabel) {
-        counterLabel.setText(Integer.toString(count));
-        counterLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-    }
-
-    //This method is used to add the labels on in the panel
-    private Box setBoxLabels() {
-        Box box = Box.createVerticalBox();
-        box.add(nameLabel.firstname);
-        box.add(nameLabel.lastname);
-        box.add(counterLabel);
-        return box;
-    }
-
-    //main method to test working of panel
     public static void main(String[] args) {
-
-        // TODO Auto-generated method stub
-        JFrame frame = new JFrame();
-        JPanel panel = new P104_Shilimkar_Panel(2);
-        panel.setBounds(40, 80, 200, 200);
-        frame.add(panel);
-        frame.setSize(600, 400);
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // TODO code application logic here
+        //create a Jframe container for application.
+        JFrame frame = new JFrame("Demo");
+        //   frame.setPreferredSize(new Dimension(WIDTH,HEIGHT));
+        frame.add(new P104_Shilimkar_Panel(1));
+        frame.setLayout(new FlowLayout());
         frame.setVisible(true);
+        frame.pack();
+        frame.setSize(600, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 

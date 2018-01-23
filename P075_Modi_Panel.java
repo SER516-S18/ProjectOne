@@ -40,7 +40,7 @@ public class P075_Modi_Panel extends JFrame implements Runnable
 
 //        Set Fonts
 
-        font = new Font("Papyrus", Font.PLAIN, 18);
+        font = new Font("Papyrus", Font.PLAIN, 15);
         name.setFont(font);
         timer.setFont(font);
 

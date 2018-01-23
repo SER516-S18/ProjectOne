@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.FlowLayout;
 import java.awt.event.*;
 
-public class P005_Banerjee_Panel
+public class P005_Banerjee_Panel extends JPanel
 {
 	int count_even = 0;
 	int flag;
@@ -24,25 +24,35 @@ public class P005_Banerjee_Panel
 	{
 		//JPanel objPanell = new JPanel();
 		if ((number % 2) == 0)
+		{
 			flag = 1;
+			Color white = new Color(255,255,255);
+			this.setBackground(white);
+		}
+			
 		else 
+		{
 			flag = 0;
+			Color lightblue = new Color(187,255,255);
+			this.setBackground(lightblue);
+		}
+			
 		//Passing the flag value to Panel
 		createPanel(flag);
 	}
 	
-	private JPanel createPanel(int flag)
+	private void createPanel(int flag)
 	{	
 		//setting panel dimension to a window of size 100X100
-		myPanel.setPreferredSize(new Dimension(100, 100));
-	    	myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.PAGE_AXIS));  
+		this.setPreferredSize(new Dimension(100, 100));
+	    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));  
 	   
-	    	//Printing the labels
-	    	myPanel.add(firstname, BorderLayout.CENTER);
-	    	myPanel.add(lastname);
-	   	// flagNum = new JLabel(String.valueOf(flag));
-	    	//myPanel.add(flagNum);
-		myPanel.add(displayNumber);
+	    //Printing the labels
+	    this.add(firstname, BorderLayout.CENTER);
+	    this.add(lastname);
+	   // flagNum = new JLabel(String.valueOf(flag));
+	    //myPanel.add(flagNum);
+		this.add(displayNumber);
 		
 		//Aligning the labels to center of the panel
 		firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -65,9 +75,6 @@ public class P005_Banerjee_Panel
 				{
 					if(flag==1)
 					{	
-						Color white = new Color(255,255,255);
-						myPanel.setBackground(white);
-						
 						if(count_even<10)
 						{	
 							count_even++;
@@ -81,9 +88,7 @@ public class P005_Banerjee_Panel
 					}
 					else if(flag==0)
 					{	
-						Color lightblue = new Color(173,216,230);
-						myPanel.setBackground(lightblue);
-						
+												
 						if(count_odd>0)
 						{
 							
@@ -92,8 +97,7 @@ public class P005_Banerjee_Panel
 						}
 						else
 						{
-							count_odd = 9;
-							
+							count_odd = 9;	
 						}
 						displayNumber.setText(""+count_odd);
 					}
@@ -105,19 +109,19 @@ public class P005_Banerjee_Panel
 		{
 			System.out.println(e.getMessage());
 		}
-	    return myPanel;
+	    //return myPanel;
 	}
 	/*public static void main(String[] args)
 	{
-		Creating an object of the P005_Banerjee_Panel class and passing it a test value(say 4). 
-		This value is passed to the parameterized constructor of the class, which in turn checks if the number is even or odd in nature. 
+		//Creating an object of the P005_Banerjee_Panel class and passing it a test value(say 4). 
+		//This value is passed to the parameterized constructor of the class, which in turn checks if the number is even or odd in nature. 
 		P005_Banerjee_Panel objPanel = new P005_Banerjee_Panel(4);
 		JFrame frame = new JFrame("JPanel Test");	//Creating a JFrame object
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 800);
-		frame.add(objPanel.myPanel);	//Adding the JPanel to the Frame, using the JPanel object, myPanel
+		frame.add(objPanel);	//Adding the JPanel to the Frame, using the JPanel object, myPanel
 		frame.pack();
 		frame.setVisible(true);
-	}
-	*/
+	}*/
+	
 }

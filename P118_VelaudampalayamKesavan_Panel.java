@@ -26,7 +26,7 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 			}
 			
 			else {
-				bg = new Color (173,216,230);		////Background Color cyan if parameter passed is odd.
+				bg = new Color (173,216,230);		//Background Color cyan if parameter passed is odd.
 				//counter = 9;
 				decrementCounter();
 			}
@@ -37,6 +37,7 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 			
 			fname.setFont(font);
 			lname.setFont(font);
+			time.setFont(font);
 			
 			fname.setHorizontalAlignment(SwingConstants.CENTER);
 			lname.setHorizontalAlignment(SwingConstants.CENTER);

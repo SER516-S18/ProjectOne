@@ -10,6 +10,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ * 
+ * @author Shubhangi Gupta
+ * @description Panel class
+ * @version 1.0
+ * 
+ * Class extends JPanel containing name of the author and the counter with parameterized constructor 
+ * that accepts integer as a value.
+ * When value is even ---> background : white, Counter increments from 0 to 9
+ * When value is odd ---> background : Light Blue (173, 216, 230), Counter decrements from 9 to 0 
+ *
+ */
+
 public class P037_Gupta_Panel extends JPanel{
 	
 	//JPanel instance
@@ -43,7 +56,7 @@ public JPanel getJPanelInstance(){
     
     try {
     // set font style of JLabels. 
-    Font font = new Font("Papyrus", Font.PLAIN,12);
+    Font font = new Font("Papyrus", Font.PLAIN,15);
     
     
     // creates JPanel.
@@ -75,10 +88,11 @@ public JPanel getJPanelInstance(){
     p.add(counter);
     
     // if num is even, sets panel background to white otherwise set panel color to light blue.
+    Color lightBlue = new Color(173,216,230);
     if(this.num%2==0)
     	p.setBackground(Color.WHITE);
     else
-    	p.setBackground(Color.CYAN);  
+    	p.setBackground(lightBlue);  
     
    // timer implementation for increment or decrement of counter label
     Timer timer = new Timer(1000, new ActionListener() {

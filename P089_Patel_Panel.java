@@ -31,8 +31,8 @@ public class P089_Patel_Panel
         constraints.gridy = 0; // Positioning of Label 1 - y-coordinate
         constraints1.gridx = 0; //Positioning of Label 1 - x-coordinate
         constraints1.gridy = 2; //Positioning of Label 1 - y-coordinate
-        nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 13)); // Set font properties of Label1
-        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 13)); // Set font properties of Label2
+        nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15)); // Set font properties of Label1
+        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15)); // Set font properties of Label2
         newPanel.add(nameLabel, constraints);// Adds Label1 to panel
         newPanel.add(timerLabel, constraints1);//Adds Label2 to panel
         if(num % 2 != 0){ // checks for odd number
