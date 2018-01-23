@@ -37,19 +37,18 @@ public class P043_Iyer_Panel extends JPanel {
         {
             timer = 9;
         }
-
-        JPanel jp = new JPanel();
-        jp.setLayout(new GridLayout(2,1));
-        jp.setPreferredSize(new Dimension(100,100));
+    
+        this.setLayout(new GridLayout(2,1));
+        
         if (type % 2 == 0)
-            jp.setBackground(new Color(255, 255, 255));
+            this.setBackground(new Color(255, 255, 255));
         else
-            jp.setBackground(new Color(90, 150, 255));
+            this.setBackground(new Color(90, 150, 255));
         JLabel name = new JLabel("<html>Supriya<br>Iyer</html>", JLabel.CENTER);
         name.setFont(new Font("Papyrus", Font.BOLD, 16));
         JLabel counter = new JLabel("",JLabel.CENTER);
         counter.setFont(new Font("Papyrus", Font.BOLD, 16));
-
+        
         final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(new Runnable() {
             @Override
@@ -68,7 +67,7 @@ public class P043_Iyer_Panel extends JPanel {
                     timer--;
                     if (timer < 0)
                         timer = 9;
-
+                    
                 }
                 try
                 {
@@ -80,11 +79,11 @@ public class P043_Iyer_Panel extends JPanel {
                 }
             }
         }, 0, 1, TimeUnit.SECONDS);
-
-        jp.add(name);
-        jp.add(counter);
-        add(jp);
-
+        
+        this.add(name);
+        this.add(counter);
+        setVisible(true);
+        
     }
     /** The main was included in the file for testing purpose.*/
 
