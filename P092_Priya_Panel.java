@@ -94,7 +94,7 @@ public class P092_Priya_Panel {
                 }, 1000, 1000);
             } else {
                 timeElapsedSec[0] = 9;
-                panel.setBackground(Color.cyan);
+                panel.setBackground(new Color(173,216,230));
                 timer.schedule(new TimerTask() {
 
                     @Override
