@@ -55,7 +55,7 @@ public class P113_Thiagarajan_Panel extends JPanel {
 		
 		nameLabel.setFont(font);
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		add(fnameLabel);
+		add(nameLabel);
 		
 		timeLabel.setFont(font);
 		timeLabel.setHorizontalAlignment(SwingConstants.CENTER);   
