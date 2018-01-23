@@ -33,10 +33,13 @@ public class P063_Madabhushi_Panel extends JPanel
        l1 = new JLabel("Sowmya",JLabel.CENTER);
        l1.setVerticalTextPosition(JLabel.BOTTOM);
        l1.setHorizontalTextPosition(JLabel.CENTER);
+       l1.setFont(new Font("Papyrus", Font.PLAIN, 15));
        //displaying first name and positioning the label
        l2 = new JLabel("Madabhushi",JLabel.CENTER);
+       l2.setFont(new Font("Papyrus", Font.PLAIN, 15));
        //displaying the last name
        l3 = new JLabel("Timer",JLabel.CENTER);
+       l3.setFont(new Font("Papyrus", Font.PLAIN, 15));
        //Label 3 for implementing the timer
        add(l1);
        add(l2);
@@ -81,7 +84,7 @@ public class P063_Madabhushi_Panel extends JPanel
             timer.start();
             }
         }
-        /* for testing */
+        /* for testing 
     public static void frame()
         {//creating JFrame 
         JFrame f = new JFrame("demo");
@@ -104,7 +107,7 @@ public class P063_Madabhushi_Panel extends JPanel
             //condition
             }
         });
-    }
+    } */
         
-    }
+    } 
         

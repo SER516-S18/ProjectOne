@@ -33,12 +33,12 @@ public class P112_Thakkar_Panel extends Thread{
 		constr.gridy=2;
 		
 		JLabel label = new JLabel("<html>Maitreyi <br> Thakkar </html>");  
-		label.setFont(new Font("Papyrus", Font.PLAIN, 14));                                     
+		label.setFont(new Font("Papyrus", Font.PLAIN, 15));                                     
 		jpanel.add(label);                                                 
 		
 		JLabel labelC = new JLabel();                                     
 		jpanel.add(labelC);                                                
-		labelC.setFont(new Font("Papyrus", Font.PLAIN, 14));               
+		labelC.setFont(new Font("Papyrus", Font.PLAIN, 15));               
 		jpanel.add(labelC, constr);                                        
 		
 		if((i%2)==0){	                                                   
@@ -97,7 +97,7 @@ public class P112_Thakkar_Panel extends Thread{
 	 */
 	
 	public JPanel ReturnObject(){                                        
-		P112_Thakkar_Panel h1 = new P112_Thakkar_Panel(115);
+		//P112_Thakkar_Panel h1 = new P112_Thakkar_Panel(115);
 		return jpanel;
 	}
 	

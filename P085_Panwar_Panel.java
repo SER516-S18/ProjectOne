@@ -9,13 +9,13 @@ The background color changes depending on the integer passed to the constructor.
 import java.awt.*;
 import javax.swing.*;
 
-public class P085_Panwar_Panel {
+
+public class P085_Panwar_Panel extends JPanel {
 
     /*
     --- CLASS PROPERTIES ---
      */
 
-    JPanel panel;       //a panel to hold all the components to display data
     JLabel nameLabel;   //label to display first name and last name
     JLabel timerLabel;  // label to display the counter value, which keeps changing in every 1 second
     int counter;        // counter to hold the value to be displayed in Jlabel timerLabel
@@ -26,9 +26,8 @@ public class P085_Panwar_Panel {
     --- CLASS CONSTRUCTOR ---
      */
 
-    public P085_Panwar_Panel(int number){
-        panel = new JPanel();                                       //declare panel
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));    //Set the Layout
+    public  P085_Panwar_Panel(int number){
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));    //Set the Layout
 
         nameLabel = new JLabel("<html>Shipra <br/>Panwar</html>");      //Define label to contain first name and lastname
         nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
@@ -39,22 +38,22 @@ public class P085_Panwar_Panel {
         timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
         //add both labels to panel
-        panel.add(nameLabel);
-        panel.add(timerLabel);
+        this.add(nameLabel);
+        this.add(timerLabel);
 
 
-        panel.setVisible(true);
-        panel.setPreferredSize(new Dimension(100,100));
+        this.setVisible(true);
+        this.setPreferredSize(new Dimension(100,100));
 
         if(number%2 ==0){           //sets the background color as white for even number received by constructor and update the counter to start from 0
             checkEven= true;
             counter = 0;
-            panel.setBackground(Color.WHITE);
+            this.setBackground(Color.WHITE);
         }
         else {                      //sets the background color as blue for odd number received by constructor and update the counter to start from 9
             checkEven = false;
             counter = 9;
-            panel.setBackground(Color.BLUE);
+            this.setBackground(Color.BLUE);
         }
         Timers();                   //method to increment or decrement counter value and display it on panel under label timerLabel
     }
@@ -99,12 +98,10 @@ public class P085_Panwar_Panel {
         JFrame frame = new JFrame("");
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        P085_Panwar_Panel panelObj = new P085_Panwar_Panel(40);
-
-        frame.getContentPane().add(panelObj.panel);
+        frame.add(new P085_Panwar_Panel(41));
         frame.pack();
     }
     */
+
 }//end of class
 

@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
+import java.awt.Component;
+import java.awt.FlowLayout;
 
 /**
  * This class is my Panel implementation using a parameterized constructor along
@@ -30,17 +32,17 @@ public class P002_ArmstrongMensah_Panel extends JPanel {
 	 */
 	private void init(int flag) {
 		setBorder(new EtchedBorder(EtchedBorder.LOWERED, Color.BLACK, null));
-		setLayout(null);
+		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 15));
 
 		JLabel lblFullName = new JLabel("<html>Cephas<br>Armstrong-Mensah</html>");
+		lblFullName.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblFullName.setFont(new Font("Papyrus", Font.PLAIN, 10));
-		lblFullName.setBounds(2, 2, 96, 50);
 		add(lblFullName);
 
 		JLabel lblCounter = new JLabel("");
+		lblCounter.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblCounter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		lblCounter.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCounter.setBounds(35, 65, 30, 30);
 		add(lblCounter);
 
 		Counter counter = new Counter(lblCounter, (flag % 2 == 0) ? 0 : 9);

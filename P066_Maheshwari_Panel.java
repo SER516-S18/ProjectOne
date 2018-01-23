@@ -23,7 +23,9 @@ public class P066_Maheshwari_Panel extends JPanel {
     
     //panel related variables
     
-    private JLabel fullName;
+    private JLabel firstName;
+	
+	private JLabel lastName;
     
     public final int panelWidth = 100;
 
@@ -76,7 +78,7 @@ public class P066_Maheshwari_Panel extends JPanel {
     	
         clock = new JLabel(String.valueOf(counter));
 
-        clock.setFont(new Font("Papyrus",Font.BOLD,16));
+        clock.setFont(new Font("Papyrus",Font.PLAIN,15));
 
         this.add(clock);
 
@@ -140,11 +142,23 @@ public class P066_Maheshwari_Panel extends JPanel {
     	
     	try {
 
-	        fullName = new JLabel("<html>Aman<br>Maheshwari</html>");
+	        firstName = new JLabel("Aman");
 	
-	        fullName.setFont(new Font("Papyrus",Font.BOLD,16));
+	        firstName.setFont(new Font("Papyrus",Font.PLAIN,15));
 	
-	        this.add(fullName);
+	        firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			lastName = new JLabel("Maheshwari");
+	
+	        lastName.setFont(new Font("Papyrus",Font.PLAIN,15));
+	
+	        lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+			
+			this.add(firstName);
+			
+			this.add(lastName);
 	        
     	}
     	

@@ -18,6 +18,7 @@ public class P060_Kumar_Panel extends JPanel{
 	private JLabel lastName;
 	private JLabel displayNum;
 	private Color backColor;
+	private boolean evenFlag;
 
 
 	/**Description - Constructor
@@ -29,10 +30,14 @@ public class P060_Kumar_Panel extends JPanel{
 		//checking if input number is  even or odd
 		if(numInput%2==0) {
 			backColor=Color.WHITE;
+			evenFlag=true;
 		}else
 		{			
-			backColor=Color.cyan;
+			backColor=new Color(173,216,230);
+			evenFlag=false;
+
 		}
+
 		
 	}
 	
@@ -40,7 +45,7 @@ public class P060_Kumar_Panel extends JPanel{
 	/**
 	 * @param numInput - number input for checking the color
 	 */
-	public JPanel createPanel(int numInput)
+	public JPanel createPanel()
 	{
 		
 		try {
@@ -54,15 +59,19 @@ public class P060_Kumar_Panel extends JPanel{
 			
 			//setting the Jlabels
 			this.firstName=new JLabel("Abhishek");
+	        this.firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
 			this.lastName=new JLabel("Kumar");
+	        this.lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
+
 			
-			this.firstName.setFont(new Font("Papyrus ", Font.PLAIN, 18));
-			this.lastName.setFont(new Font("Papyrus ", Font.PLAIN, 18));
+			this.firstName.setFont(new Font("Papyrus ", Font.PLAIN, 15));
+			this.lastName.setFont(new Font("Papyrus ", Font.PLAIN, 15));
 			
 
 			//initialising the Jlabel for changing digit
 			displayNum=new JLabel();
-			this.displayNum.setFont(new Font("Papyrus ", Font.PLAIN, 18));
+			this.displayNum.setFont(new Font("Papyrus ", Font.PLAIN, 15));
+	        this.displayNum.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 			//setting the Timer to change the digit every second
 			Timer t = new javax.swing.Timer(1000, new ActionListener(){
@@ -77,7 +86,7 @@ public class P060_Kumar_Panel extends JPanel{
 
 					//logic for changing digit
 					
-					if(numInput%2==0) {
+					if(evenFlag) {
 					counter1++;
 					num=String.valueOf(counter1);
 					displayNum.setText(num);
@@ -120,14 +129,14 @@ public class P060_Kumar_Panel extends JPanel{
 	/**Main method--Uncomment the main method for testing
 	 * @param args
 	 */
-	/*public static void main(String args[])
+/*	public static void main(String args[])
 	{
 	
 		JFrame jFrame = new JFrame();
 
 
 
-    	jFrame.setContentPane(new P060_Kumar_Panel(1).createPanel(1));
+    	jFrame.setContentPane(new P060_Kumar_Panel(1).createPanel());
 
 
     	jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -7,11 +7,9 @@ import javax.swing.plaf.synth.SynthStyle;
 /**
  * P084_Pandey_Panel
  * @author: Dileep Pandey
- * objName.getPanel() -> Returns Panel
  */
-public class P084_Pandey_Panel implements ActionListener{
+public class P084_Pandey_Panel extends JPanel implements ActionListener{
 
-    static JPanel panel;
     JLabel counter = new JLabel();;
     Timer tm = new Timer(1000, this);
     static int time;
@@ -29,23 +27,20 @@ public class P084_Pandey_Panel implements ActionListener{
             time = 9;
         }
 
-        // Initializing panel
-        panel = new JPanel();
-        // panel.setLayout(new GridLayout(3, 1));
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setSize(100, 100);
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setSize(100, 100);
         
-        // Setting background to white if even, else light blue or cyan.
+        // Setting background to white if even, else light blue.
         if(even) {
-            panel.setBackground(Color.WHITE);
+            setBackground(Color.WHITE);
         } else {
-            panel.setBackground(Color.CYAN);
+            setBackground(new Color(173, 216, 230));
         }
         
         // Setting font style
-        firstName.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        lastName.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        counter.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        firstName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        lastName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
         // Align Center
         firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -56,16 +51,16 @@ public class P084_Pandey_Panel implements ActionListener{
         tm.start();
         
         // Adding Components
-        panel.add(firstName, SwingConstants.CENTER);
-        panel.add(lastName);
-        panel.add(counter);
+        add(firstName);
+        add(lastName);
+        add(counter);
     
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         execute();
-        panel.repaint();
+        repaint();
     }
 
     public void execute() {
@@ -82,11 +77,6 @@ public class P084_Pandey_Panel implements ActionListener{
         if(time == -1){
             time = 9;
         }
-    }
-
-    // Returns Panel object
-    public JPanel getPanel() {
-        return panel;
     }
     
 }

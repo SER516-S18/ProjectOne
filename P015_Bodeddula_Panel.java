@@ -57,6 +57,7 @@ public class P015_Bodeddula_Panel extends JPanel
             Timer timer1 = new Timer(1000, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (flag % 2 == 0) {
+                    	 setBackground(new Color(255, 255, 255));
 
                         if (increment == 9) {
                             increment = -1;
@@ -68,7 +69,7 @@ public class P015_Bodeddula_Panel extends JPanel
 
                     else {
 
-                        setBackground(new Color(224, 255, 255));
+                        setBackground(new Color(-173, 216, 230));
 
 
                         if (decrement == 0)
@@ -90,7 +91,7 @@ public class P015_Bodeddula_Panel extends JPanel
         }
     }
 
-    public static void main(String args[])
+   /* public static void main(String args[])
     {
         P015_Bodeddula_Panel p= new P015_Bodeddula_Panel(0);
         JFrame frame = new JFrame();
@@ -98,5 +99,5 @@ public class P015_Bodeddula_Panel extends JPanel
         frame.add(p);
         frame.setVisible(true);
 
-    }
+    }  */
 }

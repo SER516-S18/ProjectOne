@@ -21,6 +21,7 @@ public class P045_JOHAR_Panel extends JPanel{
 
     int counter;
     boolean isEven = false;
+    Color lightBlue = new Color(173, 216, 230);
 
     //Singelton Panel object which is returned
     private static P045_JOHAR_Panel panel;
@@ -38,12 +39,12 @@ public class P045_JOHAR_Panel extends JPanel{
             isEven = true;
             counter = 0;
         }
-
         createPanelObject();
     }
 
-    // Singleton setup
-    // num - Even for increasing counter, odd for decreasing.
+    /* Singleton setup
+     * num - Even for increasing counter, odd for decreasing.
+    */
     public static P045_JOHAR_Panel getInstance( int num ) {
 
         //if panel object is null, then create a new object else return the already created object
@@ -53,6 +54,9 @@ public class P045_JOHAR_Panel extends JPanel{
         return panel;
     }
 
+    /**
+     * This method creates a panel with 3 labels :- firstName, lastName and counter.
+     */
     public void createPanelObject()
     {
         Timer timer;
@@ -60,44 +64,47 @@ public class P045_JOHAR_Panel extends JPanel{
         JLabel lastName;
         JLabel displayNum;
 
-        setLayout(null);
-        // Setting the size of the panel
+        //Setting the size of the panel
         setSize(100, 100);
+        setLayout(null);
 
         //Setting the background color of the panel depending on the input passed to constructor
         if (isEven) {
             setBackground(Color.WHITE);
         } else {
-            Color lightBlue = new Color(173, 216, 230);
+
             setBackground(lightBlue);
         }
 
         //First name of the author which goes in the first row
         firstName=new JLabel("Saheb", JLabel.CENTER);
-        firstName.setBounds(10, 0, 35, 25);
-        firstName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        firstName.setBounds(10, 0, 50, 25);
+        firstName.setFont(new Font("Papyrus", Font.PLAIN, 15));
         firstName.setHorizontalAlignment(JLabel.CENTER);
         firstName.setVerticalAlignment(JLabel.CENTER);
+        firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(firstName);
 
         //Last name of the author which goes in the second row
         lastName=new JLabel("Johar", JLabel.CENTER);
-        lastName.setBounds(10, 10, 35, 25);
-        lastName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        lastName.setBounds(10, 15, 50, 25);
+        lastName.setFont(new Font("Papyrus", Font.PLAIN, 15));
         lastName.setHorizontalAlignment(JLabel.CENTER);
         lastName.setVerticalAlignment(JLabel.CENTER);
+        lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(lastName);
 
         //Counter value which goes in the last row
         displayNum=new JLabel(String.valueOf(counter), JLabel.CENTER);
-        displayNum.setBounds(10, 20, 35, 25);
-        displayNum.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        displayNum.setBounds(10, 30, 50, 25);
+        displayNum.setFont(new Font("Papyrus", Font.PLAIN, 15));
         displayNum.setHorizontalAlignment(JLabel.CENTER);
         displayNum.setVerticalAlignment(JLabel.CENTER);
+        displayNum.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(displayNum);
 
         setLayout(new BorderLayout(0, 0));
-        setBorder(new EmptyBorder(20, 20, 20, 20));
+        setBorder(new EmptyBorder(30, 30, 30, 30));
 
         //Timer which is used to increment or decrement the counter
         timer = new Timer(1000, new ActionListener() {
@@ -128,17 +135,4 @@ public class P045_JOHAR_Panel extends JPanel{
         timer.setInitialDelay(500);
         timer.start();
     }
-
-
-
-   /* public static void main(String args[])
-    {
-
-        JFrame frame = new JFrame();
-        frame.setSize(100, 100);
-        frame.add(P045_JOHAR_Panel.getInstance(0));
-        frame.setVisible(true);
-
-    }*/
-
 }

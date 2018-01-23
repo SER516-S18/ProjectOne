@@ -1,4 +1,4 @@
-package ser516;
+//package ser516;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -34,7 +34,7 @@ public class P014_Bingumalla_Panel extends JPanel {
 			this.setBackground(Color.WHITE);
 			count = 0;
 		} else {
-			this.setBackground(new Color(51,204,255));
+			this.setBackground(new Color(173, 216, 230));
 			count = 9;
 		}
 
@@ -59,10 +59,9 @@ public class P014_Bingumalla_Panel extends JPanel {
 		Box vbox=Box.createVerticalBox();
 		vbox.add(firstName);
 		vbox.add(lastName);
-
+		vbox.add(timer_label);
 		/*Addition of Name and timer labels to the panel*/
 		this.add(vbox);
-		this.add(timer_label);
 
 	}
 
@@ -109,7 +108,7 @@ public class P014_Bingumalla_Panel extends JPanel {
 	 * Main function just to test testing
 	 */
 	/*public static void main(String[] args) {	
-		P014_Bingumalla_Panel obj = new P014_Bingumalla_Panel(014);
+		P014_Bingumalla_Panel obj = new P014_Bingumalla_Panel(0141);
 		JFrame frame = new JFrame();
 		frame.setSize(500, 500);
 		frame.add(obj);

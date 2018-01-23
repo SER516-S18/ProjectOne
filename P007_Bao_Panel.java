@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
+
 
 
 
@@ -15,12 +15,13 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 	JLabel name = new JLabel("<html><body>"+"Zelin"+"<br>"+"Bao"+"</html>",JLabel.CENTER);    //create a name label	
 	JLabel number = new JLabel("testing",JLabel.CENTER);										//create a timer label
 	private boolean input = false;		//decide increasing or decreasing
+	private Thread thread;  			//thread variable
 	
-	
-	public P007_Bao_Panel(int num) {
+	public P007_Bao_Panel(int num) {			
+		
 		//set font of labels
-	    number.setFont(new Font("Rockwell", 1, 30));	
-		name.setFont(new Font("Rockwell", 1, 30));		
+	    number.setFont(new Font("Rockwell", 1, 15));	
+		name.setFont(new Font("Rockwell", 1, 15));		
 		
 		
 		//set panel
@@ -36,13 +37,17 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 			setBackground(Color.WHITE);
 		}
 		
+		//run another thread
+		thread = new Thread(this);
+		thread.start();
+		
 	}
 	
-	
+	//override run method 
 	public void run(){
 		try{
 			
-			if(input){		//increasing
+			if(input){		//increasing the timer
 				int i = 0;
 			
 				while(i <= 9){
@@ -55,7 +60,7 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 				 }
 		
 			}
-			else{		//decreasing
+			else{		//decreasing the timer
 				int i = 9;
 				while(i >= 0){
 					String iValue = String.valueOf(i);
@@ -65,6 +70,7 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 					if(i < 0)	i = 9;
 				}
 			}
+			
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
@@ -74,7 +80,7 @@ public class P007_Bao_Panel extends JPanel implements Runnable{
 		//test 
 		JFrame jf = new JFrame();	//create a frame
 		P007_Bao_Panel p = new P007_Bao_Panel(1);	
-		new Thread(p).start();	
+		//new Thread(p).start();	
 		jf.setSize(800,800);
 		jf.setVisible(true);
 		jf.add(p);

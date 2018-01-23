@@ -28,7 +28,7 @@ public class P054_Katpally_Panel{
 		}
 		else
 		{	
-			color = new Color(31, 190, 214);
+			color = new Color(173, 216, 230);
 		}
 	}
 	
@@ -39,15 +39,15 @@ public class P054_Katpally_Panel{
 		
 	    label1 = new JLabel("Harshitha");
 	    label1.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-	    label1.setFont(new Font("Papyrus", Font.BOLD, 16));
+	    label1.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	    
 	    label2 = new JLabel("Katpally");
 	    label2.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-	    label2.setFont(new Font("Papyrus", Font.BOLD, 16));
+	    label2.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	    
 	    label3 = new JLabel("Text");
 	    label3.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-	    label3.setFont(new Font("Papyrus", Font.BOLD, 16));
+	    label3.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	  
 	    panel = new JPanel();
 	    panel.setSize(100, 100);

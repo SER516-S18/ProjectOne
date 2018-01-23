@@ -59,7 +59,7 @@ public class P009_Bhangal_Panel extends JPanel{
 		}
 		else {												//If input to constructor is Odd
 					
-			this.setBackground(Color.CYAN);					//set lightBlue color
+			this.setBackground(new Color(173,216,230));					//set lightBlue color
 			check = 0;
 			count = 9;
 		}
@@ -80,12 +80,12 @@ public class P009_Bhangal_Panel extends JPanel{
 		counterLabel = new JLabel("counterLabel");
 		
 		nameLabel.setText("<html>Karansher<br>Bhangal<html>");
-		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		this.add(nameLabel);
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		counterLabel.setText("0");
-		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		this.add(counterLabel);
 		counterLabel.setHorizontalAlignment(SwingConstants.CENTER);
 	}

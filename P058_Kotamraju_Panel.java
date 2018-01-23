@@ -1,17 +1,15 @@
-package P058_Kotamraju_Panel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 /**
  *
- * @author koush
+ * @author Koushik Kotamraju
  */
 public class P058_Kotamraju_Panel extends JPanel{
 
-    private int key; //integer value that will determine the counter and background color
-    private JLabel counterLabel, nameLabel; //two labels: one for the counter and one for name
-    private int counter;
+    int key; //integer value that will determine the counter and background color
+    JLabel counterLabel, nameLabel; //two labels: one for the counter and one for name
+    int counter;
 
     public P058_Kotamraju_Panel(int key) 
     {
@@ -19,24 +17,25 @@ public class P058_Kotamraju_Panel extends JPanel{
         {
             this.key = key;
             this.setPreferredSize(new Dimension(100,100));
-            if(key % 2 == 0)
+            if(key % 2 == 0)	//if even
             {
-                this.setBackground(Color.WHITE);
+                this.setBackground(Color.WHITE);	//changing background color to white
                 this.counter = 0;
             }
-            else
+            else	//if odd
             {
-                this.setBackground(Color.CYAN);
+		Color blue1 = new Color(173,216,230); // changing background color to blue
+            	this.setBackground(blue1);	
                 this.counter = 9;
             }
-
+	    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
             nameLabel = new JLabel("<html>Koushik<br>Kotamraju</html>");    //creating name label for first name and last name
             nameLabel.setFont(new Font("Papyrus",Font.BOLD,15));
-            this.add(nameLabel);
+            this.add(nameLabel);    //adding name to Panel
             
             counterLabel = new JLabel(String.valueOf(counter)); //counterLabel to display counter increasing or decreasing
             counterLabel.setFont(new Font("Papyrus",Font.BOLD,15));
-            this.add(counterLabel);
+            this.add(counterLabel); //adding counter to Panel
             startCounter(); //starting Counter
             
         }
@@ -56,30 +55,34 @@ public class P058_Kotamraju_Panel extends JPanel{
 	
 	            public void actionPerformed(ActionEvent event) {	
 	                if(key % 2 == 0){
-	
-	                    counter = counter + 1; //increasing
                             if(counter == 9)
                             {
-                                counter =0; //reset counter
+                                counterLabel.setText(Integer.toString(counter));
+                                counter = 0; //reset counter
+                            }
+                            else
+                            {
+                                counter = counter + 1; //increasing
                             }
 	
 	                }	
 	                else
                         {
-	                    counter = counter -1; //decreasing
                             if(counter == 0)
                             {
+                                counterLabel.setText(Integer.toString(counter));
                                 counter =9; //reset counter
+                            }
+                            else
+                            {
+                                counter = counter -1; //decreasing
                             }
 	                }
 	                counterLabel.setText(Integer.toString(counter));
 	            }
 	
 	        });
-            t.setRepeats(true);
-            t.start();
-	
-	        
+            t.start();  //start timer
         }
         catch(Exception e) 
         {
@@ -87,13 +90,12 @@ public class P058_Kotamraju_Panel extends JPanel{
         }
     }
 	
-//     public static void main(String[] args) {
-        
-//         JFrame frame = new JFrame();
+//    public static void main(String[] args) {    
+//        JFrame frame = new JFrame();
 //     	frame.setContentPane(new P058_Kotamraju_Panel(6));
 //     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //     	frame.pack();
 //     	frame.setVisible(true);
-//     }
+//    }
     
 }

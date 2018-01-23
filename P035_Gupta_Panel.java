@@ -21,36 +21,43 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
         public final int WIDTH = 100;
         public final int wait = 1000;
         Integer value;
-        
+        int determineCounter;
+	 GridBagConstraints c;
         
 	P035_Gupta_Panel(int val)  
         {  
 	this.value=val;
       // creating labels
-        labelName = new JLabel("<html>Mahima<br>Gupta</html>"); //JPanel with full namelabel,first namelabel on first row and last namelabel on the next row.
+        labelName = new JLabel("<html><br>Mahima<br>Gupta<br><br><br><br><br><br><br></html>"); //JPanel with full namelabel,first namelabel on first row and last namelabel on the next row.
         timeLabel= new JLabel("");
+    
         
         //Resetting the font for both the variables
         labelName.setFont(new Font("Papyrus", Font.BOLD, 15));
-        timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15));                             
+        timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15)); 
         
+        JPanel panel=new JPanel(new GridBagLayout());
+         
+        c = new GridBagConstraints();
+        c.gridx=0;                                                   
+	c.gridy=2;
         //Giving attributes to  panel
-        this.setSize(HEIGHT,WIDTH); 
+        panel.setSize(HEIGHT,WIDTH); 
        
-         if(val%2==0) {
+         if(value%2==0) {
 
-			this.setBackground(Color.WHITE);
+			panel.setBackground(Color.WHITE);
                         counter=0;
                      }
 		
         else         {
-			this.setBackground(new Color(173,216,230));
+			panel.setBackground(new Color(173,216,230));
                         counter=9;
 		}
 
 
-        this.add(labelName);
-        this.add(timeLabel);
+        panel.add(labelName,c);
+        panel.add(timeLabel,c);
 		
       //Counter for displaying 0 to 9
         Thread t = new Thread(this);
@@ -68,7 +75,7 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
                             if(counter <10)
                             {
                             Thread.sleep(wait);
-                            timeLabel.setText("            "+counter.toString()); //JLabel displaying numbers from 0-9
+                            timeLabel.setText(counter.toString()); //JLabel displaying numbers from 0-9
                             counter++;
                             }
                             else counter=0;
@@ -78,7 +85,7 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
                         if(counter>=0)
                         {
                         Thread.sleep(wait);
-                        timeLabel.setText("            "+counter.toString()); //JLabel displaying numbers from 0-9
+                        timeLabel.setText(counter.toString()); //JLabel displaying numbers from 0-9
                         counter--;
                         }
                         else 
@@ -91,19 +98,22 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
 		    }   
 	            }
 	            }
-                  
+            
 	        }
+
+
 /*
-public static void main(String args[])  
+      public static void main(String args[])  
         {  
         JFrame frame=new JFrame("");
-     
-        
-      frame.add(new P035_Gupta_Panel(2));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     frame.add(panel);
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,400);    
         frame.setLayout(null);    
         frame.setVisible(true);
+        
+      frame.add(new P035_Gupta_Panel(2));
+       
         	 
         	
         }

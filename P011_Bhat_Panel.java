@@ -51,17 +51,15 @@ public class P011_Bhat_Panel extends JPanel {
 	 * @return Jlabel which is used to display counter
 	 */
 	private JLabel createCounterLabel(int num) {
-		JLabel counterLabel = new JLabel();
+		JLabel counterLabel = new JLabel("",SwingConstants.CENTER);
 		if (num % 2 == 0) {
 			counterLabel.setText("0");
 			this.setBackground(Color.white);
 		} else {
 			counterLabel.setText("9");
-			this.setBackground(SystemColor.activeCaption);
+			this.setBackground(new Color(171,216,230));
 		}
-
-		counterLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		counterLabel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		counterLabel.setBorder(null);
 		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
 		counterLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 		counterLabel.setPreferredSize(new Dimension(50, 30));
@@ -73,10 +71,9 @@ public class P011_Bhat_Panel extends JPanel {
 	 * Name label shows First name in the one row and last name in the second row
 	 */
 	private void createNameLabel() {
-		JLabel nameLabel = new JLabel("<html>Shilpa <br> Bhat </html>");
-		nameLabel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		JLabel nameLabel = new JLabel("<html>Shilpa <br> Bhat </html>",SwingConstants.CENTER);
+		nameLabel.setBorder(null);
 		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nameLabel.setPreferredSize(new Dimension(95, 50));
 		add(nameLabel);
 	}
@@ -85,9 +82,9 @@ public class P011_Bhat_Panel extends JPanel {
 	 * Panel size set to 100*100
 	 */
 	private void stylePanel() {
-		setMaximumSize(new Dimension(100, 100));
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBorder(null);
 		setPreferredSize(new Dimension(100, 100));
+		setLayout(new GridLayout(2,1));
 	}
 }
 

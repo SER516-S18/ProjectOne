@@ -40,17 +40,25 @@ public class P082_gspai_panel extends JPanel{
     }
 
     public void background_color(Color col) {
-
-      
+        
         setSize(100,100);//here we set the size of panel to 100 and 100
-        setBackground(col);//initially setting the background color of the whole panel
-        JLabel Name = new JLabel("<html>Gopika<br>Pai</html>");//Create and initialise Name label with the name of the person
-        Name.setFont(new Font("Papyrus", Font.PLAIN, 10));
-        add(Name);
+		setLayout(new GridBagLayout());//aligns to the center
+        GridBagConstraints center1 = new GridBagConstraints();
+        setBackground(col);//initially setting the background color of thw whole panel
+		JLabel Name = new JLabel("<html>Gopika<br>Pai</html>");//Create and initialise Name label with the name of the person
+		center1.gridx=0;
+        center1.gridy=0;
+        
+        Name.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        add(Name, center1);
+		
 
         JLabel  Counter = new JLabel(String.valueOf(cntr));//Create and Initialise Counter label with the counter value
-        Counter.setFont(new Font("Papyrus", Font.PLAIN, 10));
-        add(Counter);
+        Counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		
+		center1.gridx=0;//Set the column address to O for the leftmost element
+        center1.gridy=1;
+        add(Counter, center1);
         
         //Timer value is wrapped in between try and catch to handle exceptions during runtime
         try {

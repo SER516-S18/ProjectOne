@@ -1,8 +1,5 @@
-package helloWorld;
-
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 /**
  * SER: 516(SOFTWARE AGILITY)
@@ -28,20 +25,19 @@ public class P010_Bhat_Panel extends JPanel {
 			 * on the value of passed integer- whether it is even or odd.
 			 */
 		 	
-	 		Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
-	 		this.setBorder(border);
-	 		this.setVisible(true);	 		
 	 		this.setPreferredSize(new Dimension(100,100));
 	 		this.setLayout(new GridLayout(2,1));
 	 		displayNumber = new JLabel();
 	 		fullName = new JLabel("<html>Kritika<br> Bhat</html>");
-	 		fullName.setFont(new Font("Papyrus", Font.BOLD, 14));
+			fullName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+	 		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	 		this.add(fullName);
 	 		this.add(displayNumber);
 	 		fullName.setHorizontalAlignment(JLabel.CENTER);
 	 		displayNumber.setHorizontalAlignment(JLabel.CENTER);
+	 		this.setVisible(true);	 		
 	 		
-	 		/**
+	 		/** 
 	 		 *The background color and counter value are decided here 
 	 		 */
 	 		
@@ -50,7 +46,7 @@ public class P010_Bhat_Panel extends JPanel {
 	 			method_timer(controlInteger);	 			
 	 		}
 	 		else { 
-	 			this.setBackground(new Color(187,255,255));
+	 			this.setBackground(new Color(173,216,230));
 	 			method_timer(controlInteger);			 	    
 	 		}
 		}
@@ -97,6 +93,7 @@ public class P010_Bhat_Panel extends JPanel {
 			    }.start();
 			}
 		}
+		
 		
 		/**
 		 * The main method was used for testing only.

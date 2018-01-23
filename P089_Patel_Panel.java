@@ -9,100 +9,87 @@ import javax.swing.*;
  * @author  Meet Patel
  * @version 1.0
  */
-
-public class P089_Patel_Panel
-{
-    int counter; // to increase or decrease the timer
+public class P089_Patel_Panel{
+    int counter;
     Timer timer;
-    JPanel newPanel = new JPanel(new GridBagLayout());// Object of JPanel class and declared the layout of Panel
-    JLabel nameLabel = new JLabel("<html>Meet<br>Patel</html>");//First Label with first and last name
-    JLabel timerLabel = new JLabel();//Second Label for the counter
-
+    JPanel newPanel = new JPanel(new GridBagLayout());
+    JLabel nameLabel = new JLabel("<html>Meet<br>Patel</html>");
+    JLabel timerLabel = new JLabel();
     /**
      *
      * @param num - To change the Backgroud of the panel, if ODD, changes to lightblue else to White
      */
-    public P089_Patel_Panel(int num) { // Parameterized constructor to add the Labels in the Panel
-
-        GridBagConstraints constraints = new GridBagConstraints(); //object of Layout Class
-        GridBagConstraints constraints1 = new GridBagConstraints();// 2nd object for 2nd label of layout class
-        newPanel.setPreferredSize(new Dimension(100, 100));// Fix the dimensions of Panel
-        constraints.gridx = 0; // Positioning of Label 1 - x-coordinate
-        constraints.gridy = 0; // Positioning of Label 1 - y-coordinate
-        constraints1.gridx = 0; //Positioning of Label 1 - x-coordinate
-        constraints1.gridy = 2; //Positioning of Label 1 - y-coordinate
-        nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 13)); // Set font properties of Label1
-        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 13)); // Set font properties of Label2
-        newPanel.add(nameLabel, constraints);// Adds Label1 to panel
-        newPanel.add(timerLabel, constraints1);//Adds Label2 to panel
-        if(num % 2 != 0){ // checks for odd number
-            Color lightblue = new Color(173,216,230); // changes the background color of Panel
+    public P089_Patel_Panel(int num) { 
+        GridBagConstraints constraints = new GridBagConstraints(); 
+        GridBagConstraints constraints1 = new GridBagConstraints();
+        newPanel.setPreferredSize(new Dimension(100, 100));
+        constraints.gridx = 0;
+        constraints.gridy = 0; 
+        constraints1.gridx = 0; 
+        constraints1.gridy = 2; 
+        nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15)); 
+        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        newPanel.add(nameLabel, constraints);
+        newPanel.add(timerLabel, constraints1);
+        if(num % 2 != 0){
+            Color lightblue = new Color(173,216,230); 
             newPanel.setBackground(lightblue);
             counter = 9;
-            Thread t = new Thread(){ //creates the new thread
+            Thread t = new Thread(){
                 public void run(){
-                    timer = new Timer(1000, new ActionListener() { //creates the timer
+                    timer = new Timer(1000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            timerLabel.setText(Integer.toString(counter));//prints the timer in the label
+                            timerLabel.setText(Integer.toString(counter));
                             counter--;
                             if (counter == -1) {
                                 counter = 9;
                             }
                             try{
                             }
-                            catch(Exception a){ // Exception Handling
+                            catch(Exception a){
                                 System.out.println(a);
                             }
                         }
                     });
-                    timer.setInitialDelay(0); // Sets initial delay of the timer
-                    timer.start(); // Initiates the timer
+                    timer.setInitialDelay(0);
+                    timer.start(); 
                 }
             };
-            t.start(); // Starts the Thread
-
+            t.start();
         }
         else{
-            newPanel.setBackground(Color.WHITE); // sets background color
+            newPanel.setBackground(Color.WHITE);
             counter = 0;
-            Thread t = new Thread(){ // creates a new Thread
+            Thread t = new Thread(){
                 public void run(){
-                    timer = new Timer(1000, new ActionListener() { // Creates the new Timer
+                    timer = new Timer(1000, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            timerLabel.setText(Integer.toString(counter)); //prints the timer on the Label
+                            timerLabel.setText(Integer.toString(counter)); 
                             counter++;
                             if(counter == 10){
                                 counter = 0;
                             }
                             try{
                             }
-                            catch(Exception a){ // Exception Handling
+                            catch(Exception a){ 
                                 System.out.println(a);
                             }
                         }
                     });
                     timer.setInitialDelay(0);
-                    timer.start();//Starts the Timer
+                    timer.start();
                 }
             };
-            t.start();// Starts the Thread
-
+            t.start();
         }
-        //add(newPanel); //adds the panel to the frame
-        //pack(); //to pack all components
-        //setLocationRelativeTo(null);
-        //setVisible(true);
-
     }
-
     /**
      *
      * @return - Returns the object of the Panel
      */
-    public JPanel Ret_Panel_Object(){ // Funtion to return the JPanel Object
+    public JPanel Ret_Panel_Object(){
         return newPanel;
     }
-
 }

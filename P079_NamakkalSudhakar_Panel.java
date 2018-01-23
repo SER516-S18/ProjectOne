@@ -20,7 +20,7 @@ import javax.swing.border.EtchedBorder;
  */
 
 @SuppressWarnings("serial")
-public class P078_NamakkalSudhakar_Panel extends JPanel {
+public class P079_NamakkalSudhakar_Panel extends JPanel {
 	
 	//Panel type is based on the number passed to the constructor, this is used instead of repeatedly finding whether the number is even or odd
 	enum PanelType {
@@ -30,7 +30,7 @@ public class P078_NamakkalSudhakar_Panel extends JPanel {
 	
 	private PanelType panelType;
 	
-	public P078_NamakkalSudhakar_Panel(int num) {
+	public P079_NamakkalSudhakar_Panel(int num) {
 		
 		//Set panel type
 		this.panelType = (num%2 == 0) ? PanelType.Even : PanelType.Odd; 

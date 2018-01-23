@@ -1,5 +1,5 @@
 
-
+import java.awt.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -88,7 +88,7 @@ public class P069_Mantri_Panel extends JPanel
             }
         });
         t.start();
-    
+        this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
         //setting name and surname in the variables
         Name.setText("Rishab");
         Surname.setText("Mantri");
@@ -96,15 +96,14 @@ public class P069_Mantri_Panel extends JPanel
         add(Surname);
         add(Clock);
         //setting font
-        Name.setFont(new Font("Papyrus",Font.BOLD,16));
-        Surname.setFont(new Font("Papyrus",Font.BOLD,16));
-        Clock.setFont(new Font("Papyrus",Font.BOLD,16));
+        Name.setFont(new Font("Papyrus",Font.PLAIN,15));
+        Surname.setFont(new Font("Papyrus",Font.PLAIN,15));
+        Clock.setFont(new Font("Papyrus",Font.PLAIN,15));
         
-        Name.setBounds(25, 1, 50, 25);
-        Surname.setBounds(25, 30, 50, 25);
-        Clock.setBounds(25, 59, 50, 25);
-        setSize(100,100);    
-        setLayout(null); 
+        Name.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Surname.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Clock.setAlignmentX(Component.CENTER_ALIGNMENT);
+        setSize(100,100);
         setVisible(true);   
         }
  

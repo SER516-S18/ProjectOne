@@ -1,8 +1,3 @@
-/* Implementation for SER 516 Lab-1
- * @author Zain Siddiqui
- * Class to implement Panel with full name, a counter, 
- * and background color.*/
-
  import java.awt.Font;
  import java.awt.Color;
  import java.awt.event.ActionEvent;
@@ -13,13 +8,18 @@
  import javax.swing.JFrame;
  import javax.swing.Timer;
  import javax.swing.BoxLayout;
- 
- /*
-  * Creating class as per Lab-work intructions
-  */
+
+/**
+ * Implementation for SER 516 Lab-1
+ * @author Zain Siddiqui
+ * Class to implement Panel with full name, a counter, 
+ * and background color.
+ * Creating class as per Lab-work intructions
+ */
  public class P105_Siddiqui_Panel extends JPanel {
 
- 	private JLabel fullName;
+ 	private JLabel fName;
+ 	private JLabel lName;
  	private JLabel counter;
  	private ActionListener al;
  	private Color bgColor;
@@ -36,7 +36,8 @@
  	public static final Color lightBlue_Bg = new Color(173,216,230);
 
  	/*
- 	 * Constructor which takes an integer value and set parameters for background and counter direction.
+ 	 * Constructor which takes an integer value and set parameters for 
+	 * background and counter direction.
  	 */
 
  	public P105_Siddiqui_Panel(int value){
@@ -59,17 +60,23 @@
  	 */
  	public void panelWork(){
 
- 		fullName = new JLabel("<Html><div>Zain<br>Siddiqui</div></Html>");
+ 		fName = new JLabel("Zain");
+ 		lName = new JLabel("Siddiqui");
  		counter = new JLabel();
  		font = new Font("Papyrus", Font.PLAIN, 15);
 
 
- 		fullName.setFont(font);
+ 		fName.setFont(font);
+ 		lName.setFont(font);
  		counter.setFont(font);
+ 		fName.setAlignmentX(CENTER_ALIGNMENT);
+ 		lName.setAlignmentX(CENTER_ALIGNMENT);
+ 		counter.setAlignmentX(CENTER_ALIGNMENT);
 
  		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
- 		add(fullName);
+ 		add(fName);
+ 		add(lName);
  		add(counter);
 
  		try{
@@ -123,24 +130,4 @@
  	}
  			
 
- 		
- 	
-
- 	
- 	/* Main method for testing purpose */
-	/* 
- 	public static void main(String[] args) {
- 		JFrame frame =  new JFrame();
- 		frame.setVisible(true);
-		frame.setSize(100,100);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		P105_Siddiqui_Panel testing = new P105_Siddiqui_Panel(106);
-		frame.add(testing);
- 		
- 	}
-	*/
-
  }
-
-

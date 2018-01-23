@@ -1,52 +1,50 @@
-//package edu.asu.swing.group5;
-
 import java.awt.Color;
-
 import javax.swing.JPanel;
 
 /**
  * This class creates a panel with my name and a counter
  * @author Vikram Wathodkar (vikram.wathodkar@asu.edu)
- *
  */
 public class P125_Wathodkar_Panel extends JPanel {
 
 	/**
 	 * Constructor of the class; It initialize all 
 	 * components and start the counter
-	 * @param x : if x is odd background is light blue, otherwise white
+	 * @param panelPlace : if panelPlace is odd background is light blue, otherwise white
  	 */
-	public P125_Wathodkar_Panel(int x) {
-		jLabel1 = new javax.swing.JLabel();
-		jLabel2 = new javax.swing.JLabel();
-		jLabel3 = new javax.swing.JLabel();
-		jLabel1.setText("Vikram Kiran");
-		jLabel2.setText("Wathodkar");
-		jLabel3.setText("0");
+	public P125_Wathodkar_Panel(int panelPlace) {
+		
+		/* Initialize labels and add them in panel */
+		jLabelFirstName = new javax.swing.JLabel();
+		jLabelLastName = new javax.swing.JLabel();
+		jLabelCounter = new javax.swing.JLabel();
+		jLabelFirstName.setText("Vikram Kiran");
+		jLabelLastName.setText("Wathodkar");
+		jLabelCounter.setText("0");
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
 		this.setLayout(layout);
 		layout.setHorizontalGroup(layout
 				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(
 						layout.createSequentialGroup()
-								.addGap(55, 55, 55)
+								.addGap(20, 20, 20)
 								.addGroup(
 										layout.createParallelGroup(
 												javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel3)
-												.addComponent(jLabel2)
-												.addComponent(jLabel1))
+												.addComponent(jLabelCounter)
+												.addComponent(jLabelLastName)
+												.addComponent(jLabelFirstName))
 								.addContainerGap(202, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout.createParallelGroup(
 				javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-				layout.createSequentialGroup().addGap(40, 40, 40)
-						.addComponent(jLabel1).addGap(40, 40, 40)
-						.addComponent(jLabel2).addGap(39, 39, 39)
-						.addComponent(jLabel3)
+				layout.createSequentialGroup().addGap(20, 20, 20)
+						.addComponent(jLabelFirstName).addGap(20, 20, 20)
+						.addComponent(jLabelLastName).addGap(20, 20, 20)
+						.addComponent(jLabelCounter)
 						.addContainerGap(82, Short.MAX_VALUE)));
 		
 		/* Set the background depending on argument */
-		if (x % 2 == 0)
+		if (panelPlace % 2 == 0)
 			this.setBackground(Color.WHITE);
 		else
 			this.setBackground(new Color(90, 150, 255));
@@ -66,9 +64,9 @@ public class P125_Wathodkar_Panel extends JPanel {
 				Integer counter = 0;
 				int step = 1;
 				while (true) {
-					jLabel3.setText(counter.toString());
+					jLabelCounter.setText(counter.toString());
 					try {
-						/* Put thread to sleep for 1 sec */
+						/* Put thread to sleep for 1 second */
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
@@ -82,7 +80,8 @@ public class P125_Wathodkar_Panel extends JPanel {
 		t.start();
 	}
 	
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel2;
-	private javax.swing.JLabel jLabel3;
+	/* Private Variables */
+	private javax.swing.JLabel jLabelFirstName;
+	private javax.swing.JLabel jLabelLastName;
+	private javax.swing.JLabel jLabelCounter;
 }

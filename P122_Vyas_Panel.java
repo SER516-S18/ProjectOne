@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 /*
 * @author Shubham Vyas
@@ -34,7 +35,7 @@ public class P122_Vyas_Panel extends JPanel{
 			this.setBackground(Color.WHITE);
 		}
 		else{
-			this.setBackground(new Color(176, 216, 230));
+			this.setBackground(new Color(173, 216, 230));
 			flag = false;
 		}
 		initialize();
@@ -47,13 +48,14 @@ public class P122_Vyas_Panel extends JPanel{
 		setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("<html><center>Shubham<br>Vyas</center></html>");
-		lblNewLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		lblNewLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		lblNewLabel.setBounds(10, 10, 60, 38);
 		add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(10, 44, 46, 14);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(10, 48, 46, 14);
 		add(lblNewLabel_1);
 
 		Timer timer = new Timer();

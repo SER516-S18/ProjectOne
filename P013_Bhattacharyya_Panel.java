@@ -1,9 +1,16 @@
+/* 
+ * SER 516 Lab 1
+ * Debarati Bhattacharyya
+ * 01/22/2017
+ *
+ */
+
 import java.awt.*;  
 import javax.swing.*;  
 import java.awt.event.*;
 import java.awt.Color;
 
-public class P013_Bhattacharyya_Panel{
+public class P013_Bhattacharyya_Panel extends JPanel{
 	
    /*This class is used to create a Panel of size 100X100 which contains three labels Firstname, Lastname
     *and number. This number increments from 0-9 if the value passed to the class is even and decrements 
@@ -13,7 +20,6 @@ public class P013_Bhattacharyya_Panel{
    private JLabel firstname;
    private JLabel lastname;
    private JLabel number;
-   private JPanel myPanel;
    private int flag;
    
    // This is the constructor which receives an integer value.
@@ -22,45 +28,38 @@ public class P013_Bhattacharyya_Panel{
 		  flag = 0; //set flag to 0 if value is even
 	  else
 		  flag = 1; //set flag to 1 if value is odd
-   }
-    
-   // This method creates the Panel and returns a panel object.	
-   public JPanel P013_Bhattacharyya_Panel(){
-	   
+	  
 	  // Creation of JLabel 
 	  
       firstname = new JLabel("Debarati", JLabel.CENTER);   
-      firstname.setFont(new Font("Papyrus", Font.PLAIN, 14));	  
+      firstname.setFont(new Font("Papyrus", Font.PLAIN, 15));	  
       lastname = new JLabel("Bhattacharyya",JLabel.CENTER);  
-      lastname.setFont(new Font("Papyrus", Font.PLAIN, 14));
+      lastname.setFont(new Font("Papyrus", Font.PLAIN, 15));
       number = new JLabel();
-	  number.setFont(new Font("Papyrus", Font.PLAIN, 14));
+	  number.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	  firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
 	  lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
 	  number.setAlignmentX(Component.CENTER_ALIGNMENT);
 	  
 	  // Creation of JPanel
 	  
-	  myPanel = new JPanel();  
-	  myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
-	  myPanel.setSize(100, 100);
+	  setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+	  setSize(100, 100);
 	  
 	  if (flag == 0)
-		  myPanel.setBackground(Color.white);
+		  setBackground(Color.white);
 	  else
-		  myPanel.setBackground(new Color(187, 255, 255));
+		  setBackground(new Color(173, 216, 230));
       
 	  // Adding components to the panel
 	  
-	  myPanel.add(firstname);
-	  myPanel.add(lastname);
-	  myPanel.add(number);
-	  myPanel.setVisible(true);
+	  add(firstname);
+	  add(lastname);
+	  add(number);
+	  setVisible(true);
 	  
 	  // Timer increment and decrement
 	  TimerFunc();
-
-	  return myPanel;  
    }
 	
     public void TimerFunc(){
@@ -101,10 +100,9 @@ public class P013_Bhattacharyya_Panel{
 	/*This code is for testing purpose			
     public static void main(String[] args){
 	   
-	   P013_Bhattacharyya_Panel obj = new P013_Bhattacharyya_Panel(2);
-	   JPanel panel_obj = obj.P013_Bhattacharyya_Panel();
+	   P013_Bhattacharyya_Panel obj = new P013_Bhattacharyya_Panel(13);
 	   JFrame frame_obj = new JFrame();
-	   frame_obj.add(panel_obj);
+	   frame_obj.add(obj);
 	   frame_obj.setLayout(new FlowLayout(FlowLayout.CENTER, 0,90));
 	   frame_obj.setSize(800, 800);
 	   frame_obj.setVisible(true);

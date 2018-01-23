@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import java.util.*;
 import java.util.Timer;
@@ -22,10 +21,12 @@ public class P028_Dusad_Panel{
 	private JLabel timer;
 	
 
-	//Constructor which takes an integer as input. 
-	//If the integer is even then we set even=true and counter to 0. value goes from 0 to 9
-	//If the integer is odd then we set even=false and counter to 9. value goes from 9 to 0
-	public P028_Dusad_Panel(int color_value) {
+	/**
+    * Constructor which takes an integer as input.
+	* If the integer is even then we set even=true and counter to 0. value goes from 0 to 9
+	* If the integer is odd then we set even=false and counter to 9. value goes from 9 to 0
+	*/
+    public P028_Dusad_Panel(int color_value) {
 		try {
 			if (color_value % 2 == 0) {
 				even = true;
@@ -40,18 +41,20 @@ public class P028_Dusad_Panel{
 		}
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		P028_Dusad_Panel panel28 = new P028_Dusad_Panel(2);
-		JFrame frame = new JFrame("28-Frame");
-		frame.setSize(300, 300);
-		JPanel panel = panel28.preparePanelUI(7);
-		frame.add(panel);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
- 
-	}
-	
+//    public static void main(String[] args) {
+//        // TODO Auto-generated method stub
+//        P028_Dusad_Panel panel28 = new P028_Dusad_Panel(2);
+//        JFrame frame = new JFrame("28-Frame");
+//        frame.setSize(300, 300);
+//        JPanel panel = panel28.preparePanelUI(7);
+//        frame.add(panel);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setVisible(true);
+//
+//    }
+	/**
+     *This method creates a panel with 3 JLabels. First name, Last name and a timer.
+     */
 	public JPanel preparePanelUI(int color_value) {
 		try {
 			//Panel and label properties: Font, Color, Text, Layout, size and calls function made for the timer execution
@@ -60,6 +63,7 @@ public class P028_Dusad_Panel{
 			panel.setSize(100, 100);
 			JLabel firstNameLabel,lastNameLabel;
 			
+            //1st label: create firstname label
 			firstNameLabel = new JLabel("Utsav", JLabel.CENTER);
 			firstNameLabel.setBounds(10, 0, 35, 25);
 			firstNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 10));
@@ -67,6 +71,7 @@ public class P028_Dusad_Panel{
 			firstNameLabel.setVerticalAlignment(JLabel.CENTER);
 			panel.add(firstNameLabel);
 			
+            //2nd label: create lastname label
 			lastNameLabel = new JLabel("Dusad", JLabel.CENTER);
 			lastNameLabel.setBounds(10, 10, 35, 25);
 			lastNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 10));
@@ -74,10 +79,11 @@ public class P028_Dusad_Panel{
 			lastNameLabel.setVerticalAlignment(JLabel.CENTER);
 			panel.add(lastNameLabel);
 			
+            //3rd label: create timer label
 			timer = new JLabel("0", JLabel.CENTER);
 			timer.setBounds(10, 20, 25, 25);
 			Timer t = new Timer();
-			timer.setFont(new Font("Papyrus", Font.PLAIN, 10));
+			timer.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			timer.setHorizontalAlignment(JLabel.CENTER);
 			timer.setVerticalAlignment(JLabel.CENTER);
 			panel.add(timer);
