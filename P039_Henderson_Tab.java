@@ -36,8 +36,7 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P038_Gupta_Panel(typeSwitch++));
 		this.add(new P040_Henderson_Panel(typeSwitch++));
 		this.add(new P041_Hosahalli_Panel(typeSwitch++));
-		// Is not a panel. Will not work. Does not appear to be done.
-		// this.add(new P042_Yiru_Panel(15));
+		this.add(new P042_Hu_Panel(typeSwitch++));
 		this.add(new P043_Iyer_Panel(typeSwitch++));
 		this.add(new P044_Jaime_Panel(typeSwitch++));
 		this.add(new P045_JOHAR_Panel(typeSwitch++));
