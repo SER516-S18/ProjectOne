@@ -39,7 +39,7 @@ public class P016_Bumb_Panel extends JPanel {
     private void function() {
        // jp = new JPanel();
         setSize(100,100);
-        jp.setLayout(new GridLayout(2,1)); // giving attributes to the panel
+        this.setLayout(new GridLayout(2,1)); // giving attributes to the panel
 //        jp.setPreferredSize(new Dimension(100,100));
         if (type % 2 == 0)
             this.setBackground(new Color(255, 255, 255));
