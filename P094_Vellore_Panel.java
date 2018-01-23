@@ -63,10 +63,9 @@ public class P094_Vellore_Panel extends JPanel{
 		name.setFont(font);
 		timer.setFont(font);		
 		name.setHorizontalAlignment(JLabel.CENTER);
-	    timer.setHorizontalAlignment(JLabel.CENTER);
-	    
-		
-	    //adding labels to the panel
+		timer.setHorizontalAlignment(JLabel.CENTER);
+
+		//adding labels to the panel
 		add(BorderLayout.NORTH,name);
 		add(timer);
 		setVisible(true);
