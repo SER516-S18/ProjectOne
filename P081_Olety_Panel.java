@@ -7,15 +7,14 @@
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JFrame;
 import java.awt.Dimension;
 import java.awt.Font;
 
-public class P081_Olety_Panel extends JFrame {
+public class P081_Olety_Panel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	JFrame frame = new JFrame();
+	
 	JPanel p081Panel = new JPanel();
 	JLabel p081Name = new JLabel("<html><br>Namratha<br>Olety Venkatesh<br></html>"); //label for full name
 	JLabel p081Timer = new JLabel("");
@@ -32,10 +31,6 @@ public class P081_Olety_Panel extends JFrame {
 		p081Panel.add(p081Name);
 		p081Timer.setFont(p081TimerFont);
 		p081Panel.add(p081Timer);
-		frame.add(p081Panel);
-		frame.pack();
-		frame.setVisible(true);
-	
 		//check value passed is even or odd
 		if(oddeven%2==0) 
 		{
