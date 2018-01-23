@@ -26,7 +26,7 @@ import javax.swing.*;
  * @author Yuan Cao, ID: 018
  * @version 2018.0121
  */
-public class P018_Cao_Panel {
+public class P018_Cao_Panel extends JPanel{
 
 	private boolean increase;
 	private int curTime;
@@ -43,6 +43,7 @@ public class P018_Cao_Panel {
 	 * @param arg: an integer number used to determine behavior of this constructor.
 	 */
 	public P018_Cao_Panel(int arg) {
+		super();
 		//Check argument even or odd 
 		if((arg & 1) == 1) {
 			//If odd
@@ -61,6 +62,7 @@ public class P018_Cao_Panel {
 			//Current time should be 0
 			this.curTime = 0;
 		}
+		this.create();
 	}
 	
 	/**
@@ -73,27 +75,26 @@ public class P018_Cao_Panel {
 	 * @return a panel instance which user wish to create.
 	 * @see java.awt.event.ActionListener;
 	 */
-	public JPanel create() {
-		JPanel panel = new JPanel();
+	private void create() {
 		Font font = new Font("Papyrus", Font.PLAIN, 12);
 		
 		//Configure panel layout and size
-		panel.setLayout(new GridLayout(2, 1));
-		panel.setPreferredSize(new Dimension(100, 100));
-		panel.setMinimumSize(new Dimension(100, 100));
+		setLayout(new GridLayout(2, 1));
+		setPreferredSize(new Dimension(100, 100));
+		setMinimumSize(new Dimension(100, 100));
 		
 		//Configure panel background color
-		panel.setBackground(this.color);
+		setBackground(this.color);
 		
 		//JLabel for name
 		JLabel label1 = new JLabel("<html>Yuan<br>Cao</html>", JLabel.CENTER);
 		label1.setFont(font);
-		panel.add(label1);
+		add(label1);
 		
 		//JLabel for time counter
 		JLabel label2 = new JLabel(Integer.toString(curTime), JLabel.CENTER);
 		label2.setFont(font);
-		panel.add(label2);
+		add(label2);
 		
 		//Configuring timer for time counter
 		
@@ -116,8 +117,6 @@ public class P018_Cao_Panel {
 		//Create a new timer and run it
 		Timer timer = new Timer(this.TIME_INTERVAL, taskPerformer);
 		timer.start();
-		
-		return panel;
 	}
 
 	/**
@@ -136,8 +135,8 @@ public class P018_Cao_Panel {
 		frame.setUndecorated(true);
 		
 		//Setting and getting new panel
-		P018_Cao_Panel entity = new P018_Cao_Panel(1);
-		frame.setContentPane(entity.create());
+		P018_Cao_Panel entity = new P018_Cao_Panel(2);
+		frame.setContentPane(entity);
 		
 		//Pack and run it
 		frame.pack();
