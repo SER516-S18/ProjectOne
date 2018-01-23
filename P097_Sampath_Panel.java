@@ -19,9 +19,21 @@ public class P097_Sampath_Panel extends JPanel{
     private int counter;
     private TimerTask oneSecondTask;
     private boolean isEven;
-
+    private static final String labelName = "<html>Balachandar<br>Sampath</html>";
+    public enum ColorsEnum{
+        LIGHTBLUE(new Color(173,216,230)), WHITE(Color.WHITE);
+        private Color color;
+        private ColorsEnum(Color color)
+        {
+            this.color=color;
+        }
+        public Color getColor() {
+            return color;
+        }
+    }
     /**
-     * This constructor acts as a controller which calls appropriate functions to intialize timer, labels and background based on input value
+     * This constructor acts as a controller which calls appropriate functions to intialize timer, labels and background
+     * based on input value
      * @param inputValue
      */
     public P097_Sampath_Panel(int inputValue)
@@ -41,11 +53,11 @@ public class P097_Sampath_Panel extends JPanel{
     private void initializeBackGround(boolean isEven) {
         if(isEven)
         {
-            setBackground(Color.WHITE);
+            setBackground(ColorsEnum.WHITE.getColor());
         }
         else
         {
-            setBackground(new Color(173,216,230));
+            setBackground(ColorsEnum.LIGHTBLUE.getColor());
         }
     }
 
@@ -64,10 +76,8 @@ public class P097_Sampath_Panel extends JPanel{
                         counter = (counter + 1) % 10;
                     else
                         counter = (9 + counter) % 10;
-
                 }
             };
-
             Timer timer = new Timer();
             long interval = 1000L;
             long delay = 0L;
@@ -77,7 +87,6 @@ public class P097_Sampath_Panel extends JPanel{
         {
             e.printStackTrace();
         }
-
     }
 
     /** This method is used to initialise the labels, one for name and another for counter value.
@@ -86,7 +95,7 @@ public class P097_Sampath_Panel extends JPanel{
     public void initializeLabels()
     {
         setLayout(new GridBagLayout());
-        nameLabel = new JLabel("<html>Balachandar<br>Sampath</html>");
+        nameLabel = new JLabel(labelName);
         counterLabel = new JLabel();
         Border border = counterLabel.getBorder();
         Border margin = new EmptyBorder(11,11,11,11);
@@ -114,6 +123,6 @@ public class P097_Sampath_Panel extends JPanel{
         jFrame.setSize(1000, 500);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }*/
+    } */
 
 }
