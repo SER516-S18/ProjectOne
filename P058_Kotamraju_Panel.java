@@ -28,7 +28,7 @@ public class P058_Kotamraju_Panel extends JPanel{
             	this.setBackground(blue1);	
                 this.counter = 9;
             }
-
+	    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
             nameLabel = new JLabel("<html>Koushik<br>Kotamraju</html>");    //creating name label for first name and last name
             nameLabel.setFont(new Font("Papyrus",Font.BOLD,15));
             this.add(nameLabel);    //adding name to Panel
