@@ -30,11 +30,11 @@ public class P058_Kotamraju_Panel extends JPanel{
             }
 	    this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
             nameLabel = new JLabel("<html>Koushik<br>Kotamraju</html>");    //creating name label for first name and last name
-            nameLabel.setFont(new Font("Papyrus",Font.BOLD,15));
+            nameLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
             this.add(nameLabel);    //adding name to Panel
             
             counterLabel = new JLabel(String.valueOf(counter)); //counterLabel to display counter increasing or decreasing
-            counterLabel.setFont(new Font("Papyrus",Font.BOLD,15));
+            counterLabel.setFont(new Font("Papyrus",Font.PLAIN,15));
             this.add(counterLabel); //adding counter to Panel
             startCounter(); //starting Counter
             
