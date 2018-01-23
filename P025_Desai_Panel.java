@@ -44,7 +44,7 @@ public class P025_Desai_Panel extends JPanel {
         if (type % 2 == 0)
             this.setBackground(new Color(255, 255, 255));
         else
-            this.setBackground(new Color(0, 255, 255));
+            this.setBackground(new Color(171, 216, 230));
         JLabel name = new JLabel("<html>Dhruti<br> Desai</html>", JLabel.CENTER);
         name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         JLabel counter = new JLabel("",JLabel.CENTER);
@@ -76,7 +76,7 @@ public class P025_Desai_Panel extends JPanel {
 
         this.add(name);
         this.add(counter);
-         setVisible(true);
+        setVisible(true);
 
     }
     /**Main function is included for testing. */
@@ -87,7 +87,6 @@ public class P025_Desai_Panel extends JPanel {
      * jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      * jf.setVisible(true);
      * jf.setSize(400,400);
-     * jf.add(jp);
      *}*/
       
       }
