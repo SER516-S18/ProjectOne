@@ -92,8 +92,4 @@ public class P081_Olety_Panel extends JFrame {
             }
      .start();
 	}
-	
-	public static void main(String[] args) {
-		new P081_Olety_Panel(28);
-	}
 }
