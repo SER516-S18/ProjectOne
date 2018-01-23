@@ -1,93 +1,94 @@
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ * @author Tarun kolla P05_Kolla_panel is a extension of JPanel Used to create a
+ *         panel with "name" and "Counter"
+ * 
+ */
+public class P057_Kolla_Panel extends JPanel {
 
-public class P057_Kolla_Panel extends JPanel  {
+	int count;
+	JLabel counter = new JLabel();
 
-
-
-	int counter;
-	JLabel c = new JLabel();
-	
-	/* Constructor to input even or odd integer
-	 * changes color and counter accordingly
+	/**
+	 * @param "input"
+	 *            to take integer value to the constructor
 	 */
-	
 	public P057_Kolla_Panel(final int input)
-
+	/**
+	 * boxLayout to align "name" and "counter" Changes background color to white for
+	 * even and lightBlue for odd "input"
+	 */
 	{
+		JLabel name = null;
 
-		JLabel l= null;
-		
-		this.setSize(100, 100);  //used to set panel size
-		this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
-		
-		if(input%2 == 0) {
-			counter = 0;
-			this.setBackground(Color.WHITE); //even for white 
+		this.setSize(100, 100);
+		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+
+		if (input % 2 == 0) {
+			count = 0;
+			this.setBackground(Color.WHITE);
 		} else {
-			counter = 9;
-			this.setBackground(new Color(173, 216, 230)); //odd for light blue
+			count = 9;
+			int green = 216;
+			int blue = 230;
+			int red = 173;
+			Color lightBlue = new Color(red, green, blue);
+			this.setBackground(lightBlue);
 		}
-		l = new JLabel("<html><br>Tarun<br>Kolla</html>", JLabel.CENTER); 
-                l.setAlignmentX(Component.CENTER_ALIGNMENT);
-		/*Font type, style and size*/
-
+		/**
+		 * Papyrus font style, plain with font size of 15
+		 */
+		name = new JLabel("<html><br>Tarun<br>Kolla</html>", JLabel.CENTER);
+		name.setAlignmentX(Component.CENTER_ALIGNMENT);
 		Font font = new Font("Papyrus", Font.PLAIN, 15);
-		l.setFont(font);
+		name.setFont(font);
+		counter.setFont(font);
 
-		Timer timer = new Timer(1000, new ActionListener() { //timer class 
+		Timer time = new Timer(1000, new ActionListener() {
 
-			//@Override
+			/**
+			 * (non-Javadoc)
+			 * 
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(input%2 == 0) {
-					c.setText(String.valueOf(counter)); //increment for even 
-					c.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-                                        counter++;
-					if(counter>9) {
-						counter = 0;
+				/**
+				 * Increment and decrement counter based on "input" type Increments for even
+				 * input Decrements for odd input
+				 */
+				if (input % 2 == 0) {
+					counter.setText(String.valueOf(count));
+					counter.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+					count++;
+					if (count > 9) {
+						count = 0;
 					}
-					
+
 				} else {
-					c.setText(String.valueOf(counter)); // decrement for odd
-					c.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-                                        counter--;
-					if(counter < 0) {
-						counter = 9;
+					counter.setText(String.valueOf(count));
+					counter.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+					count--;
+					if (count < 0) {
+						count = 9;
 					}
-					
+
 				}
 			}
 		});
-		timer.start();
-		this.add(l);
-		this.add(c);
-		
+		time.start();
+		this.add(name);
+		this.add(counter);
 
 	}
-
-	/* main class that calls the constructor with an even or odd value */
-
-	/*public static void main(String[] args) throws InterruptedException {
-		//P057_Kolla_Panel panel = new P057_Kolla_Panel(1);
-	    P057_Kolla_Panel panel = new P057_Kolla_Panel(2);
-		JFrame f = new JFrame("test");
-		f.add(panel);
-		f.setVisible(true);
-		f.setSize(500, 500);
-		//f.setLayout(new GridLayout(0,1));
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}*/
 
 }

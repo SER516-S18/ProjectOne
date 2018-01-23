@@ -1,17 +1,17 @@
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
- * Author Chiranjeevi Ramamurthy <cramamu1@asu.edu>
- * Version 1.0
+ * @author  Chiranjeevi Ramamurthy <cramamu1@asu.edu>
+ * @version 1.0
+ * @since   January 23, 2018
  *
  * SER516 Lab1 Panel submission from Chiranjeevi Ramamurthy for Group 4, ID 93
  * ASURITE cramamu1
@@ -20,8 +20,8 @@ import java.util.TimerTask;
  * This file contains java code module for displaying a JPanel alongside with JLabel
  * as per given functional requirements
  *
- * Final update made on January 23, 2018
  */
+
 public class P093_Ramamurthy_Panel extends JPanel {
 
     private JLabel name;
@@ -29,6 +29,7 @@ public class P093_Ramamurthy_Panel extends JPanel {
     private int count;
     private TimerTask timerTask;
     private boolean isEven;
+    private final Color lightBlue;
 
     /**
      * This parameterized constructor acts as a controller which calls appropriate functions to initialize timer,
@@ -37,8 +38,9 @@ public class P093_Ramamurthy_Panel extends JPanel {
      */
     public P093_Ramamurthy_Panel(int inputValue) {
         isEven = (inputValue%2==0); //To determine the given input as even or odd
+        lightBlue = new Color(173,216,230);
         setPreferredSize(new Dimension(100, 100));
-        setBackground(isEven ? Color.WHITE : Color.CYAN);//Deciding panel's bg color based on given input parameter
+        setBackground(isEven ? Color.WHITE : lightBlue);//Deciding panel's bg color based on given input parameter
         initializeLabel();
         computeCounter(isEven);
         setVisible(true);
@@ -54,8 +56,8 @@ public class P093_Ramamurthy_Panel extends JPanel {
         name.setVerticalAlignment(SwingConstants.BOTTOM);
         counter = new JLabel("",SwingConstants.CENTER);
         counter.setVerticalAlignment(SwingConstants.TOP);
-        name.setFont(new Font("Arial",Font.BOLD,16));
-        counter.setFont(new Font("Arial",Font.BOLD,16));
+        name.setFont(new Font("Papyrus",Font.BOLD,15));
+        counter.setFont(new Font("Papyrus",Font.BOLD,15));
         add(name);
         add(counter);
     }
@@ -65,11 +67,11 @@ public class P093_Ramamurthy_Panel extends JPanel {
      * @param isEven
      */
     private void computeCounter(boolean isEven) {
-        //initialising counter here
+        //initialising count variable here, this is to govern increasing or decreasing counter rate
         if(isEven)
             count =0;
         else
-            count=9;
+            count =9;
 
         try {
             timerTask = new TimerTask() {
@@ -81,7 +83,6 @@ public class P093_Ramamurthy_Panel extends JPanel {
                     counter.setText(String.valueOf(count));
                 }
             };
-
             Timer timer = new Timer();
             long interval = 1000L;
             long delay = 0L;
@@ -90,20 +91,5 @@ public class P093_Ramamurthy_Panel extends JPanel {
         catch (RuntimeException e) {
             e.printStackTrace();
         }
-
     }
-
-    /**
-     * This method is for testing purposes only
-     * @param args
-     */
-    public static void main(String[] args) {
-
-        JFrame frame = new JFrame();
-        frame.add(new P093_Ramamurthy_Panel(2));
-        frame.setSize(200, 200);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
 }
