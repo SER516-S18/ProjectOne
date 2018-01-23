@@ -148,15 +148,17 @@ public class P066_Maheshwari_Panel extends JPanel {
 	
 	        firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
-		this.add(firstName);
-			
-		lastName = new JLabel("Maheshwari");
+			lastName = new JLabel("Maheshwari");
 	
 	        lastName.setFont(new Font("Papyrus",Font.PLAIN,15));
 	
 	        lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
-		this.add(lastName);
+			this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+			
+			this.add(firstName);
+			
+			this.add(lastName);
 	        
     	}
     	
