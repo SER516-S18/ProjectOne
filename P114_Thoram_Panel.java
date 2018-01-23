@@ -114,7 +114,7 @@ public class P114_Thoram_Panel extends JPanel {
     /**
      * @param args
      */
-   /* public static void main(String[] args) {
+    public static void main(String[] args) {
         // TODO Auto-generated method stub
         SwingUtilities.invokeLater(new Runnable() {
  
@@ -122,6 +122,5 @@ public class P114_Thoram_Panel extends JPanel {
         test.add(new P114_Thoram_Panel(22).get_object());
         test.setVisible(true);
         test.setSize(100, 100); } });
-
-    }*/
+    }
 }
