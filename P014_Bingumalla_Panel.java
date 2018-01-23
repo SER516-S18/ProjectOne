@@ -34,7 +34,7 @@ public class P014_Bingumalla_Panel extends JPanel {
 			this.setBackground(Color.WHITE);
 			count = 0;
 		} else {
-			this.setBackground(new Color(51,204,255));
+			this.setBackground(new Color(173, 216, 230));
 			count = 9;
 		}
 
