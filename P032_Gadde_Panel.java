@@ -29,7 +29,6 @@ public class P032_Gadde_Panel extends JPanel{
 	            this.value = value;
 	            setPanelSize();
 	            set_layout();
-	            initializeAddNameLabel();
 	            setBackgroundColor();
 	            setCounterValue();
 	            setClockTimer();
@@ -52,8 +51,14 @@ public class P032_Gadde_Panel extends JPanel{
 	    // If the value is even it increments by 1 else it decrements by 1
 	    private void setClockTimer() {
 	        timer = new JLabel(String.valueOf(count));
-	        timer.setBounds(15, 50, 50, 90);
 	        timer.setFont(new Font("Papyrus",Font.PLAIN,15));
+	        name = new JLabel("<html>Vijayamounika<br>Gadde</html>");
+	    	name.setFont(new Font("Papyrus",Font.PLAIN,15));
+	    	name.setHorizontalAlignment(JLabel.CENTER);
+	        name.setVerticalAlignment(JLabel.CENTER);
+	        timer.setVerticalAlignment(JLabel.CENTER);
+	        timer.setHorizontalAlignment(JLabel.CENTER);
+	        this.add(name);
 	        this.add(timer);
 
 	        // Starts the timer
@@ -88,19 +93,13 @@ public class P032_Gadde_Panel extends JPanel{
 	            this.setBackground(new Color(173, 216, 230));
 	        }
 	    }
-	    // function to initialize the First name and Last name
-	    private void initializeAddNameLabel() {
-	    	JLabel name = new JLabel("<html>Vijayamounika<br>Gadde</html>",JLabel.CENTER);
-	    	name.setFont(new Font("Papyrus",Font.PLAIN,15));
-	        this.add(name);   
-	    }
 
 	    // function to set the panel size
 	    private void setPanelSize() {
 	    	this.setPreferredSize(new Dimension(100,100));
 	    }
+	    
 	    // function to set the Layout
-
 	    private void set_layout() {
 	        this.setLayout(new GridLayout(2, 1));
 	    }
@@ -110,12 +109,12 @@ public class P032_Gadde_Panel extends JPanel{
 	        return value % 2 == 0;
 	    }
 /* Main method in case of testing */
-    public static void main(String [] s) {
+/*  public static void main(String [] s) {
       JFrame frame = new JFrame();
-      frame.setContentPane(new P032_Gadde_Panel(3));
+      frame.setContentPane(new P032_Gadde_Panel(2));
 	    frame.setSize(500, 500);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.pack();
       frame.setVisible(true);
-  }
+  }*/
 	}
