@@ -25,30 +25,36 @@ public class P113_Thiagarajan_Panel extends JPanel {
 
 	String name="<html><center>Janani<br>Thiagarajan<br></center></html>";
 	
-	JLabel fnameLabel = new JLabel(name);
+	JLabel nameLabel = new JLabel(name);
 	JLabel timeLabel= new JLabel();
 	Font font= new Font("Papyrus", Font.PLAIN,15);
+	Color lightBlue= new Color(173,216,230);
 	
 	Timer timer;
 	int count;
-	
-	 /*	Constructor with integer value based on which 
-	  *	the background color and the timer changes 
-	  */
-	public P113_Thiagarajan_Panel(int i) {  	
-		createMyPanel(i);
+	/**
+	 * Constructor which calls a method that creates a panel
+	 * @param integer - Input value based on which the background 
+	 *		    color and timer changes
+	 */
+	public P113_Thiagarajan_Panel(int inputValue) {  	
+		createMyPanel(inputValue);
 	}
 	
-	/* Method that creates a Panel with First 
-	 * & Last name and a timer 
-	 */
-	
-	public void createMyPanel(int i) {  
+	/**
+	 * Method that creates a panel with name of the author and a timer
+	 * @param integer - Input value based on which the background 
+	 *		    color and timer changes
+	 * If the input value is even set background to White, timer goes 
+	 * from 0 to 9 
+	 * If its odd set background to LightBlue,timer goes from 9 to 0                       
+	 */	
+	public void createMyPanel(int inputValue) {  
 		setPreferredSize(new Dimension(100,100));
 		setLayout(new GridLayout(0, 1));
 		
-		fnameLabel.setFont(font);
-		fnameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		nameLabel.setFont(font);
+		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		add(fnameLabel);
 		
 		timeLabel.setFont(font);
@@ -56,10 +62,7 @@ public class P113_Thiagarajan_Panel extends JPanel {
 		add(timeLabel);   
 
 		try {
-			/* Check if the argument sent is even and if it is then,
-			 * set background to White and a timer which counts from 0 to 9 repeatedly 
-			 */
-			if(i % 2 == 0) {
+		     if(inputValue % 2 == 0) {
 				count=0;
 				setBackground(Color.WHITE);
 				timer = new Timer(1000, new ActionListener() {	  
@@ -68,19 +71,13 @@ public class P113_Thiagarajan_Panel extends JPanel {
 						timeLabel.setText(Integer.toString(count));
 						if (count==9) count=0;
 						else count++;
-					} else {
-						((Timer) (e.getSource())).stop();
-					  }
+					} 
 					}
 				});
 				timer.start();
-			}
-			/* If the argument sent is odd then, set background to 
-			 * Blue and a timer which counts from 9 to 0 repeatedly 
-			 */
-			else {
+		      }
+		      else {
 				count=9;
-				Color lightBlue= new Color(173,216,230);
 				setBackground(lightBlue);
 				timer = new Timer(1000, new ActionListener() {
 					public void actionPerformed(ActionEvent e) {				 
@@ -88,13 +85,11 @@ public class P113_Thiagarajan_Panel extends JPanel {
 						timeLabel.setText(Integer.toString(count));
 						if(count==0) count=9;
 						else count--;
-					} else {
-						timer.stop();
-					  }
+					} 
 					}
 				 });
 				timer.start();
-			}
+		      }
 		}
 		catch(Exception e) {
 			e.printStackTrace();
