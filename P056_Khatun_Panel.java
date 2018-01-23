@@ -6,17 +6,6 @@ import javax.swing.JPanel;
 //CLASS P056_KHATUN_PANEL
 
 public class P056_Khatun_Panel extends JPanel {
-
-	//private static final long serialVersionUID = 1L;
-
-	/*  
-	public static void main(String args[])  
-    {
-		//OBJECT OF THIS CLASS IS CREATED
-		P056_Khatun_Panel p = new P056_Khatun_Panel(5);		
-		p.createPanel();
-    }
-    */
 	
 	Color color;
 	Boolean isEven;
@@ -62,12 +51,8 @@ public class P056_Khatun_Panel extends JPanel {
 		
 		// ADD LABELS TO PANEL
 		this.add(lblName);
-		this.add(lblCounter);		
-	}
-	
-	//CREATING A PANEL WITH DESIRED FUNCTIONALITY 
-	public void createPanel()
-	{
+		this.add(lblCounter);	
+		
 		Integer c = 0;
 		while(true)
 		{
@@ -118,8 +103,7 @@ public class P056_Khatun_Panel extends JPanel {
 			}
 			
 		}//END OF WHILE LOOP				
-		
-		
-	}//END OF CREATEPANEL METHOD									
+
+	}// END OF CONSTRUCTOR
 
 }//END OF CLASS
