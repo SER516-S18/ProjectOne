@@ -3,21 +3,23 @@ import java.awt.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
 /**
-* Row1 one is the first name.
-* Row 2 is the last name.
-* Row 3 is the counter that is incrementing from 0 or decrementing frrom 9.
-* The mode of the counter and the background color are determined by the value passed to the constructor.
+ * Row1 one is the first name.
+ * Row 2 is the last name.
+ * Row 3 is the counter that is incrementing from 0 or decrementing frrom 9.
+ * The mode of the counter and the background color are determined by the value passed to the constructor.
  */
 public class P016_Bumb_Panel extends JPanel {
     private int timer;
     private int type;
-    private Font f = new Font("Papyrus", Font.PLAIN, 15);
+    private static JPanel jp;
+    private Font f = new Font("Papyrus", Font.BOLD, 16);
 
     /**
-    * constuctor class
-    * describes the background color and counter mode of the panel. 
-    */
+     * constuctor class
+     * describes the background color and counter mode of the panel.
+     */
     public P016_Bumb_Panel(int type) { //constructor
         // Even is white and count uop, odd is cyan and counts down.
         this.type = type;
@@ -30,14 +32,15 @@ public class P016_Bumb_Panel extends JPanel {
         function(); // calling method which has the logic
     }
     /**
-    *This function sets the layout, color and also executing the thread
-    *for counter
-    */
+     *This function sets the layout, color and also executing the thread
+     *for counter
+     */
 
     private void function() {
-        JPanel jp = new JPanel();
+        jp = new JPanel();
+        setSize(100,100);
         jp.setLayout(new GridLayout(2,1)); // giving attributes to the panel
-        jp.setPreferredSize(new Dimension(100,100));
+//        jp.setPreferredSize(new Dimension(100,100));
         if (type % 2 == 0)
             jp.setBackground(new Color(255, 255, 255));
         else
@@ -74,7 +77,6 @@ public class P016_Bumb_Panel extends JPanel {
 
         jp.add(name);
         jp.add(counter);
-        add(jp);
 
 
 
@@ -82,23 +84,18 @@ public class P016_Bumb_Panel extends JPanel {
 
     }
     // Main method used for testing.
-    /**
-    * public static void main(String args[])
-    * {
+
+   /** public static void main(String args[])
+    *{
     *   JFrame jf= new JFrame();
-    *    jf.getContentPane().add(new P016_Bumb_Panel(3));// calling constructor.
+    *   jf.getContentPane().add(new P016_Bumb_Panel(3));// calling constructor.
     *    jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     *    jf.setVisible(true);
-    *    jf.setSize(400,400);
-    * }
-    */
-    
+    *    jf.setSize(1200,400);
+    *    jf.add(jp);
+    }*/
+
+
 
 
 }
-
-
-
-
-
-
