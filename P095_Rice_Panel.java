@@ -1,9 +1,17 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+/**
+ * Extended JPanel class that takes in an int and displays two labels.
+ * The first label is my first and last name. 
+ * If event it will have a white background and count up from 0-9.
+ * If odd it will have a light blue background and count down from 9-0.
+ */
 
 /**
  * SER516 ProjectOne Panel Class
@@ -15,6 +23,7 @@ public class P095_Rice_Panel extends JPanel{
 	private
 		JLabel nameLabel;
 		JLabel countLabel;
+		Color lightblue;
 		int count;
 
 	/**
@@ -24,6 +33,7 @@ public class P095_Rice_Panel extends JPanel{
 	public P095_Rice_Panel(int evenCheck){
 		super();
 		this.count = 0;
+		this.lightblue = new Color(173, 216, 230);
 		init();
 		evenCheck(evenCheck);
 		setVisible(true);
@@ -36,17 +46,22 @@ public class P095_Rice_Panel extends JPanel{
 	 * Creates the labels and adds them to the Panel.
 	 */
 	private void init(){
+		Font font = new Font("Papyrus", Font.PLAIN, 16);
+		
 		this.nameLabel = new JLabel();
-		nameLabel.setText("<html>"
+		this.nameLabel.setText("<html>"
 					+ "Jason"
 					+ "<br>"
 					+ "Rice"
 					+ "</html>");
 		
-		countLabel = new JLabel(String.valueOf(count));
+		this.countLabel = new JLabel(String.valueOf(count));
 		
-		add(nameLabel);
-		add(countLabel);
+		this.nameLabel.setFont(font);
+		this.countLabel.setFont(font);
+		
+		add(this.nameLabel);
+		add(this.countLabel);
 	}
 
 	/**
@@ -58,15 +73,15 @@ public class P095_Rice_Panel extends JPanel{
 	 * If so creates a Timer to increment the count value.
 	 */
 	private void evenCheck(int check){
+		boolean validate = check % 2 == 0;
+		
+		if(validate){
+			setBackground(Color.WHITE);
+		} else{
+			setBackground(this.lightblue);
+		}
+		
 		try{
-			boolean validate = check % 2 == 0;
-			
-			if(validate){
-				setBackground(Color.WHITE);
-			} else{
-				setBackground(Color.BLUE.brighter());
-			}
-			
 			ActionListener actionListner = new ActionListener() {
 				
 				@Override
@@ -90,7 +105,8 @@ public class P095_Rice_Panel extends JPanel{
 			new Timer(1000, actionListner).start();
 			
 		} catch(Exception exception){
-			System.out.println(exception.getMessage());
+			System.out.println( "P095_Rice_Panel Exception in evenCheck(): "
+					+ exception.getMessage());
 		}
 	}
 

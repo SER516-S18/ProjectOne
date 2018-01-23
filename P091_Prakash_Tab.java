@@ -13,7 +13,7 @@ public class P091_Prakash_Tab extends JPanel {
 
     public P091_Prakash_Tab() {
         this.setLayout(new GridLayout(0, 5));
-        this.add(new P080_Nolastname_Panel(1).getPanel());
+        this.add(new P080_Nolastname_Panel(1));
         this.add(new P081_Olety_Panel(2));
         this.add(new P082_gspai_panel(3));
         this.add(new P083_Palkar_Panel(4));
