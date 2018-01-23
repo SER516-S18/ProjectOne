@@ -1,81 +1,84 @@
-/******************************************************************************************************************
-# Name of Program				:	P073_Menon_Panel.java
-#
-# Description					:	This program creates a JPanel in the following manner:
-#									a) A Jlabel with full name (one row for first name, a second row for last name).
-#									b) A Jlabel displaying a number (0 to 9). It will change automatically 
-#										(increasing from 0 or decreasing from 9) every second.
-#									c) A constructor that receives an integer value. 
-#										If the value is Even or 0, background is White and the counter increases.
-#										Else, background is light Blue and the counter decreases.
-#
-# Subject                       :   SER-516
-#
-# Project Number				:   1
-#
-# Due Date						:   23 Jan 2018
-#
-# Created By					:	Vimal Menon
-#
-# Created On                    :   20 Jan 2018
-#
-# IDE / OS                      :   Eclipse Neon 3 / Windows 10 (64 bit)
-#******************************************************************************************************************/
-
 import javax.swing.*;
 import java.awt.*;
 
+/******************************************************************************************************************
+# Name of Class		:	P073_Menon_Panel.java
+#
+# Description		:	This program creates a JPanel with 2 Jlabels. First Jlabel is for the full name.
+#						Second Jlabel is a timer which increases from 0 to 9 for Even numbers, vice versa for Odd.
+#						If the constructor receives an Even or 0, background is White and the counter increases.
+#						Else, background is light Blue and the counter decreases.
+#
+# Subject			:   SER-516
+#
+# Project Number	:   1
+#
+# Due Date			:   23 Jan 2018
+#
+# Created By		:	Vimal Menon
+#
+# Created On		:   20 Jan 2018
+#
+# Version			:	1.1
+#
+# IDE / OS			:   Eclipse Neon 3 / Windows 10 (64 bit)
+#******************************************************************************************************************/
+
 public class P073_Menon_Panel extends JPanel {
-	private int num, numValue;
 	
-	private String firstName = "Vimal";
-    private String lastName = "Menon";
 	private JLabel fullName;
-    
+	private JLabel timerDisplay;
+	
+	public static final String firstName = "Vimal";
+	public static final String lastName = "Menon";
+    public static final String htmlOpenTag = "<html>";
+    public static final String htmlCloseTag = "</html>";
+    public static final String htmlBreakTag = "<br>";
+	public static final String FONTTYPE = "Papyrus";
+	
+	Color lightBlue = new Color(173, 216, 230);
+	Color black = Color.BLACK;
+	Color white = Color.WHITE;
+	
+	public static final int FONTSIZE = 15;
+	public static final int TIMEGAP = 1000;
 	public static final int LENGTH = 100;
 	public static final int BREADTH = 100;
-	
-	Color lightBlue= new Color(203, 246, 255);
-    
-	public static final int TIMEGAP = 1000; // Equivalent to 1 second
-    private int counter;
-    private JLabel timerDisplay;
-    
-    // Constructor
-    public P073_Menon_Panel(int num){
+	public static final int ROWSINPANEL = 2;
+	public static final int COLUMNSINPANEL = 1;
+	public static final int TIMERSTARTVALUE = 0;
+	public static final int TIMERENDVALUE = 9;
+    private int timerCounter = 0;
+    private int numReceived = 0;
+      
+    public P073_Menon_Panel(int numPassed){
         
-    	// To Display the Timer below the name, two rows and a column grid layout is employed.
-    	super(new GridLayout(2,1));
+    	super(new GridLayout(ROWSINPANEL,COLUMNSINPANEL));
     	
-    	// Assigning the integer value passed to constructor to local variable.
-    	numValue = num;
+    	numReceived = numPassed;
+    	if (numReceived < 0)
+    		numReceived = numReceived * (-1);
     	
-        // Setting the size of the JPanel.
+    	if (numReceived % 2 == 0 || numReceived == 0)
+    		timerCounter = TIMERSTARTVALUE;
+        else
+        	timerCounter = TIMERENDVALUE;
+    	
         setPreferredSize(new Dimension(LENGTH, BREADTH));
         
-        // Setting the color of the Panel.
-        // If Odd integer is passed, then Color is set to Light Blue, else White.
-        if (numValue % 2 == 0)
-            setBackground(Color.WHITE);
+        if (numReceived % 2 == 0)
+            setBackground(white);
         else
             setBackground(lightBlue);	
         
-    	// Setting the value of the "fullName" Jlabel along with type & size of Font.
-        fullName = new JLabel("<html>" + firstName + "<br>" + lastName + "</html>", JLabel.CENTER);
-        fullName.setFont(new Font("Papyrus", Font.BOLD, 16));
+        fullName = new JLabel(htmlOpenTag + firstName + htmlBreakTag + lastName + htmlCloseTag, JLabel.CENTER);
+        fullName.setFont(new Font(FONTTYPE, Font.PLAIN, FONTSIZE));
+        fullName.setForeground(black);
         add(fullName);
         
-    	// Setting Counter start value for the Timer. 
-    	// If Odd value passed, then Counter is initialized to 9 and then decremented.
-    	// If Even value passed, then Counter is set to 0 and then incremented.
-    	if (numValue % 2 == 0)
-            counter = 0;
-        else
-            counter = 9;
-        
-    	// Second Jlabel for displaying a Counter which goes from 0 to 9 for Even and vice versa for Odd numbers.
-    	timerDisplay = new JLabel(String.valueOf(counter), JLabel.CENTER);
-    	timerDisplay.setFont(new Font("Papyrus",Font.BOLD,16));
+    	timerDisplay = new JLabel(String.valueOf(timerCounter), JLabel.CENTER);
+    	timerDisplay.setFont(new Font(FONTTYPE, Font.PLAIN, FONTSIZE));
+    	timerDisplay.setForeground(black);
         add(timerDisplay);
         timerMechanism();
     }
@@ -84,7 +87,7 @@ public class P073_Menon_Panel extends JPanel {
 	# Function / Method      		:	timerMechanism
 	#
 	# Description					:	A Timer which increases from 0 to 9 for Even values and decreases
-	#									from 9 to 0 for Odd values.
+	#									from 9 to 0 for Odd values passed.
 	#
 	# Parameters passed				:	none
 	#
@@ -94,37 +97,41 @@ public class P073_Menon_Panel extends JPanel {
     private void timerMechanism() {
     	Thread timerThread = new Thread (new Runnable() {
     		public void run() {
-    			if (counter == 0) {
-    				for(int i = 1; i< 10; i++) {
-		        	    try {
-		        	        //sending the actual Thread of execution to sleep X milliseconds
-		        	        Thread.sleep(TIMEGAP);
-		        	    } catch(InterruptedException ie) {}
-		        	    counter++;
-		        	    timerDisplay.setText(String.valueOf(counter));
-		        	}
-    			} 
-    			else {
-		    		for(int i = 1; i< 10; i++) {
-		        	    try {
-		        	        //sending the actual Thread of execution to sleep X milliseconds
-		        	        Thread.sleep(TIMEGAP);
-		        	    } catch(InterruptedException ie) {}
-		        	    counter--;
-		        	    timerDisplay.setText(String.valueOf(counter));
-		        	}
-		    	}
+    			while (timerCounter >= 0) {
+    				int internalCounter = timerCounter;
+	    			if (internalCounter == TIMERSTARTVALUE) {
+	    				for(internalCounter = 0; internalCounter < 10; internalCounter++) {
+	    					timerDisplay.setText(String.valueOf(internalCounter));
+			        	    try {
+			        	        Thread.sleep(TIMEGAP);
+			        	    } 
+			        	    catch (InterruptedException ie) {
+			        	    	System.out.println("Exception in code: " + ie.getMessage());
+			        	    }
+			        	}
+	    			} 
+	    			else {
+			    		for(internalCounter = TIMERENDVALUE; internalCounter > -1; internalCounter--) {
+			        	    timerDisplay.setText(String.valueOf(internalCounter));
+			        	    try {
+			        	        Thread.sleep(TIMEGAP);
+			        	    }
+			        	    catch (InterruptedException ie) {
+			        	    	System.out.println("Exception in code: " + ie.getMessage());
+			        	    }
+			        	}
+			    	}
+    			}
     		}
     	});
     	timerThread.start();
     }
     
-    //Main - for testing purposes
+    // Main - for testing purposes
 //    public static void main(String [] s) {
 //        JFrame jFrame = new JFrame();
-//        jFrame.setContentPane(new P073_Menon_Panel(100));
+//        jFrame.setContentPane(new P073_Menon_Panel(-1067));
 //        jFrame.pack();
 //        jFrame.setVisible(true);
 //    }
-    
 }
