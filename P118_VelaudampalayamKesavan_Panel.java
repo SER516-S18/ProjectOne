@@ -37,6 +37,7 @@ public class P118_VelaudampalayamKesavan_Panel extends JPanel{
 			
 			fname.setFont(font);
 			lname.setFont(font);
+			time.setFont(font);
 			
 			fname.setHorizontalAlignment(SwingConstants.CENTER);
 			lname.setHorizontalAlignment(SwingConstants.CENTER);
