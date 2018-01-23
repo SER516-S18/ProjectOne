@@ -1,46 +1,50 @@
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+/*Program to display the first and last name along with a counter that goes from 0-9 if an even number is passed along with the object creation
+ * and the background is set to white. In case of an odd number counter counts down from 9-0 and background changes to light blue.
+ */
 
 
 public class P077_Mohanty_Panel extends JPanel {
 	//Initializing JLabels
-	JLabel label1 = new JLabel("Abhinab");
-	JLabel label2 = new JLabel("Mohanty");
-	JLabel label3 = new JLabel();
+	JLabel first_name = new JLabel("Abhinab");
+	JLabel last_name = new JLabel("Mohanty");
+	JLabel counter = new JLabel();
 	
 	 //Initializing Color object for the lighter shade of blue
 	 Color lightBlue= new Color(173,216,230);
 	
-	//Initializing counter and up/down values
-	int val1=-1,counter=0,val2=10;
+	//Initializing checker and up/down values
+	int up_checker=-1,checker=0,down_checker=10;
 	boolean slope=true;
 
 
-    public JPanel myPanel()
+    public void myPanel()
     {
     	 	//Initializing a JPanel with Box Layout
 			JPanel newPanel = new JPanel();
 			 newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
 			 
 			 //Setting Font for labels
-			 label1.setFont(new Font("Papyrus",Font.PLAIN,15));
-			 label2.setFont(new Font("Papyrus",Font.PLAIN,15));
-			 label3.setFont(new Font("Papyrus",Font.PLAIN,15));
+			 first_name.setFont(new Font("Papyrus",Font.PLAIN,15));
+			 last_name.setFont(new Font("Papyrus",Font.PLAIN,15));
+			 counter.setFont(new Font("Papyrus",Font.PLAIN,15));
 			 
 
 			 
 			 //Setting X-Axis Alignment
-			 label1.setAlignmentX(Component.CENTER_ALIGNMENT);
-			 label2.setAlignmentX(Component.CENTER_ALIGNMENT);
-			 label3.setAlignmentX(Component.CENTER_ALIGNMENT);
+			 first_name.setAlignmentX(Component.CENTER_ALIGNMENT);
+			 last_name.setAlignmentX(Component.CENTER_ALIGNMENT);
+			 counter.setAlignmentX(Component.CENTER_ALIGNMENT);
 		try {	 //Timer Actions defined here
 			Timer t = new Timer(1000,new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					if(counter%2==0)
+					if(checker%2==0)
 						{
 							slope=true;
 							newPanel.setBackground(Color.WHITE);
@@ -57,29 +61,30 @@ public class P077_Mohanty_Panel extends JPanel {
 
 					if(slope)
 					{
-						if(val1!=9)
+						if(up_checker!=9)
 						{
-						val1++;
+						up_checker++;
 						
-						String textval = String.valueOf(val1);
-						label3.setText(textval);
+						String textval = String.valueOf(up_checker);
+						counter.setText(textval);
 						}
 						else {
-							val1 =0;
-							label3.setText("0");
+							up_checker =0;
+							counter.setText("0");
 						}
 					}
 					else
 					{
 						
-						if(val2!=0)
-						{val2--;
-						String textval = String.valueOf(val2);
-						label3.setText(textval);
+						if(down_checker!=0)
+						{
+							down_checker--;
+						String textval = String.valueOf(down_checker);
+						counter.setText(textval);
 						}
 						else {
-							val2 = 9;
-							label3.setText("9");
+							down_checker = 9;
+							counter.setText("9");
 						}
 					}
 					
@@ -90,9 +95,9 @@ public class P077_Mohanty_Panel extends JPanel {
 			
 			 
 			//Adding labels to Panel
-			 newPanel.add(label1);
-			 newPanel.add(label2);
-			 newPanel.add(label3);
+			 newPanel.add(first_name);
+			 newPanel.add(last_name);
+			 newPanel.add(counter);
 			 //Setting Size and Visibility
 			 newPanel.setSize(100, 100);
 			 newPanel.setVisible(true);
@@ -101,16 +106,16 @@ public class P077_Mohanty_Panel extends JPanel {
 			 
 			 add(newPanel);
 			 t.start();    
-			 //pack();
+	
 
 			 
 			
 		} catch (Exception e) {
-			//  catch block
-			e.printStackTrace();
+			
+			System.out.println("Exception Occurred:"+e.getMessage());
 		}
 		
-		return newPanel;
+		
     	
     }
 	
@@ -120,19 +125,14 @@ public class P077_Mohanty_Panel extends JPanel {
 	
 	public P077_Mohanty_Panel(int a)
 	{
-		 counter = a;
+		 checker = a;
+		 myPanel();
 	}
 	
 	
-//	public static void main(String[] args){
-//        JFrame frame;
-//        frame = new JFrame("P077_Mohanty_Panel");
-//        frame.setVisible(true);
-//        frame.setSize(800, 800);
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        P077_Mohanty_Panel obj=new P077_Mohanty_Panel(3);
-//        frame.add(obj.myPanel());
-//    }
+
 	
 	
+	
+	 
 }
