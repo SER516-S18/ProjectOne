@@ -4,22 +4,24 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.*;
 
-public class P062_Laad_Panel {
+public class P062_Laad_Panel extends JPanel{
 
     private JPanel panel;
     private JLabel firstname,lastname,watch;
     private Timer timer = new Timer();
     private int secondsPassed = 0;
-    private int num ;
+    private int ColorFlag ;
 
-   public P062_Laad_Panel(int value ){
-       this.num=value;
+   public P062_Laad_Panel(int ColorFlag ){                // Setting ColorFlag
+       this.ColorFlag=ColorFlag;
+       getPanelInstance();
    }
 
-   public JPanel getPanelInstance(){
+   public void getPanelInstance(){
        panel = new JPanel();
        try{
-           Font font = new Font("Papyrus", Font.PLAIN, 12);
+           Color lightblue = new Color(173,216,230);
+           Font font = new Font("Papyrus", Font.PLAIN, 15);
 
 
            panel.setSize(100,100);             //Setting Panel Size
@@ -33,7 +35,7 @@ public class P062_Laad_Panel {
            lastname.setFont(font);
            panel.add(firstname);      //Adding First Name to the Panel
            panel.add(lastname);       // Adding Last Name to the Panel
-           if(num%2 == 0)             // Checking if the number is ODD or EVEN
+           if(ColorFlag%2 == 0)             // Checking if the number is ODD or EVEN
            { secondsPassed=0;
                panel.setBackground(Color.white);     // Setting Panel Background to White
                timer.schedule(new TimerTask() {      // Scheduling the Timer Task
@@ -58,7 +60,7 @@ public class P062_Laad_Panel {
            }
            else
            {   secondsPassed=9;
-               panel.setBackground(Color.cyan);  // Setting Panel Background to Light Blue
+               panel.setBackground(lightblue);  // Setting Panel Background to Light Blue
                timer.schedule(new TimerTask() {    // Scheduling the Timer Task
 
                    @Override
@@ -85,7 +87,6 @@ public class P062_Laad_Panel {
            System.out.println("Exception Occurred:"+ex.getMessage());
        }
 
-       return panel;
    }
 
 }
