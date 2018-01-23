@@ -1,2 +1,2 @@
 # ProjectOne
-Just for Fun
+Just do it!
