@@ -1,45 +1,68 @@
-// Import libraries
+/**
+ * This program is used for SER 516 - Lab 1 Project.
+ */
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.Timer;
-
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * Class name : P048_Kalluri_Panel
- * Author : Nagarjuna Kalluri (048)
- * Purpose : Populate the panel with First name, last name and counter value. 
- * Panel is white in color and counter value needs to increase from 0  to 9 if the value sent from tab class is even.
- * Else, the panel is light blue in color and counter value needs to decrease from 9  to 0. 
+ * This class creates a Panel with 3 rows. First name in the first row,
+ * last name in the second row and counter value in the third row. 
+ * It has a parameterized constructor which takes in an integer value. 
+ * Panel is white in color and counter value needs to increase from 
+ * 0  to 9 if the value sent from tab class is even. Else, the panel
+ * is light blue in color and counter needs to decrease from 9  to 0. 
+ * 
+ * @author Nagarjuna Kalluri
+ * @version 1.1
+ * @since 1/23/2017
  */
+
 public class P048_Kalluri_Panel extends JPanel{
+
+	// default version ID for suppressing warnings
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Local variables
+	 * JLabels for first name, last name and timer/counter
+	 * Timer variable and Color constants
+	 * boolean flag to increment/decrement (default) counter
+	 * 
 	 */
-	private static final long serialVersionUID = 1L;		// default version ID for suppressing warnings
 
-	private JLabel firstName;								// JLabel for populating first name	
-	private JLabel lastName;								// JLabel for populating last name	
-	private JLabel timerLabel;								// JLabel for populating counter/timer value 	
-	Timer timer = new Timer();								// Timer variable
-
-	boolean autoIncrement = false;							// boolean value for incrementing / decrementing counter (default - decrement)
+	private JLabel firstName;
+	private JLabel lastName;
+	private JLabel timerLabel;
+	
+	Timer timer = new Timer();
+	boolean autoIncrement = false;
+	
+	Color lightBlue = new Color(173,216,230); 
+	Color white = Color.white;
 
 	/**
-	 * Constructor
-	 * Parameters : Integer value (sent from the Tab class)
-	 * Counter increments/ decrements based on this integer value
+	 * This Constructor takes in the Integer value from Tab class  
+	 * & increments/decrements counter based on this integer value
+	 * 
+	 * @author Nagarjuna Kalluri
+	 * @param Integer value (sent from the Tab class)
+	 * @throws Arithematic exception if an invalid value is passed
+	 * @throws InterruptedException if a thread is interrupted
 	 */
 	public P048_Kalluri_Panel(int value) {
 
-		// checking for integer parameter passed to constructor from the tab class
+		/**
+		 *  checking for integer parameter passed to constructor
+		 *  If value is even 'autoIncrement' flag is set to true
+		 */
 		try {
 			if(value % 2 == 0) {
-				autoIncrement = true;		// increment variable is set to true
+				autoIncrement = true;
 			}
 		}
 		catch(ArithmeticException e) {
@@ -47,28 +70,27 @@ public class P048_Kalluri_Panel extends JPanel{
 		}
 
 		/**
-		 *  Putting a grid layout for the panel in a 3 X 1 format
-		 *  3 segments for First name, last name and counter respectively
+		 *  A grid layout is put in for the panel in a 3 X 1 format
+		 *  1 segment each for First name, last name and counter
 		 */ 
 		this.setLayout(new GridLayout(3, 1));
-		this.setBackground(autoIncrement ? Color.white : new Color(90,150,255));	
+		this.setBackground(autoIncrement ? white : lightBlue);
 
 		// JLabel and properties for setting first name 
 		firstName = new JLabel("Nagarjuna");
 		firstName.setHorizontalAlignment(JLabel.CENTER);
-		firstName.setFont(new Font("Papyrus",Font.BOLD,12));
+		firstName.setFont(new Font("Papyrus",Font.BOLD,16));
 
 		// JLabel and properties for setting last name 
 		lastName = new JLabel("Kalluri");
 		lastName.setHorizontalAlignment(JLabel.CENTER);
-		lastName.setFont(new Font("Papyrus",Font.BOLD,12));
+		lastName.setFont(new Font("Papyrus",Font.BOLD,16));
 
-		this.add(firstName);		// setting first name to the grid
-		this.add(lastName);			// setting last name to the grid
+		// Setting first name and last name to the grid
+		this.add(firstName);
+		this.add(lastName);
 
-		/**
-		 * Thread for running the counter logic
-		 */
+		//Thread for running the counter logic
 		Thread counterThread = new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -81,24 +103,29 @@ public class P048_Kalluri_Panel extends JPanel{
 				timerLabel = new JLabel(new Integer(value).toString());
 
 				timerLabel.setHorizontalAlignment(JLabel.CENTER);
-				timerLabel.setFont(new Font("Papyrus", Font.BOLD, 12));
-				
+				timerLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
+
 				// adding timer label to the grid
 				P048_Kalluri_Panel.this.add(timerLabel);
 
 				// Checking the boundary conditions for the counter
 				while (true) {
 
-					// if value > 9, value is reset to 0
-					if(value > 9) {
-						value = 0;
+					try {
+						// If value > 9, value is reset to 0
+						if(value > 9) {
+							value = 0;
+						}
+						// If value < 0, value is reset to 9
+						else if(value < 0) {
+							value = 9;
+						}
 					}
-					// if value < 0, value is reset to 9
-					else if(value < 0) {
-						value = 9;
+					catch(ArithmeticException e) {
+						System.err.println(e.toString());
 					}
 
-					// adding counter value to the timer JLabel
+					// Adding counter value to the timer JLabel
 					timerLabel.setText(new Integer(value).toString());
 
 					try {
@@ -107,37 +134,14 @@ public class P048_Kalluri_Panel extends JPanel{
 						System.err.println(e.toString());
 						continue;
 					}
-					
-					// incrementing the step value
+
+					// Incrementing the step value
 					value += stepVal;
 				}
 			}         
 		});
-		
-		// starting the thread for running the counter logic
+
+		// Starting the thread for running the counter logic
 		counterThread.start();
 	}
-
-	/**
-	 * Main method - for Testing only
-	 */
-	
-	/*
-	public static void main(String[] args) {
-
-		// setting up a grid of 25 panels for testing
-		JFrame frame = new JFrame();
-		GridLayout grid = new GridLayout(5, 5);
-		frame.setLayout(grid);
-
-		// populating each panel with integers from 0 to 24
-		for (int i = 0; i < 25; i++) {
-			frame.add(new P048_Kalluri_Panel(i));
-		}
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800, 800);
-		frame.setVisible(true);
-	}
-	*/
 }
