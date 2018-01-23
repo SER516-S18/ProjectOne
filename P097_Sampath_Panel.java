@@ -100,7 +100,7 @@ public class P097_Sampath_Panel extends JPanel{
      * This method is to test this application
      * @param args
      */
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
 
         JFrame jFrame = new JFrame();
         jFrame.setLayout(new GridLayout(5, 5));
@@ -113,6 +113,6 @@ public class P097_Sampath_Panel extends JPanel{
         jFrame.setSize(1000, 500);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+    }*/
 
 }
