@@ -1,4 +1,3 @@
-package P092_Priya_Panel;
 
 import javax.swing.*;
 import java.awt.*;
