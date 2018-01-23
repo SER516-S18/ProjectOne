@@ -2,23 +2,15 @@
 //Jahnavi Bantupalli
 //Date created- 01-20-2018
 
-package com;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.border.Border;
+
 
 //Defining a jpanel
 public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
@@ -79,21 +71,19 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 	public void makeApplication()					
 	{
 		//sets layout,font,border and size for the panel
-		this.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		this.setFont(new Font("Papyrus",Font.BOLD,10));
+		
+		this.setFont(new Font("Papyrus",Font.PLAIN,10));
 		this.setPreferredSize(new Dimension(100, 100));
 		this.setLayout(null);
 		this.setBounds(100,100, 100, 100);
 		//customizing name label.
 		nameLabel=new JLabel("<html>Jahnavi<br>Bantupalli</html>",JLabel.CENTER);
-		nameLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		nameLabel.setFont(new Font("PAPYRUS",Font.BOLD,20));
-		nameLabel.setBounds(10, 5, 200, 100);
+		nameLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
+		nameLabel.setBounds(50, 5, 200, 100);
 		//customizing timer label
 		timerLabel= new JLabel("",JLabel.CENTER);
-		timerLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		timerLabel.setFont(new Font("PAPYRUS",Font.BOLD,20));
-		timerLabel.setBounds(10, 100, 200, 100);
+		timerLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
+		timerLabel.setBounds(50, 100, 200, 100);
 		//create a timer that generates an event after 1 second and pass it the frame object which handles the action event by implementing the ActionListener interface
 		Timer timer=new Timer(1000,this);
 		try
@@ -130,7 +120,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		}
 		}
 
-	public static void main(String args[])
+/*	public static void main(String args[])
 	{
 		 //creates a panel
 	    P006_Bantupalli_Panel jb= new P006_Bantupalli_Panel(3);
@@ -148,7 +138,7 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 
 
 	}
-	
+	*/
 
 }
 

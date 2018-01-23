@@ -59,7 +59,7 @@ public class P110_Swaminathan_Panel extends JPanel {
         }
         else
         {
-            this.setBackground(new Color(150,200,250));
+            this.setBackground(new Color(173,216,230));
            
         }
       

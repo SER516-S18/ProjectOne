@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class P016_Bumb_Panel extends JPanel {
     private int timer;
     private int type;
-    private Font f = new Font("Papyrus", Font.BOLD, 16);
+    private Font f = new Font("Papyrus", Font.PLAIN, 15);
 
     /**
     * constuctor class
@@ -41,9 +41,11 @@ public class P016_Bumb_Panel extends JPanel {
         if (type % 2 == 0)
             jp.setBackground(new Color(255, 255, 255));
         else
-            jp.setBackground(new Color(0, 255, 255));
-        JLabel name = new JLabel("<html>Chirag<br> Bumb</html>", JLabel.CENTER); // JPanel with full name, first name on first row and last name on second row
+            jp.setBackground(new Color(171, 216,230));
+        JLabel name = new JLabel("<html>Chirag<br> Bumb</html>", JLabel.CENTER);// JPanel with full name, first name on first row and last name on second row
+        name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         JLabel counter = new JLabel("",JLabel.CENTER);
+        counter.setFont(new Font("Papyrus",Font.PLAIN, 15));
 
         //error and handling and logging.
         final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();

@@ -77,7 +77,7 @@ public class P028_Dusad_Panel{
 			timer = new JLabel("0", JLabel.CENTER);
 			timer.setBounds(10, 20, 25, 25);
 			Timer t = new Timer();
-			timer.setFont(new Font("Papyrus", Font.PLAIN, 10));
+			timer.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			timer.setHorizontalAlignment(JLabel.CENTER);
 			timer.setVerticalAlignment(JLabel.CENTER);
 			panel.add(timer);

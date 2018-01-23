@@ -27,7 +27,7 @@ public class P113_Thiagarajan_Panel extends JPanel {
 	
 	JLabel fnameLabel = new JLabel(name);
 	JLabel timeLabel= new JLabel();
-	Font font= new Font("Papyrus", Font.BOLD,15);
+	Font font= new Font("Papyrus", Font.PLAIN,15);
 	
 	Timer timer;
 	int count;
@@ -80,7 +80,7 @@ public class P113_Thiagarajan_Panel extends JPanel {
 			 */
 			else {
 				count=9;
-				Color lightBlue= new Color(150,200,250);
+				Color lightBlue= new Color(173,216,230);
 				setBackground(lightBlue);
 				timer = new Timer(1000, new ActionListener() {
 					public void actionPerformed(ActionEvent e) {				 

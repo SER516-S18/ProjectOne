@@ -74,30 +74,33 @@ public class P045_JOHAR_Panel extends JPanel{
 
         //First name of the author which goes in the first row
         firstName=new JLabel("Saheb", JLabel.CENTER);
-        firstName.setBounds(10, 0, 35, 25);
-        firstName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        firstName.setBounds(10, 0, 50, 25);
+        firstName.setFont(new Font("Papyrus", Font.PLAIN, 15));
         firstName.setHorizontalAlignment(JLabel.CENTER);
         firstName.setVerticalAlignment(JLabel.CENTER);
+        firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(firstName);
 
         //Last name of the author which goes in the second row
         lastName=new JLabel("Johar", JLabel.CENTER);
-        lastName.setBounds(10, 10, 35, 25);
-        lastName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        lastName.setBounds(10, 15, 50, 25);
+        lastName.setFont(new Font("Papyrus", Font.PLAIN, 15));
         lastName.setHorizontalAlignment(JLabel.CENTER);
         lastName.setVerticalAlignment(JLabel.CENTER);
+        lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(lastName);
 
         //Counter value which goes in the last row
         displayNum=new JLabel(String.valueOf(counter), JLabel.CENTER);
-        displayNum.setBounds(10, 20, 35, 25);
-        displayNum.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        displayNum.setBounds(10, 30, 50, 25);
+        displayNum.setFont(new Font("Papyrus", Font.PLAIN, 15));
         displayNum.setHorizontalAlignment(JLabel.CENTER);
         displayNum.setVerticalAlignment(JLabel.CENTER);
+        displayNum.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(displayNum);
 
         setLayout(new BorderLayout(0, 0));
-        setBorder(new EmptyBorder(20, 20, 20, 20));
+        setBorder(new EmptyBorder(30, 30, 30, 30));
 
         //Timer which is used to increment or decrement the counter
         timer = new Timer(1000, new ActionListener() {

@@ -35,13 +35,13 @@ public class P005_Banerjee_Panel
 	{	
 		//setting panel dimension to a window of size 100X100
 		myPanel.setPreferredSize(new Dimension(100, 100));
-	    myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.PAGE_AXIS));  
+	    	myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.PAGE_AXIS));  
 	   
-	    //Printing the labels
-	    myPanel.add(firstname, BorderLayout.CENTER);
-	    myPanel.add(lastname);
-	   // flagNum = new JLabel(String.valueOf(flag));
-	    //myPanel.add(flagNum);
+	    	//Printing the labels
+	    	myPanel.add(firstname, BorderLayout.CENTER);
+	    	myPanel.add(lastname);
+	   	// flagNum = new JLabel(String.valueOf(flag));
+	    	//myPanel.add(flagNum);
 		myPanel.add(displayNumber);
 		
 		//Aligning the labels to center of the panel
@@ -49,11 +49,11 @@ public class P005_Banerjee_Panel
 		lastname.setAlignmentX(Component.CENTER_ALIGNMENT);
 		displayNumber.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		//Customizing labels using fonts of style 'Papyrus' and size '10'
+		//Customizing labels using fonts of style 'Papyrus' and size '15'
 		firstname.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		lastname.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		displayNumber.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		displayNumber.setBorder(new LineBorder(Color.BLACK));
+		//displayNumber.setBorder(new LineBorder(Color.BLACK));
 		
 		try {
 			/*Creating a Timer to auto-increment or auto-decrement from 0-9 / 9-0 based on the value of Flag variable, passed 
@@ -81,7 +81,7 @@ public class P005_Banerjee_Panel
 					}
 					else if(flag==0)
 					{	
-						Color lightblue = new Color(187,255,255);
+						Color lightblue = new Color(173,216,230);
 						myPanel.setBackground(lightblue);
 						
 						if(count_odd>0)
