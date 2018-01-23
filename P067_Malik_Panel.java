@@ -44,17 +44,14 @@ public class P067_Malik_Panel extends JPanel {
 	 * This function creates two JLabels and sets up the JPanel's attributes.
 	 */
 	private void initializePanel() {
-
 		try {
 			name = new JLabel("<html>Salil<br/>Malik</center></html>");
 			name.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			add(name);
-
 			number = new JLabel(String.valueOf(configValue % 2 == 0 ? 0 : 9));
 			number.setFont(new Font("Papyrus", Font.PLAIN, 15));
 			add(number);
 			startTimer();
-
 			setSize(100, 100);
 			setBackground(configValue % 2 == 0 ? Color.WHITE : LIGHT_BLUE);
 			setVisible(true);
