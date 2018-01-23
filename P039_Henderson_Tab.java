@@ -40,7 +40,7 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P044_Jaime_Panel(17));
 		this.add(new P045_JOHAR_Panel(18));
 		// this.add(new P046_NAME_Panel(19)); Does not exist.
-		this.add(new P047_Kakarla_Panel(20).P047_Kakarla_Panel());
+		this.add(new P047_Kakarla_Panel(20));
 		this.add(new P048_Kalluri_Panel(21));
 		this.add(new P049_Kandimalla_Panel(22));
 		this.add(new P050_Kapadia_Panel(23));
