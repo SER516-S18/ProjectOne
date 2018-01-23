@@ -1,8 +1,3 @@
-/* Implementation for SER 516 Lab-1
- * @author Zain Siddiqui
- * Class to implement Panel with full name, a counter, 
- * and background color.*/
-
  import java.awt.Font;
  import java.awt.Color;
  import java.awt.event.ActionEvent;
@@ -13,10 +8,14 @@
  import javax.swing.JFrame;
  import javax.swing.Timer;
  import javax.swing.BoxLayout;
- 
- /*
-  * Creating class as per Lab-work intructions
-  */
+
+/**
+ * Implementation for SER 516 Lab-1
+ * @author Zain Siddiqui
+ * Class to implement Panel with full name, a counter, 
+ * and background color.
+ * Creating class as per Lab-work intructions
+ */
  public class P105_Siddiqui_Panel extends JPanel {
 
  	private JLabel fName;
@@ -37,7 +36,8 @@
  	public static final Color lightBlue_Bg = new Color(173,216,230);
 
  	/*
- 	 * Constructor which takes an integer value and set parameters for background and counter direction.
+ 	 * Constructor which takes an integer value and set parameters for 
+	 * background and counter direction.
  	 */
 
  	public P105_Siddiqui_Panel(int value){
