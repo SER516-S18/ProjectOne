@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package p104_shilimkar_panel;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -18,7 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author anu
  */
 //Need to extend this class
@@ -33,25 +31,25 @@ public class P104_Shilimkar_Panel extends JPanel {
         //constructor that recieves a paramter
         //setting a Panel dimensions
         setPreferredSize(new Dimension(100, 100));
-        
-        setLayout(new GridLayout(3,1));
-    //    GridBagConstraints c = new GridBagConstraints();
-        
+
+        setLayout(new GridLayout(3, 1));
+        //    GridBagConstraints c = new GridBagConstraints();
+
         setBorder(BorderFactory.createLineBorder(Color.blue));
         //JLabel label = new JLabel("<html>Anu<br>Shilimkar<br></html>");
-       
-       label3 = new JLabel("Timer");
-       label3.setFont(new Font("Papyrus", Font.PLAIN, 14));
-       SetTimer(num);
-       add(label3,JLabel.CENTER);
-       
-       label2 = new JLabel("Shilimkar"); 
-       label2.setFont(new Font("Papyrus", Font.PLAIN, 14));
-       add(label2,JLabel.CENTER);
-       
-       label1 = new JLabel("Anu"); 
-       label1.setFont(new Font("Papyrus", Font.PLAIN, 14));
-       add(label1,JLabel.CENTER);
+
+        label3 = new JLabel("Timer");
+        label3.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        SetTimer(num);
+        add(label3, JLabel.CENTER);
+
+        label2 = new JLabel("Shilimkar");
+        label2.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        add(label2, JLabel.CENTER);
+
+        label1 = new JLabel("Anu");
+        label1.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        add(label1, JLabel.CENTER);
     }
 
     private void SetTimer(int num) {
@@ -69,7 +67,7 @@ public class P104_Shilimkar_Panel extends JPanel {
                 public void actionPerformed(ActionEvent e) {
                     label3.setText(String.valueOf(counter));
                     //incrementing the counter form 0 to 9 for White color
-                    
+
                     counter++;
                     //Reset the counter when it reaches 9 and start again with 0
                     if (counter == 11) {
@@ -97,7 +95,7 @@ public class P104_Shilimkar_Panel extends JPanel {
                 public void actionPerformed(ActionEvent e) {
                     label3.setText(String.valueOf(counter));
                     //decrement in the counter from 0 to 9
-                     
+
                     counter--;
 
                     if (counter == -2) {

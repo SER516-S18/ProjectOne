@@ -1,13 +1,3 @@
-/**
- * SER516 Lab1.
- * Create a class to create panel for group project.
- * 
- * @author Yuan Cao id: 018, ASU ID: ycao87
- * @email caoyuan0816@gmail.com
- * @version 2018.0121
- * @group 1
- */
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -18,6 +8,14 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
+ * SER516 Lab1.
+ * Create a class to create panel for group project.
+ * 
+ * @author Yuan Cao id: 018, ASU ID: ycao87
+ * @email caoyuan0816@gmail.com
+ * @version 2018.0121
+ * @group 1
+ *
  * Class P018_Cao_Panel implemented 3 methods: A constructor, create(), and main().
  * Usage:
  *     P018_Cao_Panel p = new P018_Cao_Panel(1);
@@ -25,6 +23,7 @@ import javax.swing.*;
  *     
  * @author Yuan Cao, ID: 018
  * @version 2018.0121
+ * @see javax.swing.JPanel
  */
 public class P018_Cao_Panel extends JPanel{
 
