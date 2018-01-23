@@ -10,15 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
-
-
 /**
  * @author Janani Thiagarajan
  * 
  * @version 1.0  A class that creates a Panel with two Labels-
  * one with Name and one with timer. Uses an Integer input to 
  * determine the background color and the timer
- * 
+ *
+ * If the input value is even set background to White, timer goes 
+ * from 0 to 9.If its odd set background to LightBlue,timer goes 
+ * from 9 to 0. 
  */
 @SuppressWarnings("serial")
 public class P113_Thiagarajan_Panel extends JPanel {
@@ -33,23 +34,12 @@ public class P113_Thiagarajan_Panel extends JPanel {
 	Timer timer;
 	int count;
 	/**
-	 * Constructor which calls a method that creates a panel
+	 * Constructor which creates a panel with name & timer
 	 * @param integer - Input value based on which the background 
 	 *		    color and timer changes
 	 */
 	public P113_Thiagarajan_Panel(int inputValue) {  	
-		createMyPanel(inputValue);
-	}
-	
-	/**
-	 * Method that creates a panel with name of the author and a timer
-	 * @param integer - Input value based on which the background 
-	 *		    color and timer changes
-	 * If the input value is even set background to White, timer goes 
-	 * from 0 to 9 
-	 * If its odd set background to LightBlue,timer goes from 9 to 0                       
-	 */	
-	public void createMyPanel(int inputValue) {  
+		
 		setPreferredSize(new Dimension(100,100));
 		setLayout(new GridLayout(0, 1));
 		
