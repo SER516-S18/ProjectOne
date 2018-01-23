@@ -1,3 +1,8 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
+
 /*
  * Class Assignment - 1
  * Author : Abhishek Parmar (aparmar2)
@@ -6,16 +11,13 @@
  * background color and counter value set according to person's ID.
  * 
  */
-import javax.swing.*;
-import java.awt.*;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class P087_Parmar_Panel extends JPanel {
 	
     public static int counter = 0;
     private boolean isOdd;
-    private Color col; // To set background color of panel
+    private Color col;
+    public final static Color LIGHT_BLUE = new Color(173, 216, 230); // To set background color of panel
 
     
     // Constructor to set counter and background color according to ID.
@@ -30,7 +32,7 @@ public class P087_Parmar_Panel extends JPanel {
         {
             isOdd=true;
             counter=10;
-            col=Color.blue;
+            col=LIGHT_BLUE;
         }
         setPanel(col);
     }
@@ -39,9 +41,9 @@ public class P087_Parmar_Panel extends JPanel {
     public void setPanel(Color col) {
 
         setSize(100,100);
-        
-        setLayout(new GridBagLayout());//To align labels in center
-      //A GridBagConstraint object to set x and y coordinate of name and counter in grid.
+        //To align labels in center
+        setLayout(new GridBagLayout());
+      	//A GridBagConstraint object to set x and y coordinate of name and counter in grid.
         GridBagConstraints a = new GridBagConstraints();
         
         setBackground(col);
@@ -67,7 +69,7 @@ public class P087_Parmar_Panel extends JPanel {
             {
                 public void run()
                 {
-                	//If ID is odd setting counter to run from 9 to 0.
+                    //If ID is odd setting counter to run from 9 to 0.
                     if(isOdd)
                     {
                     	if(counter>0)
@@ -92,27 +94,9 @@ public class P087_Parmar_Panel extends JPanel {
 
         } catch(Exception e)
         {
-            e.printStackTrace();//Displays exception trace.
+            e.printStackTrace();
         }
     }
-
-
-    /*
-     * main() - For Saurabh
-     *
-     *
-    public static void main(String[] args) {
-
-        JFrame f1 = new JFrame("Frame");
-        f1.setSize(100,100);
-        P087_Parmar_Panel obj = new P087_Parmar_Panel(1);
-        f1.add(obj );
-        f1.setVisible(true);
-        f1.pack();
-        f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    }
-    */
     
 }
 
