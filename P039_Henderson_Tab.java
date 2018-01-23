@@ -45,7 +45,7 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P049_Kandimalla_Panel(22));
 		this.add(new P050_Kapadia_Panel(23));
 		this.add(new P051_Kapoor_Panel(24));
-		this.add(new P052_Kasam_Panel(25).P052_Kasam_Panel());
+		this.add(new P052_Kasam_Panel(25));
 		// This person swears that they are group 2. Could be
 		// because the main author is in our block.
 		this.add(new P131_Zhou_Panel(25));
