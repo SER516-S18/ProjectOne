@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  * The below class creates a panel and uses JLabel to create 
@@ -12,9 +15,6 @@
  * @version (1/21/2018)
  */
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 //Using JPanel to make the class P063_Madabhushi_Panel into a panel
 public class P063_Madabhushi_Panel extends JPanel
 {
@@ -83,31 +83,6 @@ public class P063_Madabhushi_Panel extends JPanel
             });
             timer.start();
             }
-        }
-        /* for testing 
-    public static void frame()
-        {//creating JFrame 
-        JFrame f = new JFrame("demo");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new P063_Madabhushi_Panel(3));//change 3 to even number to 
-        //check white bacground and counter from 0 to 9
-        f.pack();
-        f.setSize(500,500);
-        f.setVisible(true);
-        }
-   
-    public static void main(String[] args)
-    {
-        frame();
-        SwingUtilities.invokeLater(new Runnable() 
-        {
-            @Override
-            public void run(){
-            new P063_Madabhushi_Panel(3);//change 3 to even number for other 
-            //condition
-            }
-        });
-    } */
-        
-    } 
+     }
+} 
         
