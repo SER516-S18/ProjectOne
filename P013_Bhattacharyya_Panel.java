@@ -20,7 +20,6 @@ public class P013_Bhattacharyya_Panel extends JPanel{
    private JLabel firstname;
    private JLabel lastname;
    private JLabel number;
-   private JPanel myPanel;
    private int flag;
    
    // This is the constructor which receives an integer value.
