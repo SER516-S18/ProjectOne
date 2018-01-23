@@ -23,21 +23,20 @@ public class P091_Prakash_Tab extends JPanel {
         this.add(new P087_Parmar_Panel(8));
         this.add(new P088_Patel_Panel(9).returnpanel());
         this.add(new P089_Patel_Panel(10).Ret_Panel_Object());
-        this.add(new P092_Priya_Panel(11).getJPanel());
-        this.add(new P093_Ramamurthy_Panel(12));
-        this.add(new P094_Vellore_Panel(13).P094_Vellore_Panel());
-        this.add(new P095_Rice_Panel(14));
-        this.add(new P096_Saifudeen_Panel(15));
-        this.add(new P097_Sampath_Panel(16));
-        this.add(new P098_Sawant_Panel(17));
-        this.add(new P099_Shah_Panel(18));
-        this.add(new P100_Shah_Panel(19).getInstance());
-        this.add(new P101_Shah_Panel(20));
-        this.add(new P102_Sharma_Panel(21));
-        this.add(new P103_Sharma_Panel(22));
-        this.add(new P104_Shilimkar_Panel(23));
-        this.add(new P079_NamakkalSudhakar_Panel(24));
-
-
+        this.add(new P090_Perez_Panel(11));
+        this.add(new P092_Priya_Panel(12).getJPanel());
+        this.add(new P093_Ramamurthy_Panel(13));
+        this.add(new P094_Vellore_Panel(14).P094_Vellore_Panel());
+        this.add(new P095_Rice_Panel(15));
+        this.add(new P096_Saifudeen_Panel(16));
+        this.add(new P097_Sampath_Panel(17));
+        this.add(new P098_Sawant_Panel(18));
+        this.add(new P099_Shah_Panel(19));
+        this.add(new P100_Shah_Panel(20).getInstance());
+        this.add(new P101_Shah_Panel(21));
+        this.add(new P102_Sharma_Panel(22));
+        this.add(new P103_Sharma_Panel(23));
+        this.add(new P104_Shilimkar_Panel(24));
+        this.add(new P079_NamakkalSudhakar_Panel(25));
     }
 }
