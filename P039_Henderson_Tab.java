@@ -14,7 +14,7 @@ public class P039_Henderson_Tab extends JPanel {
 	public P039_Henderson_Tab() {
 		this.setLayout(new GridLayout(5, 5));
 		this.add(new P027_Dua_Panel(1));
-		this.add(new P028_Dusad_Panel(2);
+		this.add(new P028_Dusad_Panel(2));
 		this.add(new P029_Dutta_Panel(3));
 		// this.add(new P030_NAME_Panel(4));	This is Main
 		this.add(new P031_Faldu_Panel(5));
