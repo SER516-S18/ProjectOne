@@ -56,7 +56,6 @@ public class P067_Malik_Panel extends JPanel {
 			startTimer();
 
 			setSize(100, 100);
-			// The hex color code (173, 216, 230) is for LightBlue
 			setBackground(configValue % 2 == 0 ? Color.WHITE : LIGHT_BLUE);
 			setVisible(true);
 		} catch (Exception e) {
