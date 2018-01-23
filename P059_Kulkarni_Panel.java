@@ -13,7 +13,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * creates a JPanel with name and counter
+ * P059_Kulkarni_Panel, creates a JPanel with name and counter
  * 
  * This class implements the following contents:
  * A Label for First Name (JLabel NameLabel)
@@ -22,31 +22,28 @@ import java.util.TimerTask;
  * A Panel that contains the labels and the counter (JPanel panel)
  * 
  * @author Mitali Kulkarni
- *
+ * @version 1.0
  */
 
 public class P059_Kulkarni_Panel extends Panel {
 	private static final long serialVersionUID = 1L;
 	
-	// Constants
+	// Public Constants
+	public static Color LIGHT_BLUE = new Color(173,216,230);
+	public static Font FONT = new Font("Papyrus", Font.PLAIN, 15);
+	
 	private int counter = 0;
-	private boolean even = true;
-	private static final int FONT_SIZE = 15;
-	private static final String FONT_TYPE = "Papyrus";
 	private static final String NAME = "<html>Mitali<br/>Kulkarni</html>";
 	
 	/**
-	 * Determines counter and background color of Panel
-	 * If even = true , background is white and counter increases from 0 to 9. 
-	 * If even = false, background is light blue and counter decreases from 9 to 0. 
-	 * Even is true by default.
+	 * @param value determines counter and background color of Panel
+	 * If even , background is white and counter increases from 0 to 9. 
+	 * If odd , background is light blue and counter decreases from 9 to 0. 
 	 */
 	public P059_Kulkarni_Panel(int color_value) {
 		if (color_value % 2 == 0) {
-			even = true;
 			counter = 0;
 		} else {
-			even = false;
 			counter = 9;
 		}
 		
@@ -55,14 +52,14 @@ public class P059_Kulkarni_Panel extends Panel {
 			JLabel NameLabel = new JLabel(NAME, JLabel.CENTER);
 			NameLabel.setHorizontalAlignment(JLabel.CENTER);
 			NameLabel.setVerticalAlignment(JLabel.CENTER);
-			NameLabel.setFont(new Font(FONT_TYPE, Font.PLAIN, FONT_SIZE));
+			NameLabel.setFont(FONT);
 			NameLabel.setForeground(Color.BLACK);
 			
 			// Add Timer JLabel with font = Papyrus Color = BLACK
 			JLabel timer = new JLabel("", JLabel.CENTER);
 			timer.setHorizontalAlignment(JLabel.CENTER);
 			timer.setVerticalAlignment(JLabel.CENTER);
-			timer.setFont(new Font(FONT_TYPE, Font.PLAIN, FONT_SIZE));
+			timer.setFont(FONT);
 			timer.setForeground(Color.BLACK);
 			
 			// Timer object
@@ -70,16 +67,14 @@ public class P059_Kulkarni_Panel extends Panel {
 				t.schedule(new TimerTask() {
 					@Override
 					public void run() {
-						System.out.print(even);
-						if (even) {
+						if (color_value % 2 == 0) {
 							setBackground(Color.WHITE); // If color_value is even set background color to white
 							timer.setText("0");
 							if (counter == 10)
 								counter = 0;
 							timer.setText(""+ counter++);
 						} else {
-							Color lightBlue = new Color(173,216,230); // If color_value is odd set background color to light blue
-							setBackground(lightBlue);
+							setBackground(LIGHT_BLUE);
 							timer.setText("9");
 							if (counter == -1)
 								counter = 9;
@@ -94,6 +89,6 @@ public class P059_Kulkarni_Panel extends Panel {
 		} catch(Exception e) {
 	    		System.out.println("Error in Timer Display");
 			e.printStackTrace();
-	    	}
+        }
 	}
 }
