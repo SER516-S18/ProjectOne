@@ -1,4 +1,4 @@
-import java.awt.*;
+5import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -30,9 +30,9 @@ public class P008_Bartakke_Panel extends JPanel
 	P008_Bartakke_Panel(int flag)
 	{
 		value = flag; // Parameterized constructor accepting value based upon which background color and counter change
-		Font f = new Font("Papyrus", Font.BOLD, 10); // Defining the font for name label
+		Font f = new Font("Papyrus", Font.BOLD, 15); // Defining the font for name label
 		Font f1 = new Font("Papyrus", Font.BOLD, 15); // Defining the font for counter label
-		Color lightBlue= new Color(32,190,215); // Defining the light blue color for background
+		Color lightBlue= new Color(173,216,230); // Defining the light blue color for background
 		JLabel Name = new JLabel("<html>PRATIK<br>BARTAKKE</html>",JLabel.CENTER);
 		JLabel Name2 = new JLabel("",JLabel.CENTER);
 		Name.setFont(f);
