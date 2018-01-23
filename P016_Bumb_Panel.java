@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class P016_Bumb_Panel extends JPanel {
     private int timer;
     private int type;
-    private static JPanel jp;
+   // private static JPanel jp;
     private Font f = new Font("Papyrus", Font.BOLD, 16);
 
     /**
@@ -37,14 +37,14 @@ public class P016_Bumb_Panel extends JPanel {
      */
 
     private void function() {
-        jp = new JPanel();
+       // jp = new JPanel();
         setSize(100,100);
         jp.setLayout(new GridLayout(2,1)); // giving attributes to the panel
 //        jp.setPreferredSize(new Dimension(100,100));
         if (type % 2 == 0)
-            jp.setBackground(new Color(255, 255, 255));
+            this.setBackground(new Color(255, 255, 255));
         else
-            jp.setBackground(new Color(171, 216,230));
+            this.setBackground(new Color(171, 216,230));
         JLabel name = new JLabel("<html>Chirag<br> Bumb</html>", JLabel.CENTER);// JPanel with full name, first name on first row and last name on second row
         name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         JLabel counter = new JLabel("",JLabel.CENTER);
@@ -75,8 +75,9 @@ public class P016_Bumb_Panel extends JPanel {
             }
         }, 0, 1, TimeUnit.SECONDS);
 
-        jp.add(name);
-        jp.add(counter);
+        this.add(name);
+        this.add(counter);
+        setVisible(true);
 
 
 
