@@ -48,6 +48,7 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 			this.setBackground(new Color(173,216,230));
 			decrement();
 		}
+		
 		//set size of the panel
 		this.setPreferredSize(new Dimension(100,100));
 		this.setVisible(true);
