@@ -19,15 +19,15 @@ import javax.swing.JPanel;
 public class P094_Vellore_Panel extends JPanel{ 
 	
 	//Initializing panel and count label
-	private JLabel name = new JLabel("<html>Vaishak<br>Ramesh Vellore</html>");
+	private JLabel name = new JLabel("<html>Vaishak<br>Vellore</html>");
 	private JLabel timer= new JLabel();
 	private boolean var;
 	
 	
-	public enum NewColors{
+	public enum newColors{
         LIGHTBLUE(new Color(173,216,230)), WHITE(Color.WHITE);
         private Color color;
-        private NewColors(Color color)
+        private newColors(Color color)
         {
             this.color=color;
         }
@@ -48,9 +48,9 @@ public class P094_Vellore_Panel extends JPanel{
 		
 		//checks if number passed is true or false and performs the following actions
 		if(var==false)
-			setBackground(NewColors.LIGHTBLUE.setColor());
+			setBackground(newColors.LIGHTBLUE.setColor());
 		else
-			setBackground(NewColors.WHITE.setColor());
+			setBackground(newColors.WHITE.setColor());
 		
 		
 		//setting the size of the panel x,y axis
@@ -104,7 +104,7 @@ public class P094_Vellore_Panel extends JPanel{
 	            }
 	        }
 	    }.start();
-	}//end or function. 
+	}
 	
 	
 	public void timerDecrement() {
@@ -124,16 +124,5 @@ public class P094_Vellore_Panel extends JPanel{
 	            }
 	        }
 	    }.start();
-	}//end or function. 
-	
-	public static void main(String[] args) {
-		
-		P094_Vellore_Panel object= new P094_Vellore_Panel(3);
-		JFrame b=new JFrame(" ");
-		b.setVisible(true);
-		b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		b.getContentPane().add(object, BorderLayout.CENTER);
-		b.pack();
-		
-	}// end of main
+	} 
 }//end of class
