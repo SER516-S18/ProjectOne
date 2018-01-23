@@ -23,14 +23,11 @@ public class P045_JOHAR_Panel extends JPanel{
     boolean isEven = false;
     Color lightBlue = new Color(173, 216, 230);
 
-    //Singelton Panel object which is returned
-    private static P045_JOHAR_Panel panel;
-
     /**
      * Class constructor.
      * @param	num	Describes the background and counter mode of the panel.
      */
-    protected P045_JOHAR_Panel(int num) {
+    public P045_JOHAR_Panel(int num) {
 
         counter = 9;
         isEven = false;
@@ -40,18 +37,6 @@ public class P045_JOHAR_Panel extends JPanel{
             counter = 0;
         }
         createPanelObject();
-    }
-
-    /* Singleton setup
-     * num - Even for increasing counter, odd for decreasing.
-    */
-    public static P045_JOHAR_Panel getInstance( int num ) {
-
-        //if panel object is null, then create a new object else return the already created object
-        if( panel == null) {
-            panel = new P045_JOHAR_Panel( num );
-        }
-        return panel;
     }
 
     /**
