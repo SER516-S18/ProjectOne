@@ -48,9 +48,6 @@ public class P034_Gorantla_Panel extends JPanel{
     public void initUI(){
         // setting the layout for the panel
         this.setLayout(new GridLayout(2,1));
-        // setting border for the panel
-        Border panelBorder = BorderFactory.createLineBorder(Color.GRAY, 1);
-        this.setBorder(panelBorder);
     }
     
     // sets the content for the panel
