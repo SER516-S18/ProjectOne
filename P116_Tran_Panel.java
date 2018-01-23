@@ -12,40 +12,40 @@ import javax.swing.Timer;
  * @since   2018-01-22
  */
 public class P116_Tran_Panel extends JPanel {
-	
+
 	public P116_Tran_Panel(int value) {
-		
+
 		/*
 		 * The JPanel should be 100 x 100 pixels:
-         *
-         *      Nelson
-         *      Tran
-         *      [0-9]
+		 *
+		 *      Nelson
+		 *      Tran
+		 *      [0-9]
 		 */
-		
+
 		this.setSize(DIMENSION, DIMENSION);
 		this.setLayout(new GridLayout(3, 1));
 		this.add(_firstName_label);
 		this.add(_lastName_label);
 		this.add(_counter_label);
 		this.setVisible(true);
-		
+
 		/*
 		 * 'value' is even ⇒ white background, increasing counter (0 → 9)
 		 * 'value' is odd ⇒ light blue background, decreasing counter (9 → 0)
 		 */
-		
+
 		if (value % 2 == 0) {
 			setBackground(Color.WHITE);
 			_counter_inc = INCREASING;
 			_counter = 0;
-			
+
 		} else {
 			setBackground(SKY_BLUE);
 			_counter_inc = DECREASING;
 			_counter = 9;
 		}
-		
+
 		/*
 		 * Initialize the timer. Every second, the timer updates the counter
 		 * and the counter label text to count up or down depending on the
@@ -57,10 +57,10 @@ public class P116_Tran_Panel extends JPanel {
 			_counter = Math.floorMod(_counter, MAX_COUNTER);
 			_counter_label.setText(Integer.toString(_counter));
 		});
-		
+
 		_timer.start();
 	}
-	
+
 	/**
 	 * Driver method to test the class.
 	 * @param args Command line arguments.
@@ -72,12 +72,12 @@ public class P116_Tran_Panel extends JPanel {
 		frame.setSize(100, 100);
 		frame.setVisible(true);
 	}
-	
+
 	// Graphical Components.
 	private JLabel _firstName_label = new JLabel("Nelson", JLabel.CENTER);
 	private JLabel _lastName_label = new JLabel("Tran", JLabel.CENTER);
 	private JLabel _counter_label = new JLabel("", JLabel.CENTER);
-	
+
 	// Timer & Counter.
 	private Timer _timer;
 	private int _counter;
