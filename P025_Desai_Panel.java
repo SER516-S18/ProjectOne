@@ -1,28 +1,25 @@
-import javax.swing.*;
-import java.awt.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+        import javax.swing.*;
+        import java.awt.*;
+        import java.util.concurrent.Executors;
+        import java.util.concurrent.ScheduledExecutorService;
+        import java.util.concurrent.TimeUnit;
+
+        import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 /**
  * P025_Desai_Panel is panel of Dhruti Desai
  * The first row is giving first name
  * The second row is giving last name
  * Row three is a counter that is either incrementing from 0 or decrementing from 9.
  * The mode of the counter and the background color are determined by the value passed to the constructor
-  @author Dhruti Desai
+ @author Dhruti Desai
  */
 
 public class P025_Desai_Panel extends JPanel {
     private int timer;
     private int type;
-<<<<<<< HEAD
-    //private Font f = new Font("Papyrus", Font.BOLD, 15);
-=======
     private Font f = new Font("Papyrus", Font.PLAIN, 15);
->>>>>>> 4277db61a187b0742aa8e8c2069ab6778db3be9d
-
+    private static JPanel jp;
     /**
      * Class constructor.
      * @param  type Describes the background and counter mode of the panel. Even numbers result in a PanelType.WhiteIncrementor, odd give a PanelType.LightBlueDecrementor.
@@ -37,13 +34,13 @@ public class P025_Desai_Panel extends JPanel {
 
         action_function();
     }
-/**This function is basically used to design the layout for teh panel by setting its dimensions and color.
- * This action function also executes the thread for the counter.
- * Exception handling is included to check for errors encountered by threads.*/
+    /**This function is basically used to design the layout for teh panel by setting its dimensions and color.
+     * This action function also executes the thread for the counter.
+     * Exception handling is included to check for errors encountered by threads.*/
     private void action_function() {
-        JPanel jp = new JPanel();
+        jp = new JPanel();
         jp.setLayout(new GridLayout(2,1));
-        jp.setPreferredSize(new Dimension(100,100));
+//        jp.setPreferredSize(new Dimension(100,100));
         if (type % 2 == 0)
             jp.setBackground(new Color(255, 255, 255));
         else
@@ -79,18 +76,20 @@ public class P025_Desai_Panel extends JPanel {
 
         jp.add(name);
         jp.add(counter);
-        add(jp);
- }
-   /**Main function is included for testing. */
-    /**public static void main(String args[])
-      *{
-      * JFrame jf= new JFrame();
-      * jf.getContentPane().add(new P025_Desai_Panel(3));
-      * jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      * jf.setVisible(true);
-      * jf.setSize(400,400);
-      *  }*/
-}
+
+    }
+    /**Main function is included for testing. */
+   /* public static void main(String args[])
+     *{
+     *   JFrame jf= new JFrame();
+     * jf.getContentPane().add(new P025_Desai_Panel(3));
+     * jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     * jf.setVisible(true);
+     * jf.setSize(400,400);
+     * jf.add(jp);
+     *}*/
+      
+      }
 
 
 
