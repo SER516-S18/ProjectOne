@@ -1,37 +1,43 @@
-/* Panel with 2 JLabels containing full name and timer which increases and decreases according to input provided */
-
 import javax.swing.*;
 import java.awt.*;
-public class P080_Nolastname_Panel implements Runnable{
-    private JPanel p;
+
+/*  Lab 1
+    Author: Aditya Kumar
+    Panel with 2 JLabels containing full name and timer which increments from 0-9
+    with background white if the input provided to constructor is even or decrements from
+    9-0 with light blue background if input provided to constructor is odd
+*/
+
+public class P080_Nolastname_Panel extends JPanel implements Runnable{
     private JLabel timeLabel;  // JLabel for Timer
     private JLabel nameLabel;  // JLabel for FullName(First Row contains First name and second row contains last name)
     static Integer startingPoint;
+    Color lightBlue= new Color(173,216,230); // Light blue colour definition in rgb
 
     public P080_Nolastname_Panel(int num){
-        p = new JPanel();
-        p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-        p.setSize(100,100);
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Setting the layout
+        setSize(100,100);  // Setting the size of the Layout
         nameLabel = new JLabel("<html>Aditya<br>Kumar</html>"); // Setting the contents of the FullName JLabel
         nameLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);        //sets the alignment of the label to the centre inside panel
         nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         timeLabel = new JLabel("");
-        timeLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        Font font = new Font("Papyrus", Font.PLAIN, 15);
-        nameLabel.setFont(font);
-        timeLabel.setFont(font);
+        timeLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);   //sets the alignment of the label to the centre inside panel
+        Font fontName = new Font("Papyrus", Font.PLAIN, 15); // setting the font of the labels
+        nameLabel.setFont(fontName);
+        timeLabel.setFont(fontName);
         timeLabelOrder(num);
-        p.add(nameLabel);
+        this.add(nameLabel); // adding name label to panel
+        setVisible(true);
     }
 
     public void timeLabelOrder(int num){  // Function to identify whether even or odd input is provided and increments or decrements the timer accordingly
         Thread t = new Thread(this);
         if(num%2 == 0){
             startingPoint = -1;
-            p.setBackground(Color.WHITE); // Setting Background colour to white
+            this.setBackground(Color.WHITE); // Setting Background colour to white
         } else {
             startingPoint = 10;
-            p.setBackground(new Color(173,216,230));   // Setting background colour to blue
+            this.setBackground(lightBlue);   // Setting background colour to blue
         }
         t.start();
     }
@@ -47,7 +53,7 @@ public class P080_Nolastname_Panel implements Runnable{
                     if(startingPoint==10) {
                         startingPoint=0;
                     }
-                    p.add(timeLabel);
+                    this.add(timeLabel); // adding timelabel to panel
                 }catch (InterruptedException e) {
                     System.out.println("Following Error has occured: "+e.getMessage());
                 }
@@ -62,7 +68,7 @@ public class P080_Nolastname_Panel implements Runnable{
                     if(startingPoint==-1) {
                         startingPoint=9;
                     }
-                    p.add(timeLabel);
+                    this.add(timeLabel); // adding time label to panel
                 }catch (InterruptedException e) {
                     System.out.println("Following Error has occured: "+e.getMessage());
                 }
@@ -70,16 +76,5 @@ public class P080_Nolastname_Panel implements Runnable{
             }
         }
     }
-    
-     public JPanel getPanel(){
-        return p;
-    }
-
- /*   public static void main(String args[]) // Main Part
-    {
-        new P080_Nolastname_Panel(2);
-        JFrame f;
-        f = new JFrame();
-        f.setVisible(true);
-    } */
 }
+
