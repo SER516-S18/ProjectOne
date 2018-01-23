@@ -73,5 +73,5 @@ public class P074_Mishra_Tab extends JPanel{
 			}
 				
 	}
-	
+
 }
