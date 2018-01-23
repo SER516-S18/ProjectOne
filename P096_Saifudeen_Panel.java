@@ -38,7 +38,7 @@ public class P096_Saifudeen_Panel extends JPanel{
 
         //Setting size and font as per requirements
         setPreferredSize(new Dimension(100,100));
-        Font font = new Font("Papyrus", 1, 14);
+        Font font = new Font("Papyrus", 0, 15);
 
         //Border to separate Name and Counter
         EmptyBorder border = new EmptyBorder(5, 5, 5, 5);
