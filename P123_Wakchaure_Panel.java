@@ -12,26 +12,27 @@ import javax.swing.*;
  *               and counter will run from 9 to 0 (descending).
  */
 
+@SuppressWarnings("unchecked")
 public class P123_Wakchaure_Panel extends JPanel{	
 	
 	Timer timer;
 	int count;
 	
 // Constructor to create the panel 
-	public P123_Wakchaure_Panel(int in_num) {
+	public P123_Wakchaure_Panel(int input) {
 			
 		Font font = new Font("Papyrus", Font.PLAIN, 15);  //font of style PAPAYRUS
-		setSize(100,100);   					          //panel size 100*100
+		setSize(100,100);   				  //panel size 100*100
 		setLayout(new GridLayout(0, 1));
 		
 		//First name and Last name in panel
 		JLabel name = new JLabel("<html>Kanchan<br>Wakchaure</html>");
 		name.setFont(font);
 		name.setHorizontalAlignment(JLabel.CENTER);
-	    add(name);
+	        add(name);
 			    
 		//Counter in panel
-	    JLabel counter = new JLabel();
+	        JLabel counter = new JLabel();
 		counter.setFont(font);
 		counter.setHorizontalAlignment(JLabel.CENTER);
 		add(counter);
@@ -39,7 +40,7 @@ public class P123_Wakchaure_Panel extends JPanel{
 		Color lightBlue = new Color(173,216,230); 
 		
 		//To set panel background color and counter
-		if (in_num % 2 == 0) {				//even input
+		if (input % 2 == 0) {				//even input
 			setBackground(Color.WHITE);    
 			count = 0;
 		}
@@ -54,7 +55,7 @@ public class P123_Wakchaure_Panel extends JPanel{
 			timer = new Timer(1000, new ActionListener(){			  
 				public void actionPerformed(ActionEvent e) {
 					counter.setText(Integer.toString(count));
-					if ( in_num % 2 == 0 ) {	//count from 0 to 9	 
+					if ( input % 2 == 0 ) {	//count from 0 to 9	 
 						if (count == 9 )
 							count = 0;
 						else
