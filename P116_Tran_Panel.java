@@ -1,6 +1,7 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
-import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,85 +9,99 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
+ * This class implements a JPanel per the project specification.
+ * Every panel requires a JLabel with the author's full name and
+ * another JLabel that displays a counter that increments or decrements
+ * depending on the parity of the integer value that is passed as an
+ * argument to the constructor.
+ *
  * @author  Nelson Tran
  * @version 1.0
- * @since   2018-01-22
+ * @since   2018-01-23
  */
 public class P116_Tran_Panel extends JPanel {
 
 	public P116_Tran_Panel(int value) {
-
 		/*
-		 * The JPanel should be 100 x 100 pixels:
+		 * If the argument to the constructor is even, then the background
+		 * color of the panel should be white and the counter should increment
+		 * by 1 every second starting at 0.
 		 *
-		 *      Nelson
-		 *      Tran
-		 *      [0-9]
-		 */
-
-		_firstName_label.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		_lastName_label.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		_counter_label.setFont(new Font("Papyrus", Font.PLAIN, 15));
-
-		this.setSize(DIMENSION, DIMENSION);
-		this.setLayout(new GridLayout(3, 1));
-		this.add(_firstName_label);
-		this.add(_lastName_label);
-		this.add(_counter_label);
-		this.setVisible(true);
-
-		/*
-		 * 'value' is even ⇒ white background, increasing counter (0 → 9)
-		 * 'value' is odd ⇒ light blue background, decreasing counter (9 → 0)
+		 * Otherwise, the background color should be sky blue and the counter
+		 * should decrement by 1 every second starting at 9.
 		 */
 
 		if (value % 2 == 0) {
 			setBackground(Color.WHITE);
-			_counter_inc = INCREASING;
-			_counter = 0;
+			counterIncrement = INCREASING;
+			counter = 0;
 
 		} else {
 			setBackground(SKY_BLUE);
-			_counter_inc = DECREASING;
-			_counter = 9;
+			counterIncrement = DECREASING;
+			counter = 9;
 		}
 
-		/*
-		 * Initialize the timer. Every second, the timer updates the counter
-		 * and the counter label text to count up or down depending on the
-		 * parity of 'value'.
-		 */
-
-		_timer = new Timer(UPDATE_INTERVAL, event -> {
-			_counter += _counter_inc;
-			_counter = Math.floorMod(_counter, MAX_COUNTER);
-			_counter_label.setText(Integer.toString(_counter));
-		});
-
-		_timer.start();
+		setupPanel("Nelson", "Tran");
+		startTimer(UPDATE_INTERVAL);
 	}
 
-	/**
-	 * Driver method to test the class.
-	 * @param args Command line arguments.
-	 */
-	public static void main(String... args) {
-		P116_Tran_Panel panel = new P116_Tran_Panel(116);
-		JFrame frame = new JFrame();
-		frame.add(panel);
-		frame.setSize(100, 100);
-		frame.setVisible(true);
+	private void setupPanel(String firstName, String lastName) {
+		/*
+		 * To be consistent with the other JPanels in the class, the
+		 * dimensions of each JPanel should be 100×100 pixels and all
+		 * labels should be drawn using the Papyrus font.
+		 *
+		 *     JPanel Preview:
+		 *   ┌─────────────────┐
+		 *   │   {firstName}   │
+		 *   │   {lastName}    │
+		 *   │   {counter}     │
+		 *   └─────────────────┘
+		 */
+
+		nameLabel.setText(
+			String.format(
+				"<html><center>%s<br>%s</center></html>",
+				firstName,
+				lastName
+			)
+		);
+
+		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 14));
+		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
+
+		this.setLayout(new BorderLayout());
+		this.add(nameLabel, BorderLayout.NORTH);
+		this.add(counterLabel, BorderLayout.SOUTH);
+		this.setSize(DIMENSION, DIMENSION);
+		this.setVisible(true);
+	}
+
+	private void startTimer(int interval) {
+		/*
+		 * Every second, the timer updates the counter and the counter labels.
+		 * The counter is restricted to [0, 9]. If the counter reaches the
+		 * minimum or maximum value, the next value should wrap around.
+		 */
+
+		timer = new Timer(interval, event -> {
+			counter += counterIncrement;
+			counter = Math.floorMod(counter, MAX_COUNTER);
+			counterLabel.setText(Integer.toString(counter));
+		});
+
+		timer.start();
 	}
 
 	// Graphical Components.
-	private JLabel _firstName_label = new JLabel("Nelson", JLabel.CENTER);
-	private JLabel _lastName_label = new JLabel("Tran", JLabel.CENTER);
-	private JLabel _counter_label = new JLabel("", JLabel.CENTER);
+	private JLabel nameLabel = new JLabel("", JLabel.CENTER);
+	private JLabel counterLabel = new JLabel("", JLabel.CENTER);
 
 	// Timer & Counter.
-	private Timer _timer;
-	private int _counter;
-	private int _counter_inc;
+	private Timer timer;
+	private int counter;
+	private int counterIncrement;
 
 	// Constants.
 	private final Color SKY_BLUE = new Color(173,216,230);
