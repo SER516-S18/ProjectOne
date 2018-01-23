@@ -1,4 +1,3 @@
-//package Project01;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -39,7 +38,8 @@ public class P023_Day_Panel extends JPanel implements Runnable {
 		this.setSize(100, 100);
 
 		JLabel name = new JLabel("<html>Melissa <br>Day</html>");
-		name.setFont(new Font("Papyrus", Font.BOLD, 14));
+		name.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		name.setForeground(Color.BLACK);
 		name.setHorizontalAlignment(JLabel.CENTER);
 		this.add(name);
 
@@ -66,15 +66,15 @@ public class P023_Day_Panel extends JPanel implements Runnable {
 			countChange = -1;
 			even = false;
 
-			Color lightBlue = new Color(243, 255, 255, 255);
+			Color lightBlue = new Color(173, 216, 230, 255);
 			this.setBackground(lightBlue);
 		}
 
 		counterAsString = Integer.toString(count);
 
 		counterLabel = new JLabel(counterAsString);
-		counterLabel.setFont(new Font("Papyrus", Font.BOLD, 14));
-
+		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		counterLabel.setForeground(Color.BLACK);
 		counterLabel.setHorizontalAlignment(JLabel.CENTER);
 		this.add(counterLabel);
 
@@ -119,30 +119,5 @@ public class P023_Day_Panel extends JPanel implements Runnable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
-	/**
-	 * For Testing
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		JFrame frame = new JFrame();
-		GridLayout grid = new GridLayout(5, 5);
-		frame.setLayout(grid);
-
-		for (int i = 0; i < 10; i++) {
-			frame.add(new P023_Day_Panel(8));
-		}
-
-		for (int i = 0; i < 15; i++) {
-			frame.add(new P023_Day_Panel(9));
-		}
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800, 800);
-		frame.setVisible(true);
-	}
-
 }
