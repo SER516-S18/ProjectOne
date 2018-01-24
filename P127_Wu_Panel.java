@@ -1,9 +1,4 @@
-/**
- * a JLabel used for SER 516, which can show my name and a number
- * @author Huichuan Wu
- * @version 1.0
- * @since 01/21/2018
- */
+
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -12,7 +7,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Timer;
-
+/**
+ * a JLabel used for SER 516, which can show my name and a number
+ * @author Huichuan Wu
+ * @version 1.0
+ * @since 01/21/2018
+ */
 public class P127_Wu_Panel{
 	Color bcolor;
 	Timer timer;
@@ -68,18 +68,6 @@ public class P127_Wu_Panel{
 		}
 		timer.start();
 		return p;
-	}
-	public static void main(String[] args) {
-		P127_Wu_Panel p = new P127_Wu_Panel(2);
-		JFrame frame = new JFrame(); 
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-	    frame.setLayout(null);
-
-	    JLabel label = p.create();
-	    frame.add(label); 
-
-	    frame.setSize(250, 150); 
-	    frame.setVisible(true);
 	}
 }
 
