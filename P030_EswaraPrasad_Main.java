@@ -40,11 +40,11 @@ public class P030_EswaraPrasad_Main extends JPanel {
             * like border and Titles to each tab.
             * */
 
-            myTabPane.addTab(Tab1.TABNAME, BahlTab);
-            myTabPane.addTab(Tab2.TABNAME, HendersonTab);
-            myTabPane.addTab(Tab3.TABNAME, MishraTab);
-            myTabPane.addTab(Tab4.TABNAME, PrakashTab);
-            myTabPane.addTab(Tab5.TABNAME, SrivastavaTab);
+            myTabPane.addTab(Tab1.TABNAME, Tab1);
+            myTabPane.addTab(Tab2.TABNAME, Tab2);
+            myTabPane.addTab(Tab3.TABNAME, Tab3);
+            myTabPane.addTab(Tab4.TABNAME, Tab4);
+            myTabPane.addTab(Tab5.TABNAME, Tab5);
 
             myTabPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
