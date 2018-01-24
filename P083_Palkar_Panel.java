@@ -1,13 +1,5 @@
 //package swing;
-/*Lab 1
-Author:Tejasi Palkar
-This file creates a JPanel, the panel is painted with a color-white(for a even ID author) and Blue(for an odd ID author)
-and  contains name of the author and a counter that runs from 0-9/9-0 added as labels depending on the type of ID of the author
-*/
-
-
-
-//package pkg516;
+//Lab 1
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,87 +11,119 @@ import java.util.TimerTask;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+/*
+ *  @author: Tejasi Palkar
+ *  @version: 1.0
+ *  @createdOn:  23 January, 2018
+ *
+ *  This file creates a JPanel, the panel is painted with a color-white(for a even ID author) 
+ *  and Blue(for an odd ID author) and  contains name of the author and a counter that runs 
+ *  from 0-9/9-0 added as labels depending on the type of ID of the author
+ *
+ */
 
 public class P083_Palkar_Panel extends JPanel{
 
-
+/* Preset variable for the counter
+* */
  public static int counter=0;
-	private JLabel Name;	//Private members
-	private JLabel Counter;	//Private members
-	private Color bgColor;	//Private members
 	
-	public P083_Palkar_Panel(int ID) {
-		// TODO Auto-generated constructor stub
+/*Private members for the class
+* */
+private JLabel Name;	
+private JLabel Counter;	
+private Color bgColor;	
+	
+	/*
+	 * Constructor for the class
+	 */
+		public P083_Palkar_Panel(int ID) {
+		/*
+		 * If the ID is even , initialises background color to white and counter is set to -1
+		 * Otherwise , background color value is set to blue and counter decreases from 9 to 0 and hence 
+		 * counter is set to 10
+		 * */
 		if(ID%2==0)
 		{
-			bgColor=Color.white;//Set panel color to white if ID is even
-			counter=-1;//Set counter value
-			CreatePanel(bgColor);//Create Panel with set background color
+			bgColor=Color.white;
+			counter=-1;
+			CreatePanel(bgColor);
 			
 		}
 		else
 		{
-			bgColor=Color.BLUE;//Set panel color to white if ID is even
-			counter=10;//Set counter value
-			CreatePanel(bgColor);//Create Panel with set background color
+			bgColor=new Color(173, 216, 230);
+			counter=10;
+			CreatePanel(bgColor);
 		}
 	}
+	/*
+	 * creates a panel with set value of bacgkround color(white or blue), having predefined size and color passed as parameter
+	 * Arranges the labels on the panel,sets the size and font such that the labels are located on the
+	 * center of the panel
+	 * 
+	 */
 
 	private void CreatePanel(Color bgColor) 
 	{
-		setSize(100,100);//Set panel size
+		setSize(100,100);
 		setLayout(new GridBagLayout());
-		setBackground(bgColor);//Set background color with the passed value
+		setBackground(bgColor);
 		
-		Name =new JLabel("<html>Tejasi<br>Palkar</html>");//Initialise name label
-		setFont(new Font("Papyrus", Font.PLAIN, 15));//Set font for the label
+		Name =new JLabel("<html>Tejasi<br>Palkar</html>");
+		setFont(new Font("Papyrus", Font.PLAIN, 15));
         
-        Counter = new JLabel(String.valueOf(counter));//Create and Initialise Counter label with the counter value.Represents the gUI component to be added on the panel
-        Counter.setFont(new Font("Papyrus", Font.PLAIN, 15));//Set the column address for the counter
+        Counter = new JLabel(String.valueOf(counter));
+        Counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
        
         GridBagConstraints GbcObj= new GridBagConstraints();
-        GbcObj.gridx=0;//Set the column address for the name
-		GbcObj.gridy=0;//Set row address for name
-		add(Name,GbcObj);//Add label onto panel
+        GbcObj.gridx=0;
+		GbcObj.gridy=0;
+		add(Name,GbcObj);
 		
-		GbcObj.gridx=0;//Set the column address for the counter
-        GbcObj.gridy=1;//Set the row address as 1 for the counter below the name label
-        add(Counter,GbcObj);//Add counter label onto the panel
+		GbcObj.gridx=0;
+        GbcObj.gridy=1;
+        add(Counter,GbcObj);
         
-        RunTimer(bgColor);//Call function to run timer		
+        RunTimer(bgColor);	
 	}
+	/*
+	 * Method call to run the timer from 0 to 9 if background color is white
+	 * and from 9 to 0 if the background color is blue.The counter value keeps changing every second
+	 * The run method is kept within try and catch to handle exception at the runtime
+	 * 
+	 */
 
 	private void RunTimer(Color bgColor2)
 	{
 		// TODO Auto-generated method stub
 		try {
 
-            TimerTask updateCounter = new TimerTask()//Create an Object of TimerTask Class
+            TimerTask updateCounter = new TimerTask()
             {
-                public void run()//Method to change counter value
+                public void run()
                 {
                     if(bgColor2==Color.WHITE)
                     {
                         
-                        counter = (counter+1)%10;//Counter runs from 0 to 9 if ID is even
+                        counter = (counter+1)%10;
                     }
                     else
                     {
                         if(counter>0)
-                        counter = (counter-1)%10;//Counter runs from 9 to 0 if ID is odd
+                        counter = (counter-1)%10;
                         else
                         counter=9;
                     }
 
-                    Counter.setText(String.valueOf(counter));//Sets the value of Counter label with the current value and updates continously
+                    Counter.setText(String.valueOf(counter));
                 }
             };
 
-            Timer t1 = new Timer();//Creates a new object of the timer class
-            long delay = 5L;//The delay after which counter should start getting updated
-            long timeLapse = 1000L;//The time gap between successive counter values
-            t1.scheduleAtFixedRate(updateCounter, delay, timeLapse);//Method to update the counter value after fixed time lapse.The process of counter updation starts after given delay
-
+            Timer t1 = new Timer();
+            long delay = 5L;
+            long timeLapse = 1000L;
+            t1.scheduleAtFixedRate(updateCounter, delay, timeLapse);
         } 
         catch(Exception e)
         {
@@ -109,6 +133,8 @@ public class P083_Palkar_Panel extends JPanel{
 
     }
  	
+	//Main method to test the above class' methods
+	
  /*
 	public static void main(String[] args) 
 	{
