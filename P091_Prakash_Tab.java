@@ -11,10 +11,12 @@ import javax.swing.JPanel;
  */
 public class P091_Prakash_Tab extends JPanel {
     public static final String TABNAME = "Saurabh Prakash";
+
     public P091_Prakash_Tab() {
         this.setLayout(new GridLayout(0, 5));
-        this.add(new P080_Nolastname_Panel(1));
-        //this.add(new P081_Olety_Panel(2));
+
+        this.add(new P079_NamakkalSudhakar_Panel(1));
+        this.add(new P080_Nolastname_Panel(2));
         this.add(new P082_gspai_panel(3));
         this.add(new P083_Palkar_Panel(4));
         this.add(new P084_Pandey_Panel(5));
@@ -37,6 +39,7 @@ public class P091_Prakash_Tab extends JPanel {
         this.add(new P102_Sharma_Panel(22));
         this.add(new P103_Sharma_Panel(23));
         this.add(new P104_Shilimkar_Panel(24));
-        this.add(new P079_NamakkalSudhakar_Panel(25));
+        //this.add(new P081_Olety_Panel(25));
+
     }
 }
