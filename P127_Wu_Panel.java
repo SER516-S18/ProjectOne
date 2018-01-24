@@ -1,5 +1,3 @@
-
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,12 +16,13 @@ public class P127_Wu_Panel{
 	Timer timer;
 	int n;
 	P127_Wu_Panel(int p){
+		Color lightblue = new Color(139,218,252);
 		if(p % 2 == 0){
 			bcolor = Color.white;
 			n = 0;
 		}
 		else{
-			bcolor = new Color(139,218,252);
+			bcolor = lightblue;
 			n = 9;
 		}
 	}
