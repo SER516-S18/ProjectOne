@@ -8,11 +8,11 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 /**
- P043_Iyer_Panel is panel of Supriya Iyer
- The first row prints first name
- The second row prints last name
- the third row is a counter that is either incrementing from 0 or decrementing from 9.
- The mode of the counter and the background color are determined by the value passed to the constructor
+ *P043_Iyer_Panel is panel of Supriya Iyer
+ *The first row prints first name
+ *The second row prints last name
+ *the third row is a counter that is either incrementing from 0 or decrementing from 9.
+ *The mode of the counter and the background color are determined by the value passed to the constructor
  @author Supriya Iyer
  */
 
