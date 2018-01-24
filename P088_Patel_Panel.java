@@ -6,37 +6,42 @@ import java.awt.*;
  * @author jay patel
  * @version 1.0
  *
+ * This file contains java code module for displaying a JPanel alongside with JLabel
+ * as per given functional requirements
+ *
  */
+public class P088_Patel_Panel extends JPanel implements Runnable {
+    private JLabel name = new JLabel("<html> Jay <br> Patel </html>");
+    private JLabel counter = new JLabel("0");
+    private int parameter;
 
-
-public class P088_Patel_Panel implements Runnable {
-    private JLabel label = new JLabel("<html> Jay <br> Patel </html>");
-    private JLabel label1 = new JLabel("0");
-    JPanel panel;
-    int y;
-
+    /**
+   *
+   * When a new thread is started by this class, Thread method is executed.
+   * If the input is odd then counter will start from 9,
+   * elseif input is even then counter will start from 0.
+   * */
     @Override
     public void run() {
-        if (y%2 == 0){
-        for(int i=0; i<10; i++) {
-            label1.setText("" + i );
-            if (i == 9){
-                i = 0;
+        if (parameter%2 == 0){
+            for(int i=0; i<10; i++) {
+                counter.setText("" + i );
+                if (i == 9){
+                    i = 0;
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
         }
         else {
             for(int i=9; i >=0 ; i-- ){
-                label1.setText("" + i );
+                counter.setText("" + i );
                 if (i == 0){
                     i = 10;
                 }
-                // exception handling
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -46,35 +51,35 @@ public class P088_Patel_Panel implements Runnable {
         }
     }
 
-    public P088_Patel_Panel(int x) {
-        y = x;
-        panel = new JPanel(new GridBagLayout());
+    /**
+    * Constructor of this class, used to instantiate
+    * panel objects, and counter.
+    *
+    * @param parameter An integer parameter to decide the background color of the panel and
+     *                  starting point of the counter.
+    */
+    public P088_Patel_Panel(int parameter) {
+        this.parameter = parameter;
+        this.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.CENTER;
         constraints.insets = new Insets(10, 10, 10, 10);
-        if (x%2 == 0) {
-            panel.setBackground(Color.white);
+        Color lightblue = new Color(173,216,230);
+        if (parameter %2 == 0) {
+            this.setBackground(Color.white);
         }
         else {
-            panel.setBackground(new Color(173,216,230));
+            this.setBackground(lightblue);
         }
-        panel.setPreferredSize(new Dimension(100, 100));
-        panel.add(label);
-        label.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        label.setHorizontalAlignment(JLabel.CENTER);
+        this.setPreferredSize(new Dimension(100, 100));
+        this.add(name);
+        name.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        name.setHorizontalAlignment(JLabel.CENTER);
         constraints.gridy = 1;
-        panel.add(label1, constraints);
-        label1.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        label.setHorizontalAlignment(JLabel.CENTER);
+        this.add(counter, constraints);
+        counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        name.setHorizontalAlignment(JLabel.CENTER);
         Thread thread = new Thread(this);
-        thread.start(); 
-    }
-    
-    /**
-     *
-     * @return - Returns the panel object
-     */
-    public JPanel returnpanel(){
-        return panel;
+        thread.start();
     }
 }

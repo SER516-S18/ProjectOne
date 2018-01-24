@@ -1,12 +1,3 @@
-/**
-* The P115_Tikku_Panel class creates a JPanel containing two labels for name and a timer value.
-* The name contains the full name displayed in 2 lines.
-* The timer displays a number between 0-9 and changes automatically in increasing or decreasing order.
-* 
-* @author  Adhiraj Tikku
-* @version 1.0
-* @since   2018-01-21
-*/
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -18,6 +9,15 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.JLabel;
 
+/**
+* P115_Tikku_Panel class creates a JPanel containing two labels for name and a timer value.<br>
+* 1. The name shows the full name in 2 separate lines.<br>
+* 2. The timer displays a number between 0-9 and changes every second in either increasing or decreasing order.
+* 
+* @author  Adhiraj Tikku
+* @version 1.0
+* @since   2018-01-21
+*/
 @SuppressWarnings("serial")
 public class P115_Tikku_Panel extends JPanel
 {
@@ -26,45 +26,46 @@ public class P115_Tikku_Panel extends JPanel
 	private CountDirection countDirection;
 	
 	/* Constants */
-	private static final String name = "<html>Adhiraj<br>Tikku</html>";
+	private static final String FULL_NAME = "<html>Adhiraj<br>Tikku</html>";
 	private static final String FONT_NAME = "Papyrus";
 	private static final int FONT_SIZE = 15;
 	private static final Color FONT_COLOR = Color.BLACK;
+	private static final Color LIGHT_BLUE = new Color(173, 216, 230);
 	
 	/**
 	* This constructor creates a customized JPanel with two labels for name and timer.
-	* @param flagCounterColor Value to determine the panel background color and increasing or decreasing order of timer.
-	* If flag is even, then white background and increasing order.
-	* If flag is odd, then light blue and decreasing order.
+	* @param panelConfigure Value to determine the panel background color and increasing or decreasing order of timer.
+	* <br>1. If {@code even}, then white background and increasing order.
+	* <br>2. If {@code odd}, then light blue background and decreasing order.
 	*/
-	P115_Tikku_Panel(int flagCounterColor)
+	P115_Tikku_Panel(int panelConfigure)
 	{
-		setCountDirection(flagCounterColor);
+		setCountDirection(panelConfigure);
 		createPanel();
 		startTimer();
 	}
 	
 	/**
-	* This function sets the count direction of the counter.
-	* @param flagCounter Value to determine the increasing or decreasing order of timer.
-	* If flag is even, then increasing order.
-	* If flag is odd, then decreasing order.
+	* This function sets the {@code countDirection} of the counter.
+	* @param panelConfigure Value to determine the increasing or decreasing order of timer.
+	* <br>1. If {@code even}, then increasing order.
+	* <br>2. If {@code odd}, then decreasing order.
+	* @return Nothing
 	*/
-	public void setCountDirection(int flagCounter)
+	public void setCountDirection(int panelConfigure)
 	{
-		if(flagCounter % 2 == 0)
+		if(panelConfigure % 2 == 0)
 			countDirection = CountDirection.increment;
 		else
 			countDirection = CountDirection.decrement;
 	}
 	
 	/**
-	* This function customizes the panel with two labels.
-	* 1st label is set to the name.
-	* 2nd label is set to a timer value.
-	* A thread is run to display the timer value as it changes every second.
-	* @param Nothing 
-	* @return Nothing.
+	* This function creates the panel and adds two labels to it.
+	* <br>1st label is set to the name.
+	* <br>2nd label is set to a number.
+	* @param Nothing
+	* @return Nothing
 	*/
 	public void createPanel()
 	{
@@ -72,7 +73,7 @@ public class P115_Tikku_Panel extends JPanel
 		setLayout(new GridLayout(2, 0));
 		
 		// lName
-		lName = new JLabel(name, SwingConstants.CENTER);
+		lName = new JLabel(FULL_NAME, SwingConstants.CENTER);
 		lName.setFont(new Font(FONT_NAME, Font.PLAIN, FONT_SIZE));
 		lName.setForeground(FONT_COLOR);
 		
@@ -89,11 +90,11 @@ public class P115_Tikku_Panel extends JPanel
 	}
 	
 	/**
-	* Sets the starting value of the lNumber label.
-	* If count direction is increment then label is set to 0
+	* Sets the starting value of label {@code lNumber}.
+	* If {@code countDirection} is increment then label is set to 0,
 	* else it is set to 9.
-	* @param Nothing 
-	* @return Nothing.
+	* @param Nothing
+	* @return Nothing
 	*/
 	public void setStartingTimerValue()
 	{
@@ -109,8 +110,8 @@ public class P115_Tikku_Panel extends JPanel
 	
 	/**
 	* Gets the background color of the panel.
-	* @param Nothing 
-	* @return Color.
+	* @param Nothing
+	* @return Color
 	*/
 	public Color getBackgroundColor()
 	{
@@ -120,14 +121,14 @@ public class P115_Tikku_Panel extends JPanel
 		}
 		else
 		{
-			return new Color(173, 216, 230);
+			return LIGHT_BLUE;
 		}
 	}
 	
 	/**
 	* Starts a timer at intervals of 1 second in either increasing or decreasing order.
-	* @param Nothing 
-	* @return Nothing.
+	* @param Nothing
+	* @return Nothing
 	* @exception Exception
 	*/
 	public void startTimer()
@@ -157,32 +158,32 @@ public class P115_Tikku_Panel extends JPanel
 	}
 	
 	/**
-	* Increases count of timer by 1 and sets it to the label lNumber.
-	* If timer value is crossing 9 then label is set to 0 so that it loops from 0-9.
-	* @param Nothing 
-	* @return Nothing.
+	* Increases count of timer by 1 and sets it to the label {@code lNumber}.
+	* If timer value is crossing 9 then label is set to 0 so that it loops from 0 to 9.
+	* @param Nothing
+	* @return Nothing
 	*/
 	public void counterIncrement()
 	{
-		int num = Integer.parseInt(lNumber.getText());
-		if(num == 9)
+		int counterValue = Integer.parseInt(lNumber.getText());
+		if(counterValue == 9)
 			lNumber.setText("0");
 		else
-			lNumber.setText("" + ++num);
+			lNumber.setText("" + ++counterValue);
 	}
 	
 	/**
-	* Decreases count of timer by 1 and sets it to the label lNumber.
-	* If timer value is crossing 0 then label is set to 9 so that it loops from 9-0.
-	* @param Nothing 
-	* @return Nothing.
+	* Decreases count of timer by 1 and sets it to the label {@code lNumber}.
+	* If timer value is crossing 0 then label is set to 9 so that it loops from 9 to 0.
+	* @param Nothing
+	* @return Nothing
 	*/
 	public void counterDecrement()
 	{
-		int num = Integer.parseInt(lNumber.getText());
-		if(num == 0)
+		int counterValue = Integer.parseInt(lNumber.getText());
+		if(counterValue == 0)
 			lNumber.setText("9");
 		else
-			lNumber.setText("" + --num);
+			lNumber.setText("" + --counterValue);
 	}
 }
