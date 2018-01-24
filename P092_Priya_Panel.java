@@ -18,28 +18,26 @@ import javax.swing.JPanel;
 
 public class P092_Priya_Panel {
 
-    private int colorFlag;
+    //Timer for counter
+    private Timer timer = new Timer();
+
+    final int[] timeElapsedSec = {0};
+
+    //Creating labels with FirstName LastName and tick
+    private JLabel firstName = new JLabel("Aashita");
+    private JLabel lastName = new JLabel("Priya");
+    private JLabel tick = new JLabel();
 
     private static final Logger LOGGER = Logger.getLogger(P092_Priya_Panel.class.getSimpleName());
+
+
 
     /**
      * Constructor with a parameter for color flag
      * @param colorFlag
      */
     public P092_Priya_Panel(int colorFlag) {
-        this.colorFlag = colorFlag;
-    }
-
-    /**
-     *
-     * @return JPanel Object to use
-     */
-    public JPanel getJPanel() {
-
-        //Timer for counter
-        Timer timer = new Timer();
-
-        final int[] timeElapsedSec = {0};
+        int colorFlag1 = colorFlag;
 
         //Creating a JPanel object
         JPanel panel = new JPanel(new GridBagLayout());
@@ -47,11 +45,6 @@ public class P092_Priya_Panel {
 
             //Creating a Font object with given constraints
             Font font = new Font("Papyrus", Font.PLAIN, 15);
-
-            //Creating labels with FirstName LastName and tick
-            JLabel firstName = new JLabel("Aashita");
-            JLabel lastName = new JLabel("Priya");
-            JLabel tick = new JLabel();
 
             //Creating constraints for the positions of each label
             GridBagConstraints fNameConstraints = new GridBagConstraints();
@@ -100,7 +93,7 @@ public class P092_Priya_Panel {
                 }, 1000, 1000);
             } else {
                 timeElapsedSec[0] = 9;
-                panel.setBackground(new Color(173,216,230));
+                panel.setBackground(Color.cyan);
                 timer.schedule(new TimerTask() {
 
                     @Override
@@ -120,15 +113,5 @@ public class P092_Priya_Panel {
         } catch (Exception e) {
             LOGGER.severe("Exception Occurred:" + e.getMessage());
         }
-        return panel;
     }
-
-    /**
-     * How to use
-     * 1. Create an object of P092_Priya_Panel [ P092_Priya_Panel panelCreate = new P092_Priya_Panel(1); ]
-     * 2. Create Frame
-     * 3. Add panel to Frame using [ add(panelCreate.getPanel()); ]
-     * 4. Pack the Frame [pack()]
-     * 5. Set Visible to true [ setLocationRelativeTo(null); ]
-     */
 }
