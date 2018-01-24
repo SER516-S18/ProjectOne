@@ -1,7 +1,12 @@
-import javax.swing.*;
-import java.awt.*;
-import java.util.TimerTask;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 /**
  * 
  * @author RAHUL
@@ -39,8 +44,7 @@ public class P036_Gupta_Panel extends JPanel{
 			setBackground(Color.white);
 			Mytask task = new Mytask(labelCtr, 0);
 			time.scheduleAtFixedRate(task, 0, 1000);
-		}
-		else {
+		}else {
 			setBackground(LIGHTBLUE);
 			Mytask task2 = new Mytask(labelCtr, 9);
 			time.scheduleAtFixedRate(task2, 0, 1000);
@@ -75,10 +79,9 @@ public class P036_Gupta_Panel extends JPanel{
 						counter = 9;
 					}
 				}
-	}
-		catch(Exception e) {
-			System.out.println("Timer Exception"+ e);
-		}
+			}catch(Exception e) {
+				System.out.println("Timer Exception"+ e);
+			}
 		}
 	}	
 }

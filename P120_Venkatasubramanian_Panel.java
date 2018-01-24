@@ -1,7 +1,9 @@
-import java.awt.*; 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.GridLayout;
 
 /**
 * SER 516 - Project 1
@@ -29,7 +31,7 @@ public class P120_Venkatasubramanian_Panel extends JPanel {
 	};
 /**
 * Class Constructor
-* @param bgcolor decides the background color and counter direction based on its property ( odd or even)
+* @param check decides the background color and counter direction based on its property ( odd or even)
 * Odd: Light Blue background and counter counts from 9 to 0
 * Even: White background and counter counts from 0 to 9
 */
