@@ -18,10 +18,10 @@ public class P044_Jaime_Panel extends JPanel
     private static int autoDencrement = 10;
 
     /**
-	 * Constructor of the Class
-	 * Counter is increased or decreased based on the parameter 
-	 * @param  Integer value
-	 */
+    * Constructor of the Class
+    * Counter is increased or decreased based on the parameter 
+    * @param  Integer value
+    */
     public P044_Jaime_Panel(int value)
     {
         setSize(150,150);
@@ -36,9 +36,9 @@ public class P044_Jaime_Panel extends JPanel
     }
 
     /**
-     * Counter is executed from 0 to 9, then starts over again
-     * @param value Describes the background and counter mode of the panel.
-     */
+    * Counter is executed from 0 to 9, then starts over again
+    * @param value Describes the background and counter mode of the panel.
+    */
     public void counter(int value)
     {
         try {
