@@ -12,7 +12,8 @@ import javax.swing.JPanel;
  *The first row prints first name
  *The second row prints last name
  *the third row is a counter that is either incrementing from 0 or decrementing from 9.
- *The mode of the counter and the background color are determined by the value passed to the constructor
+ *The mode of the counter and the background color are determined by the value passed to 
+ *the constructor
  @author Supriya Iyer
  */
 
@@ -22,10 +23,10 @@ public class P043_Iyer_Panel extends JPanel {
     
     /**
      *Class constructor.
-     *@param  type Describes the background and counter mode of the panel. Even numbers result in a white 
-     *background with incrementing counter, odd gives light blue background with decrementing counter.
-     *This function is used to design the layout for the panel by setting its dimensions.
-     *Jlabel name is used to set the name of the author.
+     *@param  type Describes the background and counter mode of the panel. Even numbers 
+     *result in a white background with incrementing counter, odd gives light blue background 
+     *with decrementing counter.This function is used to design the layout for the panel by 
+     *setting its dimensions.Jlabel name is used to set the name of the author.
      *Jlabel counter is used to set the timer.
      *It executes the thread for the counter.
      *Exception handling is included to check for errors encountered by threads.*/
