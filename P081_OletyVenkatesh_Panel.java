@@ -12,27 +12,27 @@ import java.awt.Font;
 public class P081_OletyVenkatesh_Panel extends JPanel {
 
 	int minCounter=0,maxCounter=9;
-	JLabel p081Name,p081Timer;
-	Font p081NameFontSize,p081TimerFontSize;
-	Dimension p081PanelSize;
+	JLabel name,timer;
+	Font nameFontSize,timerFontSize;
+	Dimension panelSize;
 	Color lightBlue = new Color(173, 216, 230);
 
 	//Constructor to set label and background properties
 	public P081_OletyVenkatesh_Panel(int oddEven) {
 
-		p081PanelSize = new Dimension(100, 100);
-		setPreferredSize(p081PanelSize);
+		panelSize = new Dimension(100, 100);
+		setPreferredSize(panelSize);
 
-		p081Name = new JLabel("<html><br>Namratha<br>Olety Venkatesh"+
+		name = new JLabel("<html><br>Namratha<br>Olety Venkatesh"+
 						"<br><br><br><br><br></html>");
-		p081NameFontSize = new Font("Papyrus", Font.BOLD, 12);
-		p081Name.setFont(p081NameFontSize);
-		add(p081Name);
+		nameFontSize = new Font("Papyrus", Font.BOLD, 12);
+		name.setFont(nameFontSize);
+		add(name);
 
-		p081Timer = new JLabel("");
-		p081TimerFontSize = new Font("Papyrus", Font.BOLD, 18);
-		p081Timer.setFont(p081TimerFontSize);
-		add(p081Timer);
+		timer = new JLabel("");
+		timerFontSize = new Font("Papyrus", Font.BOLD, 18);
+		timer.setFont(timerFontSize);
+		add(timer);
 
 		//Thread to handle timer and background based on parameter passed.
 		new Thread() {
@@ -44,7 +44,7 @@ public class P081_OletyVenkatesh_Panel extends JPanel {
 				if(oddEven%2==0) {
 					setBackground(lightBlue);
 					for ( int down = maxCounter; down >=minCounter; down--) {
-						p081Timer.setText(" "+down);
+						timer.setText(" "+down);
 						try{
 							Thread.sleep(1000);
 						}
@@ -59,7 +59,7 @@ public class P081_OletyVenkatesh_Panel extends JPanel {
 				else {
 					setBackground(Color.WHITE);
 					for ( int up = minCounter; up <= maxCounter; up++) {
-						p081Timer.setText(" " + up);
+						timer.setText(" " + up);
 						try {
 							Thread.sleep(1000);
 						}
