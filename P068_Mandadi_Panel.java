@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.awt.Font;
+import javax.swing.*;
 /**
  * @author Siva Pranav Mandadi
  * @date 01/22/2018
@@ -8,14 +11,6 @@
  * Panel background is set to WHITE if value is even or LIGHT BLUE (173,216,230) if odd.
  * Counter increments from 0-9 if value is even or decrements from 9-0 if odd.
  */
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class P068_Mandadi_Panel extends JPanel {
     private JLabel name , counter;
@@ -35,15 +30,17 @@ public P068_Mandadi_Panel(int key){
     
     
 }
-  
+
+    //Setting the Size of the Panel Size 
     private void setPanelSize() {
-        //Setting the Size of the Panel Size 
+       
         this.setPreferredSize(new Dimension(100,100));
         
     }
 
+    //Color is White if the key is even or Light Buue if odd
     private void backGroundColor() {
-        //Color is White if the key is even or Light Buue if odd
+    
         if(this.key % 2 == 0)
             this.setBackground(Color.white);
         else {
@@ -52,9 +49,8 @@ public P068_Mandadi_Panel(int key){
         }
             
     }
-
-    private void nameandtimer(int key) throws InterruptedException {
-        //Name is Printed in one Multi-Lined Label
+    //Name is Printed in one Multi-Lined Label and Timer countiues
+    private void nameandtimer(int key) throws InterruptedException { 
        this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS)); 
        name = new JLabel("<html>Siva Pranav<br>Mandadi</html>");
        name.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -70,12 +66,12 @@ public P068_Mandadi_Panel(int key){
         t = new Thread(() -> {
             //Starting value is 0 if even or 9 if odd.
             try{
-            if(key % 2 == 0){
+                if(key % 2 == 0){
                 //Counter increasing from 0 to 9
-           for(int i= 0; i <10; i++){
-               counter.setText("" + i);
-               Thread.sleep(1000);//This sleeps the Thread for a Second
-               if(i == 9)
+                for(int i= 0; i <10; i++){
+                counter.setText("" + i);
+                Thread.sleep(1000);//This sleeps the Thread for a Second
+                if(i == 9)
                    i = -1;
            }
        }
