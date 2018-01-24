@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 /* 
- * LAB I - Project
+ * LAB I - Project1
  * AUTHOR: Venkata Akhil Madaraju
  * DESC : A Main Frame consisting of 5 Tabs in it which 
  * in turn has 25 Panels (5*5) one for each student
