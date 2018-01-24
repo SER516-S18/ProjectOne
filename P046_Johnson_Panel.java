@@ -1,11 +1,20 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+/**
+ * P046_Johnson_Panel ProjectOne, featuring a countdown timer and the author's name
+ *
+ * @author  Jeb Johnson (jajohn64@asu.edu)
+ * @version 1.0
+ * @since   2018-01-18
+ */
 
 public class P046_Johnson_Panel extends JPanel {
 
