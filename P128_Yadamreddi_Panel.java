@@ -1,52 +1,54 @@
 import javax.swing.*;
 import java.awt.*;
-/*Panel consisting first and last name and a counter incrementing or decrementing from 0 to 9 or
- * 9 to 0 based on a argument passed to it. */
-public class P128_Yadamreddi_Panel {
-    
-    static JPanel panel;
-    JLabel firstLine;
-    JLabel secondLine;
-    JLabel count;
+
+/*The below code constructs a panel with name and a counter on it. The counter
+ * increments if the value passed is even and decrements if the value is odd. */
+
+public class P128_Yadamreddi_Panel extends JPanel
+{    
+	private static final long serialVersionUID = 1L;
+    private JLabel firstLine;
+    private JLabel secondLine;
+    private JLabel count;
+    private static final Color LIGHT_BLUE = new Color(173, 216, 230);
     
     static Thread timerThread;
-    int i;
+    public int i;
 
-    //Panel constructor which initializes name and count on the panel.
-    public P128_Yadamreddi_Panel(int counter) {
-    	
-        panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setSize(100, 100);
-        firstLine = new JLabel("Divya", JLabel.CENTER);
-        secondLine = new JLabel("Yadamreddi", JLabel.CENTER);
-        firstLine.setFont(new Font("Papyrus", Font.BOLD, 12));
-        secondLine.setFont(new Font("Papyrus", Font.BOLD, 12));
-        count = new JLabel("", JLabel.CENTER);
-        count.setFont(new Font("Papyrus", Font.BOLD, 12));
+    /*Panel constructor which initializes name and count on the panel.
+     * An integer is passed to this constructor, if the value is even, 
+     * the counter increments and if the value is odd, the counter decrements */
+    public P128_Yadamreddi_Panel(int counter) 
+    {	
+    	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setSize(100, 100);
+        firstLine = new JLabel("Divya");
+        secondLine = new JLabel("Yadamreddi");
+        count = new JLabel("");
+        firstLine.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        secondLine.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        count.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        firstLine.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        secondLine.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        count.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         
-        panel.add(firstLine);
-        panel.add(secondLine);
-        panel.add(count);
+        add(firstLine);
+        add(secondLine);
+        add(count);
 
-        if ((counter % 2) == 0) {
-            panel.setBackground(Color.WHITE);
-        } else {
-            panel.setBackground(Color.CYAN);
-        }
-    }
-
-    // Thread used to increment and decrement the count in label
-    public JPanel constructPanel(int counter) {
-    //	timerThread = new Thread();
-        if ((counter % 2) == 0) {
-            timerThread = new Thread(() -> {
+        if ((counter % 2) == 0) 
+        {
+        	setBackground(Color.WHITE);
+        	timerThread = new Thread(() -> {
             	i = 0;
-                while(i < 10) {
+                while(i < 10) 
+                {       	
                     count.setText(Integer.toString(i));
-                    try {
+                    try 
+                    {   	
                         Thread.sleep(1000);
-                    } catch (InterruptedException e) {
+                    } catch (InterruptedException e) 
+                    {
                         e.printStackTrace();
                     }
                     i++;
@@ -54,13 +56,19 @@ public class P128_Yadamreddi_Panel {
                     	i = 0;
                 }
             });
-        } else {
+        } 
+        else 
+        {
+        	setBackground(LIGHT_BLUE);
             timerThread = new Thread(() -> {
-               while(i > -1) {
+               while(i > -1) 
+               {
                    count.setText(Integer.toString(i));
-                   try {
+                   try 
+                   {
                        Thread.sleep(1000);
-                   } catch (InterruptedException e) {
+                   } catch (InterruptedException e) 
+                   {
                        e.printStackTrace();
                    }
                    i--;
@@ -71,18 +79,5 @@ public class P128_Yadamreddi_Panel {
         }
 
         timerThread.start();
-        return panel;
-    }
-
-    public static void main(String[] args) {
-    	
-        JFrame frame = new JFrame();
-        frame.setSize(500, 500);
-        
-        P128_Yadamreddi_Panel panel = new P128_Yadamreddi_Panel(11);
-        JPanel constructPanel = panel.constructPanel(11);
-        frame.add(constructPanel);
-        frame.setLayout(null);
-        frame.setVisible(true);
     }
 }

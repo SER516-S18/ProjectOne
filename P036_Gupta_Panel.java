@@ -9,7 +9,7 @@ import java.util.Timer;
  * @version 1.0
  * 
  * SER 516 : Project 01
- * Class extends JPanel containing name of the author and the counter with parameterized constructor 
+ * Class extends JPanel containing name of the author and counter with parameterized constructor 
  * that accepts integer as a value.
  * When value is even -> background : white, Counter increments from 0 to 9
  * When value is odd -> background : Light Blue, Counter decrements from 9 to 0 
