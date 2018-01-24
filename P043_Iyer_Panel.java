@@ -21,8 +21,8 @@ public class P043_Iyer_Panel extends JPanel {
     private int type;
     
     /**
-     * Class constructor.
-     * @param  type Describes the background and counter mode of the panel. Even numbers result in a white 
+     *Class constructor.
+     *@param  type Describes the background and counter mode of the panel. Even numbers result in a white 
      *background with incrementing counter, odd gives light blue background with decrementing counter.
      *This function is used to design the layout for the panel by setting its dimensions.
      *Jlabel name is used to set the name of the author.
