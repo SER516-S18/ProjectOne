@@ -1,91 +1,87 @@
-/*
-Lab1
-Author: Shipra Panwar
-The class creates a Panel with First and Last Name's of a person.
-A counter is incremented and decremented from 0-9 or 9-0.
-The background color changes depending on the integer passed to the constructor. For an even number the background color is white, whereas for an odd number the background is blue
+import java.awt.*;
+import javax.swing.*;
+
+/**
+ *  The file creates a Panel with First and Last Name's of the author and a counter.
+ *  The counter increments/decrements from 0-9/9-0 respectively.
+ *  The background color of the panel changes depending on the integer passed to the class constructor. For an even number the background color is white, whereas for an odd number the background is blue
+ *
+ *  @author Shipra Panwar
+ *  @version 1.0
+ *  @createdon January, 2018
 */
-
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-
 
 public class P085_Panwar_Panel extends JPanel {
 
-    /*
-    --- CLASS PROPERTIES ---
-     */
+    public final static Color LIGHT_BLUE = new Color(173, 216, 230); // set background color of panel
+    public final static Color WHITE = Color.WHITE;
+    public final static int RangeMin = 0;
+    public final static int RangeMax = 9;
 
-    JLabel nameLabel;   //label to display first name and last name
-    JLabel timerLabel;  // label to display the counter value, which keeps changing in every 1 second
-    int counter;        // counter to hold the value to be displayed in Jlabel timerLabel
-    boolean checkEven;
+    public static int counter = 0;        // counter to hold the value to be displayed in Jlabel counterLabel
+    private JLabel nameLabel;   // label to display first name and last name
+    private JLabel counterLabel;  // label to display the counter value, which keeps changing in every 1 second
+    private boolean checkEven;  // parameter to check if the input value is even or odd
 
 
-    /*
-    --- CLASS CONSTRUCTOR ---
+    /**
+     *  The parameterized constructor defines label to be displayed on the panel, which includes name of the author and a counter.
+     *  Based on the argument- number, the background color changes to white for even number or light blue for odd number.
+     *
+     *  @param number   numeric     a value passed to alter the background of panel accordingly
      */
 
     public  P085_Panwar_Panel(int number){
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));    //Set the Layout
 
-        nameLabel = new JLabel("<html>Shipra <br/>Panwar</html>");      //Define label to contain first name and lastname
+        nameLabel = new JLabel("<html>Shipra <br/>Panwar</html>", SwingConstants.CENTER);      //Define label to contain first name and last name
         nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
         nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);        //sets the alignment of the label to the centre inside panel
-        nameLabel.setHorizontalAlignment(SwingConstants.CENTER);    //sets the alignment of the text inside the label to the centre
 
-        timerLabel = new JLabel();                                           //Define label for time counter
-        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        counterLabel = new JLabel( String.valueOf(counter), SwingConstants.CENTER);                                           //Define label for time counter
+        counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
         //add both labels to panel
         this.add(nameLabel);
-        this.add(timerLabel);
+        this.add(counterLabel);
 
 
         this.setVisible(true);
         this.setPreferredSize(new Dimension(100,100));
 
-        if(number%2 ==0){           //sets the background color as white for even number received by constructor and update the counter to start from 0
+        if(number%2 ==0){           //sets the background color as white for even number received by constructor and update the counter to start from RangeMin
             checkEven= true;
-            counter = 0;
-            this.setBackground(Color.WHITE);
+            counter = RangeMin;
+            this.setBackground(WHITE);
         }
-        else {                      //sets the background color as blue for odd number received by constructor and update the counter to start from 9
+        else {                      //sets the background color as blue for odd number received by constructor and update the counter to start from RangeMax
             checkEven = false;
-            counter = 9;
-            this.setBackground(Color.BLUE);
+            counter = RangeMax;
+            this.setBackground(LIGHT_BLUE);
         }
-        Timers();                   //method to increment or decrement counter value and display it on panel under label timerLabel
+        Timers();                   //method to increment or decrement counter value and display it on panel under label counterLabel
     }
 
 
 
-    /*
-    --- CLASS METHOD --
-    Update the value of counter to be displayed on Panel.
-     */
+    /**
+    *   This method updates the value of counter to be displayed on Panel, in every 1 second.
+    */
 
     public void Timers(){
         new Thread() {
             public void run() {
                 while (true) {
-                    if (counter == 10)
-                        counter = 0;                //sets counter to 0 after 9
-                    if(counter == -1)
-                        counter = 9;                //sets counter to 9 after 0
-                    timerLabel.setText(" " + counter);
+                    if (counter == RangeMax+1)
+                        counter = RangeMin;                //sets counter back to RangeMin after it reaches RangeMax
+                    if(counter == RangeMin-1)
+                        counter = RangeMax;                //sets counter back to RangeMax after it reaches RangeMin
+                    counterLabel.setText(" " + counter);
                     if(checkEven){
-                        counter++;                  //for even number passed through constructor, this increments counter from 0-9
+                        counter++;                  // for even number passed through constructor, this increments counter from RangeMin-RangeMax
                     }
                     else {
-                        counter--;                  // for odd number passed through constructor, this decrement counter from 9-0
+                        counter--;                  // for odd number passed through constructor, this decrement counter from RangeMax-RangeMin
                     }
                     try {
                         Thread.sleep(1000);    // the next increment or decrement occurs after 1000 milliseconds
@@ -96,19 +92,7 @@ public class P085_Panwar_Panel extends JPanel {
                 }
             }
         }.start();
-    } //end of timers class method
-
-
-    /*
-    //main class
-    public static void main(String[] args){
-        JFrame frame = new JFrame("");
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.add(new P085_Panwar_Panel(41));
-        frame.pack();
     }
-    */
 
-}//end of class
+}
 
