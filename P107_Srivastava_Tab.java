@@ -43,6 +43,7 @@ public class P107_Srivastava_Tab extends JPanel{
 		add(new P116_Tran_Panel(116), gbc);
 		add(new P117_VasantraoYadav_Panel(117), gbc);
 		add(new P118_VelaudampalayamKesavan_Panel(118), gbc);
+		// add(new P119_Vemula_Panel(119), gbc);
 		add(new P120_Venkatasubramanian_Panel(120), gbc);
 		add(new P121_Venugopal_Panel(121), gbc);
 		add(new P122_Vyas_Panel(122), gbc);
@@ -54,7 +55,7 @@ public class P107_Srivastava_Tab extends JPanel{
 		add(new P128_Yadamreddi_Panel(128).constructPanel(128), gbc); //Had to call extra function
 		add(new P129_Yan_Panel(129), gbc);
 		add(new P130_Zhang_Panel(130), gbc);
-		add(new P131_Zhou_Panel(131), gbc);
+		// add(new P131_Zhou_Panel(131), gbc); //This guy is included in group 2 as P030 is the main window, so they lack one panel
 	}
 
 }
