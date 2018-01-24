@@ -30,21 +30,21 @@ public class P030_EswaraPrasad_Main extends JPanel {
             JTabbedPane myTabPane = new JTabbedPane();
 
             /* Creating JPanel Objects to Link to the tabs. */
-            P091_Prakash_Tab Tab1 = new P091_Prakash_Tab();
-            P107_Srivastava_Tab Tab2 = new P107_Srivastava_Tab();
-            P039_Henderson_Tab Tab3 = new P039_Henderson_Tab();
-            P074_Mishra_Tab Tab4 = new P074_Mishra_Tab();
-            P004_Bahl_Tab Tab5 = new P004_Bahl_Tab();
+            JPanel Tab1 = new P004_Bahl_Tab();
+            JPanel Tab2 = new P039_Henderson_Tab();
+            JPanel Tab3 = new P074_Mishra_Tab();
+            JPanel Tab4 = new P091_Prakash_Tab();
+            JPanel Tab5 = new P107_Srivastava_Tab();
 
             /* Creating tabs from Panels and assigning other attributes
             * like border and Titles to each tab.
             * */
 
-            myTabPane.addTab(Tab1.TABNAME, Tab1);
-            myTabPane.addTab(Tab2.TABNAME, Tab2);
-            myTabPane.addTab(Tab3.TABNAME, Tab3);
-            myTabPane.addTab(Tab4.TABNAME, Tab4);
-            myTabPane.addTab(Tab5.TABNAME, Tab5);
+            myTabPane.addTab(P004_Bahl_Tab.TABNAME, Tab1);
+            myTabPane.addTab(P039_Henderson_Tab.TABNAME, Tab2);
+            myTabPane.addTab(P074_Mishra_Tab.TABNAME, Tab3);
+            myTabPane.addTab(P091_Prakash_Tab.TABNAME, Tab4);
+            myTabPane.addTab(P107_Srivastava_Tab.TABNAME, Tab5);
 
             myTabPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
