@@ -7,30 +7,31 @@ import java.util.TimerTask;
 @SuppressWarnings("serial")
 
 /**
+ * @author	Akash
+ * @version 	1.0
+ * @since	21.01.2018
+ * 
+ * Project:01 SER516
  * Class extends JPanel and contains two JLabels.
  * One JLabel used for Name and one for the Counter.
- * It Contains constructor which takes one input value.
- * Panel background is set to WHITE if the input value is even and LIGHT BLUE if the input value is odd.
+ * Panel background is set to WHITE or LIGHTBLUE based on input argument to constructor.
  * Counter increases from 0-9 if value is even or decreases from 9-0 if input value is odd.
- * 
- * @author	Akash
- * @version 1.0
- * @since	21.01.2018
  */
 
 public class P102_Sharma_Panel extends JPanel
 {
-	private int x;
+	private int inputValue;
+	public static final Color LIGHTBLUE = new Color(173, 216, 230);
 	
 	/**
 	 * Constructor takes input value and call initialize_PanelProperties() to set panel properties.
-	 * @param x
+	 * @param inputValue
 	 */
 	
-	public P102_Sharma_Panel(int x)
+	public P102_Sharma_Panel(int inputValue)
 	{
-		this.x = x;
-		initialize_PanelProperties(); // Function to add JLabels and set various properties on panel
+		this.inputValue = inputValue;
+		initialize_PanelProperties();
 	}
 	
 	/**
@@ -59,16 +60,16 @@ public class P102_Sharma_Panel extends JPanel
 		{
 			Timer tmObj = new Timer();
 			
-			if(x%2 == 0)
+			if(inputValue % 2 == 0)
 			{
 				setBackground (Color.WHITE);
-				tmObj.scheduleAtFixedRate(new clockTask(Counterlbl, 0), 0, 1000);
+				tmObj.scheduleAtFixedRate(new ClockTask(Counterlbl, 0), 0, 1000);
 				
 			}
 			else
 			{
-				setBackground (new Color(173, 216, 230));
-				tmObj.scheduleAtFixedRate(new clockTask(Counterlbl, 9), 0, 1000);
+				setBackground (LIGHTBLUE);
+				tmObj.scheduleAtFixedRate(new ClockTask(Counterlbl, 9), 0, 1000);
 			}
 		} catch(Exception e)
 		{
@@ -78,28 +79,27 @@ public class P102_Sharma_Panel extends JPanel
 	
 	
 	/**
-	 * @author Akash
-	 * Class extends TimerTask is used to define the task to be executed.
-	 * Check for the even odd conditions and respectively changes the counter and background color.
+	 * This class extends TimerTask class.
+	 * Change counter value and background color based on inputvalue.
 	 */
 	
-	class clockTask extends TimerTask 
+	class ClockTask extends TimerTask 
 	{
-		private JLabel lblCounter;
+		private JLabel counterLabel;
 		private int counter;
-		private int flag;
+		private int startDigit;
 		
 		/**
 		 * Constructor to to clockTask
-		 * @param lblref Counter Label Reference
+		 * @param counterLabel Counter Label Reference
 		 * @param startDigit Initialize the starting digit.
 		 */
 		
-		public clockTask(JLabel lblref, int startDigit)
+		public ClockTask(JLabel counterLabel, int startDigit)
 		{
-			this.lblCounter = lblref;
+			this.counterLabel = counterLabel;
 			this.counter = startDigit;
-			this.flag = startDigit;
+			this.startDigit = startDigit;
 		}
 		
 		//Function to increment or decrement the counter based on the input value.
@@ -109,16 +109,16 @@ public class P102_Sharma_Panel extends JPanel
 			try
 			{
 
-				if(flag == 0)
+				if(startDigit == 0)
 				{
-					lblCounter.setText(String.valueOf(counter));
+					counterLabel.setText(String.valueOf(counter));
 					counter++;
 					if(counter > 9)
 						counter = 0;
 				}
 				else
 				{
-					lblCounter.setText(String.valueOf(counter));
+					counterLabel.setText(String.valueOf(counter));
 					counter--;
 					if(counter < 0)
 						counter = 9;
@@ -130,21 +130,5 @@ public class P102_Sharma_Panel extends JPanel
 		}
 		
 	}
-	
-	/**
-	 * Main method to test the code.
-	 * @param args
-	 *
-	
-	public static void main(String[] args)
-	{
-		JFrame frame = new JFrame();
-		P102_Sharma_Panel panel = new P102_Sharma_Panel(21);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(panel);
-		frame.setSize(800, 800);
-		frame.setLayout(null);
-		frame.setVisible(true);
-	}
-	*/
 }
+
