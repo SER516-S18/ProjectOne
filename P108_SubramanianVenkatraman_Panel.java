@@ -7,6 +7,7 @@ import javax.swing.SwingConstants;
  * 
  * SER - 516  Lab 1
  * @author Ganesh Kumar Subramanian Venkatraman
+ * P108_SubramanianVenkatraman_Panel is a panel
  * Displays a panel with Ganesh Kumar as first name in the first row
  * and S V as last name in the second row
  * Last row has a counter that either increases or decreases through 0 to 9

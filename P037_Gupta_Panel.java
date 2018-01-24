@@ -26,8 +26,6 @@ import javax.swing.Timer;
 
 public class P037_Gupta_Panel extends JPanel {
 
-	// JPanel instance
-	public JPanel p;
 	// counter label to increase or decrease depending upon value given to
 	// constructor
 	JLabel counter = new JLabel();
@@ -50,9 +48,10 @@ public class P037_Gupta_Panel extends JPanel {
 		if (num % 2 == 0) {
 			j = 0;
 			even = true;
-		} else
+		} else {
 			j = 9;
-
+		}
+		this.getJPanelInstance();
 	}
 
 	/**
@@ -68,11 +67,10 @@ public class P037_Gupta_Panel extends JPanel {
 		try {
 
 			// creates JPanel.
-			p = new JPanel();
 			// sets layout
-			p.setLayout((LayoutManager) new BoxLayout(p, BoxLayout.Y_AXIS));
+			this.setLayout((LayoutManager) new BoxLayout(this, BoxLayout.Y_AXIS));
 			// set size
-			p.setSize(100, 100);
+			this.setSize(100, 100);
 
 			// creates JLabel for first name, then sets size and font and alligns to center
 			// and add it to panel.
@@ -80,7 +78,7 @@ public class P037_Gupta_Panel extends JPanel {
 			firstName.setSize(25, 25);
 			firstName.setFont(FONT);
 			firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
-			p.add(firstName);
+			this.add(firstName);
 
 			// creates JLabel for last name, then sets size and font and alligns to center
 			// and add it to panel.
@@ -88,21 +86,21 @@ public class P037_Gupta_Panel extends JPanel {
 			lastName.setSize(25, 25);
 			lastName.setFont(FONT);
 			lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
-			p.add(lastName);
+			this.add(lastName);
 
 			// JLabel for counter, then sets size and font and alligns to center and add it
 			// to panel.
 			counter.setSize(25, 25);
 			counter.setFont(FONT);
 			counter.setAlignmentX(Component.CENTER_ALIGNMENT);
-			p.add(counter);
+			this.add(counter);
 
 			// if num is even, sets panel background to white otherwise set panel color to
 			// light blue.
 			if (this.num % 2 == 0)
-				p.setBackground(Color.WHITE);
+				this.setBackground(Color.WHITE);
 			else
-				p.setBackground(LIGHT_BLUE);
+				this.setBackground(LIGHT_BLUE);
 
 			// timer implementation for increment or decrement of counter label
 			Timer timer = new Timer(1000, new ActionListener() {
