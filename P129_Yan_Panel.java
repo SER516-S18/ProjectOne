@@ -22,7 +22,8 @@ public class P129_Yan_Panel extends JPanel{
     /**
     * Constructor.
     * @para a is input number and will be determined it is an even number or an odd number.
-    * Counter will increase from 0 to 9 if @para a is even, and vice versa.
+    * Counter will increase from 0 to 9 if a is even, and Counter will decreade from 9 to 0,
+    * if a is odd.
     * timer will change counter's value by seconds.
     */
     public P129_Yan_Panel (int a){
