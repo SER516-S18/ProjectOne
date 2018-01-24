@@ -55,34 +55,34 @@ public class P112_Thakkar_Panel extends JPanel implements Runnable {
 	@Override
 	public void run() {
 		if((pass%2)==0){
-			int counter = 0;
-			while(true){
-				labelC.setText(counter+"");
-				counter++;
-				if(counter == 10){                               
-					counter = 0;
+		int counter = 0;
+		while(true){
+			labelC.setText(counter+"");
+			counter++;
+			if(counter == 10){                               
+				counter = 0;
 				}
-				try{
-					Thread.sleep(1000);                            
+			try{
+				Thread.sleep(1000);                            
 		}
-				catch(Exception e){
-					e.printStackTrace();;
+			catch(Exception e){
+				e.printStackTrace();;
 		}
 	}
 }
 		else{
-			int counter = 9;
-			while(true){
-				labelC.setText(Integer.toString(counter)+"");
-				counter--;
-				if(counter == -1){                              
-					counter = 9;
+		int counter = 9;
+		while(true){
+		labelC.setText(Integer.toString(counter)+"");
+			counter--;
+			if(counter == -1){                              
+				counter = 9;
 				}
-				try{
-					Thread.sleep(1000);                           
+			try{
+				Thread.sleep(1000);                           
 		}
-				catch(Exception e){
-					e.printStackTrace();
+			catch(Exception e){
+				e.printStackTrace();
 		}
 	}
 		}
