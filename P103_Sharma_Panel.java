@@ -95,15 +95,4 @@ public class P103_Sharma_Panel extends JPanel {
 				e.printStackTrace();
 		}
 	}
-
-	public static void main(String[] args) {
-
-		JFrame jFrame = new JFrame();
-		JPanel jPanel = new JPanel();
-		jPanel.add(new P103_Sharma_Panel(101));
-		jFrame.add(jPanel);
-		jFrame.setSize(1000, 500);
-		jFrame.setVisible(true);
-		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
 }
