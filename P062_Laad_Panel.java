@@ -1,15 +1,16 @@
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.LayoutManager;
+
+import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.*;
 
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
+/*
+Author : Minal Laad
+Program to display Name on a JPanel. Panel Background color changes according to the color flag passed by the user.
+If the color flag is even the timer increments from 0-9 and if it is odd the timer decrements from 9-0
+ */
 public class P062_Laad_Panel extends JPanel{
 
     private JPanel panel;
@@ -30,7 +31,7 @@ public class P062_Laad_Panel extends JPanel{
            Font font = new Font("Papyrus", Font.PLAIN, 15);
 
 
-           panel.setSize(100,100);             //Setting Panel Size
+           setSize(100,100);             //Setting Panel Size
            firstname = new JLabel("Minal");           //Creating Label for First Name
            firstname.setAlignmentX(Component.CENTER_ALIGNMENT);
            lastname = new JLabel("Laad");            //Creating Label for Last Name
@@ -39,12 +40,12 @@ public class P062_Laad_Panel extends JPanel{
            watch.setFont(font);
            firstname.setFont(font);
            lastname.setFont(font);
-           panel.add(firstname);      //Adding First Name to the Panel
-           panel.add(lastname);       // Adding Last Name to the Panel
+           add(firstname);      //Adding First Name to the Panel
+           add(lastname);       // Adding Last Name to the Panel
            if(ColorFlag%2 == 0)             // Checking if the number is ODD or EVEN
            { secondsPassed=0;
-               panel.setBackground(Color.white);     // Setting Panel Background to White
-               timer.schedule(new TimerTask() {      // Scheduling the Timer Task
+               setBackground(Color.white);     // Setting Panel Background to White
+               timer.schedule(new TimerTask() {      // Scheduling the Timer Task with delay of 1 second = 1000 milliseconds
 
                    @Override
                    public void run() {
@@ -55,7 +56,7 @@ public class P062_Laad_Panel extends JPanel{
                        else
                        {
                            watch.setText(Integer.toString(secondsPassed++));  // Incrementing the timer from 0 to 9
-                           panel.add(watch);         // Adding the watch to the Panel
+                           add(watch);         // Adding the watch to the Panel
                        }
 
                    }
@@ -66,8 +67,8 @@ public class P062_Laad_Panel extends JPanel{
            }
            else
            {   secondsPassed=9;
-               panel.setBackground(lightblue);  // Setting Panel Background to Light Blue
-               timer.schedule(new TimerTask() {    // Scheduling the Timer Task
+               setBackground(lightblue);  // Setting Panel Background to Light Blue
+               timer.schedule(new TimerTask() {    // Scheduling the Timer Task with delay of 1 second = 1000 milliseconds
 
                    @Override
                    public void run() {
@@ -78,7 +79,7 @@ public class P062_Laad_Panel extends JPanel{
                        else
                        {
                            watch.setText(Integer.toString(secondsPassed--));   // Incrementing the timer from 0 to 9
-                           panel.add(watch);    // Adding the watch to the Panel
+                           add(watch);    // Adding the watch to the Panel
                        }
 
                    }
@@ -87,7 +88,7 @@ public class P062_Laad_Panel extends JPanel{
 
            }
 
-           panel.setLayout((LayoutManager) new BoxLayout(panel, BoxLayout.Y_AXIS));
+           setLayout((LayoutManager) new BoxLayout(this, BoxLayout.Y_AXIS));
 
        }catch(Exception ex){
            System.out.println("Exception Occurred:"+ex.getMessage());
