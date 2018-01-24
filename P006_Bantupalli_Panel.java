@@ -74,8 +74,8 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 	public void customizePanel()					
 	{
 		this.setPreferredSize(new Dimension(100, 100));
-		this.setLayout(null);
-		this.setBounds(100,100, 100, 100);
+		this.setLayout(new GridLayout(2,1));
+		
 		nameLabel=new JLabel("<html>Jahnavi<br>Bantupalli</html>",JLabel.CENTER);
 		nameLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
 		nameLabel.setBounds(0, 5, 200, 100);
