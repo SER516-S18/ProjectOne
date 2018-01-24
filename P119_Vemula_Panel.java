@@ -1,3 +1,11 @@
+/**
+ * @author Raghavendra Prasad Vemula
+ * @date 01/22/2018
+ * @description A Panel class for SER516 lab project.
+ *
+ * Counter increments from 0-9 if value is even or decrements from 9-0 if odd.
+ * Panel background is set to WHITE if value is even or LIGHT BLUE (173,216,230) if odd.
+ */
 import java.awt.*;
 import java.util.*;
 import java.util.Timer;
@@ -7,12 +15,12 @@ import javax.swing.JPanel;
 import java.lang.Exception;
 import javax.swing.border.EmptyBorder;
 
-public class P119_Vemula_PANEL extends JPanel {
+public class P119_Vemula_Panel extends JPanel {
     private int count , val;
 
 
     //Constructor taking integer input.
-    public P119_Vemula_PANEL(int val) {
+    public P119_Vemula_Panel(int val) {
         this.val = val;
     	setPanelSize();//Sets the size of the Panel
     	backGroundColor();//Sets the Background Color of the Panel
