@@ -69,7 +69,9 @@ public class P124_Wang_Panel extends JPanel {
 				});
 				msglabel2.setText("9");
 				timer.start();
-				setBackground(Color.cyan);
+				// setBackground(Color.cyan);
+				Color lightBlue = new Color(173, 216, 230);
+				setBackground(lightBlue);
 			}
 
 			// Set up my panel
