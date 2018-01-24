@@ -3,133 +3,99 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package p104_shilimkar_panel;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
+import javax.swing.JFrame;
+import javax.swing.Timer;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-
 /**
- * @author anu
+ * P104_Shilimkar_Panel this program implements an application that will display
+ * panel. On the panel it will show the first and last name in two rows. It also
+ * shows the timer counter. It is counting for each second. When the background
+ * color is white the timer is counting from 0 to 9 and again reset at 0 so it
+ * will increase. When the panel background color is light-blue then counter is
+ * counting from 9 to 0 and again reset at 9 and it will decrease.
+ *
+ * @author anu Shilimkar
+ * @version 1.0
+ * @since 2018-01-23
  */
-//Need to extend this class
 public class P104_Shilimkar_Panel extends JPanel {
 
-    JLabel label1, label2, label3;
+    JLabel firstName, lastName, timerLabel;
     Timer timer;
-    int counter = 0; //initialize with 0
-
-    //Write a constructor for class
-    public P104_Shilimkar_Panel(int num) {
-        //constructor that recieves a paramter
-        //setting a Panel dimensions
+    int counter = 0,red = 51, green = 204, blue = 255;
+    /**
+     * Constructor for class P104_Shilimkar_Panel
+     * @param backgroundSelection . This parameter is used to set the background
+     * color
+     */
+    public P104_Shilimkar_Panel(int backgroundSelection) {
         setPreferredSize(new Dimension(100, 100));
-
         setLayout(new GridLayout(3, 1));
-        //    GridBagConstraints c = new GridBagConstraints();
-
         setBorder(BorderFactory.createLineBorder(Color.blue));
-        //JLabel label = new JLabel("<html>Anu<br>Shilimkar<br></html>");
+        
+        timerLabel = new JLabel("Timer");
+        timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        setBackgroundCount(backgroundSelection);
+        add(timerLabel, JLabel.CENTER);
 
-        label3 = new JLabel("Timer");
-        label3.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        SetTimer(num);
-        add(label3, JLabel.CENTER);
+        lastName = new JLabel("Shilimkar");
+        lastName.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        add(lastName, JLabel.CENTER);
 
-        label2 = new JLabel("Shilimkar");
-        label2.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        add(label2, JLabel.CENTER);
-
-        label1 = new JLabel("Anu");
-        label1.setFont(new Font("Papyrus", Font.PLAIN, 14));
-        add(label1, JLabel.CENTER);
+        firstName = new JLabel("Anu");
+        firstName.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        add(firstName, JLabel.CENTER);
     }
-
-    private void SetTimer(int num) {
-        //set the background colors according to parameter for the JPanel
-        if (num % 2 == 0) {
-            //When num is even then color will be White
+    /*This function is setting the background color according to
+    backgroundselection variable value*/
+    private void setBackgroundCount(int backgroundSelection) {
+        if (backgroundSelection % 2 == 0) {
             setBackground(Color.white);
-
-            //In Timer performing the action listerner
             timer = new Timer(1000, new ActionListener() {
-
-                //timer now acting on the Event   
                 @Override
-
                 public void actionPerformed(ActionEvent e) {
-                    label3.setText(String.valueOf(counter));
+                    timerLabel.setText(String.valueOf(counter));
                     //incrementing the counter form 0 to 9 for White color
-
                     counter++;
                     //Reset the counter when it reaches 9 and start again with 0
                     if (counter == 11) {
-
                         counter = 0;
-                        label3.setText(String.valueOf(counter));
+                        timerLabel.setText(String.valueOf(counter));
                         counter++;
-
                     }
-
                 }
-
             });
 
             timer.start();
         } else {
             counter = 9;
-            setBackground(new Color(51, 204, 255));
-            //Performing action of listening the event
+            setBackground(new Color(red, green, blue));
             timer = new Timer(1000, new ActionListener() {
-
                 //method for timer using an ActionListener    
                 @Override
-
                 public void actionPerformed(ActionEvent e) {
-                    label3.setText(String.valueOf(counter));
+                    timerLabel.setText(String.valueOf(counter));
                     //decrement in the counter from 0 to 9
-
                     counter--;
-
                     if (counter == -2) {
                         //resetting the counter and start again with 9
-
                         counter = 9;
-                        label3.setText(String.valueOf(counter));
-
+                        timerLabel.setText(String.valueOf(counter));
                         counter--;
-
                     }
-
                 }
-
             });
-
             timer.start();
         }
-    }
-
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //create a Jframe container for application.
-        JFrame frame = new JFrame("Demo");
-        //   frame.setPreferredSize(new Dimension(WIDTH,HEIGHT));
-        frame.add(new P104_Shilimkar_Panel(1));
-        frame.setLayout(new FlowLayout());
-        frame.setVisible(true);
-        frame.pack();
-        frame.setSize(600, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 
 }
