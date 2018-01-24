@@ -31,7 +31,7 @@ public class P037_Gupta_Panel extends JPanel {
 	// counter label to increase or decrease depending upon value given to
 	// constructor
 	JLabel counter = new JLabel();
-	public static Color LIGHT_BLUE = new Color(173, 216, 230); // color of background
+	public static Color LIGHT_BLUE = new Color(189, 214, 238); // color of background
 	public static Font FONT = new Font("Papyrus", Font.PLAIN, 15); // style of label
 	private int j;
 	private boolean even;

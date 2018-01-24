@@ -29,7 +29,7 @@ public class P049_Kandimalla_Panel extends JPanel {
 	 */
 	public P049_Kandimalla_Panel(int code) {
 		super();
-        mainPanel = createPanel(code);
+        createPanel(code);
 	}
 
 	/*
@@ -39,33 +39,26 @@ public class P049_Kandimalla_Panel extends JPanel {
 	 *  The function also sets background color depending upon code value
 	 * 
 	 */
-	public JPanel createPanel(int code) {
+	public void createPanel(int code) {
 
 		
 		JLabel nameLabel = new JLabel("<html><p>Sai Saran<br>Kandimalla</p></html>", JLabel.CENTER);
 		nameLabel.setFont(new Font("papyrus", Font.BOLD, 16));
+		this.add(nameLabel);
 		
 		JLabel counterLabel = new JLabel();
 		counterLabel.setFont(new Font("papyrus", Font.BOLD, 16));
-		
-		Box box;
-		box = Box.createVerticalBox();
-		box.add(nameLabel);
-		box.add(counterLabel);
-		
-		mainPanel.add(box);
+		this.add(counterLabel);
 
 		if (code % 2 == 0) {
 			incrementTimer(counterLabel);
-			mainPanel.setBackground(Color.WHITE);
+			this.setBackground(Color.WHITE);
 		} 
 		else if (code % 2 == 1 || code % 2 == -1) {
 			decrementTimer(counterLabel);
 			Color lightBlue = new Color(173, 216, 230);
-			mainPanel.setBackground(lightBlue);
+			this.setBackground(lightBlue);
 		}
-		add(mainPanel);
-		return mainPanel;
 	}
 
 	//This method loops the counter in counter label in ascending order i.e., from 0 to 9 
