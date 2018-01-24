@@ -1,13 +1,3 @@
-/**
- * 1. Every panel class must have three methods. A constructor. A main method (for your testing). And a function which does all the work.
- * 2. The constructor will take an integer argument and based on that set a flag for background color and timer
- * 3. The main function must not have any logical code inside it. It should just call a public function which does all the work
- * 4. Every panel must have a size of 100 x 100.
- * 5. Font of the panel must be papyrus to keep it uniform across the application.
- * 6. The tabs class will create an object of each panel class individually. And organise them accordingly.
- * And Manas is creating a blackboard thread where things will be more clear and people can stay at same page all the time
- */
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -92,18 +82,5 @@ public class P126_Wei_Panel {
 
         th.start();
         return panel;
-    }
-
-    /**
-     * This is used to testing.
-     * @param args
-     */
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setSize(100, 100);
-        P126_Wei_Panel test = new P126_Wei_Panel(10);
-        JPanel testPanel = test.getPanel();
-        frame.add(testPanel);
-        frame.setVisible(true);
     }
 }
