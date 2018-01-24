@@ -114,7 +114,7 @@ public class P082_gspai_panel extends JPanel{
 
         JFrame sampleJframe1 = new JFrame("Gopika's Frame");
         sampleJframe1.setSize(1000,1000);
-        P082_gspai_panel obj1 = new P082_gspai_panel (5);
+        P082_gspai_panel obj1 = new P082_gspai_panel (6);
         sampleJframe1.setLayout(new GridLayout(5,5));
         sampleJframe1.add(obj1 );
         sampleJframe1.setVisible(true);
