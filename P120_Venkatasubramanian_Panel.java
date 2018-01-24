@@ -29,7 +29,7 @@ public class P120_Venkatasubramanian_Panel extends JPanel {
 	};
 /**
 * Class Constructor
-* @param bgcolor decides the background color and counter direction based on its property ( odd or even)
+* @param check decides the background color and counter direction based on its property ( odd or even)
 * Odd: Light Blue background and counter counts from 9 to 0
 * Even: White background and counter counts from 0 to 9
 */
