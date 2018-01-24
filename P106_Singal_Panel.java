@@ -12,13 +12,24 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+/*
+ *  @author: Vishakha Singal
+ *  @version: 1.0
+ *  @createdOn: January, 2018
+ *
+ *  The class implements JPanel and defines the methods to show a panel with full name
+ *  and a counter which runs incrementally and decrementally as described in the constructor.
+ *  If nothing is defined, then it will run incrementally
+ *
+ */
+
 
 public class P106_Singal_Panel  extends JPanel {
 
     /*
      * Pre-defined variables for color and counter
      */
-    public static final Color VERY_LIGHT_BLUE = new Color(51,204,255);
+    public static final Color VERY_LIGHT_BLUE = new Color(173,216,230);
     public static final Color BG_WHITE = Color.WHITE;
     public static int counter = 0;
 
@@ -50,7 +61,6 @@ public class P106_Singal_Panel  extends JPanel {
     }
 
     /*
-     * Constructor
      * params: val - If even the background color will be white and the counter will
      *				increase, otherwise the background color will be light blue and
      *				the counter will decrease
