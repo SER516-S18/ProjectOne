@@ -84,7 +84,7 @@ public class P020_Chintham_panel extends JPanel implements ActionListener{
 	}
 	//returns the panel
 	public JPanel getPanel()
-    {
+    	{
         return panel;
-    }
+    	}
 }
