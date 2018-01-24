@@ -22,9 +22,9 @@ public class P072_Mathur_Panel extends JPanel {
     public final Color LIGHT_BLUE = new Color(173,216,230);
 
     /**
+     * Initializes the panel
      * @param num
-     * if value of num is odd background is set to light blue and counter moves from 9-0.
-     * if the value is even background is set to white and the counter moves from 0 to 9.
+     * @return Nothing
      */
     public P072_Mathur_Panel(int num){
         try{
@@ -42,7 +42,7 @@ public class P072_Mathur_Panel extends JPanel {
     }
 
     /**
-     * This function sets the counter Value depending on the parameter being odd or even
+     * This function sets the initial counter value depending on the parameter being odd or even
      * @param Nothing
      * @return Nothing.
      */
