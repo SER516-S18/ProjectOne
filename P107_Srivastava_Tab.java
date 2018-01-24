@@ -37,7 +37,7 @@ public class P107_Srivastava_Tab extends JPanel{
 			add(new P109_Suryawanshi_Panel(++argumentIndex), gbc);
 			add(new P110_Swaminathan_Panel(++argumentIndex), gbc);
 			add(new P111_Tandon_Panel(++argumentIndex), gbc);
-			add(new P112_Thakkar_Panel(++argumentIndex).ReturnObject(), gbc); //Had to call extra function
+			add(new P112_Thakkar_Panel(++argumentIndex), gbc); //Had to call extra function
 			add(new P113_Thiagarajan_Panel(++argumentIndex), gbc);
 			add(new P114_Thoram_Panel(++argumentIndex), gbc);
 			add(new P115_Tikku_Panel(++argumentIndex), gbc);
