@@ -17,7 +17,7 @@ public class P019_Carroll_Panel extends JPanel {
 	public final int COUNT_MIN = 0;
 	public final int FONT_SIZE = 15;
 	public final String FONT_TYPE = "Papyrus";
-	
+
 	private int setting;
 	private Timer timer;
 	private int countValue;
@@ -30,7 +30,7 @@ public class P019_Carroll_Panel extends JPanel {
 	}
 	
 	private void init() {
-		countValue = increases( setting ) ? COUNT_MIN : COUNT_MAX;
+		countValue = increases() ? COUNT_MIN : COUNT_MAX;
 		
 		// Name label
 		nameLabel = new JLabel("<html><center> Douglas <br/> Carroll </center></html>");
@@ -45,7 +45,7 @@ public class P019_Carroll_Panel extends JPanel {
 		counterLabel.setVerticalAlignment( JLabel.CENTER );
 		timer = new Timer( 1000, new ActionListener() {
 			public void actionPerformed( ActionEvent event )  {
-				countValue = increases( setting ) ? ++countValue : --countValue;
+				countValue = increases() ? ++countValue : --countValue;
 				// Keep within bounds
 				if( countValue < COUNT_MIN ) {
 					countValue = COUNT_MAX;
@@ -63,14 +63,15 @@ public class P019_Carroll_Panel extends JPanel {
 		setBorder( new EmptyBorder( 10, 10, 10, 10 ) );
 		setSize( WIDTH, HEIGHT );
 		setVisible( true );
-		setBackground( increases(setting) ? Color.WHITE : new Color( 171, 216, 230 ) );
+		setBackground( increases() ? Color.WHITE : new Color( 171, 216, 230 ) );
 		add( nameLabel, BorderLayout.NORTH );
 		add( counterLabel, BorderLayout.SOUTH );
 	}
 
 	// Defines if setting is set to increase or not (aka decrease)
 	// setting - Even for true, odd for false.
-	private boolean increases( int setting ) {
+	private boolean increases() {
 		return setting % 2 == 0;
 	}
+
 }
