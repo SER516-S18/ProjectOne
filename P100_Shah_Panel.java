@@ -2,15 +2,17 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
+ * Create a JPanel class with custom settings which
+ * can be extended to a JTab.
+ *
  * @author Ayan Shah
  * @version 1.0
  * @since 01-23-2018
  */
-public class P100_Shah_Panel implements Runnable {
+public class P100_Shah_Panel extends JPanel implements Runnable {
 
     private JLabel name = new JLabel("<html>Ayan<br/>Shah</html>");
     private JLabel Counter = new JLabel("0");
-    private JPanel P100_Panel;
 
     private int value;
     private int control;
@@ -25,9 +27,10 @@ public class P100_Shah_Panel implements Runnable {
     * @param value An integer parameter to decide the background color of the panel
     */
     public P100_Shah_Panel(int value) {
+        super();
         this.value = value;
 
-        P100_Panel = new JPanel(new GridBagLayout());
+        this.setLayout(new GridBagLayout());
         font = new Font("Papyrus", Font.PLAIN, 15);
 
         name.setFont(font);
@@ -39,25 +42,25 @@ public class P100_Shah_Panel implements Runnable {
 
         layoutConstraints.gridx = 0;
         layoutConstraints.gridy = 0;
-        P100_Panel.add(name, layoutConstraints);
+        this.add(name, layoutConstraints);
 
         layoutConstraints.gridy = 1;
-        P100_Panel.add(Counter, layoutConstraints);
-
+        this.add(Counter, layoutConstraints);
 
         if ((value % 2) == 0) {
-            P100_Panel.setBackground(Color.WHITE);
+            this.setBackground(Color.WHITE);
             control = 0;
         } else {
-            P100_Panel.setBackground(LIGHTBLUE);
+            this.setBackground(LIGHTBLUE);
             control = 1;
         }
 
         layoutConstraints.weightx = 1.0;
         layoutConstraints.weighty = 1.0;
         layoutConstraints.fill = GridBagConstraints.BOTH;
-        P100_Panel.setBorder(BorderFactory.createEtchedBorder());
-        P100_Panel.setPreferredSize(new Dimension(100, 100));
+        this.setBorder(BorderFactory.createEtchedBorder());
+        this.setPreferredSize(new Dimension(100, 100));
+        this.setVisible(true);
 
         Thread timer = new Thread(this);
         timer.start();
@@ -96,13 +99,4 @@ public class P100_Shah_Panel implements Runnable {
             }
         }
     }
-
-
-    /*
-    * @return the panel object is returned
-    */
-    public JPanel getInstance() {
-        return P100_Panel;
-    }
-
 }

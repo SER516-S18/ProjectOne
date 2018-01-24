@@ -8,13 +8,12 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 /*
-* @author Shubham Vyas
-*/
+ * for SER 516 only
+ * @author Shubham Vyas
+ * @version 1.0
+ */
 public class P122_Vyas_Panel extends JPanel{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * Create the panel.
@@ -23,19 +22,21 @@ public class P122_Vyas_Panel extends JPanel{
 	private JPanel panel;
 	private boolean flag;
 	private static int counter;
-	
-	public P122_Vyas_Panel(int n) {
+	private static final Color LIGHTBLUE = new Color(173, 216, 230);
+
+	public P122_Vyas_Panel(int id) {
 		/*
-		 * Creating new panel object and setting the size and flag attribute for appropriate background and timer.
+		 * Creating new panel object and setting the size and flag attribute
+		 * for appropriate background and timer.
 		 */
 		panel = new JPanel();
 		panel.setSize(100,100);
-		if(n%2 == 0) {
+		if(id%2 == 0) {
 			flag = true;
 			this.setBackground(Color.WHITE);
 		}
 		else{
-			this.setBackground(new Color(173, 216, 230));
+			this.setBackground(LIGHTBLUE);
 			flag = false;
 		}
 		initialize();
@@ -47,38 +48,40 @@ public class P122_Vyas_Panel extends JPanel{
 		 */
 		setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("<html><center>Shubham<br>Vyas</center></html>");
-		lblNewLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		lblNewLabel.setBounds(10, 10, 60, 38);
-		add(lblNewLabel);
+		JLabel nameLabel = new JLabel("<html><center>Shubham<br>Vyas</center></html>");
+		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		nameLabel.setBounds(10, 10, 60, 38);
+		add(nameLabel);
 
-		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(10, 48, 46, 14);
-		add(lblNewLabel_1);
+		JLabel timerLabel = new JLabel();
+		timerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		timerLabel.setBounds(10, 48, 46, 14);
+		add(timerLabel);
 
 		Timer timer = new Timer();
 		try {
-		timer.scheduleAtFixedRate(new TimerTask(){ 
-			public void run() {
-				if(flag){
-					lblNewLabel_1.setText(""+(counter++%10));
-				}
-				else {
-					lblNewLabel_1.setText(""+(9-(counter++%10)));
-				}
-			} 
-		}, new Date(), 1000);
+			timer.scheduleAtFixedRate(new TimerTask(){ 
+				public void run() {
+					if(flag){
+						timerLabel.setText(""+(counter++%10));
+					}
+					else {
+						timerLabel.setText(""+(9-(counter++%10)));
+					}
+				} 
+			}, new Date(), 1000);
 		}
 		catch(IllegalArgumentException iae) {
-			lblNewLabel_1.setText("Illegal argument has been passed to method scheduleAtFixedRate. Please fix it!");
+			System.out.println("ID: 122:-Illegal argument has been passed to method "
+					+ "scheduleAtFixedRate. Please fix it!");
 		}
 		catch(IllegalStateException iae) {
-			lblNewLabel_1.setText("Java application is not in an appropriate state for the requested operation!");
+			System.out.println("ID: 122:-Java application is not in an appropriate "
+					+ "state for the requested operation!");
 		}
 		catch(NullPointerException e) {
-			lblNewLabel_1.setText("Null pointer exception has occured!");
+			System.out.println("ID: 122:-Null pointer exception has occurred!");
 		}
 		return panel;
 	}

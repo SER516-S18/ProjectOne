@@ -1,106 +1,107 @@
-/*
-Author: Rachana Kashyap
-*/
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+/*
+ * @author  Rachana Kashyap
+ * @version 1.0
+ * @since   01-23-2018
+ * The class P053_Kashyap_Panel creates a JPanel with 2 JLabels.
+ * The first JLabel contains my name (first name and last name) in
+ * two different rows. The second JLabel contains a counter Value. 
+ * If the obtained parameter is even, the counter runs from 0 to 9 every 
+ * second and has a white background color. If it is odd, it runs from 9 to 0 
+ * every second and has a lightBlue background color.
+ */
+
+public class P053_Kashyap_Panel extends JPanel{ 
+	
+    public final Color LIGHT_BLUE = new Color(173, 216, 230);
+    public final Font FONT = new Font("Papyrus", Font.PLAIN, 15);
+    private final JLabel name = new JLabel("<html>Rachana<br/>Kashyap<br/></html>");
+    private JLabel timer = new JLabel();
+    private final boolean isEven;
 
 
-public class P053_Kashyap_Panel {
-    private JPanel panel;
-    private JLabel timer;
-    private boolean isEven;
-
-    /* Function that creates a JPanel with JLables - name and timer */
-    public JPanel P053_Kashyap_Panel() {
-        panel = new JPanel();
-        panel.setSize(100, 100);
-        panel.setLayout(null);
-        JLabel name;
-        name = new JLabel("title",JLabel.CENTER);
+    /* Constructor for the class */
+    public P053_Kashyap_Panel(int param) {
+        /* if param is even, set boolean isEven to true, else set it to false */
+        if(param % 2 == 0){
+            isEven = true;
+        }    
+        else{
+            isEven = false;
+        }   
+        
+        /* If Parameter is even, set background color to White, else lightBlue*/
+        if(isEven == true){
+            setBackground(Color.white);
+        }
+        else{
+            setBackground(LIGHT_BLUE);
+        }
+        
+        /* Set font, alignment, layout and position of the name */
+        name.setFont(FONT);
         name.setBounds(0,0,100,90);
-
-        /*first name,last name in 2 rows*/
-        name.setText("<html><body>Rachana<br/>Kashyap<br/></body></html>");
-        name.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        name.setLayout(null);
-        panel.add(name);
-
-        Color lightBlue = new Color(173, 216, 230);
-
-        /* check if isEven is true and set Background color accordingly */
-        if(isEven==false)
-            panel.setBackground(lightBlue);/*Light blue color*/
-        else
-            panel.setBackground(Color.white);
-        /* create a JLabel for timer */
-        timer = new JLabel("0", JLabel.CENTER);
-        timer.setBounds(0,30,100,90);
-        timer.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        timer.setLayout(null);
-        panel.add(timer);
-
-        /*If even, increment counter from 0*/
-        if(isEven==true){
-            new Thread() {
-                int counter = 0;
+        name.setHorizontalAlignment(JLabel.CENTER);
+        
+        /* Set font, alignment, layout and position of the timer */
+        timer.setBounds(0,50,100,90);
+        timer.setFont(FONT);
+        timer.setHorizontalAlignment(JLabel.CENTER);
+        
+        /* Add the JLabels - name and timer to the panel */
+        add(name);
+        add(timer);
+        
+        /* Set layout to null, size of Panel to 100x100 and make it visible */
+        setLayout(null);
+        setSize(100,100);
+        setVisible(true);
+        
+        /* If param is even, increment countValue from 0 to 10 every second */
+        if (isEven == true){
+            new Thread(){
+                int countValue = 0;
                 public void run() {
                     while(true) {
-                        if(counter==10)counter=0;
-                        timer.setText(" " +counter++);
+                        /* if countValue reaches 10, reset it to zero */
+                        if(countValue == 10){
+                            countValue = 0;
+                        }
+                        timer.setText(" " +countValue++);
                         try{
                             Thread.sleep(1000);
+                        } 
+                        catch(Exception e){
+				/* Catch exceptions if any */
                         }
-                        catch(Exception e) {}
                     }
                 }
             }.start();
         }
-        /* If odd, decrement counter from 9 */
+        /* If param is odd, decrement countValue from 9 to 0 every second */
         else{
             new Thread() {
-                int counter = 9;
+                int countValue = 9;
                 public void run() {
                     while(true) {
-                        if(counter==-1)counter=9;
-                        timer.setText(" " +counter--);
+                        /* if countValue reaches -1, reset it to 9 */
+                        if(countValue == -1){
+                            countValue = 9;
+                        }
+                        timer.setText(" " +countValue--);
                         try{
                             Thread.sleep(1000);
+                        } 
+                        catch(Exception e){
+				/* Catch exceptions if any */
                         }
-                        catch(Exception e) {}
                     }
                 }
             }.start();
         }
-        return panel;
-    }
-
-    /*Constructor*/
-    public P053_Kashyap_Panel(int val) {
-        /* if val is even, set boolean isEven to true */
-        if (val % 2 == 0){
-            isEven=true;
-            val = 0;
-        }
-        /* Else set it to false */
-        else{
-            isEven=false;
-            val = 9;
-        }
-    }
-    /* Main function */
-    /*
-    public static void main(String[] args) {
-        P053_Kashyap_Panel myPanel = new P053_Kashyap_Panel(5);
-        JPanel panel = myPanel.P053_Kashyap_Panel();
-        JFrame myFrame = new JFrame("");
-        myFrame.setVisible(true);
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setSize(100, 150);
-        myFrame.add(panel);
-    }
-    */
-
-}
+    } /* End of constructor */
+}/* End of class */
