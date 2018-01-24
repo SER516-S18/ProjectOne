@@ -1,18 +1,19 @@
-/*
- Lab1
- Author : Aayushi Mehulbhai Shah
- Since : 01-20-2018
- This file creates a JPanel with the name of the author.
- A counter is displayed which increments or decrements from 0 to 9 / 9 - 0.
- Counter and Background color changes according to the input passed to the constructor. 
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/*
+ * This file creates a JPanel with the name of the author.
+ * A counter is displayed which increments or decrements from 0 to 9 / 9 - 0.
+ * Counter and Background color changes according to the input passed to the constructor. 
+ * 
+ * @author Aayushi Mehulbhai Shah
+ * @version 1.0
+ */
+
 public class P099_Shah_Panel extends JPanel{
+	
 	private static final long serialVersionUID = 1L;
 
 	public static int counter = 0;
@@ -20,6 +21,15 @@ public class P099_Shah_Panel extends JPanel{
     private JLabel Name; //Label to display the name in the panel
     private JLabel Counter; //Label to display the counter value in the panel 
     private boolean Id; //Boolean parameter to check the input value is odd or even
+    public final static Color Light_Blue = new Color(173,216,230);
+    
+    /**
+	 * The parameterized constructor that initializes the counter value according to the input value
+	 * 
+	 * @param value
+	 *            The input value to the constructor according to which the background color 
+	 *            and counter is displayed
+	 */
     
     public P099_Shah_Panel(int value) {
         if(value%2==0)
@@ -34,7 +44,11 @@ public class P099_Shah_Panel extends JPanel{
         }
         set_Background(Id);
     }
-
+    
+    /**
+	 * This function sets the properties of the JPanel and the counter's value ranges from 0 to 9
+	 * depending on the value received by the constructor.
+	 */
     public void set_Background(boolean ID) {
     	setSize(100,100); //Size of the panel is set
       
@@ -42,7 +56,7 @@ public class P099_Shah_Panel extends JPanel{
     	if(ID)
     		setBackground(Color.white);
     	else
-    		setBackground(Color.BLUE);
+    		setBackground(Light_Blue);
         
     	Name = new JLabel("<html>Aayushi<br>Shah</html>",SwingConstants.CENTER); //Name to be displayed in panel is initialized to the Label Name
         Name.setFont(new Font("Papyrus", Font.PLAIN, 15)); //Font and TextSize of the name displayed is set
@@ -114,3 +128,4 @@ public class P099_Shah_Panel extends JPanel{
         jFrame.pack();
     }*/
 }
+
