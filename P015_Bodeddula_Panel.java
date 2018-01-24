@@ -35,7 +35,7 @@ public P015_Bodeddula_Panel(int counter) {
 		count =9;
 	}
 	 setSize(100,100);
-	 System.out.println("Inside constructor");
+	
      setLayout(new GridLayout(3, 1));
      JLabel firstNameLabel = new JLabel(firstName,JLabel.CENTER);
      JLabel lastNameLabel = new JLabel(lastName, JLabel.CENTER); 
@@ -53,7 +53,7 @@ public P015_Bodeddula_Panel(int counter) {
 
 
 private void startTimer(int counter) {
-	System.out.println("Inside timer");
+	
 	try {
         Timer timer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -77,21 +77,10 @@ private void startTimer(int counter) {
 
         timer.start();
     }
-	catch (Exception e)//Exception thrown
+	catch (Exception e)
     {
-        System.out.print(e);
+        System.out.print(e.getMessage());
     }
 }
-            
-
-
-public static void main(String args[])
-{
-    P015_Bodeddula_Panel p= new P015_Bodeddula_Panel(5);
-    JFrame frame = new JFrame();
-    frame.setSize(200, 200);
-    frame.add(p);
-    frame.setVisible(true);
-
-}  
+     
 }
