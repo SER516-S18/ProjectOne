@@ -17,7 +17,7 @@ import javax.swing.Timer;
  */
 public class P040_Henderson_Panel extends JPanel {
     // Public constants, available to change if necessary
-    public static Color LIGHT_BLUE = new Color(173,216,230);
+    public static Color LIGHT_BLUE = new Color(189,214,238);
     public static Font FONT = new Font("Papyrus", Font.PLAIN, 16);
     
     protected final JLabel labelName = new JLabel("<html><center>David<br>Henderson</center></html>");
