@@ -52,12 +52,6 @@ public class P116_Tran_Panel extends JPanel {
 		 * dimensions of each JPanel should be 100×100 pixels and all
 		 * labels should be drawn using the Papyrus font.
 		 *
-		 *     JPanel Preview:
-		 *   ┌─────────────────┐
-		 *   │   {firstName}   │
-		 *   │   {lastName}    │
-		 *   │   {counter}     │
-		 *   └─────────────────┘
 		 */
 
 		nameLabel.setText(
