@@ -12,7 +12,6 @@ public class P029_Dutta_Panel extends JPanel{ //Class for creating individual pa
     private JLabel firstname = new JLabel("Ananya", JLabel.CENTER);
     private JLabel lastname = new JLabel("Dutta", JLabel.CENTER);
     private JLabel dNum = new JLabel("0", JLabel.CENTER);
-    private Border border = BorderFactory.createLineBorder(Color.BLACK,1); 
 
     public P029_Dutta_Panel(int i) { //Constructor for setting the background color and timer.
     	
@@ -67,7 +66,6 @@ public class P029_Dutta_Panel extends JPanel{ //Class for creating individual pa
     public void createPanel(Color color) throws Exception  // method for adding the different labels in the panel
     {
     	this.setBackground(color);
-    	this.setBorder(border);
     	
     	//Setting font to Papyrus and font size 10
     	firstname.setFont(new Font("Papyrus",Font.PLAIN,10));

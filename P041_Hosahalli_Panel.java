@@ -6,7 +6,6 @@ import javax.swing.border.Border;
 
 public class P041_Hosahalli_Panel extends JPanel {
     private int count;
-    private Border border = BorderFactory.createLineBorder(Color.BLACK,1);
     private JLabel timer;
     private int flag;
     //Constructor which takes a color value and
@@ -56,7 +55,6 @@ public class P041_Hosahalli_Panel extends JPanel {
     //create a label for counter(0-9)
     public void preparePanelUI(Color bgcolor) {
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-        this.setBorder(border);
         this.setSize(100, 100);
         JLabel label_1,label_2;
         //creating the labels in the this

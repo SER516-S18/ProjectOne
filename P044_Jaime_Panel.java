@@ -44,17 +44,19 @@ public class P044_Jaime_Panel extends JPanel
      */
     public void counter(int value)
     {
+        JPanel that = this;
         try {
             Timer t = new Timer(1000, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     if (value % 2 == 0) {
-                    	    label_number.setBackground(Color.WHITE);
+                    	    that.setBackground(Color.WHITE);
                         if (incr == 9) {
                         	   incr = -1;
                         }
                         label_number.setText("" + (incr += 1));
                     }
                     else {
+                            that.setBackground(new Color(189,214,238));
                     		if (decr == 0){
                         		decr = 10;
                         }

@@ -58,6 +58,7 @@ public class P051_Kapoor_Panel extends JPanel
 				{
 					if(count % 2 == 0)
 					{
+						setBackground(Color.WHITE);
 						i++;
 						if(i==10)
 						{

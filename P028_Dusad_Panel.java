@@ -15,7 +15,7 @@ import java.lang.Exception;
 public class P028_Dusad_Panel extends JPanel{
     private int counter;
     private JLabel timer;
-    public static Color LIGHT_BLUE = new Color(173,216,230);
+    public static Color LIGHT_BLUE = new Color(189,214,238);
     public static Font FONT = new Font("Papyrus", Font.PLAIN, 15);
     private static final String FIRSTNAME="Utsav";
     private static final String LASTNAME="Dusad";

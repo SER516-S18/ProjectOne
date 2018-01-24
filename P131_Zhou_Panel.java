@@ -27,7 +27,6 @@ public class P131_Zhou_Panel extends JPanel {
 
 		setPreferredSize(new Dimension(100,100));
 		setMinimumSize(new Dimension(100, 100));
-		setBorder(BorderFactory.createLineBorder(Color.black));
 		init(n);
 		setLayout(null);
 

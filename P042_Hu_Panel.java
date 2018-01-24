@@ -34,7 +34,7 @@ public class P042_Hu_Panel extends JPanel{
 			this.second = 0;
 		}else {
 			//If second is odd, background is light blue
-			this.color = new Color(171,216,230);
+			this.color = new Color(189,214,238);
 			this.flag=false;
 			this.second = 9;
 		}

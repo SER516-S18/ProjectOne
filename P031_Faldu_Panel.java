@@ -68,7 +68,7 @@ import java.awt.event.ActionListener;
         	}
         	else
         	{
-        		this.setBackground(new Color(51,204,255));
+        		this.setBackground(new Color(189,214,238));
         	}
         	
         	/* 

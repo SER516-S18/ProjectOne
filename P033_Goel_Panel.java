@@ -12,7 +12,7 @@ import java.util.TimerTask;
  *
  */
 public class P033_Goel_Panel extends JPanel {
-	Color lightBlue=new Color(90,150,255);
+	Color lightBlue=new Color(189,214,238);
 	private JLabel label1;
 	private JLabel label2;
 	private JLabel label3;

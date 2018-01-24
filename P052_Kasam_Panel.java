@@ -49,7 +49,7 @@ public class P052_Kasam_Panel extends JPanel {
 		}
 		else
 		{
-			this.setBackground(new Color(173,216,230));
+			this.setBackground(new Color(189,214,238));
 		}
 		
 		//setting differenty parameters for this

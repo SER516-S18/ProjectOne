@@ -109,7 +109,7 @@ public class P046_Johnson_Panel extends JPanel {
 
     private void setPanelColor() {
 
-        this.panelColor = (incrementFlag)? Color.white : new Color(173,216,230);
+        this.panelColor = (incrementFlag)? Color.white : new Color(189,214,238);
     }
 
     private Color getPanelColor() {

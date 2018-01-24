@@ -40,7 +40,7 @@ public class P048_Kalluri_Panel extends JPanel{
 	Timer timer = new Timer();
 	boolean autoIncrement = false;
 
-	Color lightBlue = new Color(173,216,230); 
+	Color lightBlue = new Color(189,214,238);
 	Color white = Color.white;
 
 	/**
