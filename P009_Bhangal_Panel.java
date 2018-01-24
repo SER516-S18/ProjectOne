@@ -26,11 +26,19 @@ public class P009_Bhangal_Panel extends JPanel{
 
 	private JLabel nameLabel,counterLabel;
 	private Timer timer;
-	private int count,check;
+	private int count,even;					
+	private Color lightBlue = new Color(173,216,230);
+	private Color white = Color.WHITE;
+	private Dimension dim = new Dimension(100,100);
+	private GridLayout layout = new GridLayout(2,1);
+	private Font font = new Font("Papyrus", Font.PLAIN, 15);
+	private int alignment = SwingConstants.CENTER;
+	private int timeDelay = 1000;
 	
 	/**
 	 * This is the constructor method which makes use of PanelSettings, SetLabels and CounterTimer.
-	 * @param i This is passed to PanelSettings. There it is used to set the background and variables for counter.
+	 * @param i This is passed to PanelSettings. There it is used to set the background and variables for 
+	 * counter.
 	 */
 	public P009_Bhangal_Panel(int i) {
 		
@@ -53,20 +61,19 @@ public class P009_Bhangal_Panel extends JPanel{
 	private void PanelSettings(int i) {
 		
 		if(i%2==0) {											//If input to constructor is Even 
-			this.setBackground(Color.WHITE);
-			check = 1;
+			this.setBackground(white);
+			even = 1;
 			count = 0;
 		}
 		else {												//If input to constructor is Odd
 					
-			this.setBackground(new Color(173,216,230));					//set lightBlue color
-			check = 0;
+			this.setBackground(lightBlue);		
+			even = 0;
 			count = 9;
 		}
 		
-		this.setPreferredSize(new Dimension(100,100));		//set panel size
-		
-		this.setLayout(new GridLayout(2,1));					//set panel layout to gridLayout
+		this.setPreferredSize(dim);		
+		this.setLayout(layout);					
 	}
 	
 	
@@ -80,14 +87,14 @@ public class P009_Bhangal_Panel extends JPanel{
 		counterLabel = new JLabel("counterLabel");
 		
 		nameLabel.setText("<html>Karansher<br>Bhangal<html>");
-		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		nameLabel.setFont(font);
 		this.add(nameLabel);
-		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		nameLabel.setHorizontalAlignment(alignment);
 		
 		counterLabel.setText("0");
-		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		counterLabel.setFont(font);
 		this.add(counterLabel);
-		counterLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		counterLabel.setHorizontalAlignment(alignment);
 	}
 	
 	
@@ -99,18 +106,18 @@ public class P009_Bhangal_Panel extends JPanel{
 	private void CounterTimer() {
 		
 		try {
-		timer = new Timer(1000, new ActionListener() {
+		timer = new Timer(timeDelay, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 		    		counterLabel.setText(Integer.toString(count));
 		    		
-		    		if(check == 1) {										//if input to constructor is Even
+		    		if(even == 1) {							//if input to constructor is Even
 			    		count++;
 			    	  	if(count==10) 
 			    	  		count=0;
 			    	 }
-		    		else {												//if input to constructor is Odd
+		    		else {									//if input to constructor is Odd
 		    			count--;
 		    			if(count==-1)
 		    				count =9 ;
