@@ -108,7 +108,6 @@ public class P102_Sharma_Panel extends JPanel
 		{
 			try
 			{
-
 				if(startDigit == 0)
 				{
 					counterLabel.setText(String.valueOf(counter));
