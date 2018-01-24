@@ -54,8 +54,8 @@ public class P052_Kasam_Panel extends JPanel{
 	                	upCounter++;
 	                	try{
 	                		Thread.sleep(1000);} 
-						catch(Throwable exception) {
-							exception.printStackTrace();}
+				catch(Throwable exception){
+					exception.printStackTrace();}
 	            		}
 	        		}
 	   		 }.start();
@@ -72,9 +72,9 @@ public class P052_Kasam_Panel extends JPanel{
 	                	downCounter--;
 	                	try{
 	                		Thread.sleep(1000);} 
-						catch(Throwable exception) {
-							exception.printStackTrace();}
-	           			 }
+				catch(Throwable exception){
+					exception.printStackTrace();}
+	           		}
 	        		}
 	    		}.start();
 		}		
