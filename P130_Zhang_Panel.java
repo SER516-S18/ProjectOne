@@ -97,16 +97,4 @@ public class P130_Zhang_Panel extends JPanel{
         add(lastNameLabel);
         add(countLabel);
     }
-
-    /**
-     * This is main used to testing.
-     * @param args
-     */
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        JPanel testPanel = new P130_Zhang_Panel(1);
-        frame.setSize(800, 800);
-        frame.add(testPanel);
-        frame.setVisible(true);
-    }
 }
