@@ -71,11 +71,10 @@ public class P046_Johnson_Panel extends JPanel {
 
     private void setPanel() {
 
-        this.panel = new JPanel();
-        this.panel.setBackground(getPanelColor());
-        this.panel.setLayout(new GridLayout(ROWS, COLUMNS));
-        this.panel.add(this.firstNameLabel);
-        this.panel.add(this.timerLabel);
+        this.setBackground(getPanelColor());
+        this.setLayout(new GridLayout(ROWS, COLUMNS));
+        this.add(this.firstNameLabel);
+        this.add(this.timerLabel);
     }
 
     /*

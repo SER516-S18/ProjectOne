@@ -39,7 +39,7 @@ public class P039_Henderson_Tab extends JPanel {
 		this.add(new P043_Iyer_Panel(typeSwitch++));
 		this.add(new P044_Jaime_Panel(typeSwitch++));
 		this.add(new P045_JOHAR_Panel(typeSwitch++));
-		// this.add(new P046_NAME_Panel(19)); Does not exist.
+		this.add(new P046_Johnson_Panel(typeSwitch++));
 		this.add(new P047_Kakarla_Panel(typeSwitch++));
 		this.add(new P048_Kalluri_Panel(typeSwitch++));
 		this.add(new P049_Kandimalla_Panel(typeSwitch++));
