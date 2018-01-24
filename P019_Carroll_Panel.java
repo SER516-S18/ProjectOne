@@ -69,7 +69,6 @@ public class P019_Carroll_Panel extends JPanel {
 	}
 
 	// Defines if setting is set to increase or not (aka decrease)
-	// setting - Even for true, odd for false.
 	private boolean increases() {
 		return setting % 2 == 0;
 	}

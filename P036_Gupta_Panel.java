@@ -3,7 +3,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -80,7 +79,7 @@ public class P036_Gupta_Panel extends JPanel{
 					}
 				}
 			}catch(Exception e) {
-				System.out.println("Timer Exception"+ e);
+				e.printStackTrace();
 			}
 		}
 	}	

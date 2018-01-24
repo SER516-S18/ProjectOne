@@ -1,13 +1,3 @@
-/**
- * 1. Every panel class must have three methods. A constructor. A main method (for your testing). And a function which does all the work.
- * 2. The constructor will take an integer argument and based on that set a flag for background color and timer
- * 3. The main function must not have any logical code inside it. It should just call a public function which does all the work
- * 4. Every panel must have a size of 100 x 100.
- * 5. Font of the panel must be papyrus to keep it uniform across the application.
- * 6. The tabs class will create an object of each panel class individually. And organise them accordingly.
- * And Manas is creating a blackboard thread where things will be more clear and people can stay at same page all the time
- */
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -20,40 +10,53 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
- *author: Lei Zhang, ID: 130
- *A P130_Zhang_Panel class to create a 100*100 panel with constructor, a main method for testing and a function do all other works
+ * Author: Lei Zhang, ID: 130
+ * P130_Zhang_Panel class to create a 100*100 panel
+ * The panel contains label displaying author's name
+ * A number increasing from 0-9 or decreasing from 9-0 will be displayed
+ * The color of panel and initial number will be set in constructor
  */
 
 public class P130_Zhang_Panel extends JPanel{
-    final private int TIME_INTERVAL = 1000;
+    final private int DEFAULT_TIME_INTERVAL = 1000;
+    final private int DEFAULT_FONT_SIZE = 15;
+    final private String DEFAULT_FONT_STYLE = "Papyrus";
     final private String FIRST_NAME = "Lei";
     final private String LAST_NAME = "Zhang";
+    final private Color LIGHT_BLUE = new Color(173,216,230);
     
     private int counter;
     private JLabel countLabel;
-    private boolean flag = true;
+    private JLabel firstNameLabel;
+    private JLabel lastNameLabel;
+    private boolean counterFlag = true;
     private Timer timer;
     /**
      * Construct the panel
-     * The counter and color is determined by
-     * argument counter.
-     * @param counter
+     * The counter and color is determined by argument count.
+     * @param count
      */
     public P130_Zhang_Panel(int count) {
         init();
         counter = count;
+        if (counter > 9){
+        	counter %= 10;
+        }
         if ((counter & 1) == 0) {
             setBackground(Color.WHITE);
-            flag = true;
+            counterFlag = true;
         } else {
-            setBackground(new Color(224, 255, 255));
-            flag = false;
+            setBackground(LIGHT_BLUE);
+            counterFlag = false;
         }
         try{
-            timer = new Timer(TIME_INTERVAL, new ActionListener(){
+        	/**
+        	 * Create timer to update the counter on the label
+        	 */
+            timer = new Timer(DEFAULT_TIME_INTERVAL, new ActionListener(){
                 public void actionPerformed(ActionEvent e) {
                     //Check increase flag then increase of decrease time
-                    if(flag) {
+                    if(counterFlag) {
                         counter++;
                         if(counter == 10) {counter -= 10;}
                     }else {
@@ -73,24 +76,30 @@ public class P130_Zhang_Panel extends JPanel{
     /**
      * Initialize the Panel
      * Set layout and font size
-     * Set label options
+     * Set label properties
      */
     public void init(){
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setSize(100, 100);
-        JLabel firstNameLabel = new JLabel(FIRST_NAME, JLabel.CENTER);
-        JLabel lastNameLabel = new JLabel(LAST_NAME, JLabel.CENTER);
+        firstNameLabel = new JLabel(FIRST_NAME, JLabel.CENTER);
+        lastNameLabel = new JLabel(LAST_NAME, JLabel.CENTER);
         countLabel = new JLabel();
-        countLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        firstNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        lastNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        
+        firstNameLabel.setAlignmentX(CENTER_ALIGNMENT);
+        lastNameLabel.setAlignmentX(CENTER_ALIGNMENT);
+        countLabel.setAlignmentX(CENTER_ALIGNMENT);
+        
+        countLabel.setFont(new Font(DEFAULT_FONT_STYLE, Font.PLAIN, DEFAULT_FONT_SIZE));
+        firstNameLabel.setFont(new Font(DEFAULT_FONT_STYLE, Font.PLAIN, DEFAULT_FONT_SIZE));
+        lastNameLabel.setFont(new Font(DEFAULT_FONT_STYLE, Font.PLAIN, DEFAULT_FONT_SIZE));
+        
         add(firstNameLabel);
         add(lastNameLabel);
         add(countLabel);
     }
 
     /**
-     * This is used to testing.
+     * This is main used to testing.
      * @param args
      */
     public static void main(String[] args) {
