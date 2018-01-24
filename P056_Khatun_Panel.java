@@ -1,11 +1,23 @@
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-//CLASS P056_KHATUN_PANEL
+/*For SER 516 
+ * @author Raisa
+ * @version 1.0
+ * @since 01-23-18
+ */
+
+/*This class adds two labels, a name and a counter to a jpanel 
+ * The counter is always either increasing or decreasing
+ * the background color of the panel is white and counter 
+ * increases from 0 to 9 and then decreases if the value passed
+ * to constructor is even
+ * If value is odd the background is light blue and counter
+ * decreases from 9 to 0 and then increases 
+ */
 
 public class P056_Khatun_Panel extends JPanel {
 	
@@ -35,14 +47,16 @@ public class P056_Khatun_Panel extends JPanel {
 		add(lblCounter);
 		
 		// BACKGROUND COLOR SET
+		Color lightBlue=new Color(173,216,230);
+		Color white=new Color(255,255,255);
 		if(value%2==0)
 		{
-			setBackground(Color.decode("#ffffff"));
+			setBackground(white);
 			isEven=true;		
 		}
 		else
 		{
-			setBackground(new Color(173,216,230));
+			setBackground(lightBlue);
 			isEven=false;
 		}
 		
@@ -110,15 +124,5 @@ public class P056_Khatun_Panel extends JPanel {
 		thread.start();
 	}
 
-	/* TO TEST
-	public static void main(String args[])     {
-		 
-		P056_Khatun_Panel p= new P056_Khatun_Panel(3);
-		JFrame frame = new JFrame();
-		frame.setSize(500, 500);
-		frame.add(p);
-		frame.setVisible(true);
-	}
-	*/
 	
 }//END OF CLASS
