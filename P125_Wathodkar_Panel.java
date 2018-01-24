@@ -48,7 +48,7 @@ public class P125_Wathodkar_Panel extends JPanel {
 		if (panelPlace % 2 == 0)
 			this.setBackground(Color.WHITE);
 		else
-			this.setBackground(new Color(90, 150, 255));
+			this.setBackground(new Color(173, 216, 230));
 		
 		/* Start the counter */
 		startCounter();
