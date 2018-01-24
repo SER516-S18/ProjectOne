@@ -1,6 +1,6 @@
 # ProjectOne
 
-##Steps to execute in command line:
+## Steps to execute in command line:
 
 1. [x] **git pull** *to update the folder with latest code*
 
