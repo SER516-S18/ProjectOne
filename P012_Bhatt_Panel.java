@@ -5,11 +5,9 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.border.Border;
 
 /**
  * The class P012_Bhatt_Panel is used to create a panel which shows my name and a timer.
@@ -25,7 +23,6 @@ public class P012_Bhatt_Panel extends JPanel
 	Timer timer;
 	int count;
 	int flag;
-	Border border;
 	
 	/**
 	 * 
@@ -33,22 +30,19 @@ public class P012_Bhatt_Panel extends JPanel
 	 * 
 	 */
 	public P012_Bhatt_Panel(int value)
-	{		border=BorderFactory.createLineBorder(Color.black);
+	{		
 		setBackgroundProperties(value);
 
 		name=new JLabel("<html>Vihar<br>Bhatt</html>");
 		name.setBounds(0,0,100,50);
 		name.setHorizontalAlignment(JLabel.CENTER);
-		//name.setBorder(border);
 		name.setFont(new Font("Papyrus",Font.PLAIN,15));
 
 		counter.setBounds(0,50,100,50);
 		counter.setHorizontalAlignment(JLabel.CENTER);
-		//counter.setBorder(border);
 		counter.setFont(new Font("Papyrus",Font.PLAIN,15));
 
 		setPreferredSize(new Dimension(100,100));
-		//setBorder(border);
 		setLayout(new GridLayout(2,1));
 
 		add(name);
