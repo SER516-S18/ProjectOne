@@ -1,10 +1,16 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 //Implements three labels first name, last name and timer and adds to a panel.
 //The timer label behaviour, and panel's background is set based on flag
 //Author: Chintham Tharun
 //Use "new P020_Chintham_panel(0)" to fetch the panel
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class P020_Chintham_panel extends JPanel implements ActionListener{
 	int clock=-1;

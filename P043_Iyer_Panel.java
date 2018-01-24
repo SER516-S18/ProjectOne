@@ -1,10 +1,12 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 /**
  P043_Iyer_Panel is panel of Supriya Iyer
  The first row prints first name

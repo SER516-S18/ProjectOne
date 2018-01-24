@@ -1,8 +1,14 @@
 
-import java.awt.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.Timer;
-import javax.swing.*;
+import java.util.TimerTask;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
  * This class creates a panel with a name and an infinite counter. Counter can

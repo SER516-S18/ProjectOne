@@ -1,10 +1,12 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.Date; 
-import java.util.Timer; 
-import java.util.TimerTask; 
-import javax.swing.border.Border;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /*
 Author: Ramesh Gorantla

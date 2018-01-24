@@ -6,8 +6,15 @@ A counter is incremented and decremented from 0-9 or 9-0.
 The background color changes depending on the integer passed to the constructor. For an even number the background color is white, whereas for an odd number the background is blue
 */
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 
 public class P085_Panwar_Panel extends JPanel {

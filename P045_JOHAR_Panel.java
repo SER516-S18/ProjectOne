@@ -1,12 +1,12 @@
-import javax.swing.*;
-import javax.swing.JPanel;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.lang.Exception;
-import javax.swing.border.EmptyBorder;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  * P045_JOHAR_Panel describes a panel consisting of three rows of JLabels.

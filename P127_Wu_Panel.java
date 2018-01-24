@@ -5,12 +5,13 @@
  * @since 01/21/2018
  */
 
-import java.util.*;
-import javax.swing.Timer;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.Timer;
 
 public class P127_Wu_Panel{
 	Color bcolor;

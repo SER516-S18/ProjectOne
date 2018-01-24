@@ -4,12 +4,11 @@
  * and open the template in the editor.
  */
 
-import javax.swing.JPanel;
-import java.awt.*;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.JLabel;
-import java.util.Timer;
+import javax.swing.JPanel;
 
 /**
  *

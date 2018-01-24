@@ -4,7 +4,8 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
-import javax.swing.*;  
+import javax.swing.JLabel;
+import javax.swing.JPanel;  
 
 /**
  * P112_Thakkar_Panel.java - a class to create panel for an application.

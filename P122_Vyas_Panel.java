@@ -1,10 +1,11 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.JPanel;
-import java.awt.Color;
+
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 /*

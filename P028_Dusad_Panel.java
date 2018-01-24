@@ -1,9 +1,11 @@
-import java.awt.*;
-import java.util.*;
-import java.util.Timer;
-import javax.swing.*;
 import java.awt.Color;
-import java.lang.Exception;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 /**
  * P028_Dusad_Utsav: We create a panel with three rows of JLabels.
  * Row1 contains first name of the author of this class.

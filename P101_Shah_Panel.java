@@ -5,8 +5,13 @@
 * @version 1/21/2018
 */
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 //class extends JPanel as it functions as a panel and contains some basic functionality.
 //define the labels for the panel such that they can be changed and used as per the 

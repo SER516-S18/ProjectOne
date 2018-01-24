@@ -1,12 +1,12 @@
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
-import java.awt.Component;
-import java.awt.FlowLayout;
 
 /**
  * This class is my Panel implementation using a parameterized constructor along

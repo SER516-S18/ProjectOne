@@ -1,7 +1,9 @@
-import java.awt.*; 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.GridLayout;
 
 /**
 * SER 516 - Project 1

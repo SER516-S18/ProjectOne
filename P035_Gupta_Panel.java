@@ -4,10 +4,15 @@
  * and open the template in the editor.
  */
 
-import java.awt.*;  
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 /**
  *
  * @author mahimagupta
