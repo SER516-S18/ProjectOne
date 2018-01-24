@@ -30,11 +30,11 @@ public class P030_EswaraPrasad_Main extends JPanel {
             JTabbedPane myTabPane = new JTabbedPane();
 
             /* Creating JPanel Objects to Link to the tabs. */
-            JPanel Tab1 = new P091_Prakash_Tab();
-            JPanel Tab2 = new P107_Srivastava_Tab();
-            JPanel Tab3 = new P039_Henderson_Tab();
-            JPanel Tab4 = new P074_Mishra_Tab();
-            JPanel Tab5 = new P004_Bahl_Tab();
+            P091_Prakash_Tab Tab1 = new P091_Prakash_Tab();
+            P107_Srivastava_Tab Tab2 = new P107_Srivastava_Tab();
+            P039_Henderson_Tab Tab3 = new P039_Henderson_Tab();
+            P074_Mishra_Tab Tab4 = new P074_Mishra_Tab();
+            P004_Bahl_Tab Tab5 = new P004_Bahl_Tab();
 
             /* Creating tabs from Panels and assigning other attributes
             * like border and Titles to each tab.

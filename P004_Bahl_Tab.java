@@ -12,6 +12,7 @@ import javax.swing.JTabbedPane;
 
 public class P004_Bahl_Tab extends JPanel
 {    
+	public static final String TABNAME = "Nikita Bahl";
     private final JTabbedPane tbp = new JTabbedPane();
     
     public P004_Bahl_Tab()

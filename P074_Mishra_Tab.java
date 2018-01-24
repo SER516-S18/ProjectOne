@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class P074_Mishra_Tab extends JPanel{
 
-	public static String TABNAME = "Manas Mishra";
+	public static final String TABNAME = "Manas Mishra";
 	/*
  	* Constructor add 25 panels from id 53 - 78
 	* */
