@@ -17,8 +17,8 @@ import javax.swing.Timer;
  */
 public class P040_Henderson_Panel extends JPanel {
 	// Public constants, available to change if necessary
-	public static Color LIGHT_BLUE = new Color(189,214,238);
-	public static Font FONT = new Font("Papyrus", Font.PLAIN, 15);
+	public static Color LIGHT_BLUE = new Color(173,216,230);
+	public static Font FONT = new Font("Papyrus", Font.PLAIN, 16);
 	
 	protected final JLabel labelName = new JLabel("<html><center>David<br>Henderson</center></html>");
 	protected final JCountdownLabel labelCounter;
@@ -28,12 +28,12 @@ public class P040_Henderson_Panel extends JPanel {
 	 * @param value An integer to determine if the timer counts down (odd value) or up (even value)
 	 */
 	public P040_Henderson_Panel(int value) {
-		this.setLayout(new BorderLayout()); // Set the panel layout
+		this.setLayout(new BorderLayout());
 		
 		labelName.setFont(FONT);
 		labelName.setHorizontalAlignment(SwingConstants.CENTER);
 		labelName.setAlignmentX(0.5f);
-		this.add(labelName, BorderLayout.PAGE_START); // Add name label to panel, at the top
+		this.add(labelName, BorderLayout.PAGE_START);
 
 		if(value % 2 == 0) {
 			// If value is even set the panel background to white and count up
@@ -48,7 +48,7 @@ public class P040_Henderson_Panel extends JPanel {
 		labelCounter.setFont(FONT);
 		labelCounter.setHorizontalAlignment(SwingConstants.CENTER);
 		labelCounter.setAlignmentX(0.5f);
-		this.add(labelCounter, BorderLayout.CENTER); // Add the countdown label
+		this.add(labelCounter, BorderLayout.CENTER);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class P040_Henderson_Panel extends JPanel {
 		private int value = 0;
 
 		/**
-		 * Constructor tp create the label.
+		 * Constructor to create a JLabel that counts 0-9 on repeat
 		 * @param ascend Specifies whether the counter increments or decrements through values 0 - 9.
 		 */
 		public JCountdownLabel(boolean ascend) {
@@ -68,7 +68,7 @@ public class P040_Henderson_Panel extends JPanel {
 
 			// Task executed every 1000ms
 			ActionListener task = e -> {
-				JCountdownLabel.this.value = (JCountdownLabel.this.value + 1) % 10; // Keep counting
+				JCountdownLabel.this.value = (JCountdownLabel.this.value + 1) % 10;
 				if(ascending)
 					this.setText( String.valueOf(JCountdownLabel.this.value) ); // (Raw value)
 				else
