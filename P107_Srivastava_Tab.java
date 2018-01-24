@@ -6,7 +6,8 @@ import javax.swing.JPanel;
 
 	
 /**
- * Inner class which creates a panel which compiles and arranges all the other small panels to be displayed on a tab
+ * Class which creates a panel which compiles and arranges all the other small panels to be displayed on a tab
+ * This Panel will be used bu the main window to be displayed in a jtabbedpane
  * @author Varun.Srivastava
  *
  */
@@ -16,9 +17,11 @@ public class P107_Srivastava_Tab extends JPanel{
 	 * Serial Id generated
 	 */
 	private static final long serialVersionUID = 1L;
+
+	public static String TABNAME = "Varun Srivastava";
 	
 	/**
-	 * Constructor method of P107_Srivastava_Tab class
+	 * Constructor method of P107_Srivastava_Tab class. All the sub panels are loaded inside this method
 	 * 
 	 */
 	public P107_Srivastava_Tab() {
@@ -48,7 +51,7 @@ public class P107_Srivastava_Tab extends JPanel{
 		add(new P125_Wathodkar_Panel(125), gbc);
 		add(new P126_Wei_Panel(126).getPanel(), gbc); //Had to call extra function
 		add(new P127_Wu_Panel(127).create(), gbc); //Had to call extra function
-		add(new P128_Yadamreddi_Panel(128).constructPanel(128), gbc);
+		add(new P128_Yadamreddi_Panel(128).constructPanel(128), gbc); //Had to call extra function
 		add(new P129_Yan_Panel(129), gbc);
 		add(new P130_Zhang_Panel(130), gbc);
 		add(new P131_Zhou_Panel(131), gbc);
