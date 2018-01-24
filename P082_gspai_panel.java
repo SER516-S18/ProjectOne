@@ -32,17 +32,17 @@ public class P082_gspai_panel extends JPanel{
         {
             even=true;
             cntr=-1;
-            type_color=Color.white;  // setting with white color if the value is even
+            background_color = new Color(white);  // setting with white color if the value is even
 
         }
         else
         {
             even=false;
             cntr=10;
-            type_color=Color.blue; // if value is odd we set with blue color
+            background_color=new Color(173, 216, 230);// if value is odd we set with blue color
+		
 
-        }
-        background_color(type_color);//this calls to set the background color
+	}
 
     }
 
