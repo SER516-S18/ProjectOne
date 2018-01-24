@@ -1,4 +1,3 @@
-// Import libraries
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -18,9 +17,13 @@ import javax.swing.Timer;
 /* 
  * @author Vijaya Mounika Gadde
  * Implementation for SER 516 Lab-1
- * It contains a panel with three rows of Jlabels with one for the first name,one for the last name and one for the counter.
- * The background color is set to white and the counter increments if the value passed is even and
- * if the value passed is odd, the background is set to blue and the counter decrements. 
+ * It contains a panel with three rows of Jlabels.
+ * With one for the first name
+ * and one for the last name and one for the counter.
+ * The background color is set to white and the counter increments 
+ * if the value passed is even else
+ * if the value passed is odd, 
+ * the background is set to blue and the counter decrements. 
  */
 public class P032_Gadde_Panel extends JPanel{
 	// Variables Initialization
@@ -29,6 +32,7 @@ public class P032_Gadde_Panel extends JPanel{
 	    private int count;
 	    private int value;
 	    public final int DELAY = 1000;
+	    public final Color LIGHT_BLUE = new Color(173,216,230);
 	 // Constructor
 	    public P032_Gadde_Panel(int value){
 	        try{
@@ -89,14 +93,16 @@ public class P032_Gadde_Panel extends JPanel{
 	        new Timer(DELAY, taskPerformer).start();
 	    }
 
-	    // Function to set  background color of the panel to white if the value is even else it set to light blue.
+	    // Function to set  background color of the panel to white
+	    // If the value is even else 
+	    // It set to light blue.
 	    private void setBackgroundColor() {
 
 	    	if(is_even()){
 	            this.setBackground(Color.WHITE);
 	        }
 	        else{
-	            this.setBackground(new Color(173, 216, 230));
+	            this.setBackground(LIGHT_BLUE);
 	        }
 	    }
 
@@ -114,13 +120,4 @@ public class P032_Gadde_Panel extends JPanel{
 	    private boolean is_even(){
 	        return value % 2 == 0;
 	    }
-/* Main method in case of testing */
-/*  public static void main(String [] s) {
-      JFrame frame = new JFrame();
-      frame.setContentPane(new P032_Gadde_Panel(2));
-	    frame.setSize(500, 500);
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.pack();
-      frame.setVisible(true);
-  }*/
-	}
+}
