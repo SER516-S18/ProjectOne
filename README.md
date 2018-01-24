@@ -1,9 +1,9 @@
 # ProjectOne
 
-Steps to execute:
+Steps to execute in command line:
 
-1. git pull
+1. git pull (to update the folder with latest code)
 
-2. javac P030_EswaraPrasad_Main.java
+2. javac P030_EswaraPrasad_Main.java   (to compile the main class, which compiles all the included classes as well)
 
-3. java P030_EswaraPrasad_Main
+3. java P030_EswaraPrasad_Main (run the main method of the main class)
