@@ -1,51 +1,50 @@
+import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.border.EmptyBorder;
+
 /**
- * The P030_EswaraPrasad_Main class creates a JPanel that contains 5 tabs, each of which have 25 Panels in them.
- * This is a similar to a gateway and lets the user access all 125 Panels segregated using tabs.
+ * The P030_EswaraPrasad_Main class creates a JPanel that contains 5 tabs,
+ * each of which have 25 Panels in them. This is a similar to a gateway and
+ * lets the user access all 125 Panels segregated using tabs.
  *
  * @author  Swaroop Eswara Prasad
  * @version 1.0
  * @since   2018-01-22
  */
-import java.awt.BorderLayout;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.SwingUtilities;
-import javax.swing.border.EmptyBorder;
-
 
 public class P030_EswaraPrasad_Main extends JPanel {
 
+    /**
+     * The constructor of this class is used to create a JTabbedPane and link
+     * all the individual tabs together. Tabbed Pane allows the creation of
+     * tabs in a window and each tab can be linked with a JPanel.
+     */
     public P030_EswaraPrasad_Main(){
 
         /* Enclosing the code in Try/Catch block to catch exceptions. */
-        try {
 
-            /* Tabbed Pane allows the creation of tabs in a window and each
-            *  tab can be linked with a JPanel.
-            * */
+        try {
 
             JTabbedPane myTabPane = new JTabbedPane();
 
-            /* Creating JPanel Objects to Link to the tabs.
-            Variables Named after the last names of the Tab Managers.
-            * */
-            JPanel PrakashTab = new P091_Prakash_Tab();
-            JPanel SrivastavaTab = new P107_Srivastava_Tab();
-            JPanel HendersonTab = new P039_Henderson_Tab();
-            JPanel MishraTab = new P074_Mishra_Tab();
-            JPanel BahlTab = new P004_Bahl_Tab();
+            /* Creating JPanel Objects to Link to the tabs. */
+            JPanel Tab1 = new P091_Prakash_Tab();
+            JPanel Tab2 = new P107_Srivastava_Tab();
+            JPanel Tab3 = new P039_Henderson_Tab();
+            JPanel Tab4 = new P074_Mishra_Tab();
+            JPanel Tab5 = new P004_Bahl_Tab();
 
             /* Creating tabs from Panels and assigning other attributes
             * like border and Titles to each tab.
             * */
 
-            myTabPane.addTab("Nikita Bahl", BahlTab);
-            myTabPane.addTab("Chris Henderson", HendersonTab);
-            myTabPane.addTab("Manas Mishra", MishraTab);
-            myTabPane.addTab("Saurabh Prakash", PrakashTab);
-            myTabPane.addTab("Varun Srivastava", SrivastavaTab);
+            myTabPane.addTab(Tab1.TABNAME, BahlTab);
+            myTabPane.addTab(Tab2.TABNAME, HendersonTab);
+            myTabPane.addTab(Tab3.TABNAME, MishraTab);
+            myTabPane.addTab(Tab4.TABNAME, PrakashTab);
+            myTabPane.addTab(Tab5.TABNAME, SrivastavaTab);
 
             myTabPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
@@ -60,11 +59,12 @@ public class P030_EswaraPrasad_Main extends JPanel {
 
     }
 
+    /**
+     * Main Method that creates a JFrame object and adds the JTabbedPane Object.
+     * @param args Unused
+     * @return Nothing.
+     */
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                /* Main Method that creates a JFrame object and adds the JTabbedPane Object. */
                 JFrame frame = new JFrame();
                 frame.add(new P030_EswaraPrasad_Main());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,7 +72,5 @@ public class P030_EswaraPrasad_Main extends JPanel {
                 frame.setSize(800, 800);
                 frame.setTitle("Swaroop Eswara Prasad");
                 frame.setVisible(true);
-            }
-        });
     }
 }
