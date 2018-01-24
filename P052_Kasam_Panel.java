@@ -17,7 +17,7 @@ public class P052_Kasam_Panel extends JPanel{
 	private JLabel myFirstLastName; 
 	private JLabel theNumCounter;
 	private String evenOrOdd;
-	Color lightBlue = new Color(173,216,230);
+	Color lightBlue = new Color(189,214,238);
 	//Method to decide EVEN/ODD for the constructor integer received
 	public String evenOrOddFunction(int integerValue) {
 		if(integerValue%2 == 0)
@@ -29,7 +29,7 @@ public class P052_Kasam_Panel extends JPanel{
 	//constructor that receives an integer value
 	public P052_Kasam_Panel(int intPassed) {
 		String evenOrOddString = evenOrOddFunction(intPassed);
-		String myName = "<html><br>Vineesha<br>Kasam<br><br><br></html>";
+		String myName = "<html><br>Vineesha<br>Kasam<br></html>";
 		Font jLabelFont = new Font("Papyrus", Font.PLAIN, 15);
 		// JLabels initialized and setting the font
 		this.myFirstLastName = new JLabel(myName);
