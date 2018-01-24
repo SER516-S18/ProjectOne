@@ -4,7 +4,7 @@ import javax.swing.*;
 //Implements three labels first name, last name and timer and adds to a panel.
 //The timer label behaviour, and panel's background is set based on flag
 //Author: Chintham Tharun
-//Use "JPanel panel = new P020_Chintham_panel(0).getPanel();" to fetch the panel
+//Use "new P020_Chintham_panel(0)" to fetch the panel
 
 public class P020_Chintham_panel extends JPanel implements ActionListener{
 	int clock=-1;
@@ -12,9 +12,7 @@ public class P020_Chintham_panel extends JPanel implements ActionListener{
 	Color lightBlue = new Color(173, 216, 230);
 	JLabel lblTharun;
 	JLabel lblChintham;
-	JLabel lblTimer; 
-	JPanel panel;
-	
+	JLabel lblTimer;	
 	Timer t=new Timer(1000,this);
 	
 	//constructor
@@ -29,15 +27,15 @@ public class P020_Chintham_panel extends JPanel implements ActionListener{
 		
 		
 		//panel settings
-		panel = new JPanel();
-		panel.setLayout(new GridLayout(3,1));
-		panel.setSize(100,100);
+		this.setLayout(new GridLayout(3,1));
+		this.setSize(100,100);
+		
 		//setting background and clock based on check
 		if (check==0) {
-			panel.setBackground(Color.WHITE);
+			this.setBackground(Color.WHITE);
 		}
 		else {
-			panel.setBackground(lightBlue);
+			this.setBackground(lightBlue);
 			clock=10;
 		}
 		
@@ -45,17 +43,17 @@ public class P020_Chintham_panel extends JPanel implements ActionListener{
 		lblTharun = new JLabel("Tharun");
 		lblTharun.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblTharun.setHorizontalAlignment(JLabel.CENTER);
-		panel.add(lblTharun);		
+		add(lblTharun);		
 		
 		lblChintham = new JLabel("Chintham");
 		lblChintham.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblChintham.setHorizontalAlignment(JLabel.CENTER);
-		panel.add(lblChintham);		
+		add(lblChintham);		
 		
 		lblTimer = new JLabel();
 		lblTimer.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblTimer.setHorizontalAlignment(JLabel.CENTER);
-		panel.add(lblTimer);		
+		add(lblTimer);		
 		
 	}
 	
@@ -79,12 +77,8 @@ public class P020_Chintham_panel extends JPanel implements ActionListener{
 	//refreshes the label
 	public void actionPerformed(ActionEvent e) {
 		counter();
-		panel.repaint();	
+		repaint();	
 		
 	}
-	//returns the panel
-	public JPanel getPanel()
-    	{
-        return panel;
-    	}
+
 }
