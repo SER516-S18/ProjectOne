@@ -39,7 +39,7 @@ public class P091_Prakash_Tab extends JPanel {
         this.add(new P102_Sharma_Panel(22));
         this.add(new P103_Sharma_Panel(23));
         this.add(new P104_Shilimkar_Panel(24));
-        //this.add(new P081_Olety_Panel(25));
+        this.add(new P081_OletyVenkatesh_Panel(25));
 
     }
 }
