@@ -2,7 +2,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Dimension;
 import javax.swing.BoxLayout;
 /*
 Below class contains two Jlabels, one which displays first name &
@@ -28,6 +27,7 @@ public class P052_Kasam_Panel extends JPanel{
 	}
 	//constructor that receives an integer value
 	public P052_Kasam_Panel(int intPassed) {
+		int threadSleepTime = 1000; 
 		String evenOrOddString = evenOrOddFunction(intPassed);
 		String myName = "<html><br>Vineesha<br>Kasam<br></html>";
 		Font jLabelFont = new Font("Papyrus", Font.PLAIN, 15);
@@ -37,7 +37,6 @@ public class P052_Kasam_Panel extends JPanel{
 		myFirstLastName.setFont(jLabelFont);
 		theNumCounter.setFont(jLabelFont);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.setPreferredSize(new Dimension(100,100));
 		this.add(myFirstLastName);
 		this.add(theNumCounter);
 		// Implementing threads according to the requirements stated and
@@ -47,17 +46,16 @@ public class P052_Kasam_Panel extends JPanel{
 			new Thread(){
 			int upCounter = 0;
 	        	public void run(){
-	            	while(true){
+	            		while(true){
 	            		if(upCounter == 10)
 	            			upCounter = 0;
 				theNumCounter.setText(String.valueOf(upCounter));
 	                	upCounter++;
 	                	try{
-	                		Thread.sleep(1000);} 
-				catch(Throwable exception){
+	                		Thread.sleep(threadSleepTime);} 
+				catch(Throwable exception) {
 					exception.printStackTrace();}
-	            		}
-	        		}
+	            		}}
 	   		 }.start();
 		}
 		else{
@@ -66,17 +64,17 @@ public class P052_Kasam_Panel extends JPanel{
 			int downCounter = 9;
 	        	public void run() {
 	        		while(true) {
-	        			if(downCounter == -1)
+	        		if(downCounter == -1)
 	            			downCounter = 9;
 				theNumCounter.setText(" " + (downCounter));
 	                	downCounter--;
 	                	try{
-	                		Thread.sleep(1000);} 
-				catch(Throwable exception){
+	                		Thread.sleep(threadSleepTime);} 
+				catch(Throwable exception) {
 					exception.printStackTrace();}
-	           		}
-	        		}
+	           		}}
 	    		}.start();
 		}		
 	}
 }
+
