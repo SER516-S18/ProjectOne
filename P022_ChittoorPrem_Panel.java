@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,15 +26,13 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 		//instantiate name and number
 		name = new JLabel("<html><center>Anusha<br>Chittoor Prem</center></html>",JLabel.CENTER);
 		number = new JLabel();
-		//set positions and font of name and number
+		//set positions,color and font of name and number and add them to panel.
 		name.setHorizontalAlignment(JLabel.CENTER);
 		number.setHorizontalAlignment(JLabel.CENTER);
 		name.setForeground(Color.black);
 		number.setForeground(Color.black);
 		name.setFont(font);
 		number.setFont(font);
-		
-		//add them to the panel
 		add(name);
 		add(number);
 		//if value passed is even
@@ -46,7 +43,6 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 			this.setBackground(new Color(173,216,230));
 			decrement();
 		}
-		
 		//set size of the panel
 		this.setPreferredSize(new Dimension(100,100));
 		this.setVisible(true);
@@ -68,7 +64,7 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 						//sleeps for 1second. 
 						Thread.sleep(1000);
 					}catch(Exception e) {
-						System.out.println(e);
+						e.printStackTrace();
 					}
 				}
 			}
@@ -90,7 +86,7 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 					try {
 						Thread.sleep(1000);
 					}catch(Exception e) {
-						System.out.println(e);
+						e.printStackTrace();
 					}
 				}
 			}
@@ -99,7 +95,7 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 	
 	
 	//main function for testing
-	public static void main(String []args) {		
+	/*public static void main(String []args) {		
 		P022_ChittoorPrem_Panel p = new P022_ChittoorPrem_Panel(22);
 		JFrame jframe = new JFrame("Java Applaiction");
 		JPanel mainPanel = new JPanel(new BorderLayout());
@@ -107,6 +103,6 @@ public class P022_ChittoorPrem_Panel extends JPanel {
 		jframe.setSize(100,100);
 		jframe.setContentPane(mainPanel);
 		jframe.setVisible(true);
-	}
+	}*/
 
 }
