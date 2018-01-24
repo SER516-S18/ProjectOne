@@ -12,7 +12,7 @@ import javax.swing.JTabbedPane;
 
 public class P004_Bahl_Tab extends JPanel
 {    
-	public static final String TABNAME = "Nikita Bahl";
+    public static final String TABNAME = "Nikita Bahl";
     private final JTabbedPane tbp = new JTabbedPane();
     
     public P004_Bahl_Tab()
@@ -38,8 +38,6 @@ public class P004_Bahl_Tab extends JPanel
         this.add(new P017_Cai_Panel(16));
         this.add(new P018_Cao_Panel(17));
         this.add(new P019_Carroll_Panel(18));
-        this.add(new P020_Chintham_panel(19));
-        this.add(new P020_Chintham_panel(19));
         this.add(new P020_Chintham_panel(19));
         this.add(new P021_Chittineni_Panel(20).panelTimer());
         this.add(new P022_ChittoorPrem_Panel(21));
