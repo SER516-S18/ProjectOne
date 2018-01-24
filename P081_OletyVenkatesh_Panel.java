@@ -40,11 +40,11 @@ public class P081_OletyVenkatesh_Panel extends JPanel {
 			public void run() {
 				while(true) {
 				//If parameter passed is even, set background to blue
-				//and increment timer
+				//and decrement timer
 				if(oddEven%2==0) {
 					setBackground(lightBlue);
-					for ( int up = minCounter; up <=maxCounter; up++) {
-						p081Timer.setText(" "+up);
+					for ( int down = maxCounter; down >=minCounter; down--) {
+						p081Timer.setText(" "+down);
 						try{
 							Thread.sleep(1000);
 						}
@@ -55,11 +55,11 @@ public class P081_OletyVenkatesh_Panel extends JPanel {
 					}
 				}
 				//If parameter passed is odd, set background to white
-				//and decrement timer
+				//and increment timer
 				else {
 					setBackground(Color.WHITE);
-					for ( int down = maxCounter; down >= minCounter; down--) {
-						p081Timer.setText(" " + down);
+					for ( int up = minCounter; up <= maxCounter; up++) {
+						p081Timer.setText(" " + up);
 						try {
 							Thread.sleep(1000);
 						}
