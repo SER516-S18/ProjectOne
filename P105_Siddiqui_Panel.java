@@ -25,7 +25,7 @@ import javax.swing.Timer;
  	private Font font;
  	private Timer time;
  	private static int count;
- 	private int flag;
+ 	private int isOdd;
  	private int delay = 1000;
 
  	/*
@@ -43,12 +43,12 @@ import javax.swing.Timer;
  		if (value % 2 == 0){
  			count = -1;
  			bgColor = white_Bg;
- 			flag = 0;
+ 			isOdd = 0;
  		}	
  		else{
  			count = 10;
  			bgColor = lightBlue_Bg;
- 			flag = 1;
+ 			isOdd = 1;
  		}
  		panelWork();
  	}	
@@ -80,7 +80,7 @@ import javax.swing.Timer;
 
  		try{
 
- 			if(flag == 0){
+ 			if(isOdd == 0){
  				setBackground(bgColor);
  				al = new ActionListener(){
 					public void actionPerformed(ActionEvent evt)
