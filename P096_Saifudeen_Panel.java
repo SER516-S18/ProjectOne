@@ -19,9 +19,28 @@ import javax.swing.border.EmptyBorder;
  */
 public class P096_Saifudeen_Panel extends JPanel{
 
-    private final String nameValue = "<html>Ejaz<br>Saifudeen</html>";
+    private final String NAME_VALUE = "<html>Ejaz<br>Saifudeen</html>";
+    private final int PREFERRED_HEIGHT = 100;
+    private final int PREFERRED_WIDTH = 100;
+    private final String FONT_TYPE = "Papyrus";
+    private final int FONT_STYLE= Font.PLAIN;
+    private final int FONT_SIZE = 16;
+    private final int SLEEP_TIME = 1000;
     private JLabel counter;
     private JLabel name;
+    private enum BgColors{
+        WHITE(new Color(255,255,255)), LIGHT_BLUE(new Color(173,216,230));
+        private Color color;
+        BgColors(Color c){
+            color = c;
+        }
+        public Color getColor(){
+            return color;
+        }
+    }
+
+    private volatile boolean running = true;
+
 
     /**
      * Constructor, sets panel properties, labels, background and starts the counter.
@@ -42,8 +61,8 @@ public class P096_Saifudeen_Panel extends JPanel{
         setLayout(new GridBagLayout());
 
         //Setting size and font as per requirements
-        setPreferredSize(new Dimension(100,100));
-        Font font = new Font("Papyrus", 0, 15);
+        setPreferredSize(new Dimension(PREFERRED_HEIGHT,PREFERRED_WIDTH));
+        Font font = new Font(FONT_TYPE, FONT_STYLE, FONT_SIZE);
 
         //Border to separate Name and Counter
         EmptyBorder border = new EmptyBorder(5, 5, 5, 5);
@@ -52,7 +71,7 @@ public class P096_Saifudeen_Panel extends JPanel{
         counter = new JLabel();
         counter.setFont(font);
         counter.setBorder(border);
-        name = new JLabel(nameValue);
+        name = new JLabel(NAME_VALUE);
         name.setFont(font);
         name.setBorder(border);
         add(name);
@@ -63,9 +82,8 @@ public class P096_Saifudeen_Panel extends JPanel{
      * @param isEven
      */
     private void setBackgroundColor(boolean isEven){
-        //Set background color. White if even. Light Blue if odd
-        Color bg = isEven? new Color(255,255,255) : new Color(173,216,230);
-        setBackground(bg);
+        Color bgColor = isEven? BgColors.WHITE.getColor() : BgColors.LIGHT_BLUE.getColor();
+        setBackground(bgColor);
     }
 
     /**
@@ -74,42 +92,27 @@ public class P096_Saifudeen_Panel extends JPanel{
     private void startCounter(boolean isEven){
 
         //Initializing thread that increments or decrements the counter.
-        Thread background = new Thread(new Runnable(){
+        Thread counterThread = new Thread(new Runnable(){
             @Override
             public void run() {
 
                 //Starting value is 0 if even. 9 if odd.
                 int counterValue = isEven ? 0 : 9;
-                while (true) {
+                while (running) {
                     counter.setText(Integer.toString(counterValue));
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(SLEEP_TIME);
                     } catch (InterruptedException e) {
+                        counter.setText("Counter thread interrupted.");
                         e.printStackTrace();
+                        running = false;
                     }
                     //Calculate new counter value by checking if it increments or decrements.
                     counterValue = (isEven ? counterValue + 1 : counterValue + 9) % 10;
                 }
             }
         });
-        background.start();
+        counterThread.start();
     }
-
-
-
-    /**
-     * Main method to test code
-     * @param args
-     *
-    public static void main(String[] args) {
-
-        JFrame frame = new JFrame();
-        frame.setLayout(new GridLayout(2,1));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(new P096_Saifudeen_Panel(1), BorderLayout.CENTER);
-        frame.getContentPane().add(new P096_Saifudeen_Panel(2), BorderLayout.CENTER);
-        frame.pack();
-        frame.setVisible(true);
-    }
-    */
 }
+
