@@ -1,12 +1,5 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * P075_Modi_Panel.java - Class to create the panel.
@@ -17,9 +10,7 @@ import javax.swing.JPanel;
 
 public class P075_Modi_Panel extends JPanel implements Runnable {
 
-    JPanel panel = new JPanel(new GridBagLayout());
     JLabel name = new JLabel("<html><center>Rishabh<br>Modi</center></html>");
-    public int c = 0;
     JLabel timer = new JLabel();
     public Font font;
     Thread t;
@@ -35,8 +26,8 @@ public class P075_Modi_Panel extends JPanel implements Runnable {
         super();
         this.j = j;
 
-        add(panel);
-        panel.setPreferredSize(new Dimension(100, 100));
+        this.setLayout(new GridBagLayout());
+        this.setPreferredSize(new Dimension(100, 100));
 
         font = new Font("Papyrus", Font.PLAIN, 15);
         name.setFont(font);
@@ -47,20 +38,19 @@ public class P075_Modi_Panel extends JPanel implements Runnable {
         constraints.insets = new Insets(0, 0, 0, 0);
         constraints.gridx = 0;
         constraints.gridy = 0;
-        panel.add(name, constraints);
+        this.add(name, constraints);
         constraints.gridy = 1;
-        panel.add(timer, constraints);
+        this.add(timer, constraints);
 
         t = new Thread(this);
         t.start();
     }
 
     @Override
-
     public void run() {
 
         if (j % 2 == 0) {
-            panel.setBackground(Color.WHITE);
+            this.setBackground(Color.WHITE);
             int i = 0;
             while (i < 10) {
                 timer.setText("" + i);
@@ -75,7 +65,7 @@ public class P075_Modi_Panel extends JPanel implements Runnable {
                 }
             }
         } else {
-            panel.setBackground(Color.CYAN);
+            this.setBackground(Color.CYAN);
             int i = 9;
             while (i > -1) {
                 timer.setText("" + i);
@@ -91,9 +81,4 @@ public class P075_Modi_Panel extends JPanel implements Runnable {
             }
         }
     }
-
-    /**
-     * @return Jpanel object.
-     */
-
 }
