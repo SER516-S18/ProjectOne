@@ -50,8 +50,11 @@ public class P037_Gupta_Panel extends JPanel {
 		if (num % 2 == 0) {
 			j = 0;
 			even = true;
-		} else
+			this.setBackground(Color.WHITE);
+		} else {
 			j = 9;
+			this.setBackground(LIGHT_BLUE);
+		}
 
 	}
 
@@ -96,13 +99,6 @@ public class P037_Gupta_Panel extends JPanel {
 			counter.setFont(FONT);
 			counter.setAlignmentX(Component.CENTER_ALIGNMENT);
 			this.add(counter);
-
-			// if num is even, sets panel background to white otherwise set panel color to
-			// light blue.
-			if (this.num % 2 == 0)
-				p.setBackground(Color.WHITE);
-			else
-				p.setBackground(LIGHT_BLUE);
 
 			// timer implementation for increment or decrement of counter label
 			Timer timer = new Timer(1000, new ActionListener() {
