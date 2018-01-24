@@ -22,7 +22,8 @@ public class P043_Iyer_Panel extends JPanel {
     
     /**
      * Class constructor.
-     * @param  type Describes the background and counter mode of the panel. Even numbers result in a white background with incrementing counter, odd gives light blue background with decrementing counter.
+     * @param  type Describes the background and counter mode of the panel. Even numbers result in a white 
+     *background with incrementing counter, odd gives light blue background with decrementing counter.
      *This function is used to design the layout for the panel by setting its dimensions.
      *Jlabel name is used to set the name of the author.
      *Jlabel counter is used to set the timer.
@@ -45,7 +46,7 @@ public class P043_Iyer_Panel extends JPanel {
         if (type % 2 == 0)
             this.setBackground(new Color(255, 255, 255));
         else
-            this.setBackground(new Color(90, 150, 255));
+            this.setBackground(new Color(173, 216, 230));
         JLabel name = new JLabel("<html>Supriya<br>Iyer</html>", JLabel.CENTER);
         name.setFont(new Font("Papyrus", Font.BOLD, 16));
         JLabel counter = new JLabel("",JLabel.CENTER);
