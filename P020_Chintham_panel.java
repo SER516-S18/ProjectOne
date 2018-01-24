@@ -1,45 +1,56 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.*;
-//use JPanel panel = new P020_chintham_panel(0).getPanel(); to fetch the panel
+//Implements three labels first name, last name and timer and adds to a panel.
+//The timer label behaviour, and panel's background is set based on flag
+//Author: Chintham Tharun
+//Use "JPanel panel = new P020_Chintham_panel(0).getPanel();" to fetch the panel
 
-public class P020_chintham_panel implements ActionListener{
+public class P020_Chintham_panel extends JPanel implements ActionListener{
 	int clock=-1;
 	int check;
+	Color lightBlue = new Color(173, 216, 230);
 	JLabel lblTharun;
 	JLabel lblChintham;
 	JLabel lblTimer; 
 	JPanel panel;
+	
 	Timer t=new Timer(1000,this);
+	
 	//constructor
-	public P020_chintham_panel(int flag) {
+	public P020_Chintham_panel(int flag) {
 		check=flag%2;
-		t.start();
-		panel = new JPanel();//panel settings
+		
+		try {
+			t.start();
+		}catch(Exception c){
+			System.out.println("failed to start in chintham's panel"+c.getMessage());
+		}
+		
+		
+		//panel settings
+		panel = new JPanel();
 		panel.setLayout(new GridLayout(3,1));
 		panel.setSize(100,100);
-		
-		
+		//setting background and clock based on check
 		if (check==0) {
 			panel.setBackground(Color.WHITE);
 		}
 		else {
-			panel.setBackground(new Color(173, 216, 230));
+			panel.setBackground(lightBlue);
 			clock=10;
 		}
 		
+		//labels
 		lblTharun = new JLabel("Tharun");
 		lblTharun.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblTharun.setHorizontalAlignment(JLabel.CENTER);
-		panel.add(lblTharun);
-		
+		panel.add(lblTharun);		
 		
 		lblChintham = new JLabel("Chintham");
 		lblChintham.setFont(new Font("Papyrus",Font.PLAIN,15));
 		lblChintham.setHorizontalAlignment(JLabel.CENTER);
-		panel.add(lblChintham);
-		
+		panel.add(lblChintham);		
 		
 		lblTimer = new JLabel();
 		lblTimer.setFont(new Font("Papyrus",Font.PLAIN,15));
@@ -48,7 +59,7 @@ public class P020_chintham_panel implements ActionListener{
 		
 	}
 	
-	//logic for the clock variable	
+	//logic for the clock variable and lblTimer	
 	public void counter() {
 		if(check==0) {
 			clock++;
@@ -65,16 +76,15 @@ public class P020_chintham_panel implements ActionListener{
 	}
 
 	@Override
+	//refreshes the label
 	public void actionPerformed(ActionEvent e) {
-		//refreshes the label
 		counter();
 		panel.repaint();	
 		
 	}
-	public JPanel getPanel()//returns the panel
+	//returns the panel
+	public JPanel getPanel()
     {
         return panel;
     }
-	
-	
 }
