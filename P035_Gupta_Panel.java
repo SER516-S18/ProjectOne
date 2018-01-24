@@ -36,28 +36,28 @@ public class P035_Gupta_Panel extends JPanel implements Runnable {
         labelName.setFont(new Font("Papyrus", Font.BOLD, 15));
         timeLabel.setFont(new Font("Papyrus", Font.BOLD, 15)); 
         
-        JPanel panel=new JPanel(new GridBagLayout());
-         
+        this.setLayout(new GridBagLayout());
+
         c = new GridBagConstraints();
         c.gridx=0;                                                   
 	c.gridy=2;
         //Giving attributes to  panel
-        panel.setSize(HEIGHT,WIDTH); 
+        this.setSize(HEIGHT,WIDTH); 
        
          if(value%2==0) {
 
-			panel.setBackground(Color.WHITE);
+			this.setBackground(Color.WHITE);
                         counter=0;
                      }
 		
         else         {
-			panel.setBackground(new Color(173,216,230));
+			this.setBackground(new Color(173,216,230));
                         counter=9;
 		}
 
 
-        panel.add(labelName,c);
-        panel.add(timeLabel,c);
+        this.add(labelName,c);
+        this.add(timeLabel,c);
 		
       //Counter for displaying 0 to 9
         Thread t = new Thread(this);
