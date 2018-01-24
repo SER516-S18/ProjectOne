@@ -6,7 +6,8 @@
  * @version 1.0
  * @since   2018-01-22
  */
-import java.awt.*;
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -33,8 +34,7 @@ public class P030_EswaraPrasad_Main extends JPanel {
             JPanel PrakashTab = new P091_Prakash_Tab();
             JPanel SrivastavaTab = new P107_Srivastava_Tab();
             JPanel HendersonTab = new P039_Henderson_Tab();
-            P074_Mishra_Tab MishraPanel = new P074_Mishra_Tab();
-            JPanel MishraTab = MishraPanel.createTab();
+            JPanel MishraTab = new P074_Mishra_Tab();
             JPanel BahlTab = new P004_Bahl_Tab();
 
             /* Creating tabs from Panels and assigning other attributes

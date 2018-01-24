@@ -1,8 +1,14 @@
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.LayoutManager;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.*;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class P062_Laad_Panel extends JPanel{
 

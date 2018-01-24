@@ -1,6 +1,8 @@
 // Import libraries
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /*
@@ -8,6 +10,10 @@ import java.awt.event.ActionListener;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /* 
  * @author Vijaya Mounika Gadde

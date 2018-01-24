@@ -1,9 +1,15 @@
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.TimerTask;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Logger;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * P092_Priya_Panel.java

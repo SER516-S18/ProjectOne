@@ -1,16 +1,11 @@
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Panel;
-
-import java.awt.event.*;
-
-import javax.swing.JFrame;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JLabel;
 
 /**
  * P059_Kulkarni_Panel, creates a JPanel with name and counter

@@ -1,7 +1,12 @@
-import java.awt.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
 import java.util.Timer;
-import javax.swing.*;
+import java.util.TimerTask;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 /*
 *Author: Shreyas Hosahalli Govindaraja
 * Date:01/23/2018

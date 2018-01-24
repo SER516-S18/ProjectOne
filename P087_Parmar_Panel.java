@@ -1,7 +1,12 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /*
  * Class Assignment - 1

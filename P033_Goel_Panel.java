@@ -1,9 +1,11 @@
 import java.awt.Color;
 import java.awt.Font;
-
-import javax.swing.*;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * This class creates a panel displaying a name and a counter which increments per second.

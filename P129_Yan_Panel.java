@@ -7,9 +7,16 @@ Date: 2018/1/21
 */
 
 /*header file*/
-import javax.swing.*;
-import java.awt.*; 
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /* Class Part */
 public class P129_Yan_Panel extends JPanel{

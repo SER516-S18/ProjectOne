@@ -1,8 +1,9 @@
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 /*
  * SER 516 ID:81
  * Name: Namratha Olety Venkatesh

@@ -5,10 +5,13 @@
  *
  */
 
-import java.awt.*;  
-import javax.swing.*;  
-import java.awt.event.*;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class P013_Bhattacharyya_Panel extends JPanel{
 	

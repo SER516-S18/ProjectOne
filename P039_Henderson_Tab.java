@@ -1,6 +1,6 @@
-import javax.swing.JPanel;
 import java.awt.GridLayout;
-import java.awt.Color;
+
+import javax.swing.JPanel;
 
 /**
 * P039_Henderson_Tab implements the 5x5 tabbed panel grid for group 2.

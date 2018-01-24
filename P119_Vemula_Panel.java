@@ -6,13 +6,14 @@
  * Counter increments from 0-9 if value is even or decrements from 9-0 if odd.
  * Panel background is set to WHITE if value is even or LIGHT BLUE (173,216,230) if odd.
  */
-import java.awt.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.util.Timer;
-import javax.swing.*;
+
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.lang.Exception;
 import javax.swing.border.EmptyBorder;
 
 public class P119_Vemula_Panel extends JPanel {
@@ -36,7 +37,7 @@ public class P119_Vemula_Panel extends JPanel {
     private void backGroundColor() {
         //Color is White if the val is even or Light Blue if odd
         if(this.val % 2 == 0)
-            this.setBackground(Color.White);
+            this.setBackground(Color.WHITE);
         else {
             Color light_blue = new Color(173,216,230);
             this.setBackground(light_blue);
@@ -44,7 +45,7 @@ public class P119_Vemula_Panel extends JPanel {
             
     }
 
-    private void createPanel(int val) throws InterruptedException {
+    private void createPanel(int val) {
         //Name is Printed in Multi-Lined Label with first name in one line and last name in another
         JLabel firstName,lastName;
 
@@ -73,8 +74,8 @@ public class P119_Vemula_Panel extends JPanel {
 	this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS)); 
         setBorder(new EmptyBorder(20, 20, 20, 20));
        
-        Thread t;
-        t = new Thread(() -> {
+        Thread thread;
+        thread = new Thread(() -> {
             //Starting value is 0 if even or 9 if odd.
             try{
             if(val % 2 == 0){
@@ -88,12 +89,12 @@ public class P119_Vemula_Panel extends JPanel {
                         count = 9;
            	showTimer.setText(""+ count--);      //decrementing the timer
            }}
-           catch(InterruptedException e){
-                        System.out.print("Exception Occurred in " + P119_Vemula_Panel.class.getName());
+           catch(Exception e){
+              System.out.print("Exception Occurred in " + P119_Vemula_Panel.class.getName());
            }
             
         });
-       t.start();
+        thread.start();
        }
     
 }

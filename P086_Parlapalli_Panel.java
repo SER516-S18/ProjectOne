@@ -4,8 +4,14 @@
  * DESC       : This program is about creating a Jpanel which automatically changes the background and count from white and 0 while the input integer is even and blue and from 9 to 0 whne the integer is odd.
 */ 
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
 public class P086_Parlapalli_Panel {

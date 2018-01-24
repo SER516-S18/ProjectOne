@@ -1,5 +1,9 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /*The below code constructs a panel with name and a counter on it. The counter
  * increments if the value passed is even and decrements if the value is odd. */

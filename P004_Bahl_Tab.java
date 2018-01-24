@@ -1,6 +1,8 @@
 
-import javax.swing.*;
 import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 /**
 * P004_Bahl_Tab implements the 5x5 tabbed panel grid for group 1( P001 to P026 ). 
 *
@@ -35,9 +37,9 @@ public class P004_Bahl_Tab extends JPanel
         this.add(new P017_Cai_Panel(16));
         this.add(new P018_Cao_Panel(17));
         this.add(new P019_Carroll_Panel(18));
-        this.add(new P020_Chintham_panel(19).getPanel());
-        this.add(new P020_Chintham_panel(19).getPanel());
-        this.add(new P020_Chintham_panel(19).getPanel());
+        this.add(new P020_Chintham_panel(19));
+        this.add(new P020_Chintham_panel(19));
+        this.add(new P020_Chintham_panel(19));
         this.add(new P021_Chittineni_Panel(20).panelTimer());
         this.add(new P022_ChittoorPrem_Panel(21));
         this.add(new P023_Day_Panel(22));

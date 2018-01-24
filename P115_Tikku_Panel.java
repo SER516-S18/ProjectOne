@@ -4,10 +4,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
-import javax.swing.JLabel;
 
 /**
 * P115_Tikku_Panel class creates a JPanel containing two labels for name and a timer value.<br>

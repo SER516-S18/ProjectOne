@@ -1,10 +1,16 @@
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+
 /*Program to display the first and last name along with a counter that goes from 0-9 if an even number is passed along with the object creation
  * and the background is set to white. In case of an odd number counter counts down from 9-0 and background changes to light blue.
  */
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 
 public class P077_Mohanty_Panel extends JPanel {

@@ -1,11 +1,11 @@
-import java.awt.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.Timer;
-import javax.swing.*;
+import java.util.TimerTask;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.lang.Exception;
-import javax.swing.border.EmptyBorder;
 
 /**
  * P061_KUMAR_PANEL: A panel with three rows of JLabel is created.

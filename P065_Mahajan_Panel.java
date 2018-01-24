@@ -6,8 +6,13 @@
  * 
  */
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 /**
  * The P065_Mahajan_Panel class adds two labels labelFullName and
  * timeLabel. Background color of JPanel is white if the value passed

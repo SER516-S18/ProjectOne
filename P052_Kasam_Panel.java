@@ -1,9 +1,9 @@
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /*
 Contains a Jlabel with first name and last name in separate rows

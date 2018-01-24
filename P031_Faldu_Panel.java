@@ -1,7 +1,13 @@
-import java.awt.*;  
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
 
 /**
  * This class creates a panel displaying a name and a counter which increments for even value of integer passed and decrements for the odd integer passed.

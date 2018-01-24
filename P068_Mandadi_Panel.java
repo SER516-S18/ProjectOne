@@ -8,8 +8,14 @@
  * Panel background is set to WHITE if value is even or LIGHT BLUE (173,216,230) if odd.
  * Counter increments from 0-9 if value is even or decrements from 9-0 if odd.
  */
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class P068_Mandadi_Panel extends JPanel {
     private JLabel name , counter;

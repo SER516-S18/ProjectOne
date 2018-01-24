@@ -3,7 +3,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * P023_Day_Panel.java - creates a JPanel with name and counter

@@ -6,10 +6,15 @@
  * @author sanaydevi, ASU id: svdevi, Number 028.
  */
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public final class P026_Devi_Panel extends JPanel {
 
