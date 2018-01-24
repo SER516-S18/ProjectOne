@@ -12,16 +12,15 @@ import javax.swing.JPanel;
 /**
  * This class creates a Panel with 3 rows. First name in the first row,
  * last name in the second row and counter value in the third row. 
- * It has a parameterized constructor which takes in an integer value. 
+ * It has a parameterized constructor which takes in an integer value.
  * Panel is white in color and counter value needs to increase from 
  * 0  to 9 if the value sent from tab class is even. Else, the panel
- * is light blue in color and counter needs to decrease from 9  to 0. 
+ * is light blue in color and counter needs to decrease from 9  to 0.
  * 
  * @author Nagarjuna Kalluri
  * @version 1.1
  * @since 1/23/2017
  */
-
 public class P048_Kalluri_Panel extends JPanel{
 
 	// default version ID for suppressing warnings
@@ -34,14 +33,13 @@ public class P048_Kalluri_Panel extends JPanel{
 	 * boolean flag to increment/decrement (default) counter
 	 * 
 	 */
-
 	private JLabel firstName;
 	private JLabel lastName;
 	private JLabel timerLabel;
-	
+
 	Timer timer = new Timer();
 	boolean autoIncrement = false;
-	
+
 	Color lightBlue = new Color(173,216,230); 
 	Color white = Color.white;
 
@@ -71,7 +69,7 @@ public class P048_Kalluri_Panel extends JPanel{
 
 		/**
 		 *  A grid layout is put in for the panel in a 3 X 1 format
-		 *  1 segment each for First name, last name and counter
+		 *  3 segments, 1 each for First name, last name and counter
 		 */ 
 		this.setLayout(new GridLayout(3, 1));
 		this.setBackground(autoIncrement ? white : lightBlue);
