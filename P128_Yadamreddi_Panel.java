@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class P128_Yadamreddi_Panel extends JPanel
 {    
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
     private JLabel firstLine;
     private JLabel secondLine;
     private JLabel count;
