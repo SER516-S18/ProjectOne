@@ -1,6 +1,6 @@
 # ProjectOne
 
-## Steps to execute in command line: :arrow_down:
+## Steps to execute in command line:
 
  :one: **git pull** - *to update the folder with latest code*
 
