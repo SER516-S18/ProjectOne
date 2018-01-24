@@ -1,9 +1,9 @@
 # ProjectOne
 
-## Steps to execute in command line :thumbsup: :
+## Steps to execute in command line: :arrow_down:
 
-1. [x] **git pull** - *to update the folder with latest code*
+ :one: **git pull** - *to update the folder with latest code*
 
-2. [x] **javac P030_EswaraPrasad_Main.java** -  *to compile the main class, which compiles all the included classes as well*
+ :two: **javac P030_EswaraPrasad_Main.java** -  *to compile the main class, which compiles all the included classes as well*
 
-3. [x] **java P030_EswaraPrasad_Main** -  *run the main method of the main class*
+ :three: **java P030_EswaraPrasad_Main** -  *run the main method of the main class*
