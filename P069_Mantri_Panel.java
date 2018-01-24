@@ -48,7 +48,7 @@ public class P069_Mantri_Panel extends JPanel
         else
         {
             k=9;
-            setBackground(new java.awt.Color(204, 255, 255));
+            setBackground(new java.awt.Color(173,216,230));
         }
         
         
