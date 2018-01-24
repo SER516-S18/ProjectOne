@@ -24,7 +24,7 @@ public class P102_Sharma_Panel extends JPanel
 	public static final Color LIGHTBLUE = new Color(173, 216, 230);
 	
 	/**
-	 * Constructor takes input value and call initialize_PanelProperties() to set panel properties.
+	 * Constructor takes a value and call initialize_PanelProperties() to set panel properties.
 	 * @param inputValue
 	 */
 	
