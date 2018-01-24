@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -7,74 +6,78 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * P023_Day_Panel.java - creates a JPanel with name and counter
+ * P023_Day_Panel.java creates a JPanel with author's name and counter. 
+ * Counts up or down and panel changes color, based on input.
  * 
  * @author Melissa Day
- * @version 1/20/18
+ * @version 1.0
+ * @since 1/20/18
+ * 
+ * SER 516 : Project 01
  *
  */
 public class P023_Day_Panel extends JPanel implements Runnable {
-	private int count, endCount, countChange;
-	private boolean even;
+	private int counterValue, endCount, countChange;
+	private boolean evenFlag;
 	private Thread thread;
 	private String counterAsString;
 	private JLabel counterLabel;
+	private static final Color LIGHT_BLUE = new Color(173, 216, 230, 255);
+	private static final Font FONT_STYLE = new Font("Papyrus", Font.PLAIN, 15);
+	private final String AUTHOR_FIRST_NAME = "Melissa";
+	private final String AUTHOR_LAST_NAME = "Day";
 
 	/**
-	 * Constructor - Creates JPanel, changes background color and counter value
-	 * based on param
+	 * Constructor
 	 * 
-	 * @param num
-	 *            Takes integer to determine even or odd number Even: White
-	 *            background, counts from 0 to 9 in loop Odd: Light blue
-	 *            background, counts from 9 to 0 in loop
+	 * @param num : Determines counter direction and panel color
+	 * 
 	 */
 	public P023_Day_Panel(int num) {
 		this.setPanel(num);
 	}
-	
+
+	/**
+	 * Sets the panel based on input parameter.
+	 * 
+	 * @param input
+	 *            Even number input -> White background, counts 0 to 9 in loop
+	 *            Odd number input -> Light blue background, counts 9 to 9 in
+	 *            loop
+	 */
 	private void setPanel(int input) {
 		GridLayout layout = new GridLayout(2, 1);
 		this.setLayout(layout);
 		this.setSize(100, 100);
 
-		JLabel name = new JLabel("<html>Melissa <br>Day</html>");
-		name.setFont(new Font("Papyrus", Font.PLAIN, 15));
-		name.setForeground(Color.BLACK);
-		name.setHorizontalAlignment(JLabel.CENTER);
-		this.add(name);
+		JLabel authorNameLabel = new JLabel("<html>" + AUTHOR_FIRST_NAME + "<br>" + AUTHOR_LAST_NAME + "</html>");
+		authorNameLabel.setFont(FONT_STYLE);
+		authorNameLabel.setForeground(Color.BLACK);
+		authorNameLabel.setHorizontalAlignment(JLabel.CENTER);
+		this.add(authorNameLabel);
 
 		// even number
 		if (input % 2 == 0) {
-			// counter starts at 0
-			count = 0;
-			// counter stops at 9
+			counterValue = 0;
 			endCount = 9;
-			// set to increase counter value
 			countChange = 1;
-			even = true;
-
+			evenFlag = true;
 			this.setBackground(Color.white);
 		}
 
 		// odd number
 		else {
-			// counter starts at 9
-			count = 9;
-			// counter stops at 0
+			counterValue = 9;
 			endCount = 0;
-			// set to increase counter value
 			countChange = -1;
-			even = false;
-
-			Color lightBlue = new Color(173, 216, 230, 255);
-			this.setBackground(lightBlue);
+			evenFlag = false;
+			this.setBackground(LIGHT_BLUE);
 		}
 
-		counterAsString = Integer.toString(count);
+		counterAsString = Integer.toString(counterValue);
 
 		counterLabel = new JLabel(counterAsString);
-		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
+		counterLabel.setFont(FONT_STYLE);
 		counterLabel.setForeground(Color.BLACK);
 		counterLabel.setHorizontalAlignment(JLabel.CENTER);
 		this.add(counterLabel);
@@ -84,41 +87,33 @@ public class P023_Day_Panel extends JPanel implements Runnable {
 	}
 
 	/**
-	 * Counter thread logic to handle logic for even or odd input
+	 * Counter thread to handle logic for even or odd input
 	 */
 	public void run() {
-		try {
-			while (true) {
-				try {
-					Thread.sleep(1000);
-					// Input param is even
-					if (even) {
-						count += countChange;
-						counterAsString = Integer.toString(count);
-						counterLabel.setText(counterAsString);
-						if (count >= endCount) {
-							// reset to -1 to account for value change in next
-							// iteration
-							count = -1;
-						}
-					}
-					// Input param is odd
-					else {
-						count += countChange;
-						counterAsString = Integer.toString(count);
-						counterLabel.setText(counterAsString);
-						if (count <= endCount) {
-							// reset to 10 to account for value change in next
-							// iteration
-							count = 10;
-						}
-					}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+		while (true) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			// Input param is even
+			if (evenFlag) {
+				counterValue += countChange;
+				counterAsString = Integer.toString(counterValue);
+				counterLabel.setText(counterAsString);
+				if (counterValue >= endCount) {
+					counterValue = -1;
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+			// Input param is odd
+			else {
+				counterValue += countChange;
+				counterAsString = Integer.toString(counterValue);
+				counterLabel.setText(counterAsString);
+				if (counterValue <= endCount) {
+					counterValue = 10;
+				}
+			}
 		}
 	}
 }
