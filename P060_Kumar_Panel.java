@@ -1,148 +1,140 @@
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
+import javax.swing.*;
+
+import java.awt.*;
+
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
 
 /**
- * @author Abhishek
- * 
- * Description-This class helps in creating a panel
+ * @author Abhishek Kumar
  *
  */
-public class P060_Kumar_Panel extends JPanel{
+public class P060_Kumar_Panel extends JPanel {
 
-	private JPanel p;//JPanel
-
-	private JLabel firstName; //label of the first name
-	private JLabel lastName; //label of the last name
-	private JLabel displayNum;// label of the changing number
-	private Color backColor; //  background color
-	private boolean evenFlag; // flag for even or odd input
-
-
-	/**Description - Constructor
-	 * @param numInput- number input for checking the color
-	 */
-	public P060_Kumar_Panel(int numInput)
-	{		
-		//checking if input number is  even or odd
-		
-		if(numInput%2==0) {
-			backColor=Color.WHITE;
-			evenFlag=true;
-		}
-		else
-		{			
-			backColor=new Color(173,216,230);
-			evenFlag=false;
-		}
-				
-	}
+	//variables
+    private JLabel firstName;
 	
+	private JLabel lastName;
+    
+	private int inputValue;
+
+    private JLabel displayNum;
+
+    private int counter;
+
+    
+    /**Constructor
+     * @param inputValue-to check the number as even or odd number input
+     */
+    public P060_Kumar_Panel(int inputValue){
+
+        try {
+    	
+	    	this.inputValue = inputValue;
+		    	
+	        this.setPreferredSize(new Dimension(100,100));
+	        
+	        //setting the color as per the input     	        
+	        if(inputValue % 2 == 0){
+	            this.setBackground(Color.WHITE);
+	        }else{
+	            this.setBackground(new Color(173,216,230));
+	        }
+
+	        //setting the JLabels
+	        firstName = new JLabel("Abhishek");
+			lastName = new JLabel("Kumar");
+
+			firstName.setFont(new Font("Papyrus",Font.PLAIN,15));
+	        firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+	        lastName.setFont(new Font("Papyrus",Font.PLAIN,15));
+	        lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+	        //adding the labels in the Jpanel
+			this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+			this.add(firstName);
+			this.add(lastName);
 	
-	/**This function creates the Panel
-	 * @param numInput - number input for checking the color
-	 */
-	public JPanel createPanel()
-	{
-		
-		try {
-			 //creating object of new panel
-			this.p=new JPanel();
+			//calling the countdown Timer 
+	        setDisplayNum();
+	       
+        }
+        catch(Exception e) 
+        {
+        	e.printStackTrace();
+        }
+    }
 
-			//setting the attributes
-			this.p.setSize(100, 100);
-			this.p.setBackground(backColor);
-			
-			//setting the Jlabels
-			this.firstName=new JLabel("Abhishek");
-	        this.firstName.setAlignmentX(Component.CENTER_ALIGNMENT);
-			this.lastName=new JLabel("Kumar");
-	        this.lastName.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-			
-			this.firstName.setFont(new Font("Papyrus", Font.PLAIN, 15));
-			this.lastName.setFont(new Font("Papyrus", Font.PLAIN, 15));
-			
+    /**
+     * Set the counter as per the input
+     */
+    private void setDisplayNum() {
+    	
+    try {
+    	//setting the counter
+    	if(inputValue % 2 == 0){
+    		counter = 0;
+    	}else{
+    		counter = 9;
+    	}
+    	
+        	//creating JLabel to display the counter
+        displayNum = new JLabel(String.valueOf(counter));
+        displayNum.setFont(new Font("Papyrus",Font.PLAIN,15));
 
-			//initialising the Jlabel for changing digit
-			this.displayNum=new JLabel();
-			this.displayNum.setFont(new Font("Papyrus", Font.PLAIN, 15));
-	        this.displayNum.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-			//setting the Timer to change the digit every second
-			Timer t = new javax.swing.Timer(1000, new ActionListener(){
-
-				 int counter1=-1;
-				 int counter2=10;
-
-				String num;
-
-				@Override
-				public void actionPerformed(ActionEvent e){
-
-					//logic for changing digit
-					
-					if(evenFlag) 
-					{
-						counter1++;
-						num=String.valueOf(counter1);
-						displayNum.setText(num);
-
-						if(counter1>8)
-						{	
-							counter1=-1;
-						}
-					}
-					
-					else
-					{
-						counter2--;
-						num=String.valueOf(counter2);
-						displayNum.setText(num);
-
-						if(counter2<1)
-						{
-							counter2=10;
-						}
-					}
-				}
-			});
-			
-			t.start();	
-
-			//initialising the panel
-			this.p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-			this.p.add(this.firstName);
-			this.p.add(this.lastName);
-			this.p.add(this.displayNum);
-		
-		
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return p;
-	}
-
+        this.add(displayNum);
+        
+	        ActionListener taskPerformer = new ActionListener() {
 	
-	/**Main method--Uncomment the main method for testing
-	 * @param args
-	 */
-/*	public static void main(String args[])
-	{
+	            @Override
 	
-		JFrame jFrame = new JFrame();
+	            public void actionPerformed(ActionEvent e) {
+	
+	              //logic for increasing/decreasing counter
+	            	if(inputValue % 2 == 0 && counter == 9){
+	                	counter = 0;
+	                }
+	                else if((inputValue % 2 != 0) && counter == 0){
+	                	counter = 9;
+	                }
+	                else if((inputValue % 2 == 0)){
+	                	counter++;
+	                }
+	                else{
+	                	counter--;
+	                }
+	
+	                displayNum.setText(String.valueOf(counter));
+	
+	            }
+	
+	        };
+	
+	        new Timer(1000, taskPerformer).start();
+        
+        }
+        
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        	
+        }
 
-    	jFrame.setContentPane(new P060_Kumar_Panel(1).createPanel());
+    }
+    /**Main method
+     * @param s
+     */
+    /*public static void main(String [] s)
+
+    {
+    	JFrame jFrame = new JFrame();
+
+    	jFrame.setContentPane(new P060_Kumar_Panel(1));
 
     	jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -150,8 +142,6 @@ public class P060_Kumar_Panel extends JPanel{
 
     	jFrame.setVisible(true);
 
-    	jFrame.pack();
+    }*/
 
-		}
-*/
-	}
+}	
