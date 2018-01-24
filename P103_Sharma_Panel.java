@@ -1,14 +1,8 @@
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.*;
+import java.util.*;
 import java.util.Timer;
-import java.util.TimerTask;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
 /**
  * This class creates a panel with a name and an infinite counter. Counter can
@@ -98,7 +92,7 @@ public class P103_Sharma_Panel extends JPanel {
 			timer.scheduleAtFixedRate(task, 0, 1000);
 		}
 		catch (Exception e) {
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 }
