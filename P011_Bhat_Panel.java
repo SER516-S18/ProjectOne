@@ -5,14 +5,14 @@ import java.awt.event.ActionListener;
 
 /**
  * @author Shilpa Gajanan Bhat 
- * 		   Version 1.0 (01/23/2018)
- * 	       Adds and styles two labels in the
- *         JPanel Panel Background Color - White if the number received through
- *         constructor is even and blue if it is odd.
- * 		   Counter - Increments or decrements every second.Increments if the
- *         number received through constructor is even and decrements if it is
- *         odd.
- *         Timer fires event every second.
+ * Version 1.0 (01/23/2018)
+ * Adds and styles two labels in the
+ * JPanel Panel Background Color - White if the number received through
+ * constructor is even and blue if it is odd.
+ * Counter - Increments or decrements every second.Increments if the
+ * number received through constructor is even and decrements if it is
+ * odd.
+ * Timer fires event every second.
  */
 public class P011_Bhat_Panel extends JPanel {
 	Color lightBlue = new Color(173, 216, 230);
