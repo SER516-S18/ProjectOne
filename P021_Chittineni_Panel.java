@@ -1,18 +1,27 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.HeadlessException;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
-import javax.swing.Box;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
+/*This code creates a panel and a counter whose values are First name,Last name and a Timer
+ * The timer is incremented or decremented based on the parameter passed from the constructor
+ * Timer class and its built-in functions are used for displaying the timer(counter).
+**@author Salini Chittineni
+**@version 01-23-2018
+*/
 
 public class P021_Chittineni_Panel extends JPanel {
-	int par; // parameter from main method
-	Timer ctr; // creating an object for 'Timer' class
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	int par;
+	Timer ctr;
+
+	/*
+	 * Constructor which takes 'par' as the parameter value and calls the method
+	 * 'panelTimer' which sets the background color and counter values accordingly.
+	 */
 
 	public P021_Chittineni_Panel(int par) throws HeadlessException {
 		// super();
@@ -22,48 +31,55 @@ public class P021_Chittineni_Panel extends JPanel {
 
 	@SuppressWarnings("finally")
 
+	/*
+	 * This method sets the text for name label and counter label. A parameter is
+	 * passed through the constructor. If even, panel should be white in color and
+	 * counter needs to be incremented from 0 to 9 If odd, panel should be in light
+	 * blue color and needs to be decremented from 9 to 0. Used Timer class to
+	 * achieve the functionality.
+	 */
+
 	public JPanel panelTimer() {
 		JPanel pnl = new JPanel();
-		JLabel lbl = new JLabel();
-		JLabel lbl2 = new JLabel();
+		Box box = Box.createVerticalBox(); 
+		add(box);
 
-		Box box = Box.createVerticalBox(); // Box creation to display Label1 and Label2 in a vertical line
-		Color lightblue; // Declared a color name for which initialization is in the code below
-		lightblue = new Color(173, 216, 230); // initializing the color to a desired one
-		//Border brdr = BorderFactory.createLineBorder(Color.BLACK, 1);
-		lbl.setText("<HTML> &nbsp &nbsp &nbsp &nbsp &nbsp Salini<br> &nbsp &nbsp &nbsp &nbsp Chittineni</HTML>"); // setting text for Label; HTML tags are used to display multi line text
-		//lbl.setBorder(brdr);
+		JLabel lbl = new JLabel("<HTML> Salini <br> Chittineni </HTML>", JLabel.CENTER);
 		lbl.setFont(new Font("Papyrus", Font.PLAIN, 13));
+		box.add(lbl);
+
+		JLabel lbl2 = new JLabel();
+		Color lightblue; 
+		lightblue = new Color(173, 216, 230); 
 
 		try {
 
-			if (par % 2 == 0) // checks if the parameter passed is even
+			if (par % 2 == 0) 
 			{
-				ctr = new Timer(1000, new ActionListener() // Creating ActionListener event handler with actionPerformed
-															// method
+				ctr = new Timer(1000, new ActionListener()
+															
 				{
 					private int timerCount = 0;
 
 					public void actionPerformed(ActionEvent event) {
-						lbl2.setText("                 " + timerCount++ + "          ");
+						lbl2.setText("                " + timerCount++ + "      ");
 						if (timerCount > 9) {
-							ctr.stop(); // Stopping the counter once it has reached 10
-							timerCount = 0; // Resetting it to 0; as the timer needs to run back from 0 to 9
-							ctr.restart(); // Restarting the counter
+							timerCount = 0; 
+							ctr.start(); 
 
 						}
 					}
 
 				});
 				ctr.start();
-				lbl2.setHorizontalAlignment(JLabel.CENTER);
-				pnl.setBackground(Color.white); // parameter passed is even; setting the background color to 'White'
+				lbl2.setVerticalAlignment(JLabel.CENTER);
+				pnl.setBackground(Color.white); 
 			}
 
-			else // checks if the parameter passed is even
+			else 
 			{
-				ctr = new Timer(500, new ActionListener() // Creating ActionListener event handler with actionPerformed
-															// method
+				ctr = new Timer(1000, new ActionListener() 
+															
 				{
 					private int timerCount = 9;
 
@@ -71,9 +87,8 @@ public class P021_Chittineni_Panel extends JPanel {
 
 						lbl2.setText("                 " + timerCount-- + "          ");
 						if (timerCount < 0) {
-							ctr.stop(); // Stopping the counter once it has reached -1
-							timerCount = 9; // Resetting it to 9; as the timer needs to run back from 9 to 0
-							ctr.restart(); // Restarting the counter
+							timerCount = 9; 
+							ctr.start(); 
 
 						}
 					}
@@ -81,7 +96,7 @@ public class P021_Chittineni_Panel extends JPanel {
 				});
 				ctr.start();
 				lbl2.setHorizontalAlignment(JLabel.RIGHT);
-				pnl.setBackground(lightblue); // parameter passed is odd; setting the background color to 'light blue'
+				pnl.setBackground(lightblue); 
 			}
 		}
 
@@ -90,33 +105,24 @@ public class P021_Chittineni_Panel extends JPanel {
 		}
 
 		finally {
-			box.add(lbl); // Adding labels onto Box
+			box.add(lbl); 
 			box.add(lbl2);
-			pnl.add(box); // Adding box onto Panel
+			pnl.add(box); 
 			pnl.setSize(100, 100);
 			pnl.setLayout(new GridLayout());
 			pnl.setVisible(true);
-
 			return pnl;
 		}
 	}
 
-	/* 
-	 public static void main(String args[])
-	
-	{
-		JFrame frame = new JFrame();
-		final long serialVersionUID = 1L;
-        
-		
-        P021_Chittineni_Panel panel1 = new P021_Chittineni_Panel(21);
-       
-		frame.add(panel1.panelTimer()); //Adding Panel to Frame
-		
-		frame.setTitle("Panel and Timer");
-        frame.setSize(100,100);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-	} */
+	/*
+	 * public static void main(String args[])
+	 * 
+	 * { JFrame frame = new JFrame(); final long serialVersionUID = 1L;
+	 * P021_Chittineni_Panel panel1 = new P021_Chittineni_Panel(21);
+	 * frame.add(panel1.panelTimer()); //Adding Panel to Frame
+	 * frame.setTitle("Panel and Timer"); frame.setSize(100,100);
+	 * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.setVisible(true);
+	 * frame.setLocationRelativeTo(null); }
+	 */
 }
