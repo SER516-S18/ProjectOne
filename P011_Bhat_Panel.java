@@ -1,39 +1,30 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.*;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.Timer;
-
 /**
- * @author Shilpa Gajanan Bhat Version 1.0 Adds and styles two labels in the
+ * @author Shilpa Gajanan Bhat 
+ * 		   Version 1.0 (01/23/2018)
+ * 	       Adds and styles two labels in the
  *         JPanel Panel Background Color - White if the number received through
  *         constructor is even and blue if it is odd.
- * 
- *         Counter - Increments or decrements every second.Increments if the
+ * 		   Counter - Increments or decrements every second.Increments if the
  *         number received through constructor is even and decrements if it is
  *         odd.
- * 
  *         Timer fires event every second.
  */
 public class P011_Bhat_Panel extends JPanel {
+	Color lightBlue = new Color(173, 216, 230);
+	boolean isOddPosition = true;
 
-	/**
-	 * Create the panel.
-	 */
-	public P011_Bhat_Panel(int num) {
-		FlowLayout flowLayout = (FlowLayout) getLayout();
+	public P011_Bhat_Panel(int position) {
 		try {
+			isOddPosition = position % 2 != 0 ? true : false;
 			stylePanel();
 			createNameLabel();
-			JLabel counterLabel = createCounterLabel(num);
-			TimerListener y = new TimerListener(counterLabel);
+			JLabel counterLabel = createCounterLabel(position);
+			TimerListener y = new TimerListener(counterLabel, isOddPosition);
 			Timer t = new Timer(1000, y);
 			t.start();
 		} catch (Exception e) {
@@ -46,18 +37,9 @@ public class P011_Bhat_Panel extends JPanel {
 	 *            - number received from tab.
 	 * @return Jlabel which is used to display counter
 	 */
-	private JLabel createCounterLabel(int num) {
-		JLabel counterLabel = new JLabel("",SwingConstants.CENTER);
-		if (num % 2 == 0) {
-			counterLabel.setText("0");
-			this.setBackground(Color.white);
-		} else {
-			counterLabel.setText("9");
-			this.setBackground(new Color(171,216,230));
-		}
-		counterLabel.setBorder(null);
-		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 16));
-		counterLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+	private JLabel createCounterLabel(int position) {
+		JLabel counterLabel = new JLabel("", SwingConstants.CENTER);
+		counterLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		counterLabel.setPreferredSize(new Dimension(50, 30));
 		add(counterLabel);
 		return counterLabel;
@@ -67,9 +49,8 @@ public class P011_Bhat_Panel extends JPanel {
 	 * Name label shows First name in the one row and last name in the second row
 	 */
 	private void createNameLabel() {
-		JLabel nameLabel = new JLabel("<html>Shilpa <br> Bhat </html>",SwingConstants.CENTER);
-		nameLabel.setBorder(null);
-		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		JLabel nameLabel = new JLabel("<html>Shilpa <br> Bhat </html>", SwingConstants.CENTER);
+		nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 		nameLabel.setPreferredSize(new Dimension(95, 50));
 		add(nameLabel);
 	}
@@ -78,56 +59,51 @@ public class P011_Bhat_Panel extends JPanel {
 	 * Panel size set to 100*100
 	 */
 	private void stylePanel() {
-		setBorder(null);
 		setPreferredSize(new Dimension(100, 100));
-		setLayout(new GridLayout(2,1));
+		setLayout(new GridLayout(2, 1));
+		setBackground(isOddPosition ? lightBlue : Color.WHITE);
 	}
 }
 
 /**
  * @author Shilpa TimerListener implements Actionlistener interface to listen to
- *         timer events. When the event is fired counter increments from 0-9 and
- *         then decrements from 9-0 or viceversa.
+ *         timer events. When the event is fired counter increments from 0-9 or
+ *         decrements from 9-0 based on the position number received through
+ *         constructor.
  */
 class TimerListener implements ActionListener {
 	private int counter;
-	boolean flag = true;
 	JLabel l;
+	private boolean isOddPosition;
 
 	/**
-	 * @param label - get the initial value of counter
+	 * @param label
+	 *            - get the initial value of counter
 	 */
-	public TimerListener(JLabel label) {
+	public TimerListener(JLabel label, boolean isOddPosition) {
 		l = label;
-		counter = Integer.parseInt(l.getText());
+		this.isOddPosition = isOddPosition;
+		counter = isOddPosition ? 9 : 0;
+		l.setText("" + counter);
 	}
 
 	/*
-	 * (non-Javadoc)
-	 * Increments the counter when flag is set 
-	 * and decrements when it is not set
+	 * (non-Javadoc) Increments the counter when position is even and decrements when it
+	 * is odd.
+	 * 
 	 * @see
 	 * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		switch (counter) {
-		case 9: {
-			counter = counter - 1;
-			l.setText("" + counter);
-			flag = false;
-			break;
-		}
-		case 0: {
-			counter = counter + 1;
-			l.setText("" + counter);
-			flag = true;
-			break;
-		}
-		default: {
-			counter = flag ? counter + 1 : counter - 1;
-			l.setText("" + counter);
-		}
+		if (!isOddPosition) {
+			l.setText("" + ++counter);
+			if (counter == 9)
+				counter = -1;
+		} else {
+			l.setText("" + --counter);
+			if (counter == 0)
+				counter = 10;
 		}
 	}
 }
