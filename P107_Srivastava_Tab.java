@@ -18,7 +18,7 @@ public class P107_Srivastava_Tab extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static String TABNAME = "Varun Srivastava";
+	public static final String TABNAME = "Varun Srivastava";
 	
 	/**
 	 * Constructor method of P107_Srivastava_Tab class. All the sub panels are loaded inside this method
