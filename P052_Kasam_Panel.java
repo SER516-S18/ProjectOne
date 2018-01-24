@@ -45,12 +45,12 @@ public class P052_Kasam_Panel extends JPanel{
 		if(evenOrOddString == "EVEN"){
 			this.setBackground(Color.white);
 			new Thread(){
-				int upCounter = 0;
+			int upCounter = 0;
 	        	public void run(){
 	            	while(true){
 	            		if(upCounter == 10)
 	            			upCounter = 0;
-						theNumCounter.setText(String.valueOf(upCounter));
+				theNumCounter.setText(String.valueOf(upCounter));
 	                	upCounter++;
 	                	try{
 	                		Thread.sleep(1000);} 
@@ -63,12 +63,12 @@ public class P052_Kasam_Panel extends JPanel{
 		else{
 			this.setBackground(lightBlue);
 			new Thread(){
-				int downCounter = 9;
+			int downCounter = 9;
 	        	public void run() {
 	        		while(true) {
 	        			if(downCounter == -1)
 	            			downCounter = 9;
-						theNumCounter.setText(" " + (downCounter));
+				theNumCounter.setText(" " + (downCounter));
 	                	downCounter--;
 	                	try{
 	                		Thread.sleep(1000);} 
