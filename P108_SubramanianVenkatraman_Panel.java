@@ -7,11 +7,11 @@ import javax.swing.SwingConstants;
  * 
  * SER - 516  Lab 1
  * @author Ganesh Kumar Subramanian Venkatraman
- * Displays a panel with Ganesh Kumar as first name
- * and S V as last name
- * Panel with name and counter variable is displayed in the first row
- * Background colour is displayed white when the input is even
- * and light blue if the input is odd
+ * Displays a panel with Ganesh Kumar as first name in the first row
+ * and S V as last name in the second row
+ * Last row has a counter that either increases or decreases through 0 to 9
+ * Background colour is displayed white when the constructor input is even
+ * and light blue if the constructor input is odd.
  * 
  */
 
@@ -22,17 +22,24 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
     private JLabel last = new JLabel("S V");
     private Color color;
     private JLabel counter = new JLabel();
+    
+    /**
+	* Class Constructor
+	* @param background decides the background color and counter direction based on its property ( odd or even)
+	* Odd: Light Blue background and counter counts from 9 to 0
+	* Even: White background and counter counts from 0 to 9
+	*/
 
     public P108_SubramanianVenkatraman_Panel(int background) {
         
         // Constructor to set background
         if(background % 2 == 0) {
-            color = Color.WHITE;    // When the input is even, white colour will be displayed
+            color = Color.WHITE;    
             countUpwards();
         }
         
         else {
-            color = new Color (173,216,230);     // When the input is odd, light blue colour will be displayed
+            color = new Color (173,216,230);    
             countDowndards();
         }
         this.setBackground(color);
@@ -56,9 +63,8 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
         this.setVisible(true);
     }
     
+     //Incrementing counter
     public void countUpwards() {
-        
-        //Incrementing counter
         
         new Thread() {
             int count = 0;
@@ -82,10 +88,10 @@ public class P108_SubramanianVenkatraman_Panel extends JPanel{
         }.start();
     }
     
+    //Decrementing counter.
+
     public void countDowndards() {
-        
-        //Decrementing counter.
-        
+                
         new Thread() {
             int count = 9;
             
