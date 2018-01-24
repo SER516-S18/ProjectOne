@@ -78,10 +78,10 @@ public class P006_Bantupalli_Panel extends JPanel implements ActionListener {
 		this.setBounds(100,100, 100, 100);
 		nameLabel=new JLabel("<html>Jahnavi<br>Bantupalli</html>",JLabel.CENTER);
 		nameLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
-		nameLabel.setBounds(50, 5, 200, 100);
+		nameLabel.setBounds(0, 5, 200, 100);
 		timerLabel= new JLabel("",JLabel.CENTER);
 		timerLabel.setFont(new Font("PAPYRUS",Font.PLAIN,15));
-		timerLabel.setBounds(50, 50, 200, 100);
+		timerLabel.setBounds(0, 50, 200, 100);
 		Timer timer=new Timer(1000,this);
 		try
 		{
