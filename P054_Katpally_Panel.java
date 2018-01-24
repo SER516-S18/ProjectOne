@@ -4,9 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class P054_Katpally_Panel
+public class P054_Katpally_Panel extends JPanel
 {
-	private JPanel panel;
 	private JLabel firstname;
 	private JLabel lastname;
 	private JLabel counter;
@@ -31,9 +30,8 @@ public class P054_Katpally_Panel
 	    	counter.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 	    	counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
 	  
-	    	panel = new JPanel();
-	    	panel.setSize(100, 100);
-	    	panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+	    	setSize(100, 100);
+	    	setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
 	    	/*Using Timer class to display the counter and setting background color 
 	    	* depending on the argument passed while object creation.
@@ -41,7 +39,7 @@ public class P054_Katpally_Panel
 	    	if(counterdecider%2 == 0)
 	    	{
 	    		i = 0;
-	    		panel.setBackground(Color.WHITE);
+	    		setBackground(Color.WHITE);
 	    		timer = new Timer(1000, new ActionListener() {
 	    			@Override
 	    			public void actionPerformed(ActionEvent e) {
@@ -57,7 +55,7 @@ public class P054_Katpally_Panel
 	    	else
 	    	{
 	    		i = 9;
-	    		panel.setBackground(LIGHTBLUE);
+	    		setBackground(LIGHTBLUE);
 	    		timer = new Timer(1000, new ActionListener() {
 	    			@Override
 	    			public void actionPerformed(ActionEvent e) {
@@ -71,8 +69,8 @@ public class P054_Katpally_Panel
 	    		});
 	    	}
 	    	timer.start();
-	    	panel.add(firstname);
-	    	panel.add(lastname);
-		panel.add(counter); 
+	    	add(firstname);
+	    	add(lastname);
+		add(counter); 
 	}
 }
