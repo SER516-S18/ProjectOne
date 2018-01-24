@@ -7,9 +7,21 @@ import javax.swing.JPanel;
 import java.lang.Exception;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * P061_KUMAR_PANEL: A panel with three rows of JLabel is created.
+ * First Row has the firstname of the class author.
+ * Second Row has the last name of the class author.
+ * Third Row is a counter which increases or decreases based on the parameter passed to the constructor when creating the object.
+ * @author Natalya Kumar
+ * @version 1.0
+ */
 public class P061_KUMAR_PANEL extends JPanel {
     private int counter;
     private boolean even;
+    public static Color LIGHT_BLUE = new Color(173,216,230);
+    public static Font FONT = new Font("Papyrus", Font.PLAIN, 15);
+    private static final String FIRSTNAME="Natalya";
+    private static final String LASTNAME="Kumar";
 
 
     //Constructor taking integer input.
@@ -26,69 +38,56 @@ public class P061_KUMAR_PANEL extends JPanel {
         prepPanel(color_val);
     }
 
-    /*public static void main(String[] args) {
-        
-        P061_KUMAR_PANEL panel28 = new P061_KUMAR_PANEL(2);
-        JFrame frame = new JFrame("61-Frame");
-        frame.setSize(300, 300);                             //Setting Panel Size
-        frame.add(panel28);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-
-    }*/
-
+    /**
+     *This method creates a panel with 3 JLabels. First name, Last name and a timer.
+     */
     public void prepPanel(int color_val) {
 
-        setLayout(null);
-        setSize(100, 100);
         JLabel firstName,lastName;
-
-        firstName = new JLabel("Natalya", JLabel.CENTER);       //Creating Label for First Name
-        firstName.setBounds(10, 0, 45, 25);
-        firstName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+         //Creating Label for First Name
+        firstName = new JLabel(FIRSTNAME, JLabel.CENTER);       
+        firstName.setFont(FONT);
         firstName.setHorizontalAlignment(JLabel.CENTER);
         firstName.setVerticalAlignment(JLabel.CENTER);
-        add(firstName);
+        this.add(firstName);
 
-        lastName = new JLabel("Kumar", JLabel.CENTER);            //Creating Label for Last Name
-        lastName.setBounds(10, 10, 45, 25);
-        lastName.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        //Creating Label for Last Name
+        lastName = new JLabel(LASTNAME, JLabel.CENTER);            
+        lastName.setFont(FONT);
         lastName.setHorizontalAlignment(JLabel.CENTER);
         lastName.setVerticalAlignment(JLabel.CENTER);
-        add(lastName);
+        this.add(lastName);
 
+        //Creating Label for timer
         JLabel counterShow = new JLabel("0", JLabel.CENTER);
-        counterShow.setBounds(10, 20, 25, 25);
-        Timer t = new Timer();                                      //Creating Label for timer
-        counterShow.setFont(new Font("Papyrus", Font.PLAIN, 10));
+        Timer t = new Timer();                                      
+        counterShow.setFont(FONT);
         counterShow.setHorizontalAlignment(JLabel.CENTER);
         counterShow.setVerticalAlignment(JLabel.CENTER);
-        add(counterShow);
+        this.add(counterShow);
 
-        setLayout(new BorderLayout(0, 0));
-        setBorder(new EmptyBorder(20, 20, 20, 20));
-
-        if (color_val % 2 == 0) {                           // Checking if color_val is ODD or EVEN
-            setBackground(Color.WHITE);                     // Setting Panel Background to White
+        this.setLayout(new GridLayout(3, 0));
+        // Checking if color_val is ODD or EVEN
+        if (color_val % 2 == 0) {  
+            setBackground(Color.WHITE);                     
         } else {
-            Color lightBlue = new Color(173,216,230);       
-            setBackground(lightBlue);                       // Setting Panel Background to Light Blue
+            setBackground(LIGHT_BLUE);                       
         }
 
-        t.schedule(new TimerTask() {                         // Scheduling the Timer Task
+        // Scheduling the Timer Task and incrementing or decrementing based on the parameter passed
+        t.schedule(new TimerTask() {                         
             @Override
             public void run() {
                 if (even==true) {
-                    if (counter == 10)                       //if counter is 10 setting it to 0
+                    if (counter == 10)                       
                         counter = 0;
-                    counterShow.setText(""+ counter++);      //incrementing the counter
+                    counterShow.setText(""+ counter++);      
                 } else {
-                    if (counter == -1)                       //if counter is -1 setting it to 9
+                    if (counter == -1)                       
                         counter = 9;
-                    counterShow.setText(""+ counter--);      //decrementing the counter
+                    counterShow.setText(""+ counter--);      
                 }
             }
         }, 0, 1000);
     }
-
 }
