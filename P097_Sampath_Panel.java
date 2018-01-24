@@ -21,7 +21,7 @@ public class P097_Sampath_Panel extends JPanel{
     private boolean isEven;
     private static final String LABEL_NAME = "<html>Balachandar<br>Sampath</html>";
     private static final String FONT_TYPE = "Papyrus";
-    private static final int FONT_SIZE = 15;
+    private static final int FONT_SIZE = 16;
     private static final int FONT_STYLE = Font.PLAIN;
     private static final int COUNTER_SIZE = 10;
     private static final long TIMER_INTERVAL = 1000L;
