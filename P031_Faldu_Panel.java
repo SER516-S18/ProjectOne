@@ -27,7 +27,7 @@ class P031_Faldu_Panel extends JPanel  {
            	this.setLayout(new GridLayout(3, 1));
            	this.setSize(100,100);
         	Font f =new Font("Papyrus",Font.BOLD,15);
-        	lightblue = new Color(51,204,255);
+        	lightblue = new Color(189,214,238);
         	
         	counter = new JLabel("",SwingConstants.CENTER);
             JLabel lname = new JLabel("Faldu",SwingConstants.CENTER);
