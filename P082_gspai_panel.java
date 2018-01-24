@@ -1,4 +1,4 @@
-//package gopika;
+package gopika;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
@@ -122,16 +122,16 @@ public class P082_gspai_panel extends JPanel{
 
 
 
- /**   public static void main(String[] args) {
+  /** public static void main(String[] args) {
 
         JFrame sampleJframe1 = new JFrame("Gopika's Frame");
-        sampleJframe1.setSize(1000,1000);
+       // sampleJframe1.setSize(1000,1000);
         P082_gspai_panel obj1 = new P082_gspai_panel (5);
-        sampleJframe1.setLayout(new GridLayout(5,5));
+        //sampleJframe1.setLayout(new GridLayout(5,5));
         sampleJframe1.add(obj1 );
         sampleJframe1.setVisible(true);
+        sampleJframe1.pack();
         sampleJframe1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    }
+    }*/
 }
-*/
