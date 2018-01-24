@@ -20,7 +20,7 @@ public class P100_Shah_Panel extends JPanel implements Runnable {
     private Font font;
     private final Color LIGHTBLUE  = new Color(173, 216, 230);
 
-    /*
+    /**
     * Constructor of this class, used to instantiate
     * panel objects, set panel properties and attach labels to it.
     *
@@ -67,12 +67,12 @@ public class P100_Shah_Panel extends JPanel implements Runnable {
     }
 
 
-    /*
+    /**
     * Thread method which is executed when a
     * new thread is started by this class.
     * It will keep the counter running in an infinite loop
     *
-    * */
+    */
     @Override
     public void run() {
         int time = 0;
