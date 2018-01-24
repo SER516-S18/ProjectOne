@@ -23,23 +23,21 @@ public class P030_EswaraPrasad_Main extends JPanel {
      */
     public P030_EswaraPrasad_Main(){
 
-        /* Enclosing the code in Try/Catch block to catch exceptions. */
+        // Enclosing the code in Try/Catch block to catch exceptions.
 
         try {
 
             JTabbedPane myTabPane = new JTabbedPane();
 
-            /* Creating JPanel Objects to Link to the tabs. */
+            // Creating JPanel Objects to Link to the tabs.
             JPanel Tab1 = new P004_Bahl_Tab();
             JPanel Tab2 = new P039_Henderson_Tab();
             JPanel Tab3 = new P074_Mishra_Tab();
             JPanel Tab4 = new P091_Prakash_Tab();
             JPanel Tab5 = new P107_Srivastava_Tab();
-
-            /* Creating tabs from Panels and assigning other attributes
-            * like border and Titles to each tab.
-            * */
-
+            
+            // Creating tabs from Panels and assigning other attributes
+            // like border and Titles to each tab.
             myTabPane.addTab(P004_Bahl_Tab.TABNAME, Tab1);
             myTabPane.addTab(P039_Henderson_Tab.TABNAME, Tab2);
             myTabPane.addTab(P074_Mishra_Tab.TABNAME, Tab3);
@@ -47,18 +45,15 @@ public class P030_EswaraPrasad_Main extends JPanel {
             myTabPane.addTab(P107_Srivastava_Tab.TABNAME, Tab5);
 
             myTabPane.setBorder(new EmptyBorder(10, 10, 10, 10));
-
             setLayout(new BorderLayout());
             add(myTabPane, BorderLayout.CENTER);
         }
-        /* Exception Handling. Printing out the Exception to the console. */
         catch(Exception e)
         {
             System.out.println("Exception: " + e.getMessage());
         }
 
     }
-
     /**
      * Main Method that creates a JFrame object and adds the JTabbedPane Object.
      * @param args Unused
