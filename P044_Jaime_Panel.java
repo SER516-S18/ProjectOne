@@ -47,20 +47,20 @@ public class P044_Jaime_Panel extends JPanel
                 {
                     if (value % 2 == 0) 
                     {
-                    	   setBackground(Color.WHITE);
+                    	setBackground(Color.WHITE);
                         if (autoIncrement == 9) 
                         {
-                        	autoIncrement = -1;
+                            autoIncrement = -1;
                         }
                         counter.setText("" + (autoIncrement += 1));
                     }
                     else {
-                    		if (autoDencrement == 0)
-                    		{
-                    			autoDencrement = 10;
-                    		}
-                    		counter.setText("" + (autoDencrement += 1));
-                    		setBackground(Color.BLUE);
+                    	if (autoDencrement == 0)
+                    	{
+                    	    autoDencrement = 10;
+                    	}
+                    	counter.setText("" + (autoDencrement += 1));
+                    	setBackground(Color.BLUE);
                     }
                 }
             });
@@ -68,13 +68,13 @@ public class P044_Jaime_Panel extends JPanel
         }
         catch (Exception e)
         {
-        		System.out.println("Error happened!!!!!" + e);
+             System.out.println("Error happened!!!!!" + e);
         }
     }
 
     public static void main(String args[])
     {
-    	    P044_Jaime_Panel pauloJaime= new P044_Jaime_Panel(0);
+    	P044_Jaime_Panel pauloJaime= new P044_Jaime_Panel(0);
         JFrame frame = new JFrame();
         frame.setSize(150, 150);
         frame.setVisible(true);
