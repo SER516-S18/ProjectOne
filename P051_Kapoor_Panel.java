@@ -89,12 +89,4 @@ public class P051_Kapoor_Panel extends JPanel
 	    }
 		}
  
-public static void main(String[] args) 
-{	
- P051_Kapoor_Panel p = new P051_Kapoor_Panel(3);
- JFrame frame = new JFrame("Trial");
- frame.setVisible(true);
- frame.setSize(200,200);
- frame.add(p);	
- }
 }
