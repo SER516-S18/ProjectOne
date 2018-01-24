@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,8 +30,6 @@ public class P015_Bodeddula_Panel extends JPanel{
 	private static String lastName = "Bodeddula";
 	public static Color lightBlue = new Color(173, 216, 230);
 	private JLabel timerLabel;
-
-
 /*
  * initializing the timer value based on integer input
  * and displaying the output on panel with proper font and alignment
@@ -47,16 +44,15 @@ public P015_Bodeddula_Panel(int counter) {
 		count =9;
 	}
 	 setSize(100,100);
-	
      setLayout(new GridLayout(3, 1));
      JLabel firstNameLabel = new JLabel(firstName,JLabel.CENTER);
      JLabel lastNameLabel = new JLabel(lastName, JLabel.CENTER); 
      timerLabel = new JLabel("", JLabel.CENTER);
-     
+     //setting font
      firstNameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
      lastNameLabel.setFont(new Font("papyrus", Font.PLAIN, 15));
-     timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-     
+     timerLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));  
+     //displaying them to panel
      add(firstNameLabel);
      add(lastNameLabel);
      add(timerLabel);
@@ -101,8 +97,7 @@ private void startTimer(int counter) {
     }
 	catch (Exception e)
     {
-        System.out.print(e.getMessage());
+        e.printStackTrace();
     }
-}
-             
+} 
 }

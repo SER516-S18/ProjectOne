@@ -18,9 +18,9 @@ import javax.swing.Timer;
  */
 
 public class P130_Zhang_Panel extends JPanel{
-    final private int TIME_INTERVAL = 1000;
-    final private int FONT_SIZE = 15;
-    final private String FONT_STYLE = "Papyrus";
+    final private int DEFAULT_TIME_INTERVAL = 1000;
+    final private int DEFAULT_FONT_SIZE = 15;
+    final private String DEFAULT_FONT_STYLE = "Papyrus";
     final private String FIRST_NAME = "Lei";
     final private String LAST_NAME = "Zhang";
     final private Color LIGHT_BLUE = new Color(173,216,230);
@@ -53,7 +53,7 @@ public class P130_Zhang_Panel extends JPanel{
         	/**
         	 * Create timer to update the counter on the label
         	 */
-            timer = new Timer(TIME_INTERVAL, new ActionListener(){
+            timer = new Timer(DEFAULT_TIME_INTERVAL, new ActionListener(){
                 public void actionPerformed(ActionEvent e) {
                     //Check increase flag then increase of decrease time
                     if(counterFlag) {
@@ -89,9 +89,9 @@ public class P130_Zhang_Panel extends JPanel{
         lastNameLabel.setAlignmentX(CENTER_ALIGNMENT);
         countLabel.setAlignmentX(CENTER_ALIGNMENT);
         
-        countLabel.setFont(new Font(FONT_STYLE, Font.PLAIN, FONT_SIZE));
-        firstNameLabel.setFont(new Font(FONT_STYLE, Font.PLAIN, FONT_SIZE));
-        lastNameLabel.setFont(new Font(FONT_STYLE, Font.PLAIN, FONT_SIZE));
+        countLabel.setFont(new Font(DEFAULT_FONT_STYLE, Font.PLAIN, DEFAULT_FONT_SIZE));
+        firstNameLabel.setFont(new Font(DEFAULT_FONT_STYLE, Font.PLAIN, DEFAULT_FONT_SIZE));
+        lastNameLabel.setFont(new Font(DEFAULT_FONT_STYLE, Font.PLAIN, DEFAULT_FONT_SIZE));
         
         add(firstNameLabel);
         add(lastNameLabel);
