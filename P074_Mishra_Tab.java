@@ -1,6 +1,5 @@
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
-
 import javax.swing.JPanel;
 
 /*
@@ -37,8 +36,7 @@ public class P074_Mishra_Tab extends JPanel{
 			add(new P057_Kolla_Panel(5), panelGridConstraints);
 			add(new P058_Kotamraju_Panel(6), panelGridConstraints);
 			add(new P059_Kulkarni_Panel(7), panelGridConstraints);
-			//P060_Kumar_Panel kumar = new P060_Kumar_Panel(8);
-			//add(kumar.createPanel(), panelGridConstraints);
+			add(new P060_Kumar_Panel(8), panelGridConstraints);
 			add(new P061_KUMAR_PANEL(9), panelGridConstraints);
 			add(new P062_Laad_Panel(10), panelGridConstraints);
 			add(new P063_Madabhushi_Panel(11), panelGridConstraints);
