@@ -30,14 +30,14 @@ public class P074_Mishra_Tab extends JPanel{
 		// Add the panels with an integer as argument from 1 - 25
 		try {
 			add(new P053_Kashyap_Panel(1), panelGridConstraints);
-			//add(new P054_Katpally_Panel(2), panelGridConstraints);
+			add(new P054_Katpally_Panel(2), panelGridConstraints);
 			add(new P055_Khan_Panel(3), panelGridConstraints);
 			add(new P056_Khatun_Panel(4), panelGridConstraints);
 			add(new P057_Kolla_Panel(5), panelGridConstraints);
 			add(new P058_Kotamraju_Panel(6), panelGridConstraints);
 			add(new P059_Kulkarni_Panel(7), panelGridConstraints);
-			P060_Kumar_Panel kumar = new P060_Kumar_Panel(8);
-			add(kumar.createPanel(), panelGridConstraints);
+			//P060_Kumar_Panel kumar = new P060_Kumar_Panel(8);
+			//add(kumar.createPanel(), panelGridConstraints);
 			add(new P061_KUMAR_PANEL(9), panelGridConstraints);
 			add(new P062_Laad_Panel(10), panelGridConstraints);
 			add(new P063_Madabhushi_Panel(11), panelGridConstraints);
