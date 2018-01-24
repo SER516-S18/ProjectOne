@@ -79,7 +79,7 @@ public class P036_Gupta_Panel extends JPanel{
 					}
 				}
 			}catch(Exception e) {
-				System.out.println("Timer Exception"+ e);
+				e.printStackTrace();
 			}
 		}
 	}	
