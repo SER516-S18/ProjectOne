@@ -70,7 +70,7 @@ private Color bgColor;
 		setBackground(bgColor);
 		
 		Name =new JLabel("<html>Tejasi<br>Palkar</html>");
-		setFont(new Font("Papyrus", Font.PLAIN, 15));
+		Name.setFont(new Font("Papyrus", Font.PLAIN, 15));
         
         Counter = new JLabel(String.valueOf(counter));
         Counter.setFont(new Font("Papyrus", Font.PLAIN, 15));
