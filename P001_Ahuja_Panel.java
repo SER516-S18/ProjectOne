@@ -1,38 +1,30 @@
-/**
- *  For SER 516 only.
- * @author  Chetanya Ahuja
- * @version 1.0
- * @since   01-21-2018
- */
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.Timer;
-
-
-/**
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+/**        For SER 516 only
+ *         @author  Chetanya Ahuja
+ *         @version 1.0
+ *         @since   01-21-2018
  *         It Adds two labels in the
- *         JPanel with Background Color - White if the flag received through
- *         constructor as a parameter is even and light blue if its odd.
+ *         JPanel with Background Color - White if the flag received
+ *         through constructor as a parameter is even and light blue
+ *         if its odd.
  *         The timer Increments or decrements every second.
- *         It is incremented when the flag received from the constructor is even, goes from 0 to 9
- *         and repeats,
- *         It is decremented when the flag received from the constructor is odd, goes fro 9 to 0
- *         and repeats.
+ *         It is incremented when the flag received from the constructor
+ *         is even, goes from 0 to 9 and repeats,
+ *         It is decremented when the flag received from the constructor
+ *         is odd, goes fro 9 to 0 and repeats.
  */
 public class P001_Ahuja_Panel extends JPanel
 {
-    private static int increment= -1;
-    private static int decrement=10;
-    private JLabel label;
-    private JLabel label1;
-
-    public P001_Ahuja_Panel(int flag)//Constructor where flag decides the timer execution
+    int increment= -1;
+    int decrement=10;
+    JLabel labelName;
+    JLabel labelTime;
+    private static final Color Light_Blue= new Color(173, 216,230);
+    public P001_Ahuja_Panel(int flag)
     {
         /**
          * Panel and label properties: Font, Color, Text, Layout,
@@ -40,15 +32,14 @@ public class P001_Ahuja_Panel extends JPanel
          */
         setSize(100,100);
         setLayout(new GridLayout(2, 1));
-        label = new JLabel("<html>Chetanya<br>Ahuja</html>", JLabel.CENTER);
-        label1 = new JLabel("", JLabel.CENTER);
-        label.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        label1.setFont(new Font("Papyrus", Font.PLAIN, 15));
-        add(label);
-        add(label1);
+        labelName = new JLabel("<html>Chetanya<br>Ahuja</html>", JLabel.CENTER);
+        labelTime = new JLabel("", JLabel.CENTER);
+        labelName.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        labelTime.setFont(new Font("Papyrus", Font.PLAIN, 15));
+        add(labelName);
+        add(labelTime);
         start_timer(flag);
     }
-
     /**
      * Timer execution : From 0 to 9 when flag is even
      * And from 9 to 0 when flag is odd
@@ -61,25 +52,21 @@ public class P001_Ahuja_Panel extends JPanel
                 public void actionPerformed(ActionEvent e) {
                     if (flag % 2 == 0) {
 
-                        if (increment == 9) {
-                            increment = -1;
-                        }
+                        if (increment == 9) increment = -1;
+
                         increment = increment + 1;
-                        label1.setText("" + increment);
+                        labelTime.setText("" + increment);
 
                     }
 
                     else {
-
-                        setBackground(new Color(171, 216, 230));
-
-
+                        setBackground(Light_Blue);
                         if (decrement == 0)
                         {
                             decrement = 10;
                         }
                         decrement = decrement - 1;
-                        label1.setText("" + decrement);
+                        labelTime.setText("" + decrement);
                     }
 
                 }
@@ -92,14 +79,5 @@ public class P001_Ahuja_Panel extends JPanel
             System.out.print("Exception Thrown in Timer");
         }
     }
-
-    /*public static void main(String args[])
-    {
-        P001_Ahuja_Panel p= new P001_Ahuja_Panel(1);
-        JFrame frame = new JFrame();
-        frame.setSize(500, 500);
-        frame.add(p);
-        frame.setVisible(true);
-
-    }*/
+    
 }
