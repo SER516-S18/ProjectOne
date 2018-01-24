@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,8 +24,8 @@ public class P077_Mohanty_Panel extends JPanel {
     public void myPanel()
     {
     	 	//Initializing a JPanel with Box Layout
-			JPanel newPanel = new JPanel();
-			 newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.Y_AXIS));
+			//JPanel newPanel = new JPanel();
+			 setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 			 
 			 //Setting Font for labels
 			 first_name.setFont(new Font("Papyrus",Font.PLAIN,15));
@@ -47,13 +46,13 @@ public class P077_Mohanty_Panel extends JPanel {
 					if(checker%2==0)
 						{
 							slope=true;
-							newPanel.setBackground(Color.WHITE);
+							setBackground(Color.WHITE);
 						
 						}
 					else 
 					{
 						slope=false;
-						newPanel.setBackground(lightBlue);
+						setBackground(lightBlue);
 					}
 					
 
@@ -95,16 +94,16 @@ public class P077_Mohanty_Panel extends JPanel {
 			
 			 
 			//Adding labels to Panel
-			 newPanel.add(first_name);
-			 newPanel.add(last_name);
-			 newPanel.add(counter);
+			 add(first_name);
+			 add(last_name);
+			 add(counter);
 			 //Setting Size and Visibility
-			 newPanel.setSize(100, 100);
-			 newPanel.setVisible(true);
+			 setSize(100, 100);
+			 setVisible(true);
 
 			 
 			 
-			 add(newPanel);
+			 
 			 t.start();    
 	
 
@@ -129,8 +128,6 @@ public class P077_Mohanty_Panel extends JPanel {
 		 myPanel();
 	}
 	
-	
-
 	
 	
 	
