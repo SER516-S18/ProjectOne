@@ -1,144 +1,117 @@
-/**
- * SER: 516(SOFTWARE AGILITY)
- *LAB 1: USING AGILE PRINCIPLES TEAM SHOULD ASSEMBLE A PROJECT.
- * IN THIS CODE A JPANEL IS BEING CREATED DISPLAYING THE NAME AND 
- * INTEGER NUMBERS USING A TIMER.
- * @author sanaydevi, ASU id: svdevi, Number 028.
- */
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+
+/* SER: 516(SOFTWARE AGILITY)
+ *@author sanaydevi, ASU id: svdevi, Number 028.
+ * @version 1.0
+ * @since   01-21-2018
+ * LAB 1: USING AGILE PRINCIPLES TEAM SHOULD ASSEMBLE A PROJECT.
+ * IN THIS CODE A JPANEL IS BEING CREATED DISPLAYING THE NAME AND 
+ * INTEGER NUMBERS USING A TIMER
+ */
 
 public final class P026_Devi_Panel extends JPanel {
 
-    
-    private JPanel panel;
-    private JLabel namelabel;
-    private JLabel numlabel;
 
-    public P026_Devi_Panel(int i) { //Constructor
-        
-        Devi_method(i);//Calling method which has the logic for counter and displaying name.
+    JPanel finalPanel;
+    JLabel nameLabel;
+    JLabel numLabel;
+    public static Color LIGHT_BLUE = new Color(173, 216, 230);
+    public final int HEIGHT = 100;
+    public final int WIDTH = 100;
+    public final int FONT_SIZE = 15;
+    
+
+
+    public P026_Devi_Panel(int value) {
+
+        Devi_method(value);
     }
-    public void Devi_method(int i) {
+    public void Devi_method(int flag) {
+        /*Panel,label properties specified.
+         *Timer with flag as condition implemented.
+         *Checking if integer passed is not even, means it's odd so set 
+         *background to light blue and decrement counter from 9 onwards till 0
+         * else set it to white and increment counter from 0 onwards till 9.
+         *after every 1000 ms that is one second timer is set
+         */
         
-        
-        //Giving attributes to the panel
-        panel = new JPanel(new GridBagLayout());
-        panel.setSize(100, 100);
-        GridBagConstraints c = new GridBagConstraints();
-       // blackline = BorderFactory.createLineBorder(Color.BLACK);
-      //  panel.setBorder(blackline);
-        
-        //Giving attributes to the name label
-        namelabel = new JLabel();
-        namelabel.setFont(new Font("Papyrus", Font.BOLD, 15));
-       // namelabel.setBorder(blackline);
-        namelabel.setText("<html> Sanay <br> Devi </html>");//(a) JPanel with full namelabel,first namelabel on first row and last namelabel on the next row.
-        c.gridx = 0;
-        c.gridy = 1;
-        panel.add(namelabel, c);//setting the namelabel label to coordinates 0,1.
-        
+        finalPanel = new JPanel(new GridBagLayout());
+        finalPanel.setSize(WIDTH, HEIGHT);
+        GridBagConstraints coordinate = new GridBagConstraints();
+        nameLabel = new JLabel();
+        nameLabel.setFont(new Font("Papyrus", Font.BOLD, FONT_SIZE));
+        nameLabel.setText("<html> Sanay <br> Devi </html>");
+        coordinate.gridx = 0;
+        coordinate.gridy = 1;
+        finalPanel.add(nameLabel, coordinate);
+
         Timer timer = new Timer();
-        numlabel = new JLabel();
-        /*Checking if integer passed is not even, means it's odd so set 
-        background to light blue and decrement counter from 9 onwards till zero*/
+        numLabel = new JLabel();
         
-       if (i % 2 != 0) {
-            panel.setBackground(new Color(173, 216, 230));//if int value is odd then color = light blue
+        if (flag % 2 != 0) {
+            finalPanel.setBackground(LIGHT_BLUE);
             TimerTask task = new TimerTask() {
-           int i =9;
-            public void toDO() {
-                numlabel.setText(String.valueOf(i--));//(b)JLabel displaying numbers from 0-9
-                numlabel.setFont(new Font("Papyrus", Font.PLAIN , 15));
+                int counter = 9;
+                public void toDO() {
 
-            }
-            public void run() {
-                
-                toDO();
-                try {
-                    if (i < -1) {
-                        i = 9;
-                        toDO();
-                    }
-                } catch (Exception e) { //Error unknown exception, timer failed.
-                    
-                    e.printStackTrace();
-                    System.out.println("Error! Stopping the timer...");
-                    timer.cancel();
+                    numLabel.setText(String.valueOf(counter--));
+                    numLabel.setFont(new Font("Papyrus", Font.PLAIN, FONT_SIZE));
+
                 }
+                public void run() {
 
-            }
-        };
-        timer.scheduleAtFixedRate(task, 0, 1000);//after every 1000 ms that is one second timer is set
+                    toDO();
+                    try {
+                        if (counter < -1) {
+                            counter = 9;
+                            toDO();
+                        }
+                    } catch (Exception e) {
 
-        } else
-       {
-        panel.setBackground(Color.WHITE);//else color = white
-        TimerTask task = new TimerTask() {
-           int i =0;
-            public void toDO() {
-                numlabel.setText(String.valueOf(i++));//(b)JLabel displaying numbers from 0-9
-                numlabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
-
-            }
-            public void run() {
-                
-                toDO();
-                try {
-                    if (i > 10) {
-                        i = 0;
-                        toDO();
+                        System.out.println("Error! : " + e + " Stopping the timer...");
+                        timer.cancel();
                     }
-                } catch (Exception e) { //Error unknown exception, timer failed.
-                    
-                    e.printStackTrace();
-                    System.out.println("Error! Stopping the timer...");
-                    timer.cancel();
+
                 }
+            };
+            timer.scheduleAtFixedRate(task, 0, 1000);
+        } else {
+            finalPanel.setBackground(Color.WHITE);
+            TimerTask task = new TimerTask() {
+                int counter = 0;
+                public void toDO() {
+                    numLabel.setText(String.valueOf(counter++));
+                    numLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
 
-            }
-        };
-        timer.scheduleAtFixedRate(task, 0, 1000);//setting the timer to run every 1 second.
-       }
-        
-        //Setting position of second JLabel of numbers
-        c.gridx = 0;
-        c.gridy = 2;
-        panel.add(numlabel, c);//setting the numlabel label to coordinates 0,2.
-        panel.setVisible(true);
-        
+                }
+                public void run() {
+
+                    toDO();
+                    try {
+                        if (counter > 10) {
+                            counter = 0;
+                            toDO();
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Error! " + e + " Stopping the timer...");
+                        timer.cancel();
+                    }
+
+                }
+            };
+            timer.scheduleAtFixedRate(task, 0, 1000);
+        }
+        coordinate.gridx = 0;
+        coordinate.gridy = 2;
+        finalPanel.add(numLabel, coordinate);
+        finalPanel.setVisible(true);
+
     }
-    public JPanel getPanel()//returns the panel
-    {
-        return panel;
-    //PLEASE READ THIS!!
-    //In Main Method use: JPanel panel = new P026_Devi_Panel(0).getPanel(); for intializing
-   
+    public JPanel getPanel() {
+        return finalPanel;
     }
-    // MAIN METHOD USED FOR TESTING, SHOULD BE COMPLETED BY ASSIGNED TAB MEMBER.
-    
-    /* public static void main(String[] args) {
-        
-        JFrame frame = new JFrame("GROUP 1");
-         JPanel panel = new P026_Devi_Panel(5).getPanel();
-         //Giving attributes to the frame
-        frame.add(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        frame.setLayout(null);
-        frame.setVisible(true);
-        
-   
-    }*/
-    
-} //END 
-
-
+}
