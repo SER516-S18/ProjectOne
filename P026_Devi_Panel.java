@@ -1,17 +1,19 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-/* SER: 516(SOFTWARE AGILITY)
- *@author sanaydevi, ASU id: svdevi, Number 028.
+/*----------------------------------------------------------------------------------------------------------------------------
+ * Author: Sanay Devi
+ * Written:01-21-2018
+ * Last Update:01-24-2018
+ * Subject: SER: 516(SOFTWARE AGILITY)
  * @version 1.0
- * @since   01-21-2018
  * LAB 1: USING AGILE PRINCIPLES TEAM SHOULD ASSEMBLE A PROJECT.
  * IN THIS CODE A JPANEL IS BEING CREATED DISPLAYING THE NAME AND 
  * INTEGER NUMBERS USING A TIMER
- */
+ *---------------------------------------------------------------------------------------------------------------------------*/
 
 public final class P026_Devi_Panel extends JPanel {
 
@@ -24,27 +26,27 @@ public final class P026_Devi_Panel extends JPanel {
     public final int WIDTH = 100;
     public final int FONT_SIZE = 15;
     
-
-
     public P026_Devi_Panel(int value) {
-
-        Devi_method(value);
+     
+     timerMethod(value);
     }
-    public void Devi_method(int flag) {
-        /*Panel,label properties specified.
-         *Timer with flag as condition implemented.
-         *Checking if integer passed is not even, means it's odd so set 
-         *background to light blue and decrement counter from 9 onwards till 0
-         * else set it to white and increment counter from 0 onwards till 9.
-         *after every 1000 ms that is one second timer is set
-         */
+   /*Panel,label properties specified.
+    *Timer with flag as condition implemented.
+    *Checking if integer passed is not even, means it's odd so set 
+    *background to light blue and decrement counter from 9 onwards till 0
+    * else set it to white and increment counter from 0 onwards till 9.
+    *after every 1000 ms that is one second timer is set
+    */   
+    public void timerMethod(int flag) {
         
         finalPanel = new JPanel(new GridBagLayout());
         finalPanel.setSize(WIDTH, HEIGHT);
         GridBagConstraints coordinate = new GridBagConstraints();
+        
         nameLabel = new JLabel();
         nameLabel.setFont(new Font("Papyrus", Font.BOLD, FONT_SIZE));
         nameLabel.setText("<html> Sanay <br> Devi </html>");
+        
         coordinate.gridx = 0;
         coordinate.gridy = 1;
         finalPanel.add(nameLabel, coordinate);
@@ -71,7 +73,6 @@ public final class P026_Devi_Panel extends JPanel {
                             toDO();
                         }
                     } catch (Exception e) {
-
                         System.out.println("Error! : " + e + " Stopping the timer...");
                         timer.cancel();
                     }
