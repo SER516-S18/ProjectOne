@@ -25,7 +25,6 @@ public class P127_Wu_Panel{
 			bcolor = lightblue;
 			n = 9;
 		}
-		create();
 	}
 	/**
 	 * create a JLabel
