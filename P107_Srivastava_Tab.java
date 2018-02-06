@@ -52,7 +52,7 @@ public class P107_Srivastava_Tab extends JPanel{
 			add(new P124_Wang_Panel(++argumentIndex), gbc);
 			add(new P125_Wathodkar_Panel(++argumentIndex), gbc);
 			add(new P126_Wei_Panel(++argumentIndex).getPanel(), gbc); //Had to call extra function
-			add(new P127_Wu_Panel(++argumentIndex), gbc);
+			add(new P127_Wu_Panel(++argumentIndex).create(), gbc); //Had to call extra function
 			add(new P128_Yadamreddi_Panel(++argumentIndex), gbc);
 			add(new P129_Yan_Panel(++argumentIndex), gbc);
 			add(new P130_Zhang_Panel(++argumentIndex), gbc);
