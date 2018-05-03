@@ -7,6 +7,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ * P090_Perez_Panel
+ *
+ * @author Isidro Perez
+ * @version 1.0
+ */
 public class P090_Perez_Panel extends JPanel {
 
     private JLabel nameLabel;
@@ -24,14 +30,17 @@ public class P090_Perez_Panel extends JPanel {
     }
 
     private void init() {
-        setBackground(num % 2 == 0 ? Color.WHITE : Color.BLUE);
+        // initialize background color based on panel position
+        setBackground(num % 2 == 0 ? Color.WHITE :  new Color( 171, 216, 230 ));
         setLayout(new GridLayout(2, 1, 0, 0));
         setTimeLable();
 
+        // set name label
         nameLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
         nameLabel.setHorizontalAlignment(JLabel.CENTER);
         nameLabel.setVerticalAlignment(JLabel.CENTER);
 
+        // set time label
         timeLabel.setFont(new Font("Papyrus", Font.PLAIN, 15));
         timeLabel.setHorizontalAlignment(JLabel.CENTER);
         timeLabel.setVerticalAlignment(JLabel.CENTER);
@@ -42,6 +51,7 @@ public class P090_Perez_Panel extends JPanel {
         setVisible(true);
     }
 
+    // sets the displayed time label every second
     private void setTimeLable() {
         Timer timer = new Timer( 1000, event -> {
             if(num % 2 == 0) {
@@ -52,7 +62,7 @@ public class P090_Perez_Panel extends JPanel {
                 }
             } else {
                 if(count <= 0) {
-                    count = 10;
+                    count = 9;
                 } else {
                     count--;
                 }
